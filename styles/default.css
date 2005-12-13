@@ -1,0 +1,171 @@
+/* 
+ * vim: expandtab sw=4 ts=4 sts=4:
+ */
+
+/* Body */
+
+body {
+    background-color: #dddddd;
+    color: #000000;
+    padding: 0;
+    margin: 0;
+}
+
+
+/* Title */
+
+h1 {
+    background-color: #ffffdd;
+    border-bottom: 1px solid black;
+    margin: 0;
+    padding: 0.5em;
+}
+
+
+/* Toolbar */
+
+ul.toolbar {
+    border-bottom: 1px solid black;
+    padding: 0 0 1.1em 0;
+}
+ul.toolbar li {
+    margin: 0;
+    margin-left: 0.5em;
+    padding: 0;
+    list-style-type: none;
+    display: inline;
+}
+ul.toolbar li a {
+    padding: 0.2em 0.5em;
+    border: 1px solid black;
+    background-color: #eeeeee;
+    text-decoration: none;
+    color: black;
+}
+ul.toolbar li a:hover {
+    border: 1px solid #444444;
+    background-color: #ffffff;
+}
+
+
+/* Message boxes */
+
+div.notice, div.warning, div.error {
+    margin: 0.5em;
+    border: 0.1em solid;
+    background-repeat: no-repeat;
+    background-position: 1em 50%;
+    padding: 1em 1em 1em 3em;
+}
+
+div.notice {
+    color: #000000;
+    border-color: #FFD700;
+    background-color: #FFFFDD;
+    background-image: url(../images/notice.png);
+}
+
+div.warning {
+    color: #CC0000;
+    border-color: #CC0000;
+    background-color: #FFFFCC;
+    background-image: url(../images/warning.png);
+}
+
+div.error {
+    color: #ff0000;
+    border-color:  #ff0000;
+    background-color: #FFFFCC;
+    background-image: url(../images/error.png);
+}
+
+/* Forms */
+
+fieldset {
+    margin: 0.5em;
+}
+
+fieldset input[type="submit"] {
+    clear: both;
+    margin: 0.5em 0 0.5em 10em;
+    text-align: center;
+    float: left;
+}
+
+fieldset input[type="text"], fieldset textarea, fieldset select {
+    float: left;
+}
+
+fieldset input[type="checkbox"] {
+    float: left;
+    clear: both;
+}
+
+fieldset label {
+    float: left;
+}
+
+fieldset label.desc {
+    width: 10em;
+    clear: both;
+}
+
+/* Listings */
+
+table.listing {
+    border: none;
+    border-collapse: collapse;
+    margin: 0.5em;
+}
+
+table.listing td {
+    border: 1px solid black;
+}
+
+table.listing td.name, table.listing td.category, table.listing td.date {
+    padding: 0 1em 0 1em;
+}
+table.listing td.category {
+    font-size: smaller;
+}
+
+table.listing td.action {
+    width: auto;
+}
+
+.priority0 {
+    background-color: #aaeeaa;
+}
+
+.priority1 {
+    background-color: #eeeeaa;
+}
+
+.priority2 {
+    background-color: #eeaaaa;
+}
+
+.closed, .closed a, .closed td {
+    text-decoration: line-through;
+}
+
+table.listing a {
+    color: black;
+    display: block;
+}
+table.listing a.action {
+    display: inline;
+    padding: 0 0.5em 0 0.5em;
+}
+
+/* Action links, used mostly in listings */
+
+a.action:before {
+    content: '[';
+}
+
+a.action:after {
+    content: ']';
+}
+
+/* Displaying of item */
