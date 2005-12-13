@@ -1,0 +1,23 @@
+Ukolovnik
+=========
+
+Simple task manager written in PHP and using MySQL as backend.
+
+
+License
+-------
+
+Ukolovnik is provided under GNU GPL version 2.
+
+
+Installation
+------------
+
+Edit config.php to fit your setup and create needed tables by provided SQL
+script (sql/ukolovnik.sql).
+
+
+Bug reporting
+-------------
+
+Please report found bugs to http://bugs.cihar.com
