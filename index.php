@@ -193,6 +193,39 @@ function show_edit_task($name, $cmd, $title, $description, $priority, $category,
     echo '<input type="submit" value="' . $name . '"/></form></fieldset>';
 }
 
+function show_edit_category($title, $cmd, $name, $personal, $id = NULL) {
+    global $strName, $strPersonal;
+
+    echo '<fieldset><legend>' . $title . '</legend><form method="post" action="index.php">';
+    if (isset($id)) {
+        echo '<input type="hidden" name="id" value="' . $id . 'l" \>';
+    }
+    echo '<label class="desc" for="in_name">' . $strName . '</label>';
+    echo '<input type="text" id="in_name" name="name" maxlength="200" value="' . $name . '" />';
+    echo '<input type="checkbox" id="ch_personal" name="personal" ' . $personal . '/>';
+    echo '<label for="ch_personal">' . $strPersonal . '</label>';
+    echo '<input type="hidden" name="cmd" value="' . $cmd . '" \>';
+    echo '<input type="submit" value="' . $title . '"/></form></fieldset>';
+}
+
+function grab_categories() {
+    global $categories, $categories_pers, $categories_prof;
+
+    $q = do_sql('SELECT * FROM categories');
+    $categories = array();
+    $categories_pers = array();
+    $categories_prof = array();
+    while ($row = mysql_fetch_assoc($q)) {
+        $categories[$row['id']] = $row['name'];
+        if ($row['personal']) {
+            $categories_pers[$row['id']] = $row['name'];
+        } else {
+            $categories_prof[$row['id']] = $row['name'];
+        }
+    }
+    mysql_free_result($q);
+}
+
 // Check for MySQL extension
 if (!function_exists('mysql_connect')) {
     die_error(sprintf($strExtensionNeeded, 'mysql'));
@@ -228,19 +261,7 @@ if (mysql_num_rows($q) == 0) {
 mysql_free_result($q);
 
 // Grab categories
-$q = do_sql('SELECT * FROM categories');
-$categories = array();
-$categories_pers = array();
-$categories_prof = array();
-while ($row = mysql_fetch_assoc($q)) {
-    $categories[$row['id']] = $row['name'];
-    if ($row['personal']) {
-        $categories_pers[$row['id']] = $row['name'];
-    } else {
-        $categories_prof[$row['id']] = $row['name'];
-    }
-}
-mysql_free_result($q);
+grab_categories();
 
 // "Grab" priorities
 $priorities = array($strPriority0, $strPriority1, $strPriority2);
@@ -393,11 +414,15 @@ while (!empty($cmd)) {
         case 'edit':
             if (!isset($_REQUEST['id'])) {
                 message('error', $strInvalidId);
+                $cmd = '';
+                break;
             }
             $id = (int)$_REQUEST['id'];
             $q = do_sql('SELECT * FROM tasks WHERE id=' . $id);
             if (mysql_num_rows($q) != 1) {
                 message('error', $strInvalidId);
+                $cmd = '';
+                break;
             } else {
                 $row = mysql_fetch_assoc($q);
                 mysql_free_result($q);
@@ -480,30 +505,72 @@ while (!empty($cmd)) {
             }
             $cmd = '';
             break;
+        case 'editcat':
+            if (!isset($_REQUEST['id'])) {
+                message('error', $strInvalidId);
+                $cmd = '';
+                break;
+            }
+            $id = (int)$_REQUEST['id'];
+            if (!isset($categories[$id])) {
+                message('error', $strInvalidId);
+                $cmd = '';
+                break;
+            } else {
+                show_edit_category($strEditCategory, 'editcat_real', htmlspecialchars($categories[$id]), isset($categories_pers[$id]) ? ' checked="checked"' : '', $id);
+                $cmd = '';
+            }
+            break;
+        case 'editcat_real':
         case 'addcat_real':
+            $error = FALSE;
+            if ($cmd == 'editcat_real') {
+                if (!isset($_REQUEST['id'])) {
+                    message('error', $strInvalidId);
+                    $error = TRUE;
+                } else { 
+                    $id = (int)$_REQUEST['id'];
+                    if ($id <= 0) {
+                        message('error', $strInvalidId);
+                        $error = TRUE;
+                    }
+                    if (!isset($categories[$id])) {
+                        message('error', $strInvalidId);
+                        $error = TRUE;
+                    }
+                }
+            }
             if (empty($_REQUEST['name'])) {
                 message('error', $strNameNotEmpty);
+                $error = TRUE;
+            }
+            if (isset($_REQUEST['personal'])) {
+                $personal = '1';
             } else {
-                if (isset($_REQUEST['personal'])) {
-                    $personal = '1';
+                $personal = '0';
+            }
+            if (!$error) {
+                $set_sql = 'SET name="' . addslashes($_REQUEST['name']) . '", personal=' . $personal;
+                if ($cmd == 'addcat_real') {
+                    do_sql('INSERT INTO categories ' . $set_sql);
+                    message('notice', sprintf($strCategoryAdded, htmlspecialchars($_REQUEST['name'])));
                 } else {
-                    $personal = '0';
+                    do_sql('UPDATE categories ' . $set_sql . ' WHERE id=' . $id);
+                    message('notice', sprintf($strCategoryChanged, htmlspecialchars($_REQUEST['name'])));
                 }
-                do_sql('INSERT INTO categories SET name="' . addslashes($_REQUEST['name']) . '", personal=' . $personal);
-                message('notice', sprintf($strCategoryAdded, htmlspecialchars($_REQUEST['name'])));
                 // To avoid filtering
                 unset($_REQUEST['personal']);
+                // Reread categories
+                grab_categories();
                 $cmd = 'cat';
                 break;
             }
         case 'addcat':
-            echo '<fieldset><legend>' . $strAddCategory . '</legend><form method="post" action="index.php">';
-            echo '<label class="desc" for="in_name">' . $strName . '</label>';
-            echo '<input type="text" id="in_name" name="name" maxlength="200" value="' . get_opt('name') . '" />';
-            echo '<input type="checkbox" id="ch_personal" name="personal" ' . get_check('personal') . '/>';
-            echo '<label for="ch_personal">' . $strPersonal . '</label>';
-            echo '<input type="hidden" name="cmd" value="addcat_real" \>';
-            echo '<input type="submit" value="' . $strAdd . '"/></form></fieldset>';
+            if ($cmd == 'editcat_real') {
+                show_edit_category($strEditCategory, 'editcat_real', get_opt('name'), get_check('personal'), $id);
+            } else {
+                show_edit_category($strAddCategory, 'addcat_real', get_opt('name'), get_check('personal'));
+            }
             $cmd = '';
             break;
         case 'cat':
@@ -528,13 +595,14 @@ while (!empty($cmd)) {
 
                 // Listing
                 echo '<table class="listing">';
-                echo '<thead><tr><th>' . $strName . '</th><th>' . $strActions . '</th></tr></thead>';
+                echo '<thead><tr><th>' . $strName . '</th><th>' . $strPersonal . '</th><th>' . $strActions . '</th></tr></thead>';
                 echo '<tbody>';
                 foreach($cats as $id => $name) {
                     echo '<tr><td class="name"><a href="index.php?category=' . $id . '">' . htmlspecialchars($name) . '</a></td>';
+                    echo '<td class="name">' . ( isset($categories_pers[$id]) ? $strYes : $strNo ) . '</td>';
                     echo '<td class="actions">';
-                    echo '<a class="action" href="index.php?cmd=editcat&amp;category=' . $id . '">' . $strEdit . '</a>';
-                    echo '<a class="action" href="index.php?cmd=delcat&amp;category=' . $id . '">' . $strDelete . '</a> ';
+                    echo '<a class="action" href="index.php?cmd=editcat&amp;id=' . $id . '">' . $strEdit . '</a>';
+                    echo '<a class="action" href="index.php?cmd=delcat&amp;id=' . $id . '">' . $strDelete . '</a> ';
                     echo '</td>';
                     echo '</tr>';
                 }
