@@ -489,7 +489,7 @@ while (!empty($cmd)) {
                     do_sql('INSERT INTO tasks ' . $set_sql);
                     message('notice', sprintf($strTaskAdded, htmlspecialchars($_REQUEST['title'])));
                 } else {
-                    do_sql('UPDATE tasks ' . $set_sql . ' WHERE id=' . $id);
+                    do_sql('UPDATE tasks ' . $set_sql . ', updated=NOW() WHERE id=' . $id);
                     message('notice', sprintf($strTaskChanged, htmlspecialchars($_REQUEST['title'])));
                 }
                 // To avoid filtering
