@@ -50,4 +50,6 @@ $strUpdated = 'Updated';
 $strClosed = 'Closed';
 $strTaskFinished = 'Task %s finished.';
 $strTaskDeleted = 'Task %s deleted.';
+$strTaskChanged = 'Task %s changed.';
+$strInvalidId  = 'Invalid ID.';
 ?>

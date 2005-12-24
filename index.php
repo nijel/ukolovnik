@@ -141,8 +141,8 @@ function get_check($name) {
     return isset($_REQUEST[$name]) ? 'checked="checked" ' : '';
 }
 
-function get_opt($name) {
-    return empty($_REQUEST[$name]) ? '' : htmlspecialchars($_REQUEST[$name]);
+function get_opt($name, $default = '') {
+    return empty($_REQUEST[$name]) ? $default : htmlspecialchars($_REQUEST[$name]);
 }
 
 function get_select($name, $default, $options, $add_any=FALSE) {
@@ -171,6 +171,26 @@ function get_select($name, $default, $options, $add_any=FALSE) {
 
 function find_links($text) {
     return preg_replace('@((http|ftp|https)://[a-z0-9A-Z.,?&;/=+_-]+)([^.]|$)@', '<a href="\1">\1</a>\3', htmlspecialchars($text));
+}
+
+function show_edit_task($name, $cmd, $title, $description, $priority, $category, $id = NULL) {
+    global $strTitle, $strDescription, $strPriority, $strCategory;
+    global $priorities, $categories;
+
+    echo '<fieldset><legend>' . $name . '</legend><form method="post" action="index.php">';
+    if (isset($id)) {
+        echo '<input type="hidden" name="id" value="' . $id . 'l" \>';
+    }
+    echo '<label class="desc">' . $strTitle . '</label>';
+    echo '<input type="text" name="title" maxlength="200" value="' . $title . '" />';
+    echo '<label class="desc">' . $strDescription . '</label>';
+    echo '<textarea name="description" cols="60" rows="5">' . $description . '</textarea>';
+    echo '<label class="desc" for="sel_priority">' . $strPriority . '</label>';
+    echo get_select('priority', $priority, $priorities);
+    echo '<label class="desc" for="sel_category">' . $strCategory . '</label>';
+    echo get_select('category', $category, $categories);
+    echo '<input type="hidden" name="cmd" value="' . $cmd . '" \>';
+    echo '<input type="submit" value="' . $name . '"/></form></fieldset>';
 }
 
 // Check for MySQL extension
@@ -301,7 +321,7 @@ while (!empty($cmd)) {
                     echo '<td class="date">' . htmlspecialchars($row['created']) . '</td>';
                     echo '<td class="actions">';
                     echo '<a class="action" href="index.php?cmd=fin&amp;id=' . $row['id'] . '">' . $strFinished . '</a> ';
-                    echo '<a class="action" href="index.php?cmd=ed&amp;id=' . $row['id'] . '">' . $strEdit . '</a> ';
+                    echo '<a class="action" href="index.php?cmd=edit&amp;id=' . $row['id'] . '">' . $strEdit . '</a> ';
                     echo '<a class="action" href="index.php?cmd=del&amp;id=' . $row['id'] . '">' . $strDelete . '</a> ';
                     echo '</td>';
                     echo '</tr>';
@@ -332,7 +352,7 @@ while (!empty($cmd)) {
                 }
                 echo '<p class="actions">';
                 echo '<a class="action" href="index.php?cmd=fin&amp;id=' . $row['id'] . '">' . $strFinished . '</a> ';
-                echo '<a class="action" href="index.php?cmd=ed&amp;id=' . $row['id'] . '">' . $strEdit . '</a> ';
+                echo '<a class="action" href="index.php?cmd=edit&amp;id=' . $row['id'] . '">' . $strEdit . '</a> ';
                 echo '<a class="action" href="index.php?cmd=del&amp;id=' . $row['id'] . '">' . $strDelete . '</a> ';
                 echo '</p>';
                 echo '</fieldset>';
@@ -369,6 +389,80 @@ while (!empty($cmd)) {
             }
             mysql_free_result($q);
             $cmd = 'list';
+            break;
+        case 'edit_real';
+            $error = FALSE;
+            if (empty($_REQUEST['title'])) {
+                message('error', $strTitleNotEmpty);
+                $error = TRUE;
+            }
+            if (empty($_REQUEST['category'])) {
+                message('error', $strCategoryInvalid);
+                $error = TRUE;
+            } else { 
+                $category = (int)$_REQUEST['category'];
+                $q = do_sql('SELECT * FROM categories WHERE id=' . $category);
+                if (mysql_num_rows($q) != 1) {
+                    message('error', $strCategoryInvalid);
+                    $error = TRUE;
+                }
+                mysql_free_result($q);
+            }
+            if (!isset($_REQUEST['priority'])) {
+                message('error', $strPriorityInvalid);
+                $error = TRUE;
+            } else { 
+                $priority = (int)$_REQUEST['priority'];
+                if ($priority < 0 || $priority > 2) {
+                    message('error', $strPriorityInvalid);
+                    $error = TRUE;
+                }
+            }
+            if (!isset($_REQUEST['id'])) {
+                message('error', $strInvalidId);
+                $error = TRUE;
+            } else { 
+                $id = (int)$_REQUEST['id'];
+                if ($priority <= 0) {
+                    message('error', $strInvalidId);
+                    $error = TRUE;
+                }
+                $q = do_sql('SELECT * FROM tasks WHERE id=' . $category);
+                if (mysql_num_rows($q) != 1) {
+                    message('error', $strInvalidId);
+                    $error = TRUE;
+                }
+            }
+            if (empty($_REQUEST['description'])) {
+                $_REQUEST['description'] = '';
+            }
+            if (!$error) {
+                do_sql('UPDATE tasks SET '
+                    . 'title="' . addslashes($_REQUEST['title']) . '"'
+                    . ', description="' . addslashes($_REQUEST['description']) . '"'
+                    . ', category= ' . $category
+                    . ', priority= ' . $priority
+                    . ' WHERE id=' . $id);
+                message('notice', sprintf($strTaskChanged, htmlspecialchars($_REQUEST['title'])));
+                // To avoid filtering
+                unset($_REQUEST['priority'], $_REQUEST['category']);
+                $cmd = 'list';
+                break;
+            }
+        case 'edit':
+            if (!isset($_REQUEST['id'])) {
+                message('error', $strInvalidId);
+            }
+            $id = (int)$_REQUEST['id'];
+            $q = do_sql('SELECT * FROM tasks WHERE id=' . $id);
+            if (mysql_num_rows($q) != 1) {
+                message('error', $strInvalidId);
+            } else {
+                $row = mysql_fetch_assoc($q);
+                mysql_free_result($q);
+                show_edit_task($strEdit, 'edit_real', htmlspecialchars($row['title']), htmlspecialchars($row['description']), $row['priority'], $row['category'], $id);
+                $cmd = '';
+            }
             break;
         case 'add_real';
             $error = FALSE;
@@ -414,17 +508,7 @@ while (!empty($cmd)) {
                 break;
             }
         case 'add':
-            echo '<fieldset><legend>' . $strAdd . '</legend><form method="post" action="index.php">';
-            echo '<label class="desc">' . $strTitle . '</label>';
-            echo '<input type="text" name="title" maxlength="200" value="' . get_opt('title') . '" />';
-            echo '<label class="desc">' . $strDescription . '</label>';
-            echo '<textarea name="description" cols="60" rows="5">' . get_opt('description') . '</textarea>';
-            echo '<label class="desc" for="sel_priority">' . $strPriority . '</label>';
-            echo get_select('priority', 1, $priorities);
-            echo '<label class="desc" for="sel_category">' . $strCategory . '</label>';
-            echo get_select('category', -1, $categories);
-            echo '<input type="hidden" name="cmd" value="add_real" \>';
-            echo '<input type="submit" value="' . $strAdd . '"/></form></fieldset>';
+            show_edit_task($strAdd, 'add_real', get_opt('title'), get_opt('description'), get_opt('priority', 1), get_opt('category', -1));
             $cmd = '';
             break;
         case 'addcat_real':
@@ -480,7 +564,7 @@ while (!empty($cmd)) {
                 foreach($cats as $id => $name) {
                     echo '<tr><td class="name"><a href="index.php?category=' . $id . '">' . htmlspecialchars($name) . '</a></td>';
                     echo '<td class="actions">';
-                    echo '<a class="action" href="index.php?cmd=edcat&amp;category=' . $id . '">' . $strEdit . '</a>';
+                    echo '<a class="action" href="index.php?cmd=editcat&amp;category=' . $id . '">' . $strEdit . '</a>';
                     echo '<a class="action" href="index.php?cmd=delcat&amp;category=' . $id . '">' . $strDelete . '</a> ';
                     echo '</td>';
                     echo '</tr>';
