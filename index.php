@@ -390,65 +390,6 @@ while (!empty($cmd)) {
             mysql_free_result($q);
             $cmd = 'list';
             break;
-        case 'edit_real';
-            $error = FALSE;
-            if (empty($_REQUEST['title'])) {
-                message('error', $strTitleNotEmpty);
-                $error = TRUE;
-            }
-            if (empty($_REQUEST['category'])) {
-                message('error', $strCategoryInvalid);
-                $error = TRUE;
-            } else { 
-                $category = (int)$_REQUEST['category'];
-                $q = do_sql('SELECT * FROM categories WHERE id=' . $category);
-                if (mysql_num_rows($q) != 1) {
-                    message('error', $strCategoryInvalid);
-                    $error = TRUE;
-                }
-                mysql_free_result($q);
-            }
-            if (!isset($_REQUEST['priority'])) {
-                message('error', $strPriorityInvalid);
-                $error = TRUE;
-            } else { 
-                $priority = (int)$_REQUEST['priority'];
-                if ($priority < 0 || $priority > 2) {
-                    message('error', $strPriorityInvalid);
-                    $error = TRUE;
-                }
-            }
-            if (!isset($_REQUEST['id'])) {
-                message('error', $strInvalidId);
-                $error = TRUE;
-            } else { 
-                $id = (int)$_REQUEST['id'];
-                if ($priority <= 0) {
-                    message('error', $strInvalidId);
-                    $error = TRUE;
-                }
-                $q = do_sql('SELECT * FROM tasks WHERE id=' . $category);
-                if (mysql_num_rows($q) != 1) {
-                    message('error', $strInvalidId);
-                    $error = TRUE;
-                }
-            }
-            if (empty($_REQUEST['description'])) {
-                $_REQUEST['description'] = '';
-            }
-            if (!$error) {
-                do_sql('UPDATE tasks SET '
-                    . 'title="' . addslashes($_REQUEST['title']) . '"'
-                    . ', description="' . addslashes($_REQUEST['description']) . '"'
-                    . ', category= ' . $category
-                    . ', priority= ' . $priority
-                    . ' WHERE id=' . $id);
-                message('notice', sprintf($strTaskChanged, htmlspecialchars($_REQUEST['title'])));
-                // To avoid filtering
-                unset($_REQUEST['priority'], $_REQUEST['category']);
-                $cmd = 'list';
-                break;
-            }
         case 'edit':
             if (!isset($_REQUEST['id'])) {
                 message('error', $strInvalidId);
@@ -464,8 +405,26 @@ while (!empty($cmd)) {
                 $cmd = '';
             }
             break;
+        case 'edit_real';
         case 'add_real';
             $error = FALSE;
+            if ($cmd == 'edit_real') {
+                if (!isset($_REQUEST['id'])) {
+                    message('error', $strInvalidId);
+                    $error = TRUE;
+                } else { 
+                    $id = (int)$_REQUEST['id'];
+                    if ($id <= 0) {
+                        message('error', $strInvalidId);
+                        $error = TRUE;
+                    }
+                    $q = do_sql('SELECT * FROM tasks WHERE id=' . $id);
+                    if (mysql_num_rows($q) != 1) {
+                        message('error', $strInvalidId);
+                        $error = TRUE;
+                    }
+                }
+            }
             if (empty($_REQUEST['title'])) {
                 message('error', $strTitleNotEmpty);
                 $error = TRUE;
@@ -496,19 +455,29 @@ while (!empty($cmd)) {
                 $_REQUEST['description'] = '';
             }
             if (!$error) {
-                do_sql('INSERT INTO tasks SET '
+                $set_sql = 'SET '
                     . 'title="' . addslashes($_REQUEST['title']) . '"'
                     . ', description="' . addslashes($_REQUEST['description']) . '"'
                     . ', category= ' . $category
-                    . ', priority= ' . $priority);
-                message('notice', sprintf($strTaskAdded, htmlspecialchars($_REQUEST['title'])));
+                    . ', priority= ' . $priority;
+                if ($cmd == 'add_real') {
+                    do_sql('INSERT INTO tasks ' . $set_sql);
+                    message('notice', sprintf($strTaskAdded, htmlspecialchars($_REQUEST['title'])));
+                } else {
+                    do_sql('UPDATE tasks ' . $set_sql . ' WHERE id=' . $id);
+                    message('notice', sprintf($strTaskChanged, htmlspecialchars($_REQUEST['title'])));
+                }
                 // To avoid filtering
                 unset($_REQUEST['priority'], $_REQUEST['category']);
                 $cmd = 'list';
                 break;
             }
         case 'add':
-            show_edit_task($strAdd, 'add_real', get_opt('title'), get_opt('description'), get_opt('priority', 1), get_opt('category', -1));
+            if ($cmd == 'edit_real') {
+                show_edit_task($strEdit, 'edit_real', get_opt('title'), get_opt('description'), get_opt('priority', 1), get_opt('category', -1), $id);
+            } else { 
+                show_edit_task($strAdd, 'add_real', get_opt('title'), get_opt('description'), get_opt('priority', 1), get_opt('category', -1));
+            }
             $cmd = '';
             break;
         case 'addcat_real':
