@@ -211,7 +211,7 @@ function show_edit_category($title, $cmd, $name, $personal, $id = NULL) {
 function grab_categories() {
     global $categories, $categories_pers, $categories_prof;
 
-    $q = do_sql('SELECT * FROM categories');
+    $q = do_sql('SELECT * FROM ' . $GLOBALS['table_prefix'] . 'categories');
     $categories = array();
     $categories_pers = array();
     $categories_prof = array();
@@ -248,15 +248,15 @@ if (!mysql_select_db($db_database, $db)) {
 }
 
 // Check tables
-$q = do_sql('SHOW TABLES LIKE "tasks"');
+$q = do_sql('SHOW TABLES LIKE "' . $GLOBALS['table_prefix'] . 'tasks"');
 if (mysql_num_rows($q) == 0) {
-    die_error(sprintf($strCanNotFindTable, 'tasks'));
+    die_error(sprintf($strCanNotFindTable, $GLOBALS['table_prefix'] . 'tasks'));
 }
 if ($q) mysql_free_result($q);
 
-$q = do_sql('SHOW TABLES LIKE "categories"');
+$q = do_sql('SHOW TABLES LIKE "' . $GLOBALS['table_prefix'] . 'categories"');
 if (mysql_num_rows($q) == 0) {
-    die_error(sprintf($strCanNotFindTable, 'categories'));
+    die_error(sprintf($strCanNotFindTable, $GLOBALS['table_prefix'] . 'categories'));
 }
 mysql_free_result($q);
 
@@ -319,7 +319,7 @@ while (!empty($cmd)) {
             $order = 'priority DESC, created';
             // FIXME: make this parameter
                 
-            $q = do_sql('SELECT * FROM tasks ' . $filter . ' ORDER BY ' . $order);
+            $q = do_sql('SELECT * FROM ' . $GLOBALS['table_prefix'] . 'tasks ' . $filter . ' ORDER BY ' . $order);
             if (mysql_num_rows($q) == 0) {
                 message('notice', $strNoEntries);
             } else {
@@ -356,7 +356,7 @@ while (!empty($cmd)) {
             if (!isset($_REQUEST['id'])) {
                 die_error($strParameterInvalid);
             }
-            $q = do_sql('SELECT * FROM tasks WHERE id=' . (int)$_REQUEST['id']);
+            $q = do_sql('SELECT * FROM ' . $GLOBALS['table_prefix'] . 'tasks WHERE id=' . (int)$_REQUEST['id']);
             if (mysql_num_rows($q) != 1) {
                 message('notice', $strNoEntries);
             } else {
@@ -385,12 +385,12 @@ while (!empty($cmd)) {
             if (!isset($_REQUEST['id'])) {
                 die_error($strParameterInvalid);
             }
-            $q = do_sql('SELECT title FROM tasks WHERE id=' . (int)$_REQUEST['id']);
+            $q = do_sql('SELECT title FROM ' . $GLOBALS['table_prefix'] . 'tasks WHERE id=' . (int)$_REQUEST['id']);
             if (mysql_num_rows($q) != 1) {
                 message('notice', $strNoEntries);
             } else {
                 $row = mysql_fetch_assoc($q);
-                do_sql('UPDATE tasks SET closed=NOW() WHERE id=' . (int)$_REQUEST['id']);
+                do_sql('UPDATE ' . $GLOBALS['table_prefix'] . 'tasks SET closed=NOW() WHERE id=' . (int)$_REQUEST['id']);
                 message('notice', sprintf($strTaskFinished, htmlspecialchars($row['title'])));
             }
             mysql_free_result($q);
@@ -400,12 +400,12 @@ while (!empty($cmd)) {
             if (!isset($_REQUEST['id'])) {
                 die_error($strParameterInvalid);
             }
-            $q = do_sql('SELECT title FROM tasks WHERE id=' . (int)$_REQUEST['id']);
+            $q = do_sql('SELECT title FROM ' . $GLOBALS['table_prefix'] . 'tasks WHERE id=' . (int)$_REQUEST['id']);
             if (mysql_num_rows($q) != 1) {
                 message('notice', $strNoEntries);
             } else {
                 $row = mysql_fetch_assoc($q);
-                do_sql('DELETE FROM tasks WHERE id=' . (int)$_REQUEST['id']);
+                do_sql('DELETE FROM ' . $GLOBALS['table_prefix'] . 'tasks WHERE id=' . (int)$_REQUEST['id']);
                 message('notice', sprintf($strTaskDeleted, htmlspecialchars($row['title'])));
             }
             mysql_free_result($q);
@@ -418,7 +418,7 @@ while (!empty($cmd)) {
                 break;
             }
             $id = (int)$_REQUEST['id'];
-            $q = do_sql('SELECT * FROM tasks WHERE id=' . $id);
+            $q = do_sql('SELECT * FROM ' . $GLOBALS['table_prefix'] . 'tasks WHERE id=' . $id);
             if (mysql_num_rows($q) != 1) {
                 message('error', $strInvalidId);
                 $cmd = '';
@@ -443,7 +443,7 @@ while (!empty($cmd)) {
                         message('error', $strInvalidId);
                         $error = TRUE;
                     }
-                    $q = do_sql('SELECT * FROM tasks WHERE id=' . $id);
+                    $q = do_sql('SELECT * FROM ' . $GLOBALS['table_prefix'] . 'tasks WHERE id=' . $id);
                     if (mysql_num_rows($q) != 1) {
                         message('error', $strInvalidId);
                         $error = TRUE;
@@ -459,7 +459,7 @@ while (!empty($cmd)) {
                 $error = TRUE;
             } else { 
                 $category = (int)$_REQUEST['category'];
-                $q = do_sql('SELECT * FROM categories WHERE id=' . $category);
+                $q = do_sql('SELECT * FROM ' . $GLOBALS['table_prefix'] . 'categories WHERE id=' . $category);
                 if (mysql_num_rows($q) != 1) {
                     message('error', $strCategoryInvalid);
                     $error = TRUE;
@@ -486,10 +486,10 @@ while (!empty($cmd)) {
                     . ', category= ' . $category
                     . ', priority= ' . $priority;
                 if ($cmd == 'add_real') {
-                    do_sql('INSERT INTO tasks ' . $set_sql);
+                    do_sql('INSERT INTO ' . $GLOBALS['table_prefix'] . 'tasks ' . $set_sql);
                     message('notice', sprintf($strTaskAdded, htmlspecialchars($_REQUEST['title'])));
                 } else {
-                    do_sql('UPDATE tasks ' . $set_sql . ', updated=NOW() WHERE id=' . $id);
+                    do_sql('UPDATE ' . $GLOBALS['table_prefix'] . 'tasks ' . $set_sql . ', updated=NOW() WHERE id=' . $id);
                     message('notice', sprintf($strTaskChanged, htmlspecialchars($_REQUEST['title'])));
                 }
                 // To avoid filtering
@@ -552,10 +552,10 @@ while (!empty($cmd)) {
             if (!$error) {
                 $set_sql = 'SET name="' . addslashes($_REQUEST['name']) . '", personal=' . $personal;
                 if ($cmd == 'addcat_real') {
-                    do_sql('INSERT INTO categories ' . $set_sql);
+                    do_sql('INSERT INTO ' . $GLOBALS['table_prefix'] . 'categories ' . $set_sql);
                     message('notice', sprintf($strCategoryAdded, htmlspecialchars($_REQUEST['name'])));
                 } else {
-                    do_sql('UPDATE categories ' . $set_sql . ' WHERE id=' . $id);
+                    do_sql('UPDATE ' . $GLOBALS['table_prefix'] . 'categories ' . $set_sql . ' WHERE id=' . $id);
                     message('notice', sprintf($strCategoryChanged, htmlspecialchars($_REQUEST['name'])));
                 }
                 // To avoid filtering
