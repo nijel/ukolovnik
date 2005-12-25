@@ -309,9 +309,9 @@ while (!empty($cmd)) {
             }
             if (isset($_REQUEST['finished'])) {
                 if ($_REQUEST['finished'] == 'show') {
-                    $filter .= ' AND closed IS NOT NULL';
+                    $filter .= ' AND closed <> "00000000000000"';
                 } elseif ($_REQUEST['finished'] == 'hide') {
-                    $filter .= ' AND closed IS NULL';
+                    $filter .= ' AND (closed IS NULL OR closed = "00000000000000")';
                 }
             } else {
                 $filter .= ' AND closed IS NULL';
@@ -335,7 +335,7 @@ while (!empty($cmd)) {
                 echo '<tbody>';
                 while ($row = mysql_fetch_assoc($q)) {
                     echo '<tr class="priority' . $row['priority'];
-                    if (!is_null($row['closed'])) {
+                    if (!is_null($row['closed']) && $row['closed'] != '00000000000000') {
                         echo ' closed';
                     }
                     echo '">';
@@ -367,10 +367,10 @@ while (!empty($cmd)) {
                 echo '<fieldset class="priority' . $row['priority'] . '"><legend>' . htmlspecialchars($row['title'] . '(' . $categories[$row['category']] . ')' ) . '</legend>';
                 echo '<p>' . find_links($row['description']) . '</p>';
                 echo '<p>' . $strCreated . ': ' . htmlspecialchars($row['created']) . '</p>';
-                if (!is_null($row['updated'])) {
+                if (!is_null($row['updated']) && $row['updated'] != '00000000000000') {
                     echo '<p>' . $strUpdated . ': ' . htmlspecialchars($row['updated']) . '</p>';
                 }
-                if (!is_null($row['closed'])) {
+                if (!is_null($row['closed']) && $row['closed'] != '00000000000000') {
                     echo '<p>' . $strClosed . ': ' . htmlspecialchars($row['closed']) . '</p>';
                 }
                 echo '<p class="actions">';
