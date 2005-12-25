@@ -85,8 +85,10 @@ echo '<?xml version="1.0" encoding="utf-8"?>' . "\n";
 <li><a href="index.php?cmd=add"><?php echo $strAdd; ?></a></li>
 <li><a href="index.php?cmd=cat"><?php echo $strCategories; ?></a></li>
 <li><a href="index.php?cmd=addcat"><?php echo $strAddCategory; ?></a></li>
+<!--
 <li><a href="index.php?cmd=export"><?php echo $strExport; ?></a></li>
 <li><a href="index.php?cmd=stats"><?php echo $strStats; ?></a></li>
+-->
 </ul>
 <?php
 }
