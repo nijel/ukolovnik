@@ -461,12 +461,10 @@ while (!empty($cmd)) {
                 $error = TRUE;
             } else { 
                 $category = (int)$_REQUEST['category'];
-                $q = do_sql('SELECT * FROM ' . $GLOBALS['table_prefix'] . 'categories WHERE id=' . $category);
-                if (mysql_num_rows($q) != 1) {
+                if (!isset($categories[$category])) {
                     message('error', $strCategoryInvalid);
                     $error = TRUE;
                 }
-                mysql_free_result($q);
             }
             if (!isset($_REQUEST['priority'])) {
                 message('error', $strPriorityInvalid);
