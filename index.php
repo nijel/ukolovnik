@@ -262,6 +262,26 @@ if (mysql_num_rows($q) == 0) {
 }
 mysql_free_result($q);
 
+// Is there need to handle charset?
+$q = do_sql('SELECT VERSION()');
+if (mysql_num_rows($q) == 0) {
+    die_error(sprintf($strSQLFailed, 'SELECT VERSION()'));
+}
+$r = mysql_fetch_array($q);
+mysql_free_result($q);
+$mysql_ver = explode('.', $r[0]);
+unset($r);
+if (!isset($mysql_ver[0])) {
+    die_error(sprintf($strSQLFailed, 'SELECT VERSION()'));
+}
+// Since MySQL 4 we use utf-8:
+if ($mysql_ver[0] >= 4) {
+    do_sql('SET NAMES utf8');
+    do_sql('SET CHARACTER SET utf8');
+}
+unset($mysql_ver);
+
+
 // Grab categories
 grab_categories();
 
