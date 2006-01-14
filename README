@@ -14,7 +14,8 @@ Installation
 ------------
 
 Edit config.php to fit your setup and create needed tables by provided SQL
-script (sql/ukolovnik.sql).
+script (use sql/ukolovnik.sql for current MySQL which supports charsets or
+sql/ukolovnik-no-charsets.sql for older versions 3.x which do not support it).
 
 
 Bug reporting

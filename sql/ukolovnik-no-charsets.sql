@@ -18,7 +18,7 @@
 
 DROP TABLE IF EXISTS `ukolovnik_categories`;
 CREATE TABLE `ukolovnik_categories` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL auto_increment,
   `name` varchar(200) NOT NULL,
   `personal` tinyint(1) NOT NULL,
   PRIMARY KEY  (`id`),
@@ -33,7 +33,7 @@ CREATE TABLE `ukolovnik_categories` (
 
 DROP TABLE IF EXISTS `ukolovnik_tasks`;
 CREATE TABLE `ukolovnik_tasks` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL auto_increment,
   `category` int(11) NOT NULL,
   `priority` int(11) NOT NULL,
   `title` varchar(200) NOT NULL,

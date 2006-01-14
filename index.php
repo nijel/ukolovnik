@@ -271,11 +271,11 @@ $r = mysql_fetch_array($q);
 mysql_free_result($q);
 $mysql_ver = explode('.', $r[0]);
 unset($r);
-if (!isset($mysql_ver[0])) {
+if (!isset($mysql_ver[0]) || !isset($mysql_ver[1])) {
     die_error(sprintf($strSQLFailed, 'SELECT VERSION()'));
 }
 // Since MySQL 4 we use utf-8:
-if ($mysql_ver[0] >= 4) {
+if ($mysql_ver[0] >= 5 || ($mysql_ver[0] == 4 && $mysql_ver[1] >= 1)) {
     do_sql('SET NAMES utf8');
     do_sql('SET CHARACTER SET utf8');
 }
@@ -334,7 +334,7 @@ while (!empty($cmd)) {
                     $filter .= ' AND (closed IS NULL OR closed = "00000000000000")';
                 }
             } else {
-                $filter .= ' AND closed IS NULL';
+                $filter .= ' AND (closed IS NULL OR closed = "00000000000000")';
             }
 
             // Sorting
