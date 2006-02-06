@@ -360,7 +360,7 @@ while (!empty($cmd)) {
                     }
                     echo '">';
                     echo '<td class="name"><a href="index.php?cmd=show&amp;id=' . $row['id'] . '">' . htmlspecialchars($row['title']) . '</a></td>';
-                    echo '<td class="category"><a href="index.php?category=' . $row['id'] . '">' . htmlspecialchars($categories[$row['category']]) . '</a></td>';
+                    echo '<td class="category"><a href="index.php?category=' . $row['category'] . '">' . htmlspecialchars($categories[$row['category']]) . '</a></td>';
                     echo '<td class="date">' . htmlspecialchars($row['created']) . '</td>';
                     echo '<td class="actions">';
                     echo '<a class="action" href="index.php?cmd=fin&amp;id=' . $row['id'] . '">' . $strFinished . '</a> ';

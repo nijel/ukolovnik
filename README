@@ -1,7 +1,13 @@
 Ukolovnik
 =========
 
-Simple task manager written in PHP and using MySQL as backend.
+Simple task manager written in PHP and using MySQL as backend. 
+
+
+Homepage
+--------
+
+http://www.cihar.com/software/ukolovnik/
 
 
 License
@@ -21,4 +27,16 @@ sql/ukolovnik-no-charsets.sql for older versions 3.x which do not support it).
 Bug reporting
 -------------
 
-Please report found bugs to http://bugs.cihar.com
+Please report found bugs to my bugtracker [1].
+
+1. http://bugs.cihar.com
+
+
+Developing
+----------
+
+Development goes in in bazaar archive [2], you can use ArchZoom [3] to browse
+it.
+
+2. http://www.cihar.com/archives/2005-main
+3. http://archzoom.cihar.com/archzoom.cgi/michal@cihar.com--2005-main/ukolovnik--devel--1
