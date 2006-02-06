@@ -11,6 +11,8 @@ News
 
     * Many bugfixes.
     * Retain new lines in text.
+    * Automatically submit form on select change.
+    * Compact filter display.
 
 0.1 release (2006.01.14)
 

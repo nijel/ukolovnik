@@ -153,7 +153,7 @@ function get_select($name, $default, $options, $add_any=FALSE) {
     if (isset($_REQUEST[$name]) && strlen($_REQUEST[$name]) > 0) {
         $default = $_REQUEST[$name];
     }
-    $ret = '<select id="sel_' . $name . '" name="' . $name . '">';
+    $ret = '<select id="sel_' . $name . '" name="' . $name . '" onchange="this.form.submit()">';
     if ($add_any) {
         $ret .= '<option value="-1"';
         if ($default == -1) {
