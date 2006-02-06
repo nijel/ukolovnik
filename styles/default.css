@@ -86,10 +86,10 @@ fieldset {
 }
 
 fieldset input[type="submit"] {
-    clear: both;
+    clear: none;
     margin: 0.5em 0 0.5em 10em;
     text-align: center;
-    float: left;
+    float: right;
 }
 
 fieldset input[type="text"], fieldset textarea, fieldset select {
@@ -98,7 +98,6 @@ fieldset input[type="text"], fieldset textarea, fieldset select {
 
 fieldset input[type="checkbox"] {
     float: left;
-    clear: both;
 }
 
 fieldset label {
@@ -106,8 +105,8 @@ fieldset label {
 }
 
 fieldset label.desc {
-    width: 10em;
-    clear: both;
+    padding-left: 1em;
+    padding-right: 1em;
 }
 
 /* Listings */
