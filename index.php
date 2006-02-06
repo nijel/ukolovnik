@@ -385,7 +385,7 @@ while (!empty($cmd)) {
                 // Listing
                 $row = mysql_fetch_assoc($q);
                 echo '<fieldset class="priority' . $row['priority'] . '"><legend>' . htmlspecialchars($row['title'] . '(' . $categories[$row['category']] . ')' ) . '</legend>';
-                echo '<p>' . find_links($row['description']) . '</p>';
+                echo '<p>' . nl2br(find_links($row['description'])) . '</p>';
                 echo '<p>' . $strCreated . ': ' . htmlspecialchars($row['created']) . '</p>';
                 if (!is_null($row['updated']) && $row['updated'] != '00000000000000') {
                     echo '<p>' . $strUpdated . ': ' . htmlspecialchars($row['updated']) . '</p>';
