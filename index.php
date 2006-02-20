@@ -147,13 +147,17 @@ function get_opt($name, $default = '') {
     return empty($_REQUEST[$name]) ? $default : htmlspecialchars($_REQUEST[$name]);
 }
 
-function get_select($name, $default, $options, $add_any=FALSE) {
+function get_select($name, $default, $options, $add_any=FALSE, $autosubmit=FALSE) {
     global $strAny;
 
     if (isset($_REQUEST[$name]) && strlen($_REQUEST[$name]) > 0) {
         $default = $_REQUEST[$name];
     }
-    $ret = '<select id="sel_' . $name . '" name="' . $name . '" onchange="this.form.submit()">';
+    $ret = '<select id="sel_' . $name . '" name="' . $name . '"';
+    if ($autosubmit) {
+        $ret .= ' onchange="this.form.submit()"';
+    }
+    $ret .= ">\n";
     if ($add_any) {
         $ret .= '<option value="-1"';
         if ($default == -1) {
@@ -300,13 +304,13 @@ while (!empty($cmd)) {
             echo '<label class="desc">' . $strText . '</label>';
             echo '<input type="text" name="text" maxlength="200" value="' . get_opt('text') . '" />';
             echo '<label class="desc" for="sel_priority">' . $strPriority . '</label>';
-            echo get_select('priority', -1, $priorities, TRUE);
+            echo get_select('priority', -1, $priorities, TRUE, TRUE);
             echo '<label class="desc" for="sel_category">' . $strCategory . '</label>';
-            echo get_select('category', -1, $categories, TRUE);
+            echo get_select('category', -1, $categories, TRUE, TRUE);
             echo '<label class="desc" for="sel_personal">' . $strPersonal . '</label>';
-            echo get_select('personal', 'all', array('all' => $strAll, 'show' => $strShow, 'hide' => $strHide));
+            echo get_select('personal', 'all', array('all' => $strAll, 'show' => $strShow, 'hide' => $strHide), FALSE, TRUE);
             echo '<label class="desc" for="sel_closed">' . $strFinished . '</label>';
-            echo get_select('finished', 'hide', array('all' => $strAll, 'show' => $strShow, 'hide' => $strHide));
+            echo get_select('finished', 'hide', array('all' => $strAll, 'show' => $strShow, 'hide' => $strHide), FALSE, TRUE);
             echo '<input type="hidden" name="cmd" value="list" \>';
             echo '<input type="submit" value="' . $strFilter . '"/></form></fieldset>';
 
@@ -609,7 +613,7 @@ while (!empty($cmd)) {
                 // Filter
                 echo '<fieldset class="filter"><legend>' . $strFilter . '</legend><form method="get" action="index.php">';
                 echo '<label class="desc" for="sel_personal">' . $strPersonal . '</label>';
-                echo get_select('personal', 'all', array('all' => $strAll, 'show' => $strShow, 'hide' => $strHide));
+                echo get_select('personal', 'all', array('all' => $strAll, 'show' => $strShow, 'hide' => $strHide), FALSE, TRUE);
                 echo '<input type="hidden" name="cmd" value="cat" \>';
                 echo '<input type="submit" value="' . $strFilter . '"/></form></fieldset>';
 
