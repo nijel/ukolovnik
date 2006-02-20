@@ -7,14 +7,14 @@ Simple task manager written in PHP and using MySQL as backend.
 News
 ----
 
-0.2 release
+0.2 release (2006-02-20)
 
     * Many bugfixes.
     * Retain new lines in text.
     * Automatically submit form on select change.
     * Compact filter display.
 
-0.1 release (2006.01.14)
+0.1 release (2006-01-14)
 
     * Inititial release.
     * Support for most MySQL versions used in wild.
