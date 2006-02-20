@@ -86,9 +86,14 @@ fieldset {
 }
 
 fieldset input[type="submit"] {
-    clear: none;
+    clear: both;
     margin: 0.5em 0 0.5em 10em;
     text-align: center;
+    float: left;
+}
+
+fieldset.filter input[type="submit"] {
+    clear: none;
     float: right;
 }
 
@@ -98,6 +103,11 @@ fieldset input[type="text"], fieldset textarea, fieldset select {
 
 fieldset input[type="checkbox"] {
     float: left;
+    clear: both;
+}
+
+fieldset.filter input[type="checkbox"] {
+    clear: none;
 }
 
 fieldset label {
@@ -105,6 +115,13 @@ fieldset label {
 }
 
 fieldset label.desc {
+    width: 10em;
+    clear: both;
+}
+
+fieldset.filter label.desc {
+    width: auto;
+    clear: none;
     padding-left: 1em;
     padding-right: 1em;
 }

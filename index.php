@@ -296,7 +296,7 @@ while (!empty($cmd)) {
             }
 
             // Filter
-            echo '<fieldset><legend>' . $strFilter . '</legend><form method="get" action="index.php">';
+            echo '<fieldset class="filter"><legend>' . $strFilter . '</legend><form method="get" action="index.php">';
             echo '<label class="desc">' . $strText . '</label>';
             echo '<input type="text" name="text" maxlength="200" value="' . get_opt('text') . '" />';
             echo '<label class="desc" for="sel_priority">' . $strPriority . '</label>';
@@ -607,7 +607,7 @@ while (!empty($cmd)) {
                 message('notice', $strNoCategories);
             } else {
                 // Filter
-                echo '<fieldset><legend>' . $strFilter . '</legend><form method="get" action="index.php">';
+                echo '<fieldset class="filter"><legend>' . $strFilter . '</legend><form method="get" action="index.php">';
                 echo '<label class="desc" for="sel_personal">' . $strPersonal . '</label>';
                 echo get_select('personal', 'all', array('all' => $strAll, 'show' => $strShow, 'hide' => $strHide));
                 echo '<input type="hidden" name="cmd" value="cat" \>';
