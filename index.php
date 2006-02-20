@@ -172,7 +172,7 @@ function get_select($name, $default, $options, $add_any=FALSE) {
 }
 
 function find_links($text) {
-    return preg_replace('@((http|ftp|https)://[a-z0-9A-Z.,?&;/=+_-]+)([^.]|$)@', '<a href="\1">\1</a>\3', htmlspecialchars($text));
+    return preg_replace('@((http|ftp|https)://[a-z0-9A-Z.,?&;/=+_~#$%\@:-]+)([^.,]|$)@', '<a href="\1">\1</a>\3', htmlspecialchars($text));
 }
 
 function show_edit_task($name, $cmd, $title, $description, $priority, $category, $id = NULL) {
