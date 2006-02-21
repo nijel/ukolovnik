@@ -38,8 +38,14 @@ if (empty($_REQUEST['cmd'])) {
 // Required libraries
 require('./config.php');
 
-// FIXME: should be configurable
-require('./languages/en.php');
+// Include correct language file
+$failed_lang = TRUE;
+if (file_exists('./languages/' . $language . '.php')) {
+    require('./languages/' . $language . '.php');
+    $failed_lang = FALSE;
+} else {
+    require('./languages/en.php');
+}
 
 // Used later
 $now = gmdate('D, d M Y H:i:s') . ' GMT';
@@ -80,16 +86,6 @@ echo '<?xml version="1.0" encoding="utf-8"?>' . "\n";
 
 <body>
 <h1>Ukolovnik <?php echo $version; ?></h1>
-<ul class="toolbar">
-<li><a href="index.php"><?php echo $strMain; ?></a></li>
-<li><a href="index.php?cmd=add"><?php echo $strAdd; ?></a></li>
-<li><a href="index.php?cmd=cat"><?php echo $strCategories; ?></a></li>
-<li><a href="index.php?cmd=addcat"><?php echo $strAddCategory; ?></a></li>
-<!--
-<li><a href="index.php?cmd=export"><?php echo $strExport; ?></a></li>
-<li><a href="index.php?cmd=stats"><?php echo $strStats; ?></a></li>
--->
-</ul>
 <?php
 }
 
@@ -289,6 +285,27 @@ if ($mysql_ver[0] >= 5 || ($mysql_ver[0] == 4 && $mysql_ver[1] >= 1)) {
 }
 unset($mysql_ver);
 
+// Could we locate language file?
+if ($failed_lang) {
+    die_error(sprintf($strInvalidLanguage, $language));
+}
+
+if ($show_html) {
+?>
+<ul class="toolbar">
+
+<li><a href="index.php"><?php echo $strMain; ?></a></li>
+<li><a href="index.php?cmd=add"><?php echo $strAdd; ?></a></li>
+<li><a href="index.php?cmd=cat"><?php echo $strCategories; ?></a></li>
+<li><a href="index.php?cmd=addcat"><?php echo $strAddCategory; ?></a></li>
+<!--
+<li><a href="index.php?cmd=export"><?php echo $strExport; ?></a></li>
+<li><a href="index.php?cmd=stats"><?php echo $strStats; ?></a></li>
+-->
+</ul>
+
+<?php
+}
 
 // Grab categories
 grab_categories();

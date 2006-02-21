@@ -40,6 +40,7 @@ $strHide = 'Hide';
 $strAll = 'All';
 $strFilter = 'Filter';
 $strSQLFailed = 'SQL query failed: %s';
+$strInvalidLanguage = 'Invalid language (%s) chosen in config file.';
 $strActions = 'Actions';
 $strAny = 'Any';
 $strText = 'Text';
