@@ -101,7 +101,7 @@ fieldset input[type="text"], fieldset textarea, fieldset select {
     float: left;
 }
 
-fieldset input[type="checkbox"] {
+fieldset input[type="radio"], fieldset input[type="checkbox"] {
     float: left;
     clear: both;
 }

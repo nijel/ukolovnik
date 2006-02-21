@@ -51,7 +51,8 @@ $strCreated = 'Created';
 $strUpdated = 'Updated';
 $strClosed = 'Closed';
 $strTaskFinished = 'Task %s finished.';
-$strTaskDeleted = 'Task %s deleted.';
+$strTaskDeleted = 'Task %s has been deleted.';
+$strCategoryDeleted = 'Category %s has been deleted.';
 $strTaskChanged = 'Task %s has been changed.';
 $strCategoryChanged = 'Category %s has been changed.';
 $strInvalidId  = 'Invalid ID.';
@@ -70,6 +71,12 @@ $strAverageAge = 'Average task age';
 $strOldestOpenedTaskAge = 'Oldest opened task age';
 $strOldestTaskAge = 'Oldest task age';
 $strDays = 'days';
+$strDeleteCategory = 'You are about to delete category "%s"';
+$strTasksInCategory = 'Number of tasks in category: %d';
+$strNoTaskCategory = 'There are no tasks in this category.';
+$strSelectDeleteTask = 'What to do with task in deleted category?';
+$strTargetCategory = 'Target category';
+$strMoveTo = 'Move to another category';
 
 $datefmt = '%d.%m.%Y, %H:%M';
 ?>

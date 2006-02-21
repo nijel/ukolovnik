@@ -191,12 +191,12 @@ function show_edit_task($name, $cmd, $title, $description, $priority, $category,
 
     echo '<fieldset><legend>' . $name . '</legend><form method="post" action="index.php">';
     if (isset($id)) {
-        echo '<input type="hidden" name="id" value="' . $id . 'l" \>';
+        echo '<input type="hidden" name="id" value="' . $id . '" \>';
     }
-    echo '<label class="desc">' . $strTitle . '</label>';
-    echo '<input type="text" name="title" maxlength="200" value="' . $title . '" />';
-    echo '<label class="desc">' . $strDescription . '</label>';
-    echo '<textarea name="description" cols="60" rows="5">' . $description . '</textarea>';
+    echo '<label class="desc" for="t_title">' . $strTitle . '</label>';
+    echo '<input type="text" name="title" id="t_title" maxlength="200" value="' . $title . '" />';
+    echo '<label class="desc" for="t_description">' . $strDescription . '</label>';
+    echo '<textarea name="description" id="t_description" cols="60" rows="5">' . $description . '</textarea>';
     echo '<label class="desc" for="sel_priority">' . $strPriority . '</label>';
     echo get_select('priority', $priority, $priorities);
     echo '<label class="desc" for="sel_category">' . $strCategory . '</label>';
@@ -210,7 +210,7 @@ function show_edit_category($title, $cmd, $name, $personal, $id = NULL) {
 
     echo '<fieldset><legend>' . $title . '</legend><form method="post" action="index.php">';
     if (isset($id)) {
-        echo '<input type="hidden" name="id" value="' . $id . 'l" \>';
+        echo '<input type="hidden" name="id" value="' . $id . '" \>';
     }
     echo '<label class="desc" for="in_name">' . $strName . '</label>';
     echo '<input type="text" id="in_name" name="name" maxlength="200" value="' . $name . '" />';
@@ -328,15 +328,15 @@ while (!empty($cmd)) {
 
             // Filter
             echo '<fieldset class="filter"><legend>' . $strFilter . '</legend><form method="get" action="index.php">';
-            echo '<label class="desc">' . $strText . '</label>';
-            echo '<input type="text" name="text" maxlength="200" value="' . get_opt('text') . '" />';
+            echo '<label class="desc" for="t_text">' . $strText . '</label>';
+            echo '<input type="text" name="text" id="t_text" maxlength="200" value="' . get_opt('text') . '" />';
             echo '<label class="desc" for="sel_priority">' . $strPriority . '</label>';
             echo get_select('priority', -1, $priorities, TRUE, TRUE);
             echo '<label class="desc" for="sel_category">' . $strCategory . '</label>';
             echo get_select('category', -1, $categories, TRUE, TRUE);
             echo '<label class="desc" for="sel_personal">' . $strPersonal . '</label>';
             echo get_select('personal', 'all', array('all' => $strAll, 'show' => $strShow, 'hide' => $strHide), FALSE, TRUE);
-            echo '<label class="desc" for="sel_closed">' . $strFinished . '</label>';
+            echo '<label class="desc" for="sel_finished">' . $strFinished . '</label>';
             echo get_select('finished', 'hide', array('all' => $strAll, 'show' => $strShow, 'hide' => $strHide), FALSE, TRUE);
             echo '<input type="hidden" name="cmd" value="list" \>';
             echo '<input type="submit" value="' . $strFilter . '"/></form></fieldset>';
@@ -623,6 +623,104 @@ while (!empty($cmd)) {
             } else {
                 show_edit_category($strAddCategory, 'addcat_real', get_opt('name'), get_check('personal'));
             }
+            $cmd = '';
+            break;
+        case 'delcat_real':
+            if (!isset($_REQUEST['id'])) {
+                message('error', $strInvalidId);
+                $cmd = '';
+                break;
+            }
+            $id = (int)$_REQUEST['id'];
+            if (!isset($categories[$id])) {
+                message('error', $strInvalidId);
+                $cmd = '';
+                break;
+            }
+
+            $q = do_sql('SELECT COUNT(id) AS cnt FROM ' . $GLOBALS['table_prefix'] . 'tasks WHERE category = ' . $id);
+            if (mysql_num_rows($q) > 0) {
+                $row = mysql_fetch_assoc($q);
+                if ($row['cnt'] > 0) {
+                    if (!isset($_REQUEST['tasks']) || ($_REQUEST['tasks'] != 'delete' && $_REQUEST['tasks'] != 'move')) {
+                        message('error', $strParameterInvalid);
+                        $cmd = '';
+                        break;
+                    }
+                    if ($_REQUEST['tasks'] == 'delete') {
+                        do_sql('DELETE FROM ' . $GLOBALS['table_prefix'] . 'tasks WHERE category = ' . $id);
+                        do_sql('DELETE FROM ' . $GLOBALS['table_prefix'] . 'categories WHERE id = ' . $id . ' LIMIT 1');
+                        message('notice', sprintf($strCategoryDeleted, htmlspecialchars($categories[$id])));
+                    } else {
+                        
+                        if (!isset($_REQUEST['newcat'])) {
+                            message('error', $strInvalidId);
+                            $cmd = '';
+                            break;
+                        }
+                        $newcat = (int)$_REQUEST['newcat'];
+                        if (!isset($categories[$newcat])) {
+                            message('error', $strInvalidId);
+                            $cmd = '';
+                            break;
+                        }
+
+                        do_sql('UPDATE ' . $GLOBALS['table_prefix'] . 'tasks SET category = ' . $newcat . ' WHERE category = ' . $id);
+                        do_sql('DELETE FROM ' . $GLOBALS['table_prefix'] . 'categories WHERE id = ' . $id . ' LIMIT 1');
+                        message('notice', sprintf($strCategoryDeleted, htmlspecialchars($categories[$id])));
+                    }
+                } else {
+                    do_sql('DELETE FROM ' . $GLOBALS['table_prefix'] . 'categories WHERE id = ' . $id . ' LIMIT 1');
+                    message('notice', sprintf($strCategoryDeleted, htmlspecialchars($categories[$id])));
+                }
+            } else {
+                do_sql('DELETE FROM ' . $GLOBALS['table_prefix'] . 'categories WHERE id = ' . $id . ' LIMIT 1');
+                message('notice', sprintf($strCategoryDeleted, htmlspecialchars($categories[$id])));
+            }
+
+            // Reread categories
+            grab_categories();
+            $cmd = 'cat';
+            break;
+        case 'delcat':
+            if (!isset($_REQUEST['id'])) {
+                message('error', $strInvalidId);
+                $cmd = '';
+                break;
+            }
+            $id = (int)$_REQUEST['id'];
+            if (!isset($categories[$id])) {
+                message('error', $strInvalidId);
+                $cmd = '';
+                break;
+            }
+
+            echo '<fieldset><legend>' . htmlspecialchars(sprintf($strDeleteCategory, $categories[$id])) . '</legend><form method="post" action="index.php">';
+            echo '<input type="hidden" name="id" value="' . $id . '" \>';
+            $q = do_sql('SELECT COUNT(id) AS cnt FROM ' . $GLOBALS['table_prefix'] . 'tasks WHERE category = ' . $id);
+            if (mysql_num_rows($q) > 0) {
+                $row = mysql_fetch_assoc($q);
+                if ($row['cnt'] > 0) {
+                    echo '<p>' . sprintf($strTasksInCategory, $row['cnt']) . '</p>';
+                    echo '<p>' . $strSelectDeleteTask . '</p>';
+                    echo '<input name="tasks" value="delete" type="radio" id="r_delete" />';
+                    echo '<label for="r_delete">' . $strDelete . '</label>';
+                    echo '<input name="tasks" value="move" type="radio" id="r_move" checked="checked" />';
+                    echo '<label for="r_move">' . $strMoveTo . '</label>';
+                    echo '<label class="desc" for="sel_category">' . $strTargetCategory . '</label>';
+                    $cats = $categories;
+                    unset($cats[$id]);
+                    echo get_select('newcat', -1, $cats);
+                    unset($cats);
+                } else {
+                    echo '<p>' . $strNoTaskCategory . '</p>';
+                }
+            } else {
+                echo '<p>' . $strNoTaskCategory . '</p>';
+            }
+            echo '<input type="hidden" name="cmd" value="delcat_real" \>';
+            echo '<input type="submit" value="' . $strDelete . '"/></form></fieldset>';
+
             $cmd = '';
             break;
         case 'cat':
