@@ -56,4 +56,6 @@ $strCategoryChanged = 'Category %s has been changed.';
 $strInvalidId  = 'Invalid ID.';
 $strYes = 'Yes';
 $strNo = 'No';
+
+$datefmt = '%d.%m.%Y, %H:%M';
 ?>

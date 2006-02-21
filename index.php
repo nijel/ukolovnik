@@ -129,6 +129,10 @@ function die_error($text) {
     footer();
 }
 
+function format_date($date) {
+    return strftime($GLOBALS['datefmt'], $date);
+}
+
 function do_sql($query) {
     global $db, $strSQLFailed;
     $q = mysql_query($query, $db);
@@ -345,7 +349,7 @@ while (!empty($cmd)) {
             $order = 'priority DESC, created';
             // FIXME: make this parameter
                 
-            $q = do_sql('SELECT * FROM ' . $GLOBALS['table_prefix'] . 'tasks ' . $filter . ' ORDER BY ' . $order);
+            $q = do_sql('SELECT id,category,UNIX_TIMESTAMP(created) AS created,priority,title,UNIX_TIMESTAMP(closed) AS closed FROM ' . $GLOBALS['table_prefix'] . 'tasks ' . $filter . ' ORDER BY ' . $order);
             if (mysql_num_rows($q) == 0) {
                 message('notice', $strNoEntries);
             } else {
@@ -359,13 +363,13 @@ while (!empty($cmd)) {
                 echo '<tbody>';
                 while ($row = mysql_fetch_assoc($q)) {
                     echo '<tr class="priority' . $row['priority'];
-                    if (!is_null($row['closed']) && $row['closed'] != '00000000000000') {
+                    if (!is_null($row['closed']) && $row['closed'] != 0) {
                         echo ' closed';
                     }
                     echo '">';
                     echo '<td class="name"><a href="index.php?cmd=show&amp;id=' . $row['id'] . '">' . htmlspecialchars($row['title']) . '</a></td>';
                     echo '<td class="category"><a href="index.php?category=' . $row['category'] . '">' . htmlspecialchars($categories[$row['category']]) . '</a></td>';
-                    echo '<td class="date">' . htmlspecialchars($row['created']) . '</td>';
+                    echo '<td class="date">' . format_date($row['created']) . '</td>';
                     echo '<td class="actions">';
                     echo '<a class="action" href="index.php?cmd=fin&amp;id=' . $row['id'] . '">' . $strFinished . '</a> ';
                     echo '<a class="action" href="index.php?cmd=edit&amp;id=' . $row['id'] . '">' . $strEdit . '</a> ';
@@ -382,7 +386,7 @@ while (!empty($cmd)) {
             if (!isset($_REQUEST['id'])) {
                 die_error($strParameterInvalid);
             }
-            $q = do_sql('SELECT * FROM ' . $GLOBALS['table_prefix'] . 'tasks WHERE id=' . (int)$_REQUEST['id']);
+            $q = do_sql('SELECT id,category,UNIX_TIMESTAMP(created) AS created,priority,title,UNIX_TIMESTAMP(closed) AS closed,UNIX_TIMESTAMP(updated) AS updated,description FROM ' . $GLOBALS['table_prefix'] . 'tasks WHERE id=' . (int)$_REQUEST['id']);
             if (mysql_num_rows($q) != 1) {
                 message('notice', $strNoEntries);
             } else {
@@ -390,12 +394,12 @@ while (!empty($cmd)) {
                 $row = mysql_fetch_assoc($q);
                 echo '<fieldset class="priority' . $row['priority'] . '"><legend>' . htmlspecialchars($row['title'] . '(' . $categories[$row['category']] . ')' ) . '</legend>';
                 echo '<p>' . nl2br(find_links($row['description'])) . '</p>';
-                echo '<p>' . $strCreated . ': ' . htmlspecialchars($row['created']) . '</p>';
-                if (!is_null($row['updated']) && $row['updated'] != '00000000000000') {
-                    echo '<p>' . $strUpdated . ': ' . htmlspecialchars($row['updated']) . '</p>';
+                echo '<p>' . $strCreated . ': ' . format_date($row['created']) . '</p>';
+                if (!is_null($row['updated']) && $row['updated'] != 0) {
+                    echo '<p>' . $strUpdated . ': ' . format_date($row['updated']) . '</p>';
                 }
-                if (!is_null($row['closed']) && $row['closed'] != '00000000000000') {
-                    echo '<p>' . $strClosed . ': ' . htmlspecialchars($row['closed']) . '</p>';
+                if (!is_null($row['closed']) && $row['closed'] != 0) {
+                    echo '<p>' . $strClosed . ': ' . format_date($row['closed']) . '</p>';
                 }
                 echo '<p class="actions">';
                 echo '<a class="action" href="index.php?cmd=fin&amp;id=' . $row['id'] . '">' . $strFinished . '</a> ';
