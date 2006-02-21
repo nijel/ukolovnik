@@ -11,5 +11,6 @@ $table_prefix   = 'ukolovnik_';
 
 // Other setup
 $language       = 'en';
+$style          = 'default';
 
 ?>

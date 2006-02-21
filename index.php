@@ -81,7 +81,7 @@ echo '<?xml version="1.0" encoding="utf-8"?>' . "\n";
     }
     //]]>
     </script>
-    <link media="all" href="styles/default.css" type="text/css" rel="stylesheet" title="<?php echo $strDefaultStyle;?>" />
+    <link media="all" href="styles/<?php echo $style; ?>.css" type="text/css" rel="stylesheet" title="<?php echo $strDefaultStyle;?>" />
 </head>
 
 <body>
@@ -127,6 +127,12 @@ function die_error($text) {
 
 function format_date($date) {
     return strftime($GLOBALS['datefmt'], $date);
+}
+
+function show_image_link($url, $image, $text) {
+    echo '<a class="action" href="index.php?' . $url . '">';
+    echo '<img src="images/' . $GLOBALS['style'] . '/' . $image . '.png" title="' . $text . '" alt="' . $text . '"/>';
+    echo '</a> ';
 }
 
 function do_sql($query) {
@@ -300,8 +306,8 @@ if ($show_html) {
 <li><a href="index.php?cmd=addcat"><?php echo $strAddCategory; ?></a></li>
 <!--
 <li><a href="index.php?cmd=export"><?php echo $strExport; ?></a></li>
-<li><a href="index.php?cmd=stats"><?php echo $strStats; ?></a></li>
 -->
+<li><a href="index.php?cmd=stats"><?php echo $strStats; ?></a></li>
 </ul>
 
 <?php
@@ -388,9 +394,9 @@ while (!empty($cmd)) {
                     echo '<td class="category"><a href="index.php?category=' . $row['category'] . '">' . htmlspecialchars($categories[$row['category']]) . '</a></td>';
                     echo '<td class="date">' . format_date($row['created']) . '</td>';
                     echo '<td class="actions">';
-                    echo '<a class="action" href="index.php?cmd=fin&amp;id=' . $row['id'] . '">' . $strFinished . '</a> ';
-                    echo '<a class="action" href="index.php?cmd=edit&amp;id=' . $row['id'] . '">' . $strEdit . '</a> ';
-                    echo '<a class="action" href="index.php?cmd=del&amp;id=' . $row['id'] . '">' . $strDelete . '</a> ';
+                    show_image_link('cmd=fin&amp;id=' . $row['id'], 'finished', $strFinished);
+                    show_image_link('cmd=edit&amp;id=' . $row['id'], 'edit', $strEdit);
+                    show_image_link('cmd=del&amp;id=' . $row['id'], 'delete', $strDelete);
                     echo '</td>';
                     echo '</tr>';
                 }
@@ -419,9 +425,10 @@ while (!empty($cmd)) {
                     echo '<p>' . $strClosed . ': ' . format_date($row['closed']) . '</p>';
                 }
                 echo '<p class="actions">';
-                echo '<a class="action" href="index.php?cmd=fin&amp;id=' . $row['id'] . '">' . $strFinished . '</a> ';
-                echo '<a class="action" href="index.php?cmd=edit&amp;id=' . $row['id'] . '">' . $strEdit . '</a> ';
-                echo '<a class="action" href="index.php?cmd=del&amp;id=' . $row['id'] . '">' . $strDelete . '</a> ';
+
+                show_image_link('cmd=fin&amp;id=' . $row['id'], 'finished', $strFinished);
+                show_image_link('cmd=edit&amp;id=' . $row['id'], 'edit', $strEdit);
+                show_image_link('cmd=del&amp;id=' . $row['id'], 'delete', $strDelete);
                 echo '</p>';
                 echo '</fieldset>';
             }
@@ -643,16 +650,104 @@ while (!empty($cmd)) {
                 echo '<thead><tr><th>' . $strName . '</th><th>' . $strPersonal . '</th><th>' . $strActions . '</th></tr></thead>';
                 echo '<tbody>';
                 foreach($cats as $id => $name) {
-                    echo '<tr><td class="name"><a href="index.php?category=' . $id . '">' . htmlspecialchars($name) . '</a></td>';
+                    echo '<tr class="nopriority"><td class="name"><a href="index.php?category=' . $id . '">' . htmlspecialchars($name) . '</a></td>';
                     echo '<td class="name">' . ( isset($categories_pers[$id]) ? $strYes : $strNo ) . '</td>';
                     echo '<td class="actions">';
-                    echo '<a class="action" href="index.php?cmd=editcat&amp;id=' . $id . '">' . $strEdit . '</a>';
-                    echo '<a class="action" href="index.php?cmd=delcat&amp;id=' . $id . '">' . $strDelete . '</a> ';
+                    show_image_link('cmd=editcat&amp;id=' . $id, 'edit', $strEdit);
+                    show_image_link('cmd=delcat&amp;id=' . $id, 'delete', $strDelete);
                     echo '</td>';
                     echo '</tr>';
                 }
                 echo '</tbody></table>';
             }
+            $cmd = '';
+            break;
+        case 'stats':
+            echo '<table class="listing">';
+            echo '<thead><tr><th>' . $strName . '</th><th>' . $strItem . '</th></tr></thead>';
+            echo '<tbody>';
+
+            $q = do_sql('SELECT COUNT(id) as cnt FROM ' . $GLOBALS['table_prefix'] . 'tasks');
+            if (mysql_num_rows($q) > 0) {
+                $row = mysql_fetch_assoc($q);
+                echo '<tr class="nopriority"><td class="name">' . $strTotalTaskCount . '</td>';
+                echo '<td class="value number">' . $row['cnt'] . '</td></tr>';
+            }
+            mysql_free_result($q);
+
+            $q = do_sql('SELECT COUNT(id) as cnt FROM ' . $GLOBALS['table_prefix'] . 'tasks WHERE closed IS NULL');
+            if (mysql_num_rows($q) > 0) {
+                $row = mysql_fetch_assoc($q);
+                echo '<tr class="nopriority"><td class="name">' . $strOpenedTaskCount . '</td>';
+                echo '<td class="value number">' . $row['cnt'] . '</td></tr>';
+            }
+            mysql_free_result($q);
+            
+            $q = do_sql('SELECT COUNT(id) as cnt, priority FROM ' . $GLOBALS['table_prefix'] . 'tasks WHERE closed IS NULL GROUP by priority ORDER by priority DESC');
+            if (mysql_num_rows($q) > 0) {
+                $row = mysql_fetch_assoc($q);
+            } else {
+                $row['priority'] = -1;
+            }
+            echo '<tr class="nopriority"><td class="name">' . $strOpenedTaskP2 . '</td>';
+            if ($row['priority'] == 2) {
+                echo '<td class="value number">' . $row['cnt'] . '</td></tr>';
+                $row = mysql_fetch_assoc($q);
+            } else {
+                echo '<td class="value number">0</td></tr>';
+            }
+            echo '<tr class="nopriority"><td class="name">' . $strOpenedTaskP1 . '</td>';
+            if ($row['priority'] == 1) {
+                echo '<td class="value number">' . $row['cnt'] . '</td></tr>';
+                $row = mysql_fetch_assoc($q);
+            } else {
+                echo '<td class="value number">0</td></tr>';
+            }
+            echo '<tr class="nopriority"><td class="name">' . $strOpenedTaskP0 . '</td>';
+            if ($row['priority'] == 0) {
+                echo '<td class="value number">' . $row['cnt'] . '</td></tr>';
+            } else {
+                echo '<td class="value number">0</td></tr>';
+            }
+            mysql_free_result($q);
+            
+            $q = do_sql('SELECT id, title, UNIX_TIMESTAMP( NOW( ) ) - UNIX_TIMESTAMP( created ) AS age FROM ' . $GLOBALS['table_prefix'] . 'tasks ORDER BY created ASC LIMIT 1');
+            if (mysql_num_rows($q) > 0) {
+                $row = mysql_fetch_assoc($q);
+                echo '<tr class="nopriority"><td class="name">' . $strOldestTask . '</td>';
+                echo '<td class="value"><a href="index.php?cmd=show&amp;id=' . $row['id'] . '">' . htmlspecialchars($row['title']) . '</a></td></tr>';
+                echo '<tr class="nopriority"><td class="name">' . $strOldestTaskAge . '</td>';
+                echo '<td class="value number">' . round($row['age'] / (24 * 60 * 60), 1) . ' ' . $strDays . '</td></tr>';
+            }
+            mysql_free_result($q);
+
+            $q = do_sql('SELECT AVG(UNIX_TIMESTAMP( NOW( ) ) - UNIX_TIMESTAMP( created )) AS average FROM ' . $GLOBALS['table_prefix'] . 'tasks');
+            if (mysql_num_rows($q) > 0) {
+                $row = mysql_fetch_assoc($q);
+                echo '<tr class="nopriority"><td class="name">' . $strAverageAge . '</td>';
+                echo '<td class="value number">' . round($row['average'] / (24 * 60 * 60), 1) . ' ' . $strDays . '</td></tr>';
+            }
+            mysql_free_result($q);
+
+            $q = do_sql('SELECT id, title, UNIX_TIMESTAMP( NOW( ) ) - UNIX_TIMESTAMP( created ) AS age FROM ' . $GLOBALS['table_prefix'] . 'tasks WHERE closed IS NULL ORDER BY created ASC LIMIT 1');
+            if (mysql_num_rows($q) > 0) {
+                $row = mysql_fetch_assoc($q);
+                echo '<tr class="nopriority"><td class="name">' . $strOldestOpenedTask . '</td>';
+                echo '<td class="value"><a href="index.php?cmd=show&amp;id=' . $row['id'] . '">' . htmlspecialchars($row['title']) . '</a></td></tr>';
+                echo '<tr class="nopriority"><td class="name">' . $strOldestOpenedTaskAge . '</td>';
+                echo '<td class="value number">' . round($row['age'] / (24 * 60 * 60), 1) . ' ' . $strDays . '</td></tr>';
+            }
+            mysql_free_result($q);
+
+            $q = do_sql('SELECT AVG(UNIX_TIMESTAMP( NOW( ) ) - UNIX_TIMESTAMP( created )) AS average FROM ' . $GLOBALS['table_prefix'] . 'tasks WHERE closed IS NULL');
+            if (mysql_num_rows($q) > 0) {
+                $row = mysql_fetch_assoc($q);
+                echo '<tr class="nopriority"><td class="name">' . $strAverageOpenedAge . '</td>';
+                echo '<td class="value number">' . round($row['average'] / (24 * 60 * 60), 1) . ' ' . $strDays . '</td></tr>';
+            }
+            mysql_free_result($q);
+
+            echo '</tbody></table>';
             $cmd = '';
             break;
         default:

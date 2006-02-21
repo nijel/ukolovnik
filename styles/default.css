@@ -62,21 +62,21 @@ div.notice {
     color: #000000;
     border-color: #FFD700;
     background-color: #FFFFDD;
-    background-image: url(../images/notice.png);
+    background-image: url(../images/default/notice.png);
 }
 
 div.warning {
     color: #CC0000;
     border-color: #CC0000;
     background-color: #FFFFCC;
-    background-image: url(../images/warning.png);
+    background-image: url(../images/default/warning.png);
 }
 
 div.error {
     color: #ff0000;
     border-color:  #ff0000;
     background-color: #FFFFCC;
-    background-image: url(../images/error.png);
+    background-image: url(../images/default/error.png);
 }
 
 /* Forms */
@@ -138,8 +138,11 @@ table.listing td {
     border: 1px solid black;
 }
 
-table.listing td.name, table.listing td.category, table.listing td.date {
+table.listing td.value, table.listing td.name, table.listing td.category, table.listing td.date {
     padding: 0 1em 0 1em;
+}
+table.listing td.number {
+    text-align: right;
 }
 table.listing td.category {
     font-size: smaller;
@@ -153,7 +156,7 @@ table.listing td.action {
     background-color: #aaeeaa;
 }
 
-.priority1 {
+.nopriority, .priority1 {
     background-color: #eeeeaa;
 }
 
@@ -173,15 +176,6 @@ table.listing a.action {
     display: inline;
     padding: 0 0.5em 0 0.5em;
 }
-
-/* Action links, used mostly in listings */
-
-a.action:before {
-    content: '[';
+a.action img {
+    border: none;
 }
-
-a.action:after {
-    content: ']';
-}
-
-/* Displaying of item */

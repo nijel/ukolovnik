@@ -57,6 +57,19 @@ $strCategoryChanged = 'Category %s has been changed.';
 $strInvalidId  = 'Invalid ID.';
 $strYes = 'Yes';
 $strNo = 'No';
+$strItem = 'Item';
+$strOldestTask = 'Oldest task';
+$strOldestOpenedTask = 'Oldest opened task';
+$strTotalTaskCount = 'Total tasks count';
+$strOpenedTaskCount = 'Opened tasks count';
+$strOpenedTaskP0 = 'Opened low priority tasks';
+$strOpenedTaskP1 = 'Opened medium priority tasks';
+$strOpenedTaskP2 = 'Opened high priority count';
+$strAverageOpenedAge = 'Average opened task age';
+$strAverageAge = 'Average task age';
+$strOldestOpenedTaskAge = 'Oldest opened task age';
+$strOldestTaskAge = 'Oldest task age';
+$strDays = 'days';
 
 $datefmt = '%d.%m.%Y, %H:%M';
 ?>
