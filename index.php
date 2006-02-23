@@ -444,7 +444,7 @@ while (!empty($cmd)) {
                 message('notice', $strNoEntries);
             } else {
                 $row = mysql_fetch_assoc($q);
-                do_sql('UPDATE ' . $GLOBALS['table_prefix'] . 'tasks SET closed=NOW() WHERE id=' . (int)$_REQUEST['id']);
+                do_sql('UPDATE ' . $GLOBALS['table_prefix'] . 'tasks SET closed=NOW(), created=created WHERE id=' . (int)$_REQUEST['id']);
                 message('notice', sprintf($strTaskFinished, htmlspecialchars($row['title'])));
             }
             mysql_free_result($q);
@@ -541,7 +541,7 @@ while (!empty($cmd)) {
                     do_sql('INSERT INTO ' . $GLOBALS['table_prefix'] . 'tasks ' . $set_sql);
                     message('notice', sprintf($strTaskAdded, htmlspecialchars($_REQUEST['title'])));
                 } else {
-                    do_sql('UPDATE ' . $GLOBALS['table_prefix'] . 'tasks ' . $set_sql . ', updated=NOW() WHERE id=' . $id);
+                    do_sql('UPDATE ' . $GLOBALS['table_prefix'] . 'tasks ' . $set_sql . ', updated=NOW(), created=created WHERE id=' . $id);
                     message('notice', sprintf($strTaskChanged, htmlspecialchars($_REQUEST['title'])));
                 }
                 // To avoid filtering
