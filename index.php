@@ -827,7 +827,7 @@ while (!empty($cmd)) {
             }
             mysql_free_result($q);
 
-            $q = do_sql('SELECT id, title, UNIX_TIMESTAMP( NOW( ) ) - UNIX_TIMESTAMP( created ) AS age FROM ' . $GLOBALS['table_prefix'] . 'tasks WHERE closed IS NULL ORDER BY created ASC LIMIT 1');
+            $q = do_sql('SELECT id, title, UNIX_TIMESTAMP( NOW( ) ) - UNIX_TIMESTAMP( created ) AS age FROM ' . $GLOBALS['table_prefix'] . 'tasks WHERE (closed IS NULL or closed = 0) ORDER BY created ASC LIMIT 1');
             if (mysql_num_rows($q) > 0) {
                 $row = mysql_fetch_assoc($q);
                 echo '<tr class="nopriority"><td class="name">' . $strOldestOpenedTask . '</td>';
@@ -837,7 +837,7 @@ while (!empty($cmd)) {
             }
             mysql_free_result($q);
 
-            $q = do_sql('SELECT AVG(UNIX_TIMESTAMP( NOW( ) ) - UNIX_TIMESTAMP( created )) AS average FROM ' . $GLOBALS['table_prefix'] . 'tasks WHERE closed IS NULL');
+            $q = do_sql('SELECT AVG(UNIX_TIMESTAMP( NOW( ) ) - UNIX_TIMESTAMP( created )) AS average FROM ' . $GLOBALS['table_prefix'] . 'tasks WHERE (closed IS NULL or closed = 0)');
             if (mysql_num_rows($q) > 0) {
                 $row = mysql_fetch_assoc($q);
                 echo '<tr class="nopriority"><td class="name">' . $strAverageOpenedAge . '</td>';
@@ -845,7 +845,7 @@ while (!empty($cmd)) {
             }
             mysql_free_result($q);
 
-            $q = do_sql('SELECT AVG(UNIX_TIMESTAMP(closed) - UNIX_TIMESTAMP(created)) AS average FROM ' . $GLOBALS['table_prefix'] . 'tasks WHERE closed IS NOT NULL');
+            $q = do_sql('SELECT AVG(UNIX_TIMESTAMP(closed) - UNIX_TIMESTAMP(created)) AS average FROM ' . $GLOBALS['table_prefix'] . 'tasks WHERE NOT (closed IS NULL or closed = 0)');
             if (mysql_num_rows($q) > 0) {
                 $row = mysql_fetch_assoc($q);
                 echo '<tr class="nopriority"><td class="name">' . $strAverageCloseAge . '</td>';
