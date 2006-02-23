@@ -369,7 +369,7 @@ while (!empty($cmd)) {
             }
 
             // Sorting
-            $order = 'priority DESC, created';
+            $order = 'priority DESC, created ASC';
             // FIXME: make this parameter
                 
             $q = do_sql('SELECT id,category,UNIX_TIMESTAMP(created) AS created,priority,title,UNIX_TIMESTAMP(closed) AS closed FROM ' . $GLOBALS['table_prefix'] . 'tasks ' . $filter . ' ORDER BY ' . $order);
