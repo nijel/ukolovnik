@@ -773,7 +773,7 @@ while (!empty($cmd)) {
             }
             mysql_free_result($q);
 
-            $q = do_sql('SELECT COUNT(id) as cnt FROM ' . $GLOBALS['table_prefix'] . 'tasks WHERE closed IS NULL');
+            $q = do_sql('SELECT COUNT(id) as cnt FROM ' . $GLOBALS['table_prefix'] . 'tasks WHERE (closed IS NULL or closed = 0)');
             if (mysql_num_rows($q) > 0) {
                 $row = mysql_fetch_assoc($q);
                 echo '<tr class="nopriority"><td class="name">' . $strOpenedTaskCount . '</td>';
@@ -781,7 +781,7 @@ while (!empty($cmd)) {
             }
             mysql_free_result($q);
             
-            $q = do_sql('SELECT COUNT(id) as cnt, priority FROM ' . $GLOBALS['table_prefix'] . 'tasks WHERE closed IS NULL GROUP by priority ORDER by priority DESC');
+            $q = do_sql('SELECT COUNT(id) as cnt, priority FROM ' . $GLOBALS['table_prefix'] . 'tasks WHERE (closed IS NULL or closed = 0) GROUP by priority ORDER by priority DESC');
             if (mysql_num_rows($q) > 0) {
                 $row = mysql_fetch_assoc($q);
             } else {
