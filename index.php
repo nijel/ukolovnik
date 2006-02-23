@@ -845,6 +845,14 @@ while (!empty($cmd)) {
             }
             mysql_free_result($q);
 
+            $q = do_sql('SELECT AVG(UNIX_TIMESTAMP(closed) - UNIX_TIMESTAMP(created)) AS average FROM ' . $GLOBALS['table_prefix'] . 'tasks WHERE closed IS NOT NULL');
+            if (mysql_num_rows($q) > 0) {
+                $row = mysql_fetch_assoc($q);
+                echo '<tr class="nopriority"><td class="name">' . $strAverageCloseAge . '</td>';
+                echo '<td class="value number">' . round($row['average'] / (24 * 60 * 60), 1) . ' ' . $strDays . '</td></tr>';
+            }
+            mysql_free_result($q);
+
             echo '</tbody></table>';
             $cmd = '';
             break;

@@ -67,6 +67,7 @@ $strOpenedTaskP0 = 'Opened low priority tasks';
 $strOpenedTaskP1 = 'Opened medium priority tasks';
 $strOpenedTaskP2 = 'Opened high priority count';
 $strAverageOpenedAge = 'Average opened task age';
+$strAverageCloseAge = 'Average age when task is closed';
 $strAverageAge = 'Average task age';
 $strOldestOpenedTaskAge = 'Oldest opened task age';
 $strOldestTaskAge = 'Oldest task age';
