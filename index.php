@@ -5,7 +5,7 @@
 $show_html = TRUE;
 
 // Version of this script
-$version = '0.3';
+$version = '0.4';
 
 /**
  * calls $function vor every element in $array recursively
