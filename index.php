@@ -13,6 +13,7 @@ require_once('./lib/config.php');
 require_once('./lib/string.php');
 require_once('./lib/sql.php');
 require_once('./lib/category.php');
+require_once('./lib/priority.php');
 
 // Whether to show html, used for downloading
 $show_html = TRUE;
@@ -136,11 +137,9 @@ if ($show_html) {
         ));
 }
 
-// Grab categories
+// Grab categories and priorities
 CATEGORY_grab();
-
-// "Grab" priorities
-$priorities = array(LOCALE_get('Priority0'), LOCALE_get('Priority1'), LOCALE_get('Priority2'));
+PRIORITY_grab();
 
 while (!empty($cmd)) {
     switch($cmd) {

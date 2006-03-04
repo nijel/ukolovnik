@@ -28,3 +28,4 @@ function LOCALE_init() {
 function LOCALE_get($name) {
     return $GLOBALS['locale'][$name];
 }
+?>

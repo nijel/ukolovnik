@@ -12,3 +12,4 @@ function PRIORITY_grab() {
     global $priorities;
     $priorities = array(LOCALE_get('Priority0'), LOCALE_get('Priority1'), LOCALE_get('Priority2'));
 }
+?>
