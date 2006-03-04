@@ -126,20 +126,14 @@ if ($failed_lang) {
 }
 
 if ($show_html) {
-?>
-<ul class="toolbar">
-
-<li><a href="index.php"><?php echo LOCALE_get('Main'); ?></a></li>
-<li><a href="index.php?cmd=add"><?php echo LOCALE_get('Add'); ?></a></li>
-<li><a href="index.php?cmd=cat"><?php echo LOCALE_get('Categories'); ?></a></li>
-<li><a href="index.php?cmd=addcat"><?php echo LOCALE_get('AddCategory'); ?></a></li>
-<!--
-<li><a href="index.php?cmd=export"><?php echo LOCALE_get('Export'); ?></a></li>
--->
-<li><a href="index.php?cmd=stats"><?php echo LOCALE_get('Stats'); ?></a></li>
-</ul>
-
-<?php
+    HTML_toolbar(array(
+        'Main' => 'index.php',
+        'Add' => 'index.php?cmd=add',
+        'Categories' => 'index.php?cmd=cat',
+        'AddCategory' => 'index.php?cmd=addcat',
+//        'Export' => 'index.php?cmd=export', // not yet implemented
+        'Stats' => 'index.php?cmd=stats',
+        ));
 }
 
 // Grab categories

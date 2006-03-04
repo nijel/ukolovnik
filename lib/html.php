@@ -86,4 +86,12 @@ function HTML_show_image_link($url, $image, $text) {
     echo '<img src="images/' . $GLOBALS['style'] . '/' . $image . '.png" title="' . $text . '" alt="' . $text . '"/>';
     echo '</a> ';
 }
+
+function HTML_toolbar($items) {
+    echo '<ul class="toolbar">' . "\n";
+    foreach($items as $name => $target) {
+        echo '<li><a href="' . $target . '">' . LOCALE_get($name) . "</a></li>\n";
+    }
+    echo "</ul>\n";
+}
 ?>
