@@ -9,6 +9,9 @@ News
 
 0.4 release
 
+    * Modularized code.
+    * Change of translation format.
+
 0.3 release (2006-02-24)
 
     * Several bugfixes.

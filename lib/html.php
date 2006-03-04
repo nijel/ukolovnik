@@ -77,7 +77,7 @@ function HTML_footer() {
 }
 
 function HTML_die_error($text) {
-    HMTL_message('error', $text);
+    HTML_message('error', $text);
     HTML_footer();
 }
 
