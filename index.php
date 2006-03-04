@@ -14,6 +14,7 @@ require_once('./lib/string.php');
 require_once('./lib/sql.php');
 require_once('./lib/category.php');
 require_once('./lib/priority.php');
+require_once('./lib/extensions.php');
 
 // Whether to show html, used for downloading
 $show_html = TRUE;
@@ -89,14 +90,14 @@ function show_edit_task($name, $cmd, $title, $description, $priority, $category,
     echo '<input type="submit" value="' . $name . '"/></form></fieldset>';
 }
 
-// Check for MySQL extension
-if (!function_exists('mysql_connect')) {
-    HTML_die_error(sprintf(LOCALE_get('ExtensionNeeded'), 'mysql'));
-}
+// Check for extensions
+$check = EXTENSIONS_check();
 
-// Check for pcre
-if (!function_exists('preg_replace')) {
-    HTML_die_error(sprintf(LOCALE_get('ExtensionNeeded'), 'pcre'));
+if (count($check) > 0) {
+    foreach($check as $name) {
+        HTML_message('error', sprintf(LOCALE_get('ExtensionNeeded'), $name));
+    }
+    HTML_footer();
 }
 
 // Connect to database
@@ -123,7 +124,7 @@ if (count($check) > 0) {
 
 // Could we locate language file?
 if ($failed_lang) {
-    HTML_die_error(sprintf(LOCALE_get('InvalidLanguage'), $language));
+    HTML_message('warning', sprintf(LOCALE_get('InvalidLanguage'), $language));
 }
 
 if ($show_html) {
