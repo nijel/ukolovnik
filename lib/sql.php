@@ -35,7 +35,6 @@ function SQL_init() {
     // Since MySQL 4 we use utf-8:
     if ($mysql_ver[0] >= 5 || ($mysql_ver[0] == 4 && $mysql_ver[1] >= 1)) {
         SQL_do('SET NAMES utf8');
-        SQL_do('SET CHARACTER SET utf8');
     }
     unset($mysql_ver);
     return TRUE;
@@ -59,7 +58,7 @@ function SQL_check() {
     $result = array();
 
     // Check tables
-    foreach ($required_tables as $tbl) { 
+    foreach ($required_tables as $tbl) {
         $q = SQL_do('SHOW TABLES LIKE "' . SQL_name($tbl) . '"');
         if (mysql_num_rows($q) == 0) {
             $result[] = $tbl;
