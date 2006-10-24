@@ -112,7 +112,7 @@ if (in_array('db', $check)) {
     HTML_message('error', LOCALE_get('CanNotSelectDb'));
 }
 
-foreach ($required_tables as $tbl) { 
+foreach ($required_tables as $tbl) {
     if (in_array($tbl, $check)) {
         HTML_message('error', sprintf(LOCALE_get('CanNotFindTable'), SQL_name($tbl)));
     }
@@ -194,7 +194,7 @@ while (!empty($cmd)) {
             // Sorting
             $order = 'priority DESC, created ASC';
             // FIXME: make this parameter
-                
+
             $q = SQL_do('SELECT id,category,UNIX_TIMESTAMP(created) AS created,priority,title,UNIX_TIMESTAMP(closed) AS closed FROM ' . $GLOBALS['table_prefix'] . 'tasks ' . $filter . ' ORDER BY ' . $order);
             if (mysql_num_rows($q) == 0) {
                 HTML_message('notice', LOCALE_get('NoEntries'));
@@ -314,7 +314,7 @@ while (!empty($cmd)) {
                 if (!isset($_REQUEST['id'])) {
                     HTML_message('error', LOCALE_get('InvalidId'));
                     $error = TRUE;
-                } else { 
+                } else {
                     $id = (int)$_REQUEST['id'];
                     if ($id <= 0) {
                         HTML_message('error', LOCALE_get('InvalidId'));
@@ -334,7 +334,7 @@ while (!empty($cmd)) {
             if (empty($_REQUEST['category'])) {
                 HTML_message('error', LOCALE_get('CategoryInvalid'));
                 $error = TRUE;
-            } else { 
+            } else {
                 $category = (int)$_REQUEST['category'];
                 if (!isset($categories[$category])) {
                     HTML_message('error', LOCALE_get('CategoryInvalid'));
@@ -344,7 +344,7 @@ while (!empty($cmd)) {
             if (!isset($_REQUEST['priority'])) {
                 HTML_message('error', LOCALE_get('PriorityInvalid'));
                 $error = TRUE;
-            } else { 
+            } else {
                 $priority = (int)$_REQUEST['priority'];
                 if ($priority < 0 || $priority > 2) {
                     HTML_message('error', LOCALE_get('PriorityInvalid'));
@@ -369,16 +369,22 @@ while (!empty($cmd)) {
                 }
                 // To avoid filtering
                 unset($_REQUEST['priority'], $_REQUEST['category']);
-                $cmd = 'list';
-                break;
+                // Add next item after adding one
+                if (!CONFIG_get('add_stay', true)) {
+                    $cmd = 'list';
+                    break;
+                }
             }
         case 'add':
             if ($cmd == 'edit_real') {
                 show_edit_task(LOCALE_get('Edit'), 'edit_real', get_opt('title'), get_opt('description'), get_opt('priority', 1), get_opt('category', -1), $id);
-            } else { 
+            } else {
                 show_edit_task(LOCALE_get('Add'), 'add_real', get_opt('title'), get_opt('description'), get_opt('priority', 1), get_opt('category', -1));
             }
-            $cmd = '';
+            // Show listing on add page?
+            if (CONFIG_get('add_list', true)) {
+                $cmd = 'list';
+            }
             break;
         case 'editcat':
             if (!isset($_REQUEST['id'])) {
@@ -403,7 +409,7 @@ while (!empty($cmd)) {
                 if (!isset($_REQUEST['id'])) {
                     HTML_message('error', LOCALE_get('InvalidId'));
                     $error = TRUE;
-                } else { 
+                } else {
                     $id = (int)$_REQUEST['id'];
                     if ($id <= 0) {
                         HTML_message('error', LOCALE_get('InvalidId'));
@@ -475,7 +481,7 @@ while (!empty($cmd)) {
                         SQL_do('DELETE FROM ' . $GLOBALS['table_prefix'] . 'categories WHERE id = ' . $id . ' LIMIT 1');
                         HTML_message('notice', sprintf(LOCALE_get('CategoryDeleted'), htmlspecialchars($categories[$id])));
                     } else {
-                        
+
                         if (!isset($_REQUEST['newcat'])) {
                             HTML_message('error', LOCALE_get('InvalidId'));
                             $cmd = '';
@@ -603,7 +609,7 @@ while (!empty($cmd)) {
                 echo '<td class="value number">' . $row['cnt'] . '</td></tr>';
             }
             mysql_free_result($q);
-            
+
             $q = SQL_do('SELECT COUNT(id) as cnt, priority FROM ' . $GLOBALS['table_prefix'] . 'tasks WHERE (closed IS NULL or closed = 0) GROUP by priority ORDER by priority DESC');
             if (mysql_num_rows($q) > 0) {
                 $row = mysql_fetch_assoc($q);
@@ -631,7 +637,7 @@ while (!empty($cmd)) {
                 echo '<td class="value number">0</td></tr>';
             }
             mysql_free_result($q);
-            
+
             $q = SQL_do('SELECT id, title, UNIX_TIMESTAMP( NOW( ) ) - UNIX_TIMESTAMP( created ) AS age FROM ' . $GLOBALS['table_prefix'] . 'tasks ORDER BY created ASC LIMIT 1');
             if (mysql_num_rows($q) > 0) {
                 $row = mysql_fetch_assoc($q);
