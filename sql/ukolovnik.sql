@@ -45,3 +45,16 @@ CREATE TABLE `ukolovnik_tasks` (
   KEY `category` (`category`),
   KEY `priority` (`priority`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `ukolovnik_settings`
+-- 
+
+DROP TABLE IF EXISTS `ukolovnik_settings`;
+CREATE TABLE `ukolovnik_settings` (
+  `key` varchar(200) collate utf8_unicode_ci NOT NULL,
+  `value` varchar(200) collate utf8_unicode_ci NOT NULL,
+  PRIMARY KEY  (`key`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;

@@ -109,12 +109,12 @@ if (!SQL_init()) {
 $check = SQL_check();
 
 if (in_array('db', $check)) {
-    HTML_message('error', LOCALE_get('CanNotSelectDb'));
+    HTML_message('error', str_replace('setup.php', '<a href="setup.php">setup.php</a>', LOCALE_get('CanNotSelectDb')));
 }
 
 foreach ($required_tables as $tbl) {
     if (in_array($tbl, $check)) {
-        HTML_message('error', sprintf(LOCALE_get('CanNotFindTable'), SQL_name($tbl)));
+        HTML_message('error', str_replace('setup.php', '<a href="setup.php">setup.php</a>', sprintf(LOCALE_get('CanNotFindTable'), SQL_name($tbl))));
     }
 }
 
@@ -217,7 +217,11 @@ while (!empty($cmd)) {
                     echo '<td class="category"><a href="index.php?category=' . $row['category'] . '">' . htmlspecialchars($categories[$row['category']]) . '</a></td>';
                     echo '<td class="date">' . STRING_format_date($row['created']) . '</td>';
                     echo '<td class="actions">';
-                    HTML_show_image_link('cmd=fin&amp;id=' . $row['id'], 'finished', LOCALE_get('Finished'));
+                    if (!is_null($row['closed']) && $row['closed'] != 0) {
+                        HTML_show_image_link('cmd=reopen&amp;id=' . $row['id'], 'reopen', LOCALE_get('Finish'));
+                    } else {
+                        HTML_show_image_link('cmd=fin&amp;id=' . $row['id'], 'finished', LOCALE_get('Reopen'));
+                    }
                     HTML_show_image_link('cmd=edit&amp;id=' . $row['id'], 'edit', LOCALE_get('Edit'));
                     HTML_show_image_link('cmd=del&amp;id=' . $row['id'], 'delete', LOCALE_get('Delete'));
                     echo '</td>';
@@ -249,7 +253,11 @@ while (!empty($cmd)) {
                 }
                 echo '<p class="actions">';
 
-                HTML_show_image_link('cmd=fin&amp;id=' . $row['id'], 'finished', LOCALE_get('Finished'));
+                if (!is_null($row['closed']) && $row['closed'] != 0) {
+                    HTML_show_image_link('cmd=reopen&amp;id=' . $row['id'], 'reopen', LOCALE_get('Reopen'));
+                } else {
+                    HTML_show_image_link('cmd=fin&amp;id=' . $row['id'], 'finished', LOCALE_get('Finish'));
+                }
                 HTML_show_image_link('cmd=edit&amp;id=' . $row['id'], 'edit', LOCALE_get('Edit'));
                 HTML_show_image_link('cmd=del&amp;id=' . $row['id'], 'delete', LOCALE_get('Delete'));
                 echo '</p>';
@@ -257,6 +265,21 @@ while (!empty($cmd)) {
             }
             mysql_free_result($q);
             $cmd = '';
+            break;
+        case 'reopen':
+            if (!isset($_REQUEST['id'])) {
+                HTML_die_error(LOCALE_get('ParameterInvalid'));
+            }
+            $q = SQL_do('SELECT title FROM ' . $GLOBALS['table_prefix'] . 'tasks WHERE id=' . (int)$_REQUEST['id']);
+            if (mysql_num_rows($q) != 1) {
+                HTML_message('notice', LOCALE_get('NoEntries'));
+            } else {
+                $row = mysql_fetch_assoc($q);
+                SQL_do('UPDATE ' . $GLOBALS['table_prefix'] . 'tasks SET closed=NULL, created=created WHERE id=' . (int)$_REQUEST['id']);
+                HTML_message('notice', sprintf(LOCALE_get('TaskReopened'), htmlspecialchars($row['title'])));
+            }
+            mysql_free_result($q);
+            $cmd = 'list';
             break;
         case 'fin':
             if (!isset($_REQUEST['id'])) {

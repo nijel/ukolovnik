@@ -10,8 +10,8 @@ $locale['Stats'] = 'Stats';
 $locale['DefaultStyle'] = 'Default style';
 $locale['ExtensionNeeded'] = 'Can not find needed PHP extension "%s". Please install and enable it.';
 $locale['CanNotConnect'] = 'Can not connect to MySQL database. Please check your configuration.';
-$locale['CanNotSelectDb'] = 'Can not select configured database. Please check your configuration.';
-$locale['CanNotFindTable'] = 'Can not find table "%s". Please check your configuration.';
+$locale['CanNotSelectDb'] = 'Can not select configured database. Please check your configuration or use setup.php.';
+$locale['CanNotFindTable'] = 'Can not find table "%s". Please check your configuration or use setup.php.';
 $locale['UnknownCommand'] = 'Uknonwn command! Maybe you hit some not yet implemented functionality.';
 $locale['Categories'] = 'Categories';
 $locale['AddCategory'] = 'Add category';
@@ -50,7 +50,10 @@ $locale['Delete'] = 'Delete';
 $locale['Created'] = 'Created';
 $locale['Updated'] = 'Updated';
 $locale['Closed'] = 'Closed';
+$locale['Reopen'] = 'Reopen';
+$locale['Finish'] = 'Finish';
 $locale['TaskFinished'] = 'Task %s finished.';
+$locale['TaskReopened'] = 'Task %s reopened.';
 $locale['TaskDeleted'] = 'Task %s has been deleted.';
 $locale['CategoryDeleted'] = 'Category %s has been deleted.';
 $locale['TaskChanged'] = 'Task %s has been changed.';
@@ -80,4 +83,8 @@ $locale['TargetCategory'] = 'Target category';
 $locale['MoveTo'] = 'Move to another category';
 
 $locale['datefmt'] = '%d.%m.%Y, %H:%M';
+
+$locale['DatabaseCreated'] = 'Database %s has been created.';
+$locale['TableCreated'] = 'Table %s has been created.';
+$locale['TablesUpdated'] = 'Tables are in correct state (see above messages about needed changes, if any), you can go back to index.php.';
 ?>

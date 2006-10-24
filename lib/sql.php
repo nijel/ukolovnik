@@ -10,7 +10,7 @@ require_once('./lib/locale.php');
 require_once('./lib/html.php');
 
 $db = NULL;
-$required_tables = array('tasks', 'categories');
+$required_tables = array('tasks', 'categories', 'settings');
 
 function SQL_init() {
     global $db;
@@ -47,12 +47,23 @@ function SQL_name($tbl) {
     return CONFIG_get('table_prefix') . $tbl;
 }
 
-function SQL_check() {
+function SQL_check_db($name) {
+    global $db;
+    return mysql_select_db($name, $db);
+}
+
+function SQL_check($upgrade = false) {
     global $db, $required_tables;
 
     // Connect to database
-    if (!mysql_select_db(CONFIG_get('db_database'), $db)) {
-        return array('db');
+    if (!SQL_check_db(CONFIG_get('db_database'))) {
+        if ($upgrade) {
+            SQL_do('CREATE DATABASE `' . CONFIG_get('db_database') . '`');
+            HTML_message('notice', sprintf(LOCALE_get('DatabaseCreated'), htmlspecialchars(CONFIG_get('db_database'))));
+            SQL_check_db(CONFIG_get('db_database'));
+        } else {
+            return array('db');
+        }
     }
 
     $result = array();
@@ -61,6 +72,47 @@ function SQL_check() {
     foreach ($required_tables as $tbl) {
         $q = SQL_do('SHOW TABLES LIKE "' . SQL_name($tbl) . '"');
         if (mysql_num_rows($q) == 0) {
+            if ($upgrade) {
+                switch ($tbl) {
+                    case 'tasks':
+                        SQL_do('CREATE TABLE `' . SQL_name('tasks') . '` (
+                                  `id` int(11) NOT NULL auto_increment,
+                                  `category` int(11) NOT NULL,
+                                  `priority` int(11) NOT NULL,
+                                  `title` varchar(200) collate utf8_unicode_ci NOT NULL,
+                                  `description` text collate utf8_unicode_ci NOT NULL,
+                                  `created` timestamp NOT NULL default CURRENT_TIMESTAMP,
+                                  `updated` timestamp NULL default NULL,
+                                  `closed` timestamp NULL default NULL,
+                                  PRIMARY KEY  (`id`),
+                                  KEY `category` (`category`),
+                                  KEY `priority` (`priority`)
+                                ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci');
+                        HTML_message('notice', sprintf(LOCALE_get('TableCreated'), htmlspecialchars(SQL_name('tasks'))));
+                        break;
+                    case 'categories':
+                        SQL_do('CREATE TABLE `' . SQL_name('categories') . '` (
+                                  `id` int(11) NOT NULL auto_increment,
+                                  `name` varchar(200) collate utf8_unicode_ci NOT NULL,
+                                  `personal` tinyint(1) NOT NULL,
+                                  PRIMARY KEY  (`id`),
+                                  KEY `personal` (`personal`)
+                                ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci');
+                        HTML_message('notice', sprintf(LOCALE_get('TableCreated'), htmlspecialchars(SQL_name('categories'))));
+                        break;
+                    case 'settings':
+                        SQL_do('CREATE TABLE `' . SQL_name('settings') . '` (
+                                  `key` varchar(200) collate utf8_unicode_ci NOT NULL,
+                                  `value` varchar(200) collate utf8_unicode_ci NOT NULL,
+                                  PRIMARY KEY  (`key`)
+                                ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci');
+                        HTML_message('notice', sprintf(LOCALE_get('TableCreated'), htmlspecialchars(SQL_name('categories'))));
+                        break;
+                    default:
+                        HTML_die_error('Table not defined: ' . $tbl);
+                        break;
+                }
+            }
             $result[] = $tbl;
         }
         if ($q) mysql_free_result($q);
@@ -72,7 +124,7 @@ function SQL_check() {
 function SQL_do($query) {
     global $db;
     $q = mysql_query($query, $db);
-    if (!$q) {
+    if ($q === FALSE) {
         echo mysql_error($db);
         HTML_die_error(sprintf(LOCALE_get('SQLFailed'), htmlspecialchars($query)));
     }

@@ -45,3 +45,16 @@ CREATE TABLE `ukolovnik_tasks` (
   KEY `category` (`category`),
   KEY `priority` (`priority`)
 ) TYPE=MyISAM;
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `ukolovnik_settings`
+-- 
+
+DROP TABLE IF EXISTS `ukolovnik_settings`;
+CREATE TABLE `ukolovnik_settings` (
+  `key` varchar(200) NOT NULL,
+  `value` varchar(200) NOT NULL,
+  PRIMARY KEY  (`key`)
+) TYPE=MyISAM;
