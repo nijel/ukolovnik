@@ -87,4 +87,5 @@ $locale['datefmt'] = '%d.%m.%Y, %H:%M';
 $locale['DatabaseCreated'] = 'Database %s has been created.';
 $locale['TableCreated'] = 'Table %s has been created.';
 $locale['TablesUpdated'] = 'Tables are in correct state (see above messages about needed changes, if any), you can go back to index.php.';
+$locale['SettingsUpdated'] = 'Settings database has been updated';
 ?>

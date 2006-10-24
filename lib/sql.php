@@ -15,7 +15,10 @@ $required_tables = array('tasks', 'categories', 'settings');
 function SQL_init() {
     global $db;
     // Connect to database
-    $db = @mysql_connect(CONFIG_get('db_server'), CONFIG_get('db_user'), CONFIG_get('db_password'));
+    $db = @mysql_connect(
+        CONFIG_get('db_server', 'localhost', 'file'),
+        CONFIG_get('db_user', 'ukolovnik', 'file'),
+        CONFIG_get('db_password', 'ukolovnik', 'file'));
     if ($db === FALSE) {
         return FALSE;
     }
@@ -44,7 +47,7 @@ function SQL_postinit() {
 }
 
 function SQL_name($tbl) {
-    return CONFIG_get('table_prefix') . $tbl;
+    return CONFIG_get('table_prefix', 'ukolovnik_', 'file') . $tbl;
 }
 
 function SQL_check_db($name) {
@@ -56,11 +59,12 @@ function SQL_check($upgrade = false) {
     global $db, $required_tables;
 
     // Connect to database
-    if (!SQL_check_db(CONFIG_get('db_database'))) {
+    $dbname = CONFIG_get('db_database', 'ukolovnik', 'file');
+    if (!SQL_check_db($dbname)) {
         if ($upgrade) {
-            SQL_do('CREATE DATABASE `' . CONFIG_get('db_database') . '`');
-            HTML_message('notice', sprintf(LOCALE_get('DatabaseCreated'), htmlspecialchars(CONFIG_get('db_database'))));
-            SQL_check_db(CONFIG_get('db_database'));
+            SQL_do('CREATE DATABASE `' . $dbname . '`');
+            HTML_message('notice', sprintf(LOCALE_get('DatabaseCreated'), htmlspecialchars($dbname)));
+            SQL_check_db($dbname);
         } else {
             return array('db');
         }
@@ -116,6 +120,14 @@ function SQL_check($upgrade = false) {
             $result[] = $tbl;
         }
         if ($q) mysql_free_result($q);
+    }
+
+    // Check for settings version
+    $ver = (int)CONFIG_get('version', '0');
+    // Set initial version information (don't care on $upgrade here, as this does not require any special privileges)
+    if ($ver == 0) {
+        CONFIG_set('version', '1');
+        HTML_message('notice', sprintf(LOCALE_get('SettingsUpdated')));
     }
 
     return $result;

@@ -37,7 +37,7 @@ function HTML_header() {
     }
     //]]>
     </script>
-    <link media="all" href="styles/<?php echo CONFIG_get('style'); ?>.css" type="text/css" rel="stylesheet" title="<?php echo LOCALE_get('DefaultStyle');?>" />
+    <link media="all" href="styles/<?php echo CONFIG_get('style', 'default', 'file'); ?>.css" type="text/css" rel="stylesheet" title="<?php echo LOCALE_get('DefaultStyle');?>" />
 </head>
 
 <body>
