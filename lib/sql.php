@@ -121,13 +121,15 @@ function SQL_check($upgrade = false) {
         }
         if ($q) mysql_free_result($q);
     }
-
-    // Check for settings version
-    $ver = (int)CONFIG_get('version', '0');
-    // Set initial version information (don't care on $upgrade here, as this does not require any special privileges)
-    if ($ver == 0) {
-        CONFIG_set('version', '1');
-        HTML_message('notice', sprintf(LOCALE_get('SettingsUpdated')));
+    
+    if (!in_array('settings', $result)) {
+        // Check for settings version
+        $ver = (int)CONFIG_get('version', '0');
+        // Set initial version information (don't care on $upgrade here, as this does not require any special privileges)
+        if ($ver == 0) {
+            CONFIG_set('version', '1');
+            HTML_message('notice', sprintf(LOCALE_get('SettingsUpdated')));
+        }
     }
 
     return $result;
