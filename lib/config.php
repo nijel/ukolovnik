@@ -19,7 +19,7 @@ require('./config.php');
  * @param string default value
  * @param string parameter storage (db or file)
  */
-function CONFIG_get($name, $default = '', $source = 'db') {
+function CONFIG_get($name, $default = '', $source = 'db', $skip_check = false) {
     if ($source == 'file') {
         if (isset($GLOBALS[$name])) {
             return $GLOBALS[$name];
@@ -27,6 +27,10 @@ function CONFIG_get($name, $default = '', $source = 'db') {
             return $default;
         }
     } else {
+        /* This might be executed with wrong database configuration */
+        if (!$skip_check && (!SQL_init() || !SQL_check())) {
+            return $default;
+        }
         $value = $default;
         $q = SQL_do('SELECT `value` FROM `' . SQL_name('settings') . '` WHERE `key`="' . $name . '"');
         if (mysql_num_rows($q) > 0) {

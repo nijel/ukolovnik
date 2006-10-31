@@ -13,7 +13,7 @@ $locale = array();
 function LOCALE_init() {
     global $locale;
 
-    $language = CONFIG_get('language', 'en', 'file');
+    $language = CONFIG_get('language', 'en');
 
     // Include correct language file
     if (file_exists('./languages/' . $language . '.php')) {

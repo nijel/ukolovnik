@@ -14,6 +14,9 @@ $required_tables = array('tasks', 'categories', 'settings');
 
 function SQL_init() {
     global $db;
+    if ($db != NULL) {
+        return TRUE;
+    }
     // Connect to database
     $db = @mysql_connect(
         CONFIG_get('db_server', 'localhost', 'file'),
@@ -55,8 +58,13 @@ function SQL_check_db($name) {
     return mysql_select_db($name, $db);
 }
 
+$SQL_check = NULL;
+
 function SQL_check($upgrade = false) {
-    global $db, $required_tables;
+    global $db, $required_tables, $SQL_check;
+
+    // If we already did check
+    if ($SQL_check != NULL && !$upgrade) return $SQL_check;
 
     // Connect to database
     $dbname = CONFIG_get('db_database', 'ukolovnik', 'file');
@@ -121,16 +129,18 @@ function SQL_check($upgrade = false) {
         }
         if ($q) mysql_free_result($q);
     }
-    
+
     if (!in_array('settings', $result)) {
         // Check for settings version
-        $ver = (int)CONFIG_get('version', '0');
+        $ver = (int)CONFIG_get('version', '0', 'db', true);
         // Set initial version information (don't care on $upgrade here, as this does not require any special privileges)
         if ($ver == 0) {
             CONFIG_set('version', '1');
             HTML_message('notice', sprintf(LOCALE_get('SettingsUpdated')));
         }
     }
+
+    $SQL_check = $result;
 
     return $result;
 }

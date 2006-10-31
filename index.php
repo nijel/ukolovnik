@@ -7,11 +7,16 @@
 
 // Grab needed libaries
 require_once('./lib/version.php');
+require_once('./lib/sql.php');
+
+// Connect to database
+SQL_init();
+SQL_check();
+
 require_once('./lib/http.php');
 require_once('./lib/html.php');
 require_once('./lib/config.php');
 require_once('./lib/string.php');
-require_once('./lib/sql.php');
 require_once('./lib/category.php');
 require_once('./lib/priority.php');
 require_once('./lib/extensions.php');
