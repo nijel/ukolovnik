@@ -128,14 +128,7 @@ if ($failed_lang) {
 }
 
 if ($show_html) {
-    HTML_toolbar(array(
-        'Main' => 'index.php',
-        'Add' => 'index.php?cmd=add',
-        'Categories' => 'index.php?cmd=cat',
-        'AddCategory' => 'index.php?cmd=addcat',
-//        'Export' => 'index.php?cmd=export', // not yet implemented
-        'Stats' => 'index.php?cmd=stats',
-        ));
+    require('./lib/toolbar.php');
 }
 
 // Grab categories and priorities
@@ -407,6 +400,8 @@ while (!empty($cmd)) {
             // Show listing on add page?
             if (CONFIG_get('add_list')) {
                 $cmd = 'list';
+            } else {
+                $cmd = '';
             }
             break;
         case 'editcat':

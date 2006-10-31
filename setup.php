@@ -110,6 +110,8 @@ if (!SQL_init()) {
     HTML_die_error(LOCALE_get('CanNotConnect'));
 }
 
+require('./lib/toolbar.php');
+
 if ($cmd == 'update') {
     // Check with possible upgrade
     SQL_check(true);

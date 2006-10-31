@@ -7,6 +7,7 @@ $locale['Main'] = 'Main';
 $locale['Add'] = 'Add';
 $locale['Export'] = 'Export';
 $locale['Stats'] = 'Stats';
+$locale['Settings'] = 'Settings';
 $locale['DefaultStyle'] = 'Default style';
 $locale['ExtensionNeeded'] = 'Can not find needed PHP extension "%s". Please install and enable it.';
 $locale['CanNotConnect'] = 'Can not connect to MySQL database. Please check your configuration.';
