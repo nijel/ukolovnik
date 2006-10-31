@@ -122,7 +122,7 @@ if ($cmd == 'update') {
     HTML_message('notice', LOCALE_get('SettingsUpdated'));
 }
 
-echo '<form class="settings">';
+echo '<form class="settings" method="post">';
 foreach($settings as $val) {
     $name = $val['name'];
     echo '<div class="opts">';
