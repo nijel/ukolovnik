@@ -66,8 +66,10 @@ function CONFIG_get($name, $source = 'db', $skip_check = false) {
  * @param string name
  * @param string value
  */
-function CONFIG_set($name, $value) {
-    if (!SQL_init() || count(SQL_check()) > 0) return;
+function CONFIG_set($name, $value, $skip_check = false) {
+    if (!$skip_check && (!SQL_init() || count(SQL_check()) > 0)) {
+        return;
+    }
     SQL_do('REPLACE INTO `' . SQL_name('settings') . '` VALUES("' . $name . '", "' . addslashes($value) . '")');
 }
 ?>

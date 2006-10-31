@@ -135,7 +135,7 @@ function SQL_check($upgrade = false) {
         $ver = (int)CONFIG_get('version', 'db', true);
         // Set initial version information (don't care on $upgrade here, as this does not require any special privileges)
         if ($ver == 0) {
-            CONFIG_set('version', '1');
+            CONFIG_set('version', '1', true);
             HTML_message('notice', sprintf(LOCALE_get('SettingsDbUpdated')));
         }
     }
