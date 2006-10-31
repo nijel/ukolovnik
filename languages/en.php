@@ -87,5 +87,12 @@ $locale['datefmt'] = '%d.%m.%Y, %H:%M';
 $locale['DatabaseCreated'] = 'Database %s has been created.';
 $locale['TableCreated'] = 'Table %s has been created.';
 $locale['TablesUpdated'] = 'Tables are in correct state (see above messages about needed changes, if any), you can go back to index.php.';
-$locale['SettingsUpdated'] = 'Settings database has been updated';
+$locale['SettingsDbUpdated'] = 'Settings database has been updated';
+$locale['SettingsUpdated'] = 'Settings has been updated';
+
+$locale['SetLanguage'] = 'Language';
+$locale['SetStyle'] = 'Style';
+$locale['SetAddStay'] = 'Stay on add page after adding new entry';
+$locale['SetAddList'] = 'Show entries list on add page';
+$locale['Save'] = 'Save';
 ?>

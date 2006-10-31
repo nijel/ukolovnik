@@ -8,9 +8,4 @@ $db_user        = 'ukolovnik';
 $db_password    = 'ukolovnik';
 $db_database    = 'ukolovnik';
 $table_prefix   = 'ukolovnik_';
-
-// Other setup
-$language       = 'en';
-$style          = 'default';
-
 ?>

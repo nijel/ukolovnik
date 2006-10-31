@@ -37,7 +37,7 @@ function HTML_header() {
     }
     //]]>
     </script>
-    <link media="all" href="styles/<?php echo CONFIG_get('style', 'default'); ?>.css" type="text/css" rel="stylesheet" title="<?php echo LOCALE_get('DefaultStyle');?>" />
+    <link media="all" href="styles/<?php echo CONFIG_get('style'); ?>.css" type="text/css" rel="stylesheet" title="<?php echo LOCALE_get('DefaultStyle');?>" />
 </head>
 
 <body>
@@ -83,7 +83,7 @@ function HTML_die_error($text) {
 
 function HTML_show_image_link($url, $image, $text) {
     echo '<a class="action" href="index.php?' . $url . '">';
-    echo '<img src="images/' . $GLOBALS['style'] . '/' . $image . '.png" title="' . $text . '" alt="' . $text . '"/>';
+    echo '<img src="images/' . CONFIG_get('style') . '/' . $image . '.png" title="' . $text . '" alt="' . $text . '"/>';
     echo '</a> ';
 }
 

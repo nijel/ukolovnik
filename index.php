@@ -109,12 +109,12 @@ if (!SQL_init()) {
 $check = SQL_check();
 
 if (in_array('db', $check)) {
-    HTML_message('error', str_replace('setup.php', '<a href="setup.php">setup.php</a>', LOCALE_get('CanNotSelectDb')));
+    HTML_message('error', str_replace('setup.php', '<a href="setup.php?cmd=update">setup.php</a>', LOCALE_get('CanNotSelectDb')));
 }
 
 foreach ($required_tables as $tbl) {
     if (in_array($tbl, $check)) {
-        HTML_message('error', str_replace('setup.php', '<a href="setup.php">setup.php</a>', sprintf(LOCALE_get('CanNotFindTable'), SQL_name($tbl))));
+        HTML_message('error', str_replace('setup.php', '<a href="setup.php?cmd=update">setup.php</a>', sprintf(LOCALE_get('CanNotFindTable'), SQL_name($tbl))));
     }
 }
 
@@ -393,7 +393,7 @@ while (!empty($cmd)) {
                 // To avoid filtering
                 unset($_REQUEST['priority'], $_REQUEST['category']);
                 // Add next item after adding one
-                if (!CONFIG_get('add_stay', true)) {
+                if (!CONFIG_get('add_stay')) {
                     $cmd = 'list';
                     break;
                 }
@@ -405,7 +405,7 @@ while (!empty($cmd)) {
                 show_edit_task(LOCALE_get('Add'), 'add_real', get_opt('title'), get_opt('description'), get_opt('priority', 1), get_opt('category', -1));
             }
             // Show listing on add page?
-            if (CONFIG_get('add_list', true)) {
+            if (CONFIG_get('add_list')) {
                 $cmd = 'list';
             }
             break;

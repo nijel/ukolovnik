@@ -179,3 +179,14 @@ table.listing a.action {
 a.action img {
     border: none;
 }
+
+/* Settings form */
+div.opts {
+    margin: 1em;
+}
+
+div.opts label {
+    float: left;
+    width: 27em;
+    max-width: 60%;
+}

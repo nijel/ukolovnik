@@ -19,9 +19,9 @@ function SQL_init() {
     }
     // Connect to database
     $db = @mysql_connect(
-        CONFIG_get('db_server', 'localhost', 'file'),
-        CONFIG_get('db_user', 'ukolovnik', 'file'),
-        CONFIG_get('db_password', 'ukolovnik', 'file'));
+        CONFIG_get('db_server', 'file'),
+        CONFIG_get('db_user', 'file'),
+        CONFIG_get('db_password', 'file'));
     if ($db === FALSE) {
         return FALSE;
     }
@@ -50,7 +50,7 @@ function SQL_postinit() {
 }
 
 function SQL_name($tbl) {
-    return CONFIG_get('table_prefix', 'ukolovnik_', 'file') . $tbl;
+    return CONFIG_get('table_prefix', 'file') . $tbl;
 }
 
 function SQL_check_db($name) {
@@ -67,7 +67,7 @@ function SQL_check($upgrade = false) {
     if ($SQL_check != NULL && !$upgrade) return $SQL_check;
 
     // Connect to database
-    $dbname = CONFIG_get('db_database', 'ukolovnik', 'file');
+    $dbname = CONFIG_get('db_database', 'file');
     if (!SQL_check_db($dbname)) {
         if ($upgrade) {
             SQL_do('CREATE DATABASE `' . $dbname . '`');
@@ -132,11 +132,11 @@ function SQL_check($upgrade = false) {
 
     if (!in_array('settings', $result)) {
         // Check for settings version
-        $ver = (int)CONFIG_get('version', '0', 'db', true);
+        $ver = (int)CONFIG_get('version', 'db', true);
         // Set initial version information (don't care on $upgrade here, as this does not require any special privileges)
         if ($ver == 0) {
             CONFIG_set('version', '1');
-            HTML_message('notice', sprintf(LOCALE_get('SettingsUpdated')));
+            HTML_message('notice', sprintf(LOCALE_get('SettingsDbUpdated')));
         }
     }
 
