@@ -96,6 +96,7 @@ function SQL_check($upgrade = false) {
                                   `created` timestamp NOT NULL default CURRENT_TIMESTAMP,
                                   `updated` timestamp NULL default NULL,
                                   `closed` timestamp NULL default NULL,
+                                  `update_count` bigint default 0,
                                   PRIMARY KEY  (`id`),
                                   KEY `category` (`category`),
                                   KEY `priority` (`priority`)
@@ -137,6 +138,21 @@ function SQL_check($upgrade = false) {
         if ($ver == 0) {
             CONFIG_set('version', '1', true);
             HTML_message('notice', sprintf(LOCALE_get('SettingsDbUpdated')));
+        }
+    }
+    $ver = (int)CONFIG_get('version', 'db', true);
+    if ($ver == 1) {
+        if ($upgrade) {
+            // Add update_count field
+            SQL_do('ALTER TABLE `' . SQL_name('tasks') . '` ADD
+                                  `update_count` bigint default 0');
+            CONFIG_set('version', '2', true);
+            HTML_message('notice', sprintf(LOCALE_get('TableUpdated'), htmlspecialchars(SQL_name('tasks'))));
+        } else {
+            if (!isset($result['upgrade'])) {
+                $result['upgrade'] = array();
+            }
+            $result['upgrade'][] = 'tasks';
         }
     }
 

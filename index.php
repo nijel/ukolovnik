@@ -71,7 +71,7 @@ function get_select($name, $default, $options, $add_any=FALSE, $autosubmit=FALSE
     return $ret . '</select>';
 }
 
-function show_edit_task($name, $cmd, $title, $description, $priority, $category, $id = NULL) {
+function show_edit_task($name, $cmd, $title, $description, $priority, $category, $update_count, $id = NULL) {
     global $priorities, $categories;
 
     echo '<fieldset><legend>' . $name . '</legend><form method="post" action="index.php">';
@@ -87,6 +87,7 @@ function show_edit_task($name, $cmd, $title, $description, $priority, $category,
     echo '<label class="desc" for="sel_category">' . LOCALE_get('Category') . '</label>';
     echo get_select('category', $category, $categories);
     echo '<input type="hidden" name="cmd" value="' . $cmd . '" \>';
+	echo '<input type="hidden" name="update_count" value="' . $update_count . '" \>';
     echo '<input type="submit" value="' . $name . '"/></form></fieldset>';
 }
 
@@ -115,6 +116,12 @@ if (in_array('db', $check)) {
 foreach ($required_tables as $tbl) {
     if (in_array($tbl, $check)) {
         HTML_message('error', str_replace('setup.php', '<a href="setup.php?cmd=update">setup.php</a>', sprintf(LOCALE_get('CanNotFindTable'), SQL_name($tbl))));
+    }
+}
+
+if (isset($check['upgrade'], $check)) {
+    foreach ($check['upgrade'] as $tbl) {
+        HTML_message('error', str_replace('setup.php', '<a href="setup.php?cmd=update">setup.php</a>', sprintf(LOCALE_get('TableNeedsUpdate'), SQL_name($tbl))));
     }
 }
 
@@ -319,7 +326,7 @@ while (!empty($cmd)) {
             } else {
                 $row = mysql_fetch_assoc($q);
                 mysql_free_result($q);
-                show_edit_task(LOCALE_get('Edit'), 'edit_real', htmlspecialchars($row['title']), htmlspecialchars($row['description']), $row['priority'], $row['category'], $id);
+                show_edit_task(LOCALE_get('Edit'), 'edit_real', htmlspecialchars($row['title']), htmlspecialchars($row['description']), $row['priority'], $row['category'], $row['update_count'], $id);
                 $cmd = '';
             }
             break;
@@ -380,8 +387,16 @@ while (!empty($cmd)) {
                     SQL_do('INSERT INTO ' . $GLOBALS['table_prefix'] . 'tasks ' . $set_sql);
                     HTML_message('notice', sprintf(LOCALE_get('TaskAdded'), htmlspecialchars($_REQUEST['title'])));
                 } else {
-                    SQL_do('UPDATE ' . $GLOBALS['table_prefix'] . 'tasks ' . $set_sql . ', updated=NOW(), created=created WHERE id=' . $id);
+				    $cnt = (int) $_REQUEST['update_count'];
+                    SQL_do('UPDATE ' . $GLOBALS['table_prefix'] . 'tasks ' . $set_sql . ', updated=NOW(), update_count='. ($cnt+1) . ' WHERE id=' . $id . ' AND update_count='.$cnt);
+
+					$r=mysql_affected_rows();
+					if (!$r) {
+						HTML_message('error', LOCALE_get('ConcurrecyError'));
+					}
+					else {
                     HTML_message('notice', sprintf(LOCALE_get('TaskChanged'), htmlspecialchars($_REQUEST['title'])));
+                }
                 }
                 // To avoid filtering
                 unset($_REQUEST['priority'], $_REQUEST['category']);
@@ -393,9 +408,9 @@ while (!empty($cmd)) {
             }
         case 'add':
             if ($cmd == 'edit_real') {
-                show_edit_task(LOCALE_get('Edit'), 'edit_real', get_opt('title'), get_opt('description'), get_opt('priority', 1), get_opt('category', -1), $id);
+                show_edit_task(LOCALE_get('Edit'), 'edit_real', get_opt('title'), get_opt('description'), get_opt('priority', 1), get_opt('category', -1), get_opt('update_count',0), $id);
             } else {
-                show_edit_task(LOCALE_get('Add'), 'add_real', get_opt('title'), get_opt('description'), get_opt('priority', 1), get_opt('category', -1));
+                show_edit_task(LOCALE_get('Add'), 'add_real', get_opt('title'), get_opt('description'), get_opt('priority', 1), get_opt('category', -1), get_opt('update_count',0));
             }
             // Show listing on add page?
             if (CONFIG_get('add_list')) {

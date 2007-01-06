@@ -41,6 +41,7 @@ CREATE TABLE `ukolovnik_tasks` (
   `created` timestamp NOT NULL default CURRENT_TIMESTAMP,
   `updated` timestamp NULL default NULL,
   `closed` timestamp NULL default NULL,
+  `update_count` bigint default 0,
   PRIMARY KEY  (`id`),
   KEY `category` (`category`),
   KEY `priority` (`priority`)

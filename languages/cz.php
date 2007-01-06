@@ -98,4 +98,5 @@ $locale['SetStyle'] = 'Vzhled';
 $locale['SetAddStay'] = 'Zůstat na přidávací stránce po přidání úkolu';
 $locale['SetAddList'] = 'Zobrazit seznam úkolů na přidávací stránce';
 $locale['Save'] = 'Uložit';
+$locale['ConcurrecyError'] = 'Chyba konkuretního přístupu! Změny nebyly uloženy, protože někdo mezitím změnil záznam.';
 ?>

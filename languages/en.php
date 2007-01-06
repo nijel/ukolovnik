@@ -96,4 +96,7 @@ $locale['SetStyle'] = 'Style';
 $locale['SetAddStay'] = 'Stay on add page after adding new entry';
 $locale['SetAddList'] = 'Show entries list on add page';
 $locale['Save'] = 'Save';
+$locale['ConcurrecyError'] = 'Concurrency error! Changes not saved, because someone else already changed record';
+$locale['TableNeedsUpdate'] = 'Table %s need update. Please upgrade your tables or use setup.php.';
+$locale['TableUpdated'] = 'Table %s updated.';
 ?>
