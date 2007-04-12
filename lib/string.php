@@ -8,10 +8,16 @@
 // Grab needed libraries
 require_once('./lib/locale.php');
 
+/**
+ * Format date to string.
+ */
 function STRING_format_date($date) {
     return strftime(LOCALE_get('datefmt'), $date);
 }
 
+/**
+ * Make links in text clickable.
+ */
 function STRING_find_links($text) {
     return preg_replace('@((http|ftp|https)://[a-z0-9A-Z.,?&;/=+_~#$%\@:-]+)([^.,]|$)@', '<a href="\1">\1</a>\3', htmlspecialchars($text));
 }

@@ -7,6 +7,9 @@
 
 $required_extensions = array('mysql' => 'mysql_connect', 'pcre' => 'preg_replace');
 
+/**
+ * Checks whethere required extensions are installed.
+ */
 function EXTENSIONS_check() {
     global $required_extensions;
 

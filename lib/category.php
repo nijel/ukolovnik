@@ -8,6 +8,9 @@
 // Grab needed libraries
 require_once('./lib/sql.php');
 
+/**
+ * Grab all categories.
+ */
 function CATEGORY_grab() {
     global $categories, $categories_pers, $categories_prof;
 
@@ -26,6 +29,9 @@ function CATEGORY_grab() {
     mysql_free_result($q);
 }
 
+/**
+ * Show edit box for category.
+ */
 function CATEGORY_show_edit($title, $cmd, $name, $personal, $id = NULL) {
     echo '<fieldset><legend>' . $title . '</legend><form method="post" action="index.php">';
     if (isset($id)) {

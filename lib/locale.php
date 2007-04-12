@@ -10,6 +10,9 @@ require_once('./lib/config.php');
 
 $locale = array();
 
+/**
+ * Initializes locales and loads translation.
+ */
 function LOCALE_init() {
     global $locale;
 
@@ -25,6 +28,9 @@ function LOCALE_init() {
     }
 }
 
+/**
+ * Returns translation for message.
+ */
 function LOCALE_get($name) {
     return $GLOBALS['locale'][$name];
 }

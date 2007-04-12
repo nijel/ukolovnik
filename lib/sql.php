@@ -12,6 +12,9 @@ require_once('./lib/html.php');
 $db = NULL;
 $required_tables = array('tasks', 'categories', 'settings');
 
+/**
+ * Initializes SQL connection.
+ */
 function SQL_init() {
     global $db;
     if ($db != NULL) {
@@ -49,10 +52,16 @@ function SQL_init() {
 function SQL_postinit() {
 }
 
+/**
+ * Rename table according to configured prefix.
+ */
 function SQL_name($tbl) {
     return CONFIG_get('table_prefix', 'file') . $tbl;
 }
 
+/**
+ * Checks whether database is correct.
+ */
 function SQL_check_db($name) {
     global $db;
     return mysql_select_db($name, $db);
@@ -60,6 +69,10 @@ function SQL_check_db($name) {
 
 $SQL_check = NULL;
 
+/**
+ * Check for whether tables and databases are up to date. Optionally this 
+ * can also update everything to currently required state.
+ */
 function SQL_check($upgrade = false) {
     global $db, $required_tables, $SQL_check;
 
@@ -161,6 +174,9 @@ function SQL_check($upgrade = false) {
     return $result;
 }
 
+/**
+ * Execute SQL query and terminate script run if it fails.
+ */
 function SQL_do($query) {
     global $db;
     $q = mysql_query($query, $db);

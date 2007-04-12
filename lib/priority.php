@@ -8,6 +8,9 @@
 // Grab needed libraries
 require_once('./lib/locale.php');
 
+/**
+ * Creates list of priorities.
+ */
 function PRIORITY_grab() {
     global $priorities;
     $priorities = array(LOCALE_get('Priority0'), LOCALE_get('Priority1'), LOCALE_get('Priority2'));

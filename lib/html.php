@@ -11,6 +11,9 @@ require_once('./lib/http.php');
 require_once('./lib/config.php');
 require_once('./lib/locale.php');
 
+/**
+ * Displays HTML header.
+ */
 function HTML_header() {
     global $version;
 
