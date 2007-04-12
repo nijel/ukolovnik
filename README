@@ -31,14 +31,13 @@ Bug reporting
 
 Please report found bugs to my bugtracker [1].
 
-1. http://bugs.cihar.com
-
 
 Developing
 ----------
 
-Development goes in in bazaar archive [2], you can use ArchZoom [3] to browse
-it.
+Development goes on in Subversion [2], you can use web based browser [3] to
+browse it.
 
-2. http://cihar.com/archives/2005-main
-3. http://archzoom.cihar.com/archzoom.cgi/michal@cihar.com--2005-main/ukolovnik--devel--1
+[1] http://bugs.cihar.com/
+[2] http://svn.cihar.com/
+[3] http://viewsvn.cihar.com/ukolovnik
