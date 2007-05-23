@@ -59,3 +59,5 @@ CREATE TABLE `ukolovnik_settings` (
   `value` varchar(200) collate utf8_unicode_ci NOT NULL,
   PRIMARY KEY  (`key`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+INSERT INTO `ukolovnik_settings` SET `key`="version", `value`=2;

@@ -59,3 +59,5 @@ CREATE TABLE `ukolovnik_settings` (
   `value` varchar(200) NOT NULL,
   PRIMARY KEY  (`key`)
 ) TYPE=MyISAM;
+
+INSERT INTO `ukolovnik_settings` SET `key`="version", `value`=2;
