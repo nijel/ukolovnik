@@ -1,0 +1,28 @@
+#!/bin/sh
+# vim: expandtab sw=4 ts=4 sts=4:
+
+# Usage: make-release [branch]
+
+repo=ukolovnik
+srcdir=`pwd`
+
+version=`sed -n "/version =/ s/.*= '\(.*\)'.*/\1/p" lib/version.php`
+
+tmp=`mktemp -dt $repo-build-XXXXXX`
+
+cd $tmp
+echo Working in $tmp
+if [ "x$1" = "xbranch" ] ; then
+    rel=RELEASE_`echo -n $version|tr . _`
+    svn cp -m "Tag release $version" svn+ssh://mort/home/svn/$repo/trunk svn+ssh://mort/home/svn/$repo/tags/$rel
+    svn export svn+ssh://mort/home/svn/$repo/tags/$rel $repo-$version
+else
+    svn export svn+ssh://mort/home/svn/$repo/trunk $repo-$version
+fi
+tar cfz $repo-$version.tar.gz $repo-$version
+tar cfj $repo-$version.tar.bz2 $repo-$version
+7za a -bd -tzip $repo-$version.zip $repo-$version > /dev/null
+7za a -bd $repo-$version.7z $repo-$version > /dev/null
+
+echo "Release is in $tmp directory:"
+ls -lh $tmp
