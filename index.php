@@ -768,8 +768,9 @@ while (!empty($cmd)) {
                     echo 'CATEGORIES:' . $row['category'] . "\r\n";
                     echo 'SUMMARY;CHARSET=UTF-8;ENCODING=QUOTED-PRINTABLE:' . STRING_quoted_printable($row['title']) . "\r\n";
                     echo 'DESCRIPTION;CHARSET=UTF-8;ENCODING=QUOTED-PRINTABLE:' . STRING_quoted_printable($row['description']) . "\r\n";
-                    echo 'DTSTAMP:' . $row['created'] . "\r\n";
+                    echo 'CREATED:' . STRING_format_date_vcal($row['created']) . "\r\n";
                     if (!is_null($row['closed'])) {
+                        echo 'COMPLETED:' . STRING_format_date_vcal($row['closed']) . "\r\n";
                         echo "STATUS:COMPLETED\r\n";
                         echo "PERCENT-COMPLETE:100\r\n";
                     }

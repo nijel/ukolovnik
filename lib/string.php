@@ -25,8 +25,7 @@ function STRING_find_links($text) {
 /**
  * Quoted printable encoding.
  */
-function STRING_quoted_printable($input)
-{
+function STRING_quoted_printable($input) {
     // If imap_8bit() is available, use it.
     if (function_exists('imap_8bit')) {
         return imap_8bit($input);
@@ -49,5 +48,17 @@ function STRING_quoted_printable($input)
     return $output;
 }
 
+/**
+ * Converts timestamp to vCalendar format.
+ */
+function STRING_format_date_vcal($value) {
+    return sprintf('%04d%02d%02dT%02d%02d%02d',
+        date('Y', $value),
+        date('n', $value),
+        date('j', $value),
+        date('G', $value),
+        date('i', $value),
+        date('s', $value));
+}
 
 ?>
