@@ -2,7 +2,7 @@
 // vim: expandtab sw=4 ts=4 sts=4:
 
 // This is compatibility stuff for Ukolovnik, it might be dropped in future when we can require newer php
-// Copyright (c) 2005-2006 Michal Čihař
+// Copyright (c) 2005 - 2007 Michal Čihař
 // Published under GNU GPL version 2
 
 
