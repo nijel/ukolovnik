@@ -218,9 +218,9 @@ while (!empty($cmd)) {
                     echo '<td class="date">' . STRING_format_date($row['created']) . '</td>';
                     echo '<td class="actions">';
                     if (!is_null($row['closed']) && $row['closed'] != 0) {
-                        HTML_show_image_link('cmd=reopen&amp;id=' . $row['id'], 'reopen', LOCALE_get('Finish'));
+                        HTML_show_image_link('cmd=reopen&amp;id=' . $row['id'], 'reopen', LOCALE_get('Reopen'));
                     } else {
-                        HTML_show_image_link('cmd=fin&amp;id=' . $row['id'], 'finished', LOCALE_get('Reopen'));
+                        HTML_show_image_link('cmd=fin&amp;id=' . $row['id'], 'finished', LOCALE_get('Finish'));
                     }
                     HTML_show_image_link('cmd=edit&amp;id=' . $row['id'], 'edit', LOCALE_get('Edit'));
                     HTML_show_image_link('cmd=del&amp;id=' . $row['id'], 'delete', LOCALE_get('Delete'));
