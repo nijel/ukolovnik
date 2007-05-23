@@ -13,7 +13,7 @@ HTML_toolbar(array(
     'Add' => 'index.php?cmd=add',
     'Categories' => 'index.php?cmd=cat',
     'AddCategory' => 'index.php?cmd=addcat',
-//    'Export' => 'index.php?cmd=export', // not yet implemented
+    'Export' => 'index.php?cmd=export', // not yet implemented
     'Stats' => 'index.php?cmd=stats',
     'Settings' => 'setup.php',
     ));

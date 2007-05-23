@@ -101,4 +101,7 @@ $locale['Save'] = 'Uložit';
 $locale['ConcurrecyError'] = 'Chyba konkuretního přístupu! Změny nebyly uloženy, protože někdo mezitím změnil záznam.';
 $locale['TableNeedsUpdate'] = 'Tabulka %s potřebuje aktualizaci. Prosím aktualizujte ji, nebo použijte setup.php.';
 $locale['TableUpdated'] = 'Tabulka %s aktualizována.';
+
+$locale['ExportFormats'] = 'Prosím zvolte formát exportu:';
+$locale['CSVExport'] = 'CSV (Čárkou oddělené hodnoty)';
 ?>

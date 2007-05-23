@@ -99,4 +99,7 @@ $locale['Save'] = 'Save';
 $locale['ConcurrecyError'] = 'Concurrency error! Changes not saved, because someone else already changed record';
 $locale['TableNeedsUpdate'] = 'Table %s need update. Please upgrade your tables or use setup.php.';
 $locale['TableUpdated'] = 'Table %s updated.';
+
+$locale['ExportFormats'] = 'Please select export format:';
+$locale['CSVExport'] = 'CSV (Comma separated values)';
 ?>

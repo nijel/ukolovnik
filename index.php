@@ -19,13 +19,16 @@ require_once('./lib/extensions.php');
 // Whether to show html, used for downloading
 $show_html = TRUE;
 
-HTTP_clean_request();
-
 // Grab some parameters
 if (empty($_REQUEST['cmd'])) {
     $cmd = 'list';
 } else {
     $cmd = $_REQUEST['cmd'];
+}
+
+// For export we don't want html
+if (substr($cmd, 0, 7) == 'export_') {
+    $show_html = false;
 }
 
 // Include correct language file
@@ -718,8 +721,42 @@ while (!empty($cmd)) {
             echo '</tbody></table>';
             $cmd = '';
             break;
+        case 'export':
+            echo LOCALE_get('ExportFormats');
+            echo '<ul>';
+            echo '<li><a href="index.php?cmd=export_csv">' . LOCALE_get('CSVExport') . '</a></li>';
+            echo '</ul>';
+            $cmd = '';
+            break;
+        case 'export_csv':
+            header('Content-Type: text/plain; charset=utf-8');
+            header('Content-Disposition: attachment; filename="ukolovnik.csv"');
+
+            $q = SQL_do('SELECT id,category,UNIX_TIMESTAMP(created) AS created,priority,title,description,UNIX_TIMESTAMP(closed) AS closed FROM ' . $GLOBALS['table_prefix'] . 'tasks ' . $filter . ' ORDER BY priority DESC, created ASC');
+            echo "priority,title,description,category,created,closed\n";
+            if (mysql_num_rows($q) > 0) {
+                while ($row = mysql_fetch_assoc($q)) {
+                    echo $row['priority'];
+                    echo ',';
+                    echo '"' . $row['title'] . '"';
+                    echo ',';
+                    echo '"' . $row['description'] . '"';
+                    echo ',';
+                    echo $row['category'];
+                    echo ',';
+                    echo $row['created'];
+                    echo ',';
+                    echo $row['closed'];
+                    echo "\n";
+                }
+            }
+            mysql_free_result($q);
+            $cmd = '';
+            break;
         default:
             HTML_message('error', LOCALE_get('UnknownCommand'));
+            $cmd = '';
+            break;
     }
 }
 if ($show_html) {
