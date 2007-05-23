@@ -725,6 +725,7 @@ while (!empty($cmd)) {
             echo LOCALE_get('ExportFormats');
             echo '<ul>';
             echo '<li><a href="index.php?cmd=export_csv">' . LOCALE_get('CSVExport') . '</a></li>';
+            echo '<li><a href="index.php?cmd=export_vcal">' . LOCALE_get('vCalExport') . '</a></li>';
             echo '</ul>';
             $cmd = '';
             break;
@@ -750,6 +751,32 @@ while (!empty($cmd)) {
                     echo "\n";
                 }
             }
+            mysql_free_result($q);
+            $cmd = '';
+            break;
+        case 'export_vcal':
+            header('Content-Type: text/plain; charset=utf-8');
+            header('Content-Disposition: attachment; filename="ukolovnik.vcs"');
+
+            $q = SQL_do('SELECT id,category,UNIX_TIMESTAMP(created) AS created,priority,title,description,UNIX_TIMESTAMP(closed) AS closed FROM ' . $GLOBALS['table_prefix'] . 'tasks ' . $filter . ' ORDER BY priority DESC, created ASC');
+            echo "BEGIN:VCALENDAR\n";
+            echo "VERSION:1.0\n";
+            if (mysql_num_rows($q) > 0) {
+                while ($row = mysql_fetch_assoc($q)) {
+                    echo "BEGIN:TODO\n";
+                    echo 'PRIORITY:' . $row['priority'] . "\n";
+                    echo 'CATEGORIES:' . $row['category'] . "\n";
+                    echo 'SUMMARY:' . $row['title'] . "\n";
+                    echo 'DESCRIPTION:' . $row['description'] . "\n";
+                    echo 'DTSTAMP:' . $row['created'] . "\n";
+                    if (!is_null($row['closed'])) {
+                        echo "STATUS:COMPLETED\n";
+                        echo "PERCENT-COMPLETE:100\n";
+                    }
+                    echo "END:VTODO\n";
+                }
+            }
+            echo "END:VCALENDAR\n";
             mysql_free_result($q);
             $cmd = '';
             break;

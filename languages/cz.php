@@ -104,4 +104,5 @@ $locale['TableUpdated'] = 'Tabulka %s aktualizována.';
 
 $locale['ExportFormats'] = 'Prosím zvolte formát exportu:';
 $locale['CSVExport'] = 'CSV (Čárkou oddělené hodnoty)';
+$locale['vCalExport'] = 'vCalendar';
 ?>

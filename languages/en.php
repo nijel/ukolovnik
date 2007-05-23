@@ -102,4 +102,5 @@ $locale['TableUpdated'] = 'Table %s updated.';
 
 $locale['ExportFormats'] = 'Please select export format:';
 $locale['CSVExport'] = 'CSV (Comma separated values)';
+$locale['vCalExport'] = 'vCalendar';
 ?>
