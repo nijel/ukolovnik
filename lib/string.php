@@ -21,4 +21,33 @@ function STRING_format_date($date) {
 function STRING_find_links($text) {
     return preg_replace('@((http|ftp|https)://[a-z0-9A-Z.,?&;/=+_~#$%\@:-]+)([^.,]|$)@', '<a href="\1">\1</a>\3', htmlspecialchars($text));
 }
+
+/**
+ * Quoted printable encoding.
+ */
+function STRING_quoted_printable($input)
+{
+    // If imap_8bit() is available, use it.
+    if (function_exists('imap_8bit')) {
+        return imap_8bit($input);
+    }
+
+    // Rather dumb replacment: just encode everything.
+    $hex = array('0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
+                 'A', 'B', 'C', 'D', 'E', 'F');
+
+    $output = '';
+    $len = strlen($input);
+    for ($i = 0; $i < $len; ++$i) {
+        $c = substr($input, $i, 1);
+        $dec = ord($c);
+        $output .= '=' . $hex[floor($dec / 16)] . $hex[floor($dec % 16)];
+        if (($i + 1) % 25 == 0) {
+            $output .= "=\r\n";
+        }
+    }
+    return $output;
+}
+
+
 ?>

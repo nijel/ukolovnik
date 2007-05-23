@@ -759,24 +759,24 @@ while (!empty($cmd)) {
             header('Content-Disposition: attachment; filename="ukolovnik.vcs"');
 
             $q = SQL_do('SELECT id,category,UNIX_TIMESTAMP(created) AS created,priority,title,description,UNIX_TIMESTAMP(closed) AS closed FROM ' . $GLOBALS['table_prefix'] . 'tasks ' . $filter . ' ORDER BY priority DESC, created ASC');
-            echo "BEGIN:VCALENDAR\n";
-            echo "VERSION:1.0\n";
+            echo "BEGIN:VCALENDAR\r\n";
+            echo "VERSION:1.0\r\n";
             if (mysql_num_rows($q) > 0) {
                 while ($row = mysql_fetch_assoc($q)) {
-                    echo "BEGIN:TODO\n";
-                    echo 'PRIORITY:' . $row['priority'] . "\n";
-                    echo 'CATEGORIES:' . $row['category'] . "\n";
-                    echo 'SUMMARY:' . $row['title'] . "\n";
-                    echo 'DESCRIPTION:' . $row['description'] . "\n";
-                    echo 'DTSTAMP:' . $row['created'] . "\n";
+                    echo "BEGIN:TODO\r\n";
+                    echo 'PRIORITY:' . $row['priority'] . "\r\n";
+                    echo 'CATEGORIES:' . $row['category'] . "\r\n";
+                    echo 'SUMMARY;CHARSET=UTF-8;ENCODING=QUOTED-PRINTABLE:' . STRING_quoted_printable($row['title']) . "\r\n";
+                    echo 'DESCRIPTION;CHARSET=UTF-8;ENCODING=QUOTED-PRINTABLE:' . STRING_quoted_printable($row['description']) . "\r\n";
+                    echo 'DTSTAMP:' . $row['created'] . "\r\n";
                     if (!is_null($row['closed'])) {
-                        echo "STATUS:COMPLETED\n";
-                        echo "PERCENT-COMPLETE:100\n";
+                        echo "STATUS:COMPLETED\r\n";
+                        echo "PERCENT-COMPLETE:100\r\n";
                     }
-                    echo "END:VTODO\n";
+                    echo "END:VTODO\r\n";
                 }
             }
-            echo "END:VCALENDAR\n";
+            echo "END:VCALENDAR\r\n";
             mysql_free_result($q);
             $cmd = '';
             break;
