@@ -404,7 +404,7 @@ while (!empty($cmd)) {
                 // To avoid filtering
                 unset($_REQUEST['priority'], $_REQUEST['category']);
                 // Add next item after adding one
-                if (!CONFIG_get('add_stay')) {
+                if (!CONFIG_get('add_stay') || $cmd == 'edit_real') {
                     $cmd = 'list';
                     break;
                 }
