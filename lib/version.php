@@ -6,5 +6,5 @@
 // Published under GNU GPL version 2
 
 // Version of Ukolovnik
-$version = '0.8';
+$version = '0.9';
 ?>
