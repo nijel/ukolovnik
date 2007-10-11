@@ -10,7 +10,7 @@ require_once('./lib/locale.php');
 require_once('./lib/html.php');
 
 $db = NULL;
-$required_tables = array('tasks', 'categories', 'settings');
+$required_tables = array('settings', 'tasks', 'categories');
 
 /**
  * Initializes SQL connection.
@@ -70,7 +70,7 @@ function SQL_check_db($name) {
 $SQL_check = NULL;
 
 /**
- * Check for whether tables and databases are up to date. Optionally this 
+ * Check for whether tables and databases are up to date. Optionally this
  * can also update everything to currently required state.
  */
 function SQL_check($upgrade = false) {
@@ -115,6 +115,7 @@ function SQL_check($upgrade = false) {
                                   KEY `priority` (`priority`)
                                 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci');
                         HTML_message('notice', sprintf(_('Table %s has been created.'), htmlspecialchars(SQL_name('tasks'))));
+                        CONFIG_set('version', '2', true);
                         break;
                     case 'categories':
                         SQL_do('CREATE TABLE `' . SQL_name('categories') . '` (
@@ -133,6 +134,7 @@ function SQL_check($upgrade = false) {
                                   PRIMARY KEY  (`key`)
                                 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci');
                         HTML_message('notice', sprintf(_('Table %s has been created.'), htmlspecialchars(SQL_name('categories'))));
+                        CONFIG_set('version', '1', true);
                         break;
                     default:
                         HTML_die_error('Table not defined: ' . $tbl);
@@ -177,10 +179,11 @@ function SQL_check($upgrade = false) {
 /**
  * Execute SQL query and terminate script run if it fails.
  */
-function SQL_do($query) {
+function SQL_do($query, $allowfail = false) {
     global $db;
     $q = mysql_query($query, $db);
     if ($q === FALSE) {
+        if ($allowfail) return false;
         echo mysql_error($db);
         HTML_die_error(sprintf(_('SQL query failed: %s'), htmlspecialchars($query)));
     }
