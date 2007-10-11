@@ -38,9 +38,12 @@ Developing
 Development goes on in Subversion [2], you can use web based browser [3] to
 browse it.
 
-[1] http://bugs.cihar.com/
-[2] http://svn.cihar.com/
-[3] http://viewsvn.cihar.com/ukolovnik
+You can also update translations online using Pootle [4].
+
+[1]: http://bugs.cihar.com/
+[2]: http://svn.cihar.com/
+[3]: http://viewsvn.cihar.com/ukolovnik
+[4]: https://l10n.cihar.com/projects/ukolovnik/
 
 
-vim: expandtab sw=4 ts=4 sts=4:
+# vim: expandtab sw=4 ts=4 sts=4:
