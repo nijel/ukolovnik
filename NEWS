@@ -9,6 +9,8 @@ News
 
 0.8 release (2007-??-??)
 
+    * Locales switched to gettext based system.
+
 0.7 release (2007-05-23)
 
     * Development switched to subversion.
