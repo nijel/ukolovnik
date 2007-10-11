@@ -19,6 +19,9 @@ if [ "x$1" = "xbranch" ] ; then
 else
     svn export svn+ssh://mort/home/svn/$repo/trunk $repo-$version
 fi
+cd $repo-$version
+./admin/locales-generate
+cd ..
 tar cfz $repo-$version.tar.gz $repo-$version
 tar cfj $repo-$version.tar.bz2 $repo-$version
 7za a -bd -tzip $repo-$version.zip $repo-$version > /dev/null
