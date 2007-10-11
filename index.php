@@ -134,7 +134,7 @@ if (count($check) > 0) {
 
 // Could we locate language file?
 if ($failed_lang) {
-    HTML_message('warning', sprintf(_('Invalid language (%s) chosen in config file.'), $language));
+    HTML_message('warning', sprintf(_('Invalid language (%s) has been chosen.'), $language));
 }
 
 if ($show_html) {
@@ -395,7 +395,7 @@ while (!empty($cmd)) {
 
 					$r=mysql_affected_rows();
 					if (!$r) {
-						HTML_message('error', _('Concurrency error! Changes not saved, because someone else already changed record'));
+						HTML_message('error', _('Concurrency error! Changes not saved, because someone else already changed record.'));
 					}
 					else {
                     HTML_message('notice', sprintf(_('Task %s has been changed.'), htmlspecialchars($_REQUEST['title'])));

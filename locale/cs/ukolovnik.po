@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Ukolovnik 0.8\n"
 "Report-Msgid-Bugs-To: michal@cihar.com\n"
-"POT-Creation-Date: 2007-10-11 12:08+0900\n"
-"PO-Revision-Date: 2007-10-11 12:07+0900\n"
+"POT-Creation-Date: 2007-10-11 12:48+0900\n"
+"PO-Revision-Date: 2007-10-11 12:48+0900\n"
 "Last-Translator: Michal Čihař <michal@cihar.com>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -38,14 +38,14 @@ msgstr "Priorita"
 msgid "Category"
 msgstr "Kategorie"
 
-#: index.php:102 setup.php:102
+#: index.php:102 setup.php:92
 #, php-format
 msgid "Can not find needed PHP extension \"%s\". Please install and enable it."
 msgstr ""
 "Nepodařilo se načíst potřebné rozšíření PHP \"%s\". Prosím nainstalujte a "
 "povolte ho."
 
-#: index.php:109 setup.php:110
+#: index.php:109 setup.php:100
 msgid "Can not connect to MySQL database. Please check your configuration."
 msgstr ""
 "Nepodařilo se připojit k MySQL databázi. Prosím zkontrolujte vaše nastavení."
@@ -75,7 +75,7 @@ msgstr ""
 
 #: index.php:137
 #, php-format
-msgid "Invalid language (%s) chosen in config file."
+msgid "Invalid language (%s) has been chosen."
 msgstr "Byl zvolen chybný jazyk (%s)."
 
 #: index.php:152 index.php:602
@@ -192,7 +192,7 @@ msgstr "Úkol %s byl přidán."
 #: index.php:398
 msgid ""
 "Concurrency error! Changes not saved, because someone else already changed "
-"record"
+"record."
 msgstr ""
 "Chyba konkuretního přístupu! Změny nebyly uloženy, protože někdo mezitím "
 "změnil záznam."
@@ -263,11 +263,11 @@ msgstr "Nebyly nalezeny žádné úkoly v této kategorii."
 msgid "Name"
 msgstr "Jméno"
 
-#: index.php:617 setup.php:136
+#: index.php:617 setup.php:126
 msgid "Yes"
 msgstr "Ano"
 
-#: index.php:617 setup.php:136
+#: index.php:617 setup.php:126
 msgid "No"
 msgstr "Ne"
 
@@ -410,23 +410,23 @@ msgstr "Statistiky"
 msgid "Settings"
 msgstr "Nastavení"
 
-#: setup.php:53
+#: setup.php:46
 msgid "Language"
 msgstr "Jazyk"
 
-#: setup.php:54
+#: setup.php:47
 msgid "Style"
 msgstr "Vzhled"
 
-#: setup.php:55
+#: setup.php:48
 msgid "Stay on add page after adding new entry"
 msgstr "Zůstat na přidávací stránce po přidání úkolu"
 
-#: setup.php:56
+#: setup.php:49
 msgid "Show entries list on add page"
 msgstr "Zobrazit seznam úkolů na přidávací stránce"
 
-#: setup.php:120
+#: setup.php:110
 msgid ""
 "Tables are in correct state (see above messages about needed changes, if "
 "any), you can go back to index.php."
@@ -434,10 +434,10 @@ msgstr ""
 "Tabulky jsou v pořádku (případné úpravy jsou popsány výše), můžete se vrátit "
 "zpět na index.php."
 
-#: setup.php:122
+#: setup.php:112
 msgid "Settings has been updated"
 msgstr "Nastavení byla aktualizována"
 
-#: setup.php:152
+#: setup.php:142
 msgid "Save"
 msgstr "Uložit"
