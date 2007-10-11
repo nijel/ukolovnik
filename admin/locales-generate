@@ -2,5 +2,6 @@
 for x in locale/*/ukolovnik.po  ; do 
     lang=`echo $x | sed 's@locale/\(.*\)/ukolovnik.po@\1@'`
     echo -n "$lang: "
-    msgfmt --statistics --check -o ${x%.po}.mo $x
+    mkdir -p locale-data/$lang/LC_MESSAGES
+    msgfmt --statistics --check -o locale-data/$lang/LC_MESSAGES/ukolovnik.mo $x
 done
