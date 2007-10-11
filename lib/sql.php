@@ -84,7 +84,7 @@ function SQL_check($upgrade = false) {
     if (!SQL_check_db($dbname)) {
         if ($upgrade) {
             SQL_do('CREATE DATABASE `' . $dbname . '`');
-            HTML_message('notice', sprintf(LOCALE_get('DatabaseCreated'), htmlspecialchars($dbname)));
+            HTML_message('notice', sprintf(_('Database %s has been created.'), htmlspecialchars($dbname)));
             SQL_check_db($dbname);
         } else {
             return array('db');
@@ -114,7 +114,7 @@ function SQL_check($upgrade = false) {
                                   KEY `category` (`category`),
                                   KEY `priority` (`priority`)
                                 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci');
-                        HTML_message('notice', sprintf(LOCALE_get('TableCreated'), htmlspecialchars(SQL_name('tasks'))));
+                        HTML_message('notice', sprintf(_('Table %s has been created.'), htmlspecialchars(SQL_name('tasks'))));
                         break;
                     case 'categories':
                         SQL_do('CREATE TABLE `' . SQL_name('categories') . '` (
@@ -124,7 +124,7 @@ function SQL_check($upgrade = false) {
                                   PRIMARY KEY  (`id`),
                                   KEY `personal` (`personal`)
                                 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci');
-                        HTML_message('notice', sprintf(LOCALE_get('TableCreated'), htmlspecialchars(SQL_name('categories'))));
+                        HTML_message('notice', sprintf(_('Table %s has been created.'), htmlspecialchars(SQL_name('categories'))));
                         break;
                     case 'settings':
                         SQL_do('CREATE TABLE `' . SQL_name('settings') . '` (
@@ -132,7 +132,7 @@ function SQL_check($upgrade = false) {
                                   `value` varchar(200) collate utf8_unicode_ci NOT NULL,
                                   PRIMARY KEY  (`key`)
                                 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci');
-                        HTML_message('notice', sprintf(LOCALE_get('TableCreated'), htmlspecialchars(SQL_name('categories'))));
+                        HTML_message('notice', sprintf(_('Table %s has been created.'), htmlspecialchars(SQL_name('categories'))));
                         break;
                     default:
                         HTML_die_error('Table not defined: ' . $tbl);
@@ -150,7 +150,7 @@ function SQL_check($upgrade = false) {
         // Set initial version information (don't care on $upgrade here, as this does not require any special privileges)
         if ($ver == 0) {
             CONFIG_set('version', '1', true);
-            HTML_message('notice', sprintf(LOCALE_get('SettingsDbUpdated')));
+            HTML_message('notice', sprintf(_('Settings database has been updated')));
         }
     }
     $ver = (int)CONFIG_get('version', 'db', true);
@@ -160,7 +160,7 @@ function SQL_check($upgrade = false) {
             SQL_do('ALTER TABLE `' . SQL_name('tasks') . '` ADD
                                   `update_count` bigint default 0');
             CONFIG_set('version', '2', true);
-            HTML_message('notice', sprintf(LOCALE_get('TableUpdated'), htmlspecialchars(SQL_name('tasks'))));
+            HTML_message('notice', sprintf(_('Table %s updated.'), htmlspecialchars(SQL_name('tasks'))));
         } else {
             if (!isset($result['upgrade'])) {
                 $result['upgrade'] = array();
@@ -182,7 +182,7 @@ function SQL_do($query) {
     $q = mysql_query($query, $db);
     if ($q === FALSE) {
         echo mysql_error($db);
-        HTML_die_error(sprintf(LOCALE_get('SQLFailed'), htmlspecialchars($query)));
+        HTML_die_error(sprintf(_('SQL query failed: %s'), htmlspecialchars($query)));
     }
     return $q;
 }

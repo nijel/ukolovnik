@@ -9,12 +9,12 @@
 require_once('./lib/html.php');
 
 HTML_toolbar(array(
-    'Main' => 'index.php',
-    'Add' => 'index.php?cmd=add',
-    'Categories' => 'index.php?cmd=cat',
-    'AddCategory' => 'index.php?cmd=addcat',
-    'Export' => 'index.php?cmd=export', // not yet implemented
-    'Stats' => 'index.php?cmd=stats',
-    'Settings' => 'setup.php',
+    _('Main') => 'index.php',
+    _('Add') => 'index.php?cmd=add',
+    _('Categories') => 'index.php?cmd=cat',
+    _('Add category') => 'index.php?cmd=addcat',
+    _('Export') => 'index.php?cmd=export', // not yet implemented
+    _('Stats') => 'index.php?cmd=stats',
+    _('Settings') => 'setup.php',
     ));
 ?>

@@ -12,7 +12,7 @@ require_once('./lib/locale.php');
  * Format date to string.
  */
 function STRING_format_date($date) {
-    return strftime(LOCALE_get('datefmt'), $date);
+    return strftime(_('%d.%m.%Y, %H:%M'), $date);
 }
 
 /**

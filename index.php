@@ -62,7 +62,7 @@ function get_select($name, $default, $options, $add_any=FALSE, $autosubmit=FALSE
         if ($default == -1) {
             $ret .= ' selected="selected"';
         }
-        $ret .= '>' . LOCALE_get('Any') . '</option>';
+        $ret .= '>' . _('Any') . '</option>';
     }
     foreach($options as $key => $val) {
         $ret .= '<option value="' . $key . '"';
@@ -81,13 +81,13 @@ function show_edit_task($name, $cmd, $title, $description, $priority, $category,
     if (isset($id)) {
         echo '<input type="hidden" name="id" value="' . $id . '" \>';
     }
-    echo '<label class="desc" for="t_title">' . LOCALE_get('Title') . '</label>';
+    echo '<label class="desc" for="t_title">' . _('Title') . '</label>';
     echo '<input type="text" name="title" id="t_title" maxlength="200" value="' . $title . '" />';
-    echo '<label class="desc" for="t_description">' . LOCALE_get('Description') . '</label>';
+    echo '<label class="desc" for="t_description">' . _('Description') . '</label>';
     echo '<textarea name="description" id="t_description" cols="60" rows="5">' . $description . '</textarea>';
-    echo '<label class="desc" for="sel_priority">' . LOCALE_get('Priority') . '</label>';
+    echo '<label class="desc" for="sel_priority">' . _('Priority') . '</label>';
     echo get_select('priority', $priority, $priorities);
-    echo '<label class="desc" for="sel_category">' . LOCALE_get('Category') . '</label>';
+    echo '<label class="desc" for="sel_category">' . _('Category') . '</label>';
     echo get_select('category', $category, $categories);
     echo '<input type="hidden" name="cmd" value="' . $cmd . '" \>';
 	echo '<input type="hidden" name="update_count" value="' . $update_count . '" \>';
@@ -99,32 +99,32 @@ $check = EXTENSIONS_check();
 
 if (count($check) > 0) {
     foreach($check as $name) {
-        HTML_message('error', sprintf(LOCALE_get('ExtensionNeeded'), $name));
+        HTML_message('error', sprintf(_('Can not find needed PHP extension "%s". Please install and enable it.'), $name));
     }
     HTML_footer();
 }
 
 // Connect to database
 if (!SQL_init()) {
-    HTML_die_error(LOCALE_get('CanNotConnect'));
+    HTML_die_error(_('Can not connect to MySQL database. Please check your configuration.'));
 }
 
 // Check for needed tables and databases
 $check = SQL_check();
 
 if (in_array('db', $check)) {
-    HTML_message('error', str_replace('setup.php', '<a href="setup.php?cmd=update">setup.php</a>', LOCALE_get('CanNotSelectDb')));
+    HTML_message('error', str_replace('setup.php', '<a href="setup.php?cmd=update">setup.php</a>', _('Can not select configured database. Please check your configuration or use setup.php.')));
 }
 
 foreach ($required_tables as $tbl) {
     if (in_array($tbl, $check)) {
-        HTML_message('error', str_replace('setup.php', '<a href="setup.php?cmd=update">setup.php</a>', sprintf(LOCALE_get('CanNotFindTable'), SQL_name($tbl))));
+        HTML_message('error', str_replace('setup.php', '<a href="setup.php?cmd=update">setup.php</a>', sprintf(_('Can not find table "%s". Please check your configuration or use setup.php.'), SQL_name($tbl))));
     }
 }
 
 if (isset($check['upgrade'], $check)) {
     foreach ($check['upgrade'] as $tbl) {
-        HTML_message('error', str_replace('setup.php', '<a href="setup.php?cmd=update">setup.php</a>', sprintf(LOCALE_get('TableNeedsUpdate'), SQL_name($tbl))));
+        HTML_message('error', str_replace('setup.php', '<a href="setup.php?cmd=update">setup.php</a>', sprintf(_('Table %s need update. Please upgrade your tables or use setup.php.'), SQL_name($tbl))));
     }
 }
 
@@ -134,7 +134,7 @@ if (count($check) > 0) {
 
 // Could we locate language file?
 if ($failed_lang) {
-    HTML_message('warning', sprintf(LOCALE_get('InvalidLanguage'), $language));
+    HTML_message('warning', sprintf(_('Invalid language (%s) chosen in config file.'), $language));
 }
 
 if ($show_html) {
@@ -149,23 +149,23 @@ while (!empty($cmd)) {
     switch($cmd) {
         case 'list':
             if (count($categories) == 0) {
-                HTML_message('notice', LOCALE_get('NoCategories'));
+                HTML_message('notice', _('No categories defined.'));
             }
 
             // Filter
-            echo '<fieldset class="filter"><legend>' . LOCALE_get('Filter') . '</legend><form method="get" action="index.php">';
-            echo '<label class="desc" for="t_text">' . LOCALE_get('Text') . '</label>';
+            echo '<fieldset class="filter"><legend>' . _('Filter') . '</legend><form method="get" action="index.php">';
+            echo '<label class="desc" for="t_text">' . _('Text') . '</label>';
             echo '<input type="text" name="text" id="t_text" maxlength="200" value="' . get_opt('text') . '" />';
-            echo '<label class="desc" for="sel_priority">' . LOCALE_get('Priority') . '</label>';
+            echo '<label class="desc" for="sel_priority">' . _('Priority') . '</label>';
             echo get_select('priority', -1, $priorities, TRUE, TRUE);
-            echo '<label class="desc" for="sel_category">' . LOCALE_get('Category') . '</label>';
+            echo '<label class="desc" for="sel_category">' . _('Category') . '</label>';
             echo get_select('category', -1, $categories, TRUE, TRUE);
-            echo '<label class="desc" for="sel_personal">' . LOCALE_get('Personal') . '</label>';
-            echo get_select('personal', 'all', array('all' => LOCALE_get('All'), 'show' => LOCALE_get('Show'), 'hide' => LOCALE_get('Hide')), FALSE, TRUE);
-            echo '<label class="desc" for="sel_finished">' . LOCALE_get('Finished') . '</label>';
-            echo get_select('finished', 'hide', array('all' => LOCALE_get('All'), 'show' => LOCALE_get('Show'), 'hide' => LOCALE_get('Hide')), FALSE, TRUE);
+            echo '<label class="desc" for="sel_personal">' . _('Personal') . '</label>';
+            echo get_select('personal', 'all', array('all' => _('All'), 'show' => _('Show'), 'hide' => _('Hide')), FALSE, TRUE);
+            echo '<label class="desc" for="sel_finished">' . _('Finished') . '</label>';
+            echo get_select('finished', 'hide', array('all' => _('All'), 'show' => _('Show'), 'hide' => _('Hide')), FALSE, TRUE);
             echo '<input type="hidden" name="cmd" value="list" \>';
-            echo '<input type="submit" value="' . LOCALE_get('Filter') . '"/></form></fieldset>';
+            echo '<input type="submit" value="' . _('Filter') . '"/></form></fieldset>';
 
             // Apply filter
             $filter = 'WHERE 1';
@@ -200,15 +200,15 @@ while (!empty($cmd)) {
 
             $q = SQL_do('SELECT id,category,UNIX_TIMESTAMP(created) AS created,priority,title,UNIX_TIMESTAMP(closed) AS closed FROM ' . $GLOBALS['table_prefix'] . 'tasks ' . $filter . ' ORDER BY ' . $order);
             if (mysql_num_rows($q) == 0) {
-                HTML_message('notice', LOCALE_get('NoEntries'));
+                HTML_message('notice', _('No entries found.'));
             } else {
                 // Listing
                 echo '<table class="listing tasks">';
                 echo '<thead><tr>';
-                echo '<th>' . LOCALE_get('Title') . '</th>';
-                echo '<th>' . LOCALE_get('Category') . '</th>';
-                echo '<th>' . LOCALE_get('Created') . '</th>';
-                echo '<th>' . LOCALE_get('Actions') . '</th></tr></thead>';
+                echo '<th>' . _('Title') . '</th>';
+                echo '<th>' . _('Category') . '</th>';
+                echo '<th>' . _('Created') . '</th>';
+                echo '<th>' . _('Actions') . '</th></tr></thead>';
                 echo '<tbody>';
                 while ($row = mysql_fetch_assoc($q)) {
                     echo '<tr class="priority' . $row['priority'];
@@ -221,12 +221,12 @@ while (!empty($cmd)) {
                     echo '<td class="date">' . STRING_format_date($row['created']) . '</td>';
                     echo '<td class="actions">';
                     if (!is_null($row['closed']) && $row['closed'] != 0) {
-                        HTML_show_image_link('cmd=reopen&amp;id=' . $row['id'], 'reopen', LOCALE_get('Reopen'));
+                        HTML_show_image_link('cmd=reopen&amp;id=' . $row['id'], 'reopen', _('Reopen'));
                     } else {
-                        HTML_show_image_link('cmd=fin&amp;id=' . $row['id'], 'finished', LOCALE_get('Finish'));
+                        HTML_show_image_link('cmd=fin&amp;id=' . $row['id'], 'finished', _('Finish'));
                     }
-                    HTML_show_image_link('cmd=edit&amp;id=' . $row['id'], 'edit', LOCALE_get('Edit'));
-                    HTML_show_image_link('cmd=del&amp;id=' . $row['id'], 'delete', LOCALE_get('Delete'));
+                    HTML_show_image_link('cmd=edit&amp;id=' . $row['id'], 'edit', _('Edit'));
+                    HTML_show_image_link('cmd=del&amp;id=' . $row['id'], 'delete', _('Delete'));
                     echo '</td>';
                     echo '</tr>';
                 }
@@ -237,32 +237,32 @@ while (!empty($cmd)) {
             break;
         case 'show':
             if (!isset($_REQUEST['id'])) {
-                HTML_die_error(LOCALE_get('ParameterInvalid'));
+                HTML_die_error(_('Invalid parameters.'));
             }
             $q = SQL_do('SELECT id,category,UNIX_TIMESTAMP(created) AS created,priority,title,UNIX_TIMESTAMP(closed) AS closed,UNIX_TIMESTAMP(updated) AS updated,description FROM ' . $GLOBALS['table_prefix'] . 'tasks WHERE id=' . (int)$_REQUEST['id']);
             if (mysql_num_rows($q) != 1) {
-                HTML_message('notice', LOCALE_get('NoEntries'));
+                HTML_message('notice', _('No entries found.'));
             } else {
                 // Listing
                 $row = mysql_fetch_assoc($q);
                 echo '<fieldset class="priority' . $row['priority'] . '"><legend>' . htmlspecialchars($row['title'] . '(' . $categories[$row['category']] . ')' ) . '</legend>';
                 echo '<p>' . nl2br(STRING_find_links($row['description'])) . '</p>';
-                echo '<p>' . LOCALE_get('Created') . ': ' . STRING_format_date($row['created']) . '</p>';
+                echo '<p>' . _('Created') . ': ' . STRING_format_date($row['created']) . '</p>';
                 if (!is_null($row['updated']) && $row['updated'] != 0) {
-                    echo '<p>' . LOCALE_get('Updated') . ': ' . STRING_format_date($row['updated']) . '</p>';
+                    echo '<p>' . _('Updated') . ': ' . STRING_format_date($row['updated']) . '</p>';
                 }
                 if (!is_null($row['closed']) && $row['closed'] != 0) {
-                    echo '<p>' . LOCALE_get('Closed') . ': ' . STRING_format_date($row['closed']) . '</p>';
+                    echo '<p>' . _('Closed') . ': ' . STRING_format_date($row['closed']) . '</p>';
                 }
                 echo '<p class="actions">';
 
                 if (!is_null($row['closed']) && $row['closed'] != 0) {
-                    HTML_show_image_link('cmd=reopen&amp;id=' . $row['id'], 'reopen', LOCALE_get('Reopen'));
+                    HTML_show_image_link('cmd=reopen&amp;id=' . $row['id'], 'reopen', _('Reopen'));
                 } else {
-                    HTML_show_image_link('cmd=fin&amp;id=' . $row['id'], 'finished', LOCALE_get('Finish'));
+                    HTML_show_image_link('cmd=fin&amp;id=' . $row['id'], 'finished', _('Finish'));
                 }
-                HTML_show_image_link('cmd=edit&amp;id=' . $row['id'], 'edit', LOCALE_get('Edit'));
-                HTML_show_image_link('cmd=del&amp;id=' . $row['id'], 'delete', LOCALE_get('Delete'));
+                HTML_show_image_link('cmd=edit&amp;id=' . $row['id'], 'edit', _('Edit'));
+                HTML_show_image_link('cmd=del&amp;id=' . $row['id'], 'delete', _('Delete'));
                 echo '</p>';
                 echo '</fieldset>';
             }
@@ -271,65 +271,65 @@ while (!empty($cmd)) {
             break;
         case 'reopen':
             if (!isset($_REQUEST['id'])) {
-                HTML_die_error(LOCALE_get('ParameterInvalid'));
+                HTML_die_error(_('Invalid parameters.'));
             }
             $q = SQL_do('SELECT title FROM ' . $GLOBALS['table_prefix'] . 'tasks WHERE id=' . (int)$_REQUEST['id']);
             if (mysql_num_rows($q) != 1) {
-                HTML_message('notice', LOCALE_get('NoEntries'));
+                HTML_message('notice', _('No entries found.'));
             } else {
                 $row = mysql_fetch_assoc($q);
                 SQL_do('UPDATE ' . $GLOBALS['table_prefix'] . 'tasks SET closed=NULL, created=created WHERE id=' . (int)$_REQUEST['id']);
-                HTML_message('notice', sprintf(LOCALE_get('TaskReopened'), htmlspecialchars($row['title'])));
+                HTML_message('notice', sprintf(_('Task %s reopened.'), htmlspecialchars($row['title'])));
             }
             mysql_free_result($q);
             $cmd = 'list';
             break;
         case 'fin':
             if (!isset($_REQUEST['id'])) {
-                HTML_die_error(LOCALE_get('ParameterInvalid'));
+                HTML_die_error(_('Invalid parameters.'));
             }
             $q = SQL_do('SELECT title FROM ' . $GLOBALS['table_prefix'] . 'tasks WHERE id=' . (int)$_REQUEST['id']);
             if (mysql_num_rows($q) != 1) {
-                HTML_message('notice', LOCALE_get('NoEntries'));
+                HTML_message('notice', _('No entries found.'));
             } else {
                 $row = mysql_fetch_assoc($q);
                 SQL_do('UPDATE ' . $GLOBALS['table_prefix'] . 'tasks SET closed=NOW(), created=created WHERE id=' . (int)$_REQUEST['id']);
-                HTML_message('notice', sprintf(LOCALE_get('TaskFinished'), htmlspecialchars($row['title'])));
+                HTML_message('notice', sprintf(_('Task %s finished.'), htmlspecialchars($row['title'])));
             }
             mysql_free_result($q);
             $cmd = 'list';
             break;
         case 'del':
             if (!isset($_REQUEST['id'])) {
-                HTML_die_error(LOCALE_get('ParameterInvalid'));
+                HTML_die_error(_('Invalid parameters.'));
             }
             $q = SQL_do('SELECT title FROM ' . $GLOBALS['table_prefix'] . 'tasks WHERE id=' . (int)$_REQUEST['id']);
             if (mysql_num_rows($q) != 1) {
-                HTML_message('notice', LOCALE_get('NoEntries'));
+                HTML_message('notice', _('No entries found.'));
             } else {
                 $row = mysql_fetch_assoc($q);
                 SQL_do('DELETE FROM ' . $GLOBALS['table_prefix'] . 'tasks WHERE id=' . (int)$_REQUEST['id']);
-                HTML_message('notice', sprintf(LOCALE_get('TaskDeleted'), htmlspecialchars($row['title'])));
+                HTML_message('notice', sprintf(_('Task %s has been deleted.'), htmlspecialchars($row['title'])));
             }
             mysql_free_result($q);
             $cmd = 'list';
             break;
         case 'edit':
             if (!isset($_REQUEST['id'])) {
-                HTML_message('error', LOCALE_get('InvalidId'));
+                HTML_message('error', _('Invalid ID.'));
                 $cmd = '';
                 break;
             }
             $id = (int)$_REQUEST['id'];
             $q = SQL_do('SELECT * FROM ' . $GLOBALS['table_prefix'] . 'tasks WHERE id=' . $id);
             if (mysql_num_rows($q) != 1) {
-                HTML_message('error', LOCALE_get('InvalidId'));
+                HTML_message('error', _('Invalid ID.'));
                 $cmd = '';
                 break;
             } else {
                 $row = mysql_fetch_assoc($q);
                 mysql_free_result($q);
-                show_edit_task(LOCALE_get('Edit'), 'edit_real', htmlspecialchars($row['title']), htmlspecialchars($row['description']), $row['priority'], $row['category'], $row['update_count'], $id);
+                show_edit_task(_('Edit'), 'edit_real', htmlspecialchars($row['title']), htmlspecialchars($row['description']), $row['priority'], $row['category'], $row['update_count'], $id);
                 $cmd = '';
             }
             break;
@@ -338,42 +338,42 @@ while (!empty($cmd)) {
             $error = FALSE;
             if ($cmd == 'edit_real') {
                 if (!isset($_REQUEST['id'])) {
-                    HTML_message('error', LOCALE_get('InvalidId'));
+                    HTML_message('error', _('Invalid ID.'));
                     $error = TRUE;
                 } else {
                     $id = (int)$_REQUEST['id'];
                     if ($id <= 0) {
-                        HTML_message('error', LOCALE_get('InvalidId'));
+                        HTML_message('error', _('Invalid ID.'));
                         $error = TRUE;
                     }
                     $q = SQL_do('SELECT * FROM ' . $GLOBALS['table_prefix'] . 'tasks WHERE id=' . $id);
                     if (mysql_num_rows($q) != 1) {
-                        HTML_message('error', LOCALE_get('InvalidId'));
+                        HTML_message('error', _('Invalid ID.'));
                         $error = TRUE;
                     }
                 }
             }
             if (empty($_REQUEST['title'])) {
-                HTML_message('error', LOCALE_get('TitleNotEmpty'));
+                HTML_message('error', _('Title can not be empty.'));
                 $error = TRUE;
             }
             if (empty($_REQUEST['category'])) {
-                HTML_message('error', LOCALE_get('CategoryInvalid'));
+                HTML_message('error', _('Invalid category.'));
                 $error = TRUE;
             } else {
                 $category = (int)$_REQUEST['category'];
                 if (!isset($categories[$category])) {
-                    HTML_message('error', LOCALE_get('CategoryInvalid'));
+                    HTML_message('error', _('Invalid category.'));
                     $error = TRUE;
                 }
             }
             if (!isset($_REQUEST['priority'])) {
-                HTML_message('error', LOCALE_get('PriorityInvalid'));
+                HTML_message('error', _('Invalid priority.'));
                 $error = TRUE;
             } else {
                 $priority = (int)$_REQUEST['priority'];
                 if ($priority < 0 || $priority > 2) {
-                    HTML_message('error', LOCALE_get('PriorityInvalid'));
+                    HTML_message('error', _('Invalid priority.'));
                     $error = TRUE;
                 }
             }
@@ -388,17 +388,17 @@ while (!empty($cmd)) {
                     . ', priority= ' . $priority;
                 if ($cmd == 'add_real') {
                     SQL_do('INSERT INTO ' . $GLOBALS['table_prefix'] . 'tasks ' . $set_sql);
-                    HTML_message('notice', sprintf(LOCALE_get('TaskAdded'), htmlspecialchars($_REQUEST['title'])));
+                    HTML_message('notice', sprintf(_('Task %s has been added.'), htmlspecialchars($_REQUEST['title'])));
                 } else {
 				    $cnt = (int) $_REQUEST['update_count'];
                     SQL_do('UPDATE ' . $GLOBALS['table_prefix'] . 'tasks ' . $set_sql . ', updated=NOW(), update_count='. ($cnt+1) . ' WHERE id=' . $id . ' AND update_count='.$cnt);
 
 					$r=mysql_affected_rows();
 					if (!$r) {
-						HTML_message('error', LOCALE_get('ConcurrecyError'));
+						HTML_message('error', _('Concurrency error! Changes not saved, because someone else already changed record'));
 					}
 					else {
-                    HTML_message('notice', sprintf(LOCALE_get('TaskChanged'), htmlspecialchars($_REQUEST['title'])));
+                    HTML_message('notice', sprintf(_('Task %s has been changed.'), htmlspecialchars($_REQUEST['title'])));
                 }
                 }
                 // To avoid filtering
@@ -411,9 +411,9 @@ while (!empty($cmd)) {
             }
         case 'add':
             if ($cmd == 'edit_real') {
-                show_edit_task(LOCALE_get('Edit'), 'edit_real', get_opt('title'), get_opt('description'), get_opt('priority', 1), get_opt('category', -1), get_opt('update_count',0), $id);
+                show_edit_task(_('Edit'), 'edit_real', get_opt('title'), get_opt('description'), get_opt('priority', 1), get_opt('category', -1), get_opt('update_count',0), $id);
             } else {
-                show_edit_task(LOCALE_get('Add'), 'add_real', get_opt('title'), get_opt('description'), get_opt('priority', 1), get_opt('category', -1), get_opt('update_count',0));
+                show_edit_task(_('Add'), 'add_real', get_opt('title'), get_opt('description'), get_opt('priority', 1), get_opt('category', -1), get_opt('update_count',0));
             }
             // Show listing on add page?
             if (CONFIG_get('add_list')) {
@@ -424,17 +424,17 @@ while (!empty($cmd)) {
             break;
         case 'editcat':
             if (!isset($_REQUEST['id'])) {
-                HTML_message('error', LOCALE_get('InvalidId'));
+                HTML_message('error', _('Invalid ID.'));
                 $cmd = '';
                 break;
             }
             $id = (int)$_REQUEST['id'];
             if (!isset($categories[$id])) {
-                HTML_message('error', LOCALE_get('InvalidId'));
+                HTML_message('error', _('Invalid ID.'));
                 $cmd = '';
                 break;
             } else {
-                CATEGORY_show_edit(LOCALE_get('EditCategory'), 'editcat_real', htmlspecialchars($categories[$id]), isset($categories_pers[$id]) ? ' checked="checked"' : '', $id);
+                CATEGORY_show_edit(_('Edit category'), 'editcat_real', htmlspecialchars($categories[$id]), isset($categories_pers[$id]) ? ' checked="checked"' : '', $id);
                 $cmd = '';
             }
             break;
@@ -443,22 +443,22 @@ while (!empty($cmd)) {
             $error = FALSE;
             if ($cmd == 'editcat_real') {
                 if (!isset($_REQUEST['id'])) {
-                    HTML_message('error', LOCALE_get('InvalidId'));
+                    HTML_message('error', _('Invalid ID.'));
                     $error = TRUE;
                 } else {
                     $id = (int)$_REQUEST['id'];
                     if ($id <= 0) {
-                        HTML_message('error', LOCALE_get('InvalidId'));
+                        HTML_message('error', _('Invalid ID.'));
                         $error = TRUE;
                     }
                     if (!isset($categories[$id])) {
-                        HTML_message('error', LOCALE_get('InvalidId'));
+                        HTML_message('error', _('Invalid ID.'));
                         $error = TRUE;
                     }
                 }
             }
             if (empty($_REQUEST['name'])) {
-                HTML_message('error', LOCALE_get('NameNotEmpty'));
+                HTML_message('error', _('Name can not be empty.'));
                 $error = TRUE;
             }
             if (isset($_REQUEST['personal'])) {
@@ -470,10 +470,10 @@ while (!empty($cmd)) {
                 $set_sql = 'SET name="' . addslashes($_REQUEST['name']) . '", personal=' . $personal;
                 if ($cmd == 'addcat_real') {
                     SQL_do('INSERT INTO ' . $GLOBALS['table_prefix'] . 'categories ' . $set_sql);
-                    HTML_message('notice', sprintf(LOCALE_get('CategoryAdded'), htmlspecialchars($_REQUEST['name'])));
+                    HTML_message('notice', sprintf(_('Category %s has been added.'), htmlspecialchars($_REQUEST['name'])));
                 } else {
                     SQL_do('UPDATE ' . $GLOBALS['table_prefix'] . 'categories ' . $set_sql . ' WHERE id=' . $id);
-                    HTML_message('notice', sprintf(LOCALE_get('CategoryChanged'), htmlspecialchars($_REQUEST['name'])));
+                    HTML_message('notice', sprintf(_('Category %s has been changed.'), htmlspecialchars($_REQUEST['name'])));
                 }
                 // To avoid filtering
                 unset($_REQUEST['personal']);
@@ -484,21 +484,21 @@ while (!empty($cmd)) {
             }
         case 'addcat':
             if ($cmd == 'editcat_real') {
-                CATEGORY_show_edit(LOCALE_get('EditCategory'), 'editcat_real', get_opt('name'), get_check('personal'), $id);
+                CATEGORY_show_edit(_('Edit category'), 'editcat_real', get_opt('name'), get_check('personal'), $id);
             } else {
-                CATEGORY_show_edit(LOCALE_get('AddCategory'), 'addcat_real', get_opt('name'), get_check('personal'));
+                CATEGORY_show_edit(_('Add category'), 'addcat_real', get_opt('name'), get_check('personal'));
             }
             $cmd = '';
             break;
         case 'delcat_real':
             if (!isset($_REQUEST['id'])) {
-                HTML_message('error', LOCALE_get('InvalidId'));
+                HTML_message('error', _('Invalid ID.'));
                 $cmd = '';
                 break;
             }
             $id = (int)$_REQUEST['id'];
             if (!isset($categories[$id])) {
-                HTML_message('error', LOCALE_get('InvalidId'));
+                HTML_message('error', _('Invalid ID.'));
                 $cmd = '';
                 break;
             }
@@ -508,39 +508,39 @@ while (!empty($cmd)) {
                 $row = mysql_fetch_assoc($q);
                 if ($row['cnt'] > 0) {
                     if (!isset($_REQUEST['tasks']) || ($_REQUEST['tasks'] != 'delete' && $_REQUEST['tasks'] != 'move')) {
-                        HTML_message('error', LOCALE_get('ParameterInvalid'));
+                        HTML_message('error', _('Invalid parameters.'));
                         $cmd = '';
                         break;
                     }
                     if ($_REQUEST['tasks'] == 'delete') {
                         SQL_do('DELETE FROM ' . $GLOBALS['table_prefix'] . 'tasks WHERE category = ' . $id);
                         SQL_do('DELETE FROM ' . $GLOBALS['table_prefix'] . 'categories WHERE id = ' . $id . ' LIMIT 1');
-                        HTML_message('notice', sprintf(LOCALE_get('CategoryDeleted'), htmlspecialchars($categories[$id])));
+                        HTML_message('notice', sprintf(_('Category %s has been deleted.'), htmlspecialchars($categories[$id])));
                     } else {
 
                         if (!isset($_REQUEST['newcat'])) {
-                            HTML_message('error', LOCALE_get('InvalidId'));
+                            HTML_message('error', _('Invalid ID.'));
                             $cmd = '';
                             break;
                         }
                         $newcat = (int)$_REQUEST['newcat'];
                         if (!isset($categories[$newcat])) {
-                            HTML_message('error', LOCALE_get('InvalidId'));
+                            HTML_message('error', _('Invalid ID.'));
                             $cmd = '';
                             break;
                         }
 
                         SQL_do('UPDATE ' . $GLOBALS['table_prefix'] . 'tasks SET category = ' . $newcat . ' WHERE category = ' . $id);
                         SQL_do('DELETE FROM ' . $GLOBALS['table_prefix'] . 'categories WHERE id = ' . $id . ' LIMIT 1');
-                        HTML_message('notice', sprintf(LOCALE_get('CategoryDeleted'), htmlspecialchars($categories[$id])));
+                        HTML_message('notice', sprintf(_('Category %s has been deleted.'), htmlspecialchars($categories[$id])));
                     }
                 } else {
                     SQL_do('DELETE FROM ' . $GLOBALS['table_prefix'] . 'categories WHERE id = ' . $id . ' LIMIT 1');
-                    HTML_message('notice', sprintf(LOCALE_get('CategoryDeleted'), htmlspecialchars($categories[$id])));
+                    HTML_message('notice', sprintf(_('Category %s has been deleted.'), htmlspecialchars($categories[$id])));
                 }
             } else {
                 SQL_do('DELETE FROM ' . $GLOBALS['table_prefix'] . 'categories WHERE id = ' . $id . ' LIMIT 1');
-                HTML_message('notice', sprintf(LOCALE_get('CategoryDeleted'), htmlspecialchars($categories[$id])));
+                HTML_message('notice', sprintf(_('Category %s has been deleted.'), htmlspecialchars($categories[$id])));
             }
 
             // Reread categories
@@ -549,42 +549,42 @@ while (!empty($cmd)) {
             break;
         case 'delcat':
             if (!isset($_REQUEST['id'])) {
-                HTML_message('error', LOCALE_get('InvalidId'));
+                HTML_message('error', _('Invalid ID.'));
                 $cmd = '';
                 break;
             }
             $id = (int)$_REQUEST['id'];
             if (!isset($categories[$id])) {
-                HTML_message('error', LOCALE_get('InvalidId'));
+                HTML_message('error', _('Invalid ID.'));
                 $cmd = '';
                 break;
             }
 
-            echo '<fieldset><legend>' . htmlspecialchars(sprintf(LOCALE_get('DeleteCategory'), $categories[$id])) . '</legend><form method="post" action="index.php">';
+            echo '<fieldset><legend>' . htmlspecialchars(sprintf(_('You are about to delete category "%s"'), $categories[$id])) . '</legend><form method="post" action="index.php">';
             echo '<input type="hidden" name="id" value="' . $id . '" \>';
             $q = SQL_do('SELECT COUNT(id) AS cnt FROM ' . $GLOBALS['table_prefix'] . 'tasks WHERE category = ' . $id);
             if (mysql_num_rows($q) > 0) {
                 $row = mysql_fetch_assoc($q);
                 if ($row['cnt'] > 0) {
-                    echo '<p>' . sprintf(LOCALE_get('TasksInCategory'), $row['cnt']) . '</p>';
-                    echo '<p>' . LOCALE_get('SelectDeleteTask') . '</p>';
+                    echo '<p>' . sprintf(_('Number of tasks in category: %d'), $row['cnt']) . '</p>';
+                    echo '<p>' . _('What to do with task in deleted category?') . '</p>';
                     echo '<input name="tasks" value="delete" type="radio" id="r_delete" />';
-                    echo '<label for="r_delete">' . LOCALE_get('Delete') . '</label>';
+                    echo '<label for="r_delete">' . _('Delete') . '</label>';
                     echo '<input name="tasks" value="move" type="radio" id="r_move" checked="checked" />';
-                    echo '<label for="r_move">' . LOCALE_get('MoveTo') . '</label>';
-                    echo '<label class="desc" for="sel_category">' . LOCALE_get('TargetCategory') . '</label>';
+                    echo '<label for="r_move">' . _('Move to another category') . '</label>';
+                    echo '<label class="desc" for="sel_category">' . _('Target category') . '</label>';
                     $cats = $categories;
                     unset($cats[$id]);
                     echo get_select('newcat', -1, $cats);
                     unset($cats);
                 } else {
-                    echo '<p>' . LOCALE_get('NoTaskCategory') . '</p>';
+                    echo '<p>' . _('There are no tasks in this category.') . '</p>';
                 }
             } else {
-                echo '<p>' . LOCALE_get('NoTaskCategory') . '</p>';
+                echo '<p>' . _('There are no tasks in this category.') . '</p>';
             }
             echo '<input type="hidden" name="cmd" value="delcat_real" \>';
-            echo '<input type="submit" value="' . LOCALE_get('Delete') . '"/></form></fieldset>';
+            echo '<input type="submit" value="' . _('Delete') . '"/></form></fieldset>';
 
             $cmd = '';
             break;
@@ -599,25 +599,25 @@ while (!empty($cmd)) {
             }
 
             if (count($cats) == 0) {
-                HTML_message('notice', LOCALE_get('NoCategories'));
+                HTML_message('notice', _('No categories defined.'));
             } else {
                 // Filter
-                echo '<fieldset class="filter"><legend>' . LOCALE_get('Filter') . '</legend><form method="get" action="index.php">';
-                echo '<label class="desc" for="sel_personal">' . LOCALE_get('Personal') . '</label>';
-                echo get_select('personal', 'all', array('all' => LOCALE_get('All'), 'show' => LOCALE_get('Show'), 'hide' => LOCALE_get('Hide')), FALSE, TRUE);
+                echo '<fieldset class="filter"><legend>' . _('Filter') . '</legend><form method="get" action="index.php">';
+                echo '<label class="desc" for="sel_personal">' . _('Personal') . '</label>';
+                echo get_select('personal', 'all', array('all' => _('All'), 'show' => _('Show'), 'hide' => _('Hide')), FALSE, TRUE);
                 echo '<input type="hidden" name="cmd" value="cat" \>';
-                echo '<input type="submit" value="' . LOCALE_get('Filter') . '"/></form></fieldset>';
+                echo '<input type="submit" value="' . _('Filter') . '"/></form></fieldset>';
 
                 // Listing
                 echo '<table class="listing">';
-                echo '<thead><tr><th>' . LOCALE_get('Name') . '</th><th>' . LOCALE_get('Personal') . '</th><th>' . LOCALE_get('Actions') . '</th></tr></thead>';
+                echo '<thead><tr><th>' . _('Name') . '</th><th>' . _('Personal') . '</th><th>' . _('Actions') . '</th></tr></thead>';
                 echo '<tbody>';
                 foreach($cats as $id => $name) {
                     echo '<tr class="nopriority"><td class="name"><a href="index.php?category=' . $id . '">' . htmlspecialchars($name) . '</a></td>';
-                    echo '<td class="name">' . ( isset($categories_pers[$id]) ? LOCALE_get('Yes') : LOCALE_get('No') ) . '</td>';
+                    echo '<td class="name">' . ( isset($categories_pers[$id]) ? _('Yes') : _('No') ) . '</td>';
                     echo '<td class="actions">';
-                    HTML_show_image_link('cmd=editcat&amp;id=' . $id, 'edit', LOCALE_get('Edit'));
-                    HTML_show_image_link('cmd=delcat&amp;id=' . $id, 'delete', LOCALE_get('Delete'));
+                    HTML_show_image_link('cmd=editcat&amp;id=' . $id, 'edit', _('Edit'));
+                    HTML_show_image_link('cmd=delcat&amp;id=' . $id, 'delete', _('Delete'));
                     echo '</td>';
                     echo '</tr>';
                 }
@@ -627,13 +627,13 @@ while (!empty($cmd)) {
             break;
         case 'stats':
             echo '<table class="listing">';
-            echo '<thead><tr><th>' . LOCALE_get('Name') . '</th><th>' . LOCALE_get('Item') . '</th></tr></thead>';
+            echo '<thead><tr><th>' . _('Name') . '</th><th>' . _('Item') . '</th></tr></thead>';
             echo '<tbody>';
 
             $q = SQL_do('SELECT COUNT(id) as cnt FROM ' . $GLOBALS['table_prefix'] . 'tasks');
             if (mysql_num_rows($q) > 0) {
                 $row = mysql_fetch_assoc($q);
-                echo '<tr class="nopriority"><td class="name">' . LOCALE_get('TotalTaskCount') . '</td>';
+                echo '<tr class="nopriority"><td class="name">' . _('Total tasks count') . '</td>';
                 echo '<td class="value number">' . $row['cnt'] . '</td></tr>';
             }
             mysql_free_result($q);
@@ -641,7 +641,7 @@ while (!empty($cmd)) {
             $q = SQL_do('SELECT COUNT(id) as cnt FROM ' . $GLOBALS['table_prefix'] . 'tasks WHERE (closed IS NULL or closed = 0)');
             if (mysql_num_rows($q) > 0) {
                 $row = mysql_fetch_assoc($q);
-                echo '<tr class="nopriority"><td class="name">' . LOCALE_get('OpenedTaskCount') . '</td>';
+                echo '<tr class="nopriority"><td class="name">' . _('Opened tasks count') . '</td>';
                 echo '<td class="value number">' . $row['cnt'] . '</td></tr>';
             }
             mysql_free_result($q);
@@ -652,21 +652,21 @@ while (!empty($cmd)) {
             } else {
                 $row['priority'] = -1;
             }
-            echo '<tr class="nopriority"><td class="name">' . LOCALE_get('OpenedTaskP2') . '</td>';
+            echo '<tr class="nopriority"><td class="name">' . _('Opened high priority count') . '</td>';
             if ($row['priority'] == 2) {
                 echo '<td class="value number">' . $row['cnt'] . '</td></tr>';
                 $row = mysql_fetch_assoc($q);
             } else {
                 echo '<td class="value number">0</td></tr>';
             }
-            echo '<tr class="nopriority"><td class="name">' . LOCALE_get('OpenedTaskP1') . '</td>';
+            echo '<tr class="nopriority"><td class="name">' . _('Opened medium priority tasks') . '</td>';
             if ($row['priority'] == 1) {
                 echo '<td class="value number">' . $row['cnt'] . '</td></tr>';
                 $row = mysql_fetch_assoc($q);
             } else {
                 echo '<td class="value number">0</td></tr>';
             }
-            echo '<tr class="nopriority"><td class="name">' . LOCALE_get('OpenedTaskP0') . '</td>';
+            echo '<tr class="nopriority"><td class="name">' . _('Opened low priority tasks') . '</td>';
             if ($row['priority'] == 0) {
                 echo '<td class="value number">' . $row['cnt'] . '</td></tr>';
             } else {
@@ -677,44 +677,44 @@ while (!empty($cmd)) {
             $q = SQL_do('SELECT id, title, UNIX_TIMESTAMP( NOW( ) ) - UNIX_TIMESTAMP( created ) AS age FROM ' . $GLOBALS['table_prefix'] . 'tasks ORDER BY created ASC LIMIT 1');
             if (mysql_num_rows($q) > 0) {
                 $row = mysql_fetch_assoc($q);
-                echo '<tr class="nopriority"><td class="name">' . LOCALE_get('OldestTask') . '</td>';
+                echo '<tr class="nopriority"><td class="name">' . _('Oldest task') . '</td>';
                 echo '<td class="value"><a href="index.php?cmd=show&amp;id=' . $row['id'] . '">' . htmlspecialchars($row['title']) . '</a></td></tr>';
-                echo '<tr class="nopriority"><td class="name">' . LOCALE_get('OldestTaskAge') . '</td>';
-                echo '<td class="value number">' . round($row['age'] / (24 * 60 * 60), 1) . ' ' . LOCALE_get('Days') . '</td></tr>';
+                echo '<tr class="nopriority"><td class="name">' . _('Oldest task age') . '</td>';
+                echo '<td class="value number">' . round($row['age'] / (24 * 60 * 60), 1) . ' ' . _('days') . '</td></tr>';
             }
             mysql_free_result($q);
 
             $q = SQL_do('SELECT AVG(UNIX_TIMESTAMP( NOW( ) ) - UNIX_TIMESTAMP( created )) AS average FROM ' . $GLOBALS['table_prefix'] . 'tasks');
             if (mysql_num_rows($q) > 0) {
                 $row = mysql_fetch_assoc($q);
-                echo '<tr class="nopriority"><td class="name">' . LOCALE_get('AverageAge') . '</td>';
-                echo '<td class="value number">' . round($row['average'] / (24 * 60 * 60), 1) . ' ' . LOCALE_get('Days') . '</td></tr>';
+                echo '<tr class="nopriority"><td class="name">' . _('Average task age') . '</td>';
+                echo '<td class="value number">' . round($row['average'] / (24 * 60 * 60), 1) . ' ' . _('days') . '</td></tr>';
             }
             mysql_free_result($q);
 
             $q = SQL_do('SELECT id, title, UNIX_TIMESTAMP( NOW( ) ) - UNIX_TIMESTAMP( created ) AS age FROM ' . $GLOBALS['table_prefix'] . 'tasks WHERE (closed IS NULL or closed = 0) ORDER BY created ASC LIMIT 1');
             if (mysql_num_rows($q) > 0) {
                 $row = mysql_fetch_assoc($q);
-                echo '<tr class="nopriority"><td class="name">' . LOCALE_get('OldestOpenedTask') . '</td>';
+                echo '<tr class="nopriority"><td class="name">' . _('Oldest opened task') . '</td>';
                 echo '<td class="value"><a href="index.php?cmd=show&amp;id=' . $row['id'] . '">' . htmlspecialchars($row['title']) . '</a></td></tr>';
-                echo '<tr class="nopriority"><td class="name">' . LOCALE_get('OldestOpenedTaskAge') . '</td>';
-                echo '<td class="value number">' . round($row['age'] / (24 * 60 * 60), 1) . ' ' . LOCALE_get('Days') . '</td></tr>';
+                echo '<tr class="nopriority"><td class="name">' . _('Oldest opened task age') . '</td>';
+                echo '<td class="value number">' . round($row['age'] / (24 * 60 * 60), 1) . ' ' . _('days') . '</td></tr>';
             }
             mysql_free_result($q);
 
             $q = SQL_do('SELECT AVG(UNIX_TIMESTAMP( NOW( ) ) - UNIX_TIMESTAMP( created )) AS average FROM ' . $GLOBALS['table_prefix'] . 'tasks WHERE (closed IS NULL or closed = 0)');
             if (mysql_num_rows($q) > 0) {
                 $row = mysql_fetch_assoc($q);
-                echo '<tr class="nopriority"><td class="name">' . LOCALE_get('AverageOpenedAge') . '</td>';
-                echo '<td class="value number">' . round($row['average'] / (24 * 60 * 60), 1) . ' ' . LOCALE_get('Days') . '</td></tr>';
+                echo '<tr class="nopriority"><td class="name">' . _('Average opened task age') . '</td>';
+                echo '<td class="value number">' . round($row['average'] / (24 * 60 * 60), 1) . ' ' . _('days') . '</td></tr>';
             }
             mysql_free_result($q);
 
             $q = SQL_do('SELECT AVG(UNIX_TIMESTAMP(closed) - UNIX_TIMESTAMP(created)) AS average FROM ' . $GLOBALS['table_prefix'] . 'tasks WHERE NOT (closed IS NULL or closed = 0)');
             if (mysql_num_rows($q) > 0) {
                 $row = mysql_fetch_assoc($q);
-                echo '<tr class="nopriority"><td class="name">' . LOCALE_get('AverageCloseAge') . '</td>';
-                echo '<td class="value number">' . round($row['average'] / (24 * 60 * 60), 1) . ' ' . LOCALE_get('Days') . '</td></tr>';
+                echo '<tr class="nopriority"><td class="name">' . _('Average age when task is closed') . '</td>';
+                echo '<td class="value number">' . round($row['average'] / (24 * 60 * 60), 1) . ' ' . _('days') . '</td></tr>';
             }
             mysql_free_result($q);
 
@@ -722,10 +722,10 @@ while (!empty($cmd)) {
             $cmd = '';
             break;
         case 'export':
-            echo LOCALE_get('ExportFormats');
+            echo _('Please select export format:');
             echo '<ul>';
-            echo '<li><a href="index.php?cmd=export_csv">' . LOCALE_get('CSVExport') . '</a></li>';
-            echo '<li><a href="index.php?cmd=export_vcal">' . LOCALE_get('vCalExport') . '</a></li>';
+            echo '<li><a href="index.php?cmd=export_csv">' . _('CSV (Comma separated values)') . '</a></li>';
+            echo '<li><a href="index.php?cmd=export_vcal">' . _('vCalendar') . '</a></li>';
             echo '</ul>';
             $cmd = '';
             break;
@@ -782,7 +782,7 @@ while (!empty($cmd)) {
             $cmd = '';
             break;
         default:
-            HTML_message('error', LOCALE_get('UnknownCommand'));
+            HTML_message('error', _('Uknonwn command! Maybe you hit some not yet implemented functionality.'));
             $cmd = '';
             break;
     }

@@ -40,7 +40,7 @@ function HTML_header() {
     }
     //]]>
     </script>
-    <link media="all" href="styles/<?php echo CONFIG_get('style'); ?>.css" type="text/css" rel="stylesheet" title="<?php echo LOCALE_get('DefaultStyle');?>" />
+    <link media="all" href="styles/<?php echo CONFIG_get('style'); ?>.css" type="text/css" rel="stylesheet" title="<?php echo _('Default style');?>" />
 </head>
 
 <body>
@@ -93,7 +93,7 @@ function HTML_show_image_link($url, $image, $text) {
 function HTML_toolbar($items) {
     echo '<ul class="toolbar">' . "\n";
     foreach($items as $name => $target) {
-        echo '<li><a href="' . $target . '">' . LOCALE_get($name) . "</a></li>\n";
+        echo '<li><a href="' . $target . '">' . $name . "</a></li>\n";
     }
     echo "</ul>\n";
 }

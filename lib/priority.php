@@ -13,6 +13,6 @@ require_once('./lib/locale.php');
  */
 function PRIORITY_grab() {
     global $priorities;
-    $priorities = array(LOCALE_get('Priority0'), LOCALE_get('Priority1'), LOCALE_get('Priority2'));
+    $priorities = array(_('Low'), _('Medium'), _('High'));
 }
 ?>

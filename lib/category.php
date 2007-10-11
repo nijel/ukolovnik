@@ -37,10 +37,10 @@ function CATEGORY_show_edit($title, $cmd, $name, $personal, $id = NULL) {
     if (isset($id)) {
         echo '<input type="hidden" name="id" value="' . $id . '" \>';
     }
-    echo '<label class="desc" for="in_name">' . LOCALE_get('Name') . '</label>';
+    echo '<label class="desc" for="in_name">' . _('Name') . '</label>';
     echo '<input type="text" id="in_name" name="name" maxlength="200" value="' . $name . '" />';
     echo '<input type="checkbox" id="ch_personal" name="personal" ' . $personal . '/>';
-    echo '<label for="ch_personal">' . LOCALE_get('Personal') . '</label>';
+    echo '<label for="ch_personal">' . _('Personal') . '</label>';
     echo '<input type="hidden" name="cmd" value="' . $cmd . '" \>';
     echo '<input type="submit" value="' . $title . '"/></form></fieldset>';
 }

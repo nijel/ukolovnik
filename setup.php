@@ -50,12 +50,12 @@ if ($d) {
 }
 
 $settings = array(
-    array('name' => 'language', 'text' => 'SetLanguage', 'type' => 'select', 'values' => $langs),
-    array('name' => 'style', 'text' => 'SetStyle', 'type' => 'select', 'values' => $styles),
-    array('name' => 'add_stay', 'text' => 'SetAddStay', 'type' => 'bool'),
-    array('name' => 'add_list', 'text' => 'SetAddList', 'type' => 'bool'),
+    array('name' => 'language', 'text' => _('Language'), 'type' => 'select', 'values' => $langs),
+    array('name' => 'style', 'text' => _('Style'), 'type' => 'select', 'values' => $styles),
+    array('name' => 'add_stay', 'text' => _('Stay on add page after adding new entry'), 'type' => 'bool'),
+    array('name' => 'add_list', 'text' => _('Show entries list on add page'), 'type' => 'bool'),
 /*
-    array('name' => '', 'text' => LOCALE_get(''), 'type' => '', 'values' => array('')),
+    array('name' => '', 'text' => _(''), 'type' => '', 'values' => array('')),
 */
     );
 
@@ -99,7 +99,7 @@ $check = EXTENSIONS_check();
 
 if (count($check) > 0) {
     foreach($check as $name) {
-        HTML_message('error', sprintf(LOCALE_get('ExtensionNeeded'), $name));
+        HTML_message('error', sprintf(_('Can not find needed PHP extension "%s". Please install and enable it.'), $name));
     }
     HTML_footer();
 }
@@ -107,7 +107,7 @@ if (count($check) > 0) {
 
 // Connect to database
 if (!SQL_init()) {
-    HTML_die_error(LOCALE_get('CanNotConnect'));
+    HTML_die_error(_('Can not connect to MySQL database. Please check your configuration.'));
 }
 
 require('./lib/toolbar.php');
@@ -117,23 +117,23 @@ if ($cmd == 'update') {
     SQL_check(true);
 
     // We're done for now
-    HTML_message('notice', str_replace('index.php', '<a href="index.php">index.php</a>', LOCALE_get('TablesUpdated')));
+    HTML_message('notice', str_replace('index.php', '<a href="index.php">index.php</a>', _('Tables are in correct state (see above messages about needed changes, if any), you can go back to index.php.')));
 } elseif ($cmd == 'save') {
-    HTML_message('notice', LOCALE_get('SettingsUpdated'));
+    HTML_message('notice', _('Settings has been updated'));
 }
 
 echo '<form class="settings" method="post">';
 foreach($settings as $val) {
     $name = $val['name'];
     echo '<div class="opts">';
-    echo '<label for="set_' . $name . '">' . LOCALE_get($val['text']) . '</label>';
+    echo '<label for="set_' . $name . '">' . $val['text'] . '</label>';
     if ($val['type'] == 'text') {
         echo '<input type="text" name="s_' . $name . '" id="set_' . $name . '" value="' . htmlspecialchars(CONFIG_get($name)) . '" />';
     } else {
         if ($val['type'] == 'select') {
             $opts = $val['values'];
         } else {
-            $opts = array('1' => LOCALE_get('Yes'), '0' => LOCALE_get('No'));
+            $opts = array('1' => _('Yes'), '0' => _('No'));
         }
         echo '<select name="s_' . $name . '" id="set_' . $name . '" />';
         foreach ($opts as $key => $val) {
@@ -149,7 +149,7 @@ foreach($settings as $val) {
 }
 echo '<div class="opts">';
 echo '<input type="hidden" name="cmd" value="save" />';
-echo '<input type="submit" value="' . LOCALE_get('Save') . '" />';
+echo '<input type="submit" value="' . _('Save') . '" />';
 echo '</div>';
 echo '</form>';
 

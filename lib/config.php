@@ -51,7 +51,10 @@ function CONFIG_get($name, $source = 'db', $skip_check = false) {
         if (!$skip_check && (!SQL_init() || count(SQL_check()) > 0)) {
             return $value;
         }
-        $q = SQL_do('SELECT `value` FROM `' . SQL_name('settings') . '` WHERE `key`="' . $name . '"');
+        $q = SQL_do('SELECT `value` FROM `' . SQL_name('settings') . '` WHERE `key`="' . $name . '"', $skip_check);
+        if ($q === false) {
+            return $value;
+        }
         if (mysql_num_rows($q) > 0) {
             $row = mysql_fetch_assoc($q);
             $value = $row['value'];

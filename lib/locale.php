@@ -16,6 +16,7 @@ $locale = array();
 function LOCALE_init() {
     global $locale;
 
+    /* FIXME: Need to migrate to gettext! */
     $language = CONFIG_get('language', 'en');
 
     // Include correct language file
@@ -26,12 +27,5 @@ function LOCALE_init() {
         require('./languages/en.php');
         return TRUE;
     }
-}
-
-/**
- * Returns translation for message.
- */
-function LOCALE_get($name) {
-    return $GLOBALS['locale'][$name];
 }
 ?>
