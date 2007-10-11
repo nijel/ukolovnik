@@ -10,6 +10,7 @@ News
 0.8 release (2007-??-??)
 
     * Locales switched to gettext based system.
+    * Fixed some installation issues.
 
 0.7 release (2007-05-23)
 
