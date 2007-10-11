@@ -31,11 +31,15 @@ if (empty($_REQUEST['cmd'])) {
 $langs = LOCALE_list();
 $styles = HTML_list_styles();
 
+function N_($text) {
+    return $text;
+}
+
 $settings = array(
-    array('name' => 'language', 'text' => _('Language'), 'type' => 'select', 'values' => $langs),
-    array('name' => 'style', 'text' => _('Style'), 'type' => 'select', 'values' => $styles),
-    array('name' => 'add_stay', 'text' => _('Stay on add page after adding new entry'), 'type' => 'bool'),
-    array('name' => 'add_list', 'text' => _('Show entries list on add page'), 'type' => 'bool'),
+    array('name' => 'language', 'text' => N_('Language'), 'type' => 'select', 'values' => $langs),
+    array('name' => 'style', 'text' => N_('Style'), 'type' => 'select', 'values' => $styles),
+    array('name' => 'add_stay', 'text' => N_('Stay on add page after adding new entry'), 'type' => 'bool'),
+    array('name' => 'add_list', 'text' => N_('Show entries list on add page'), 'type' => 'bool'),
 /*
     array('name' => '', 'text' => _(''), 'type' => '', 'values' => array('')),
 */
@@ -105,33 +109,33 @@ if ($cmd == 'update') {
 echo '<form class="settings" method="post">';
 foreach($settings as $val) {
     $name = $val['name'];
-    echo '<div class="opts">';
-    echo '<label for="set_' . $name . '">' . $val['text'] . '</label>';
+    echo '<div class="opts">' . "\n";
+    echo '<label for="set_' . $name . '">' . gettext($val['text']) . '</label>' . "\n";
     if ($val['type'] == 'text') {
-        echo '<input type="text" name="s_' . $name . '" id="set_' . $name . '" value="' . htmlspecialchars(CONFIG_get($name)) . '" />';
+        echo '<input type="text" name="s_' . $name . '" id="set_' . $name . '" value="' . htmlspecialchars(CONFIG_get($name)) . '" />' . "\n";
     } else {
         if ($val['type'] == 'select') {
             $opts = $val['values'];
         } else {
             $opts = array('1' => _('Yes'), '0' => _('No'));
         }
-        echo '<select name="s_' . $name . '" id="set_' . $name . '" />';
+        echo '<select name="s_' . $name . '" id="set_' . $name . '" />' . "\n";
         foreach ($opts as $key => $val) {
             echo '<option value="' . $key . '"';
             if ($key == CONFIG_get($name)) {
                 echo ' selected="selected"';
             }
-            echo '>' . $val . '</option>';
+            echo '>' . $val . '</option>' . "\n";
         }
-        echo '</select>';
+        echo '</select>' . "\n";
     }
-    echo '</div>';
+    echo '</div>' . "\n";
 }
-echo '<div class="opts">';
-echo '<input type="hidden" name="cmd" value="save" />';
-echo '<input type="submit" value="' . _('Save') . '" />';
-echo '</div>';
-echo '</form>';
+echo '<div class="opts">' . "\n";
+echo '<input type="hidden" name="cmd" value="save" />' . "\n";
+echo '<input type="submit" value="' . _('Save') . '" />' . "\n";
+echo '</div>' . "\n";
+echo '</form>' . "\n";
 
 // End
 HTML_footer();
