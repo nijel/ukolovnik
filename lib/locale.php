@@ -15,12 +15,12 @@ $locale_path = './locale-data/';
 function LOCALE_init() {
     global $locale_path;
 
-    $language = CONFIG_get('language', 'cs');
+    $language = CONFIG_get('language');
 
     if ($language == 'cs') {
         setlocale(LC_MESSAGES,  'cs_CZ.UTF-8');
     } elseif ($language == 'en') {
-        setlocale(LC_MESSAGES,  'en_GB.UTF-8');
+        setlocale(LC_MESSAGES, 'C');
     }
 
     $domain = 'ukolovnik';
@@ -37,7 +37,7 @@ function LOCALE_list() {
     global $locale_path;
 
     $d = opendir($locale_path);
-    $langs = array('en');
+    $langs = array('en' => 'en');
     if ($d) {
         while (($file = readdir($d)) !== false) {
             $matches = array();
