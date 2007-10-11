@@ -16,5 +16,6 @@ HTML_toolbar(array(
     _('Export') => 'index.php?cmd=export', // not yet implemented
     _('Stats') => 'index.php?cmd=stats',
     _('Settings') => 'setup.php',
+    _('About') => 'index.php?cmd=about',
     ));
 ?>

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Ukolovnik 0.8\n"
 "Report-Msgid-Bugs-To: michal@cihar.com\n"
-"POT-Creation-Date: 2007-10-11 12:48+0900\n"
+"POT-Creation-Date: 2007-10-11 13:43+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -36,12 +36,12 @@ msgstr ""
 msgid "Category"
 msgstr ""
 
-#: index.php:102 setup.php:92
+#: index.php:102 setup.php:86
 #, php-format
 msgid "Can not find needed PHP extension \"%s\". Please install and enable it."
 msgstr ""
 
-#: index.php:109 setup.php:100
+#: index.php:109 setup.php:94
 msgid "Can not connect to MySQL database. Please check your configuration."
 msgstr ""
 
@@ -250,11 +250,11 @@ msgstr ""
 msgid "Name"
 msgstr ""
 
-#: index.php:617 setup.php:126
+#: index.php:617 setup.php:121
 msgid "Yes"
 msgstr ""
 
-#: index.php:617 setup.php:126
+#: index.php:617 setup.php:121
 msgid "No"
 msgstr ""
 
@@ -315,22 +315,40 @@ msgid "Average age when task is closed"
 msgstr ""
 
 #: index.php:725
-msgid "Please select export format:"
+msgid "About Ukolovnik"
 msgstr ""
 
-#: index.php:727
-msgid "CSV (Comma separated values)"
+#: index.php:726
+msgid "Ukolovnik is simple todo manager licensed under GNU/GPL version 2."
 msgstr ""
 
 #: index.php:728
+#, php-format
+msgid "It has homepage on %s."
+msgstr ""
+
+#: index.php:731
+#, php-format
+msgid "You can support it's development on %s."
+msgstr ""
+
+#: index.php:736
+msgid "Please select export format:"
+msgstr ""
+
+#: index.php:738
+msgid "CSV (Comma separated values)"
+msgstr ""
+
+#: index.php:739
 msgid "vCalendar"
 msgstr ""
 
-#: index.php:785
+#: index.php:796
 msgid "Uknonwn command! Maybe you hit some not yet implemented functionality."
 msgstr ""
 
-#: lib/html.php:43
+#: lib/html.php:67
 msgid "Default style"
 msgstr ""
 
@@ -395,32 +413,20 @@ msgstr ""
 msgid "Settings"
 msgstr ""
 
-#: setup.php:46
-msgid "Language"
+#: lib/toolbar.php:19
+msgid "About"
 msgstr ""
 
-#: setup.php:47
-msgid "Style"
-msgstr ""
-
-#: setup.php:48
-msgid "Stay on add page after adding new entry"
-msgstr ""
-
-#: setup.php:49
-msgid "Show entries list on add page"
-msgstr ""
-
-#: setup.php:110
+#: setup.php:104
 msgid ""
 "Tables are in correct state (see above messages about needed changes, if "
 "any), you can go back to index.php."
 msgstr ""
 
-#: setup.php:112
+#: setup.php:106
 msgid "Settings has been updated"
 msgstr ""
 
-#: setup.php:142
+#: setup.php:137
 msgid "Save"
 msgstr ""

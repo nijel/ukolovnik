@@ -109,8 +109,9 @@ if ($cmd == 'update') {
 echo '<form class="settings" method="post">';
 foreach($settings as $val) {
     $name = $val['name'];
+    $message = $val['text'];
     echo '<div class="opts">' . "\n";
-    echo '<label for="set_' . $name . '">' . gettext($val['text']) . '</label>' . "\n";
+    echo '<label for="set_' . $name . '">' . gettext($message) . '</label>' . "\n";
     if ($val['type'] == 'text') {
         echo '<input type="text" name="s_' . $name . '" id="set_' . $name . '" value="' . htmlspecialchars(CONFIG_get($name)) . '" />' . "\n";
     } else {

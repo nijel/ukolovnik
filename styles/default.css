@@ -190,3 +190,12 @@ div.opts label {
     width: 27em;
     max-width: 60%;
 }
+
+/* About page */
+p {
+    padding: 0 0 0 1.1em;
+}
+
+h3 {
+    padding: 0 0 0 1.1em;
+}

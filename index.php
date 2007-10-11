@@ -721,6 +721,17 @@ while (!empty($cmd)) {
             echo '</tbody></table>';
             $cmd = '';
             break;
+        case 'about':
+            echo '<h3>' . _('About Ukolovnik') . '</h3>';
+            echo '<p>' . _('Ukolovnik is simple todo manager licensed under GNU/GPL version 2.') . '</p>';
+            echo '<p>';
+            printf(_('It has homepage on %s.'), '<a href="http://cihar.com/software/ukolovnik/">cihar.com/software/ukolovnik</a>');
+            echo '</p>';
+            echo '<p>';
+            printf(_('You can support it\'s development on %s.'), '<a href="http://cihar.com/donate/">cihar.com/donate</a>');
+            echo '</p>';
+            $cmd = '';
+            break;
         case 'export':
             echo _('Please select export format:');
             echo '<ul>';
