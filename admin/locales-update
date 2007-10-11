@@ -1,0 +1,23 @@
+#!/bin/sh
+LOCS=`ls locale/*/ukolovnik.po | sed 's@.*/\(.*\)/[^/]*@\1@'`
+xgettext \
+    -d ukolovnik \
+    --msgid-bugs-address=michal@cihar.com \
+    -o locale/ukolovnik.pot \
+    --language=PHP \
+    --add-comments=l10n \
+    --add-location \
+    --copyright-holder="Michal Čihař" \
+    `find . -name '*.php' | sort`
+
+ver=`sed -n "/version =/ s/.*= '\(.*\)'.*/\1/p" lib/version.php`
+sed -i '
+    s/SOME DESCRIPTIVE TITLE/Ukolovnik translation/;
+    s/PACKAGE/Ukolovnik/;
+    s/(C) YEAR/(C) 2003 - 2007/;
+    s/VERSION/'$ver'/;
+    ' locale/ukolovnik.pot
+
+for loc in $LOCS ; do
+    msgmerge --previous -U locale/$loc/ukolovnik.po locale/ukolovnik.pot
+done
