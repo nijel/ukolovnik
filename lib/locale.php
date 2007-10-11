@@ -16,16 +16,16 @@ $locale = array();
 function LOCALE_init() {
     global $locale;
 
-    /* FIXME: Need to migrate to gettext! */
-    $language = CONFIG_get('language', 'en');
+    $language = CONFIG_get('language', 'cs');
 
-    // Include correct language file
-    if (file_exists('./languages/' . $language . '.php')) {
-        require('./languages/' . $language . '.php');
-        return FALSE;
-    } else {
-        require('./languages/en.php');
-        return TRUE;
+    if ($language == 'cs') {
+        setlocale(LC_MESSAGES,  'cs_CZ.UTF-8');
     }
+
+    $domain = 'ukolovnik';
+
+    bindtextdomain($domain, './locale-data/');
+    textdomain($domain);
+    bind_textdomain_codeset($domain, 'UTF-8');
 }
 ?>
