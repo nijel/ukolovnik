@@ -67,6 +67,7 @@ if ($cmd == 'save') {
             CONFIG_set($val['name'], $set);
         }
     }
+    $failed_lang = LOCALE_init();
 }
 
 HTTP_nocache_headers();
