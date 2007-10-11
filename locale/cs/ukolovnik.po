@@ -1,0 +1,443 @@
+# Ukolovnik translation.
+# Copyright (C) 2003 - 2007 Michal Čihař
+# This file is distributed under the same license as the Ukolovnik package.
+# Michal Čihař <michal@cihar.com>, 2007.
+# Michal Čihař <michal@cihar.com>, 2007.
+# 
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Ukolovnik 0.8\n"
+"Report-Msgid-Bugs-To: michal@cihar.com\n"
+"POT-Creation-Date: 2007-10-11 12:08+0900\n"
+"PO-Revision-Date: 2007-10-11 12:07+0900\n"
+"Last-Translator: Michal Čihař <michal@cihar.com>\n"
+"Language-Team: Czech <cs@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+
+#: index.php:65
+msgid "Any"
+msgstr "Jakákoliv"
+
+#: index.php:84 index.php:208
+msgid "Title"
+msgstr "Název"
+
+#: index.php:86
+msgid "Description"
+msgstr "Popis"
+
+#: index.php:88 index.php:159
+msgid "Priority"
+msgstr "Priorita"
+
+#: index.php:90 index.php:161 index.php:209
+msgid "Category"
+msgstr "Kategorie"
+
+#: index.php:102 setup.php:102
+#, php-format
+msgid "Can not find needed PHP extension \"%s\". Please install and enable it."
+msgstr ""
+"Nepodařilo se načíst potřebné rozšíření PHP \"%s\". Prosím nainstalujte a "
+"povolte ho."
+
+#: index.php:109 setup.php:110
+msgid "Can not connect to MySQL database. Please check your configuration."
+msgstr ""
+"Nepodařilo se připojit k MySQL databázi. Prosím zkontrolujte vaše nastavení."
+
+#: index.php:116
+msgid ""
+"Can not select configured database. Please check your configuration or use "
+"setup.php."
+msgstr ""
+"Nepodařilo se vybrat zvolenou databázi. Prosím zkontrolujte vaše nastavení "
+"nebo použijte setup.php."
+
+#: index.php:121
+#, php-format
+msgid ""
+"Can not find table \"%s\". Please check your configuration or use setup.php."
+msgstr ""
+"Nepodařilo se nalézt tabulku \"%s\". Prosím zkontrolujte vaše nastavení nebo "
+"použijte setup.php."
+
+#: index.php:127
+#, php-format
+msgid "Table %s need update. Please upgrade your tables or use setup.php."
+msgstr ""
+"Tabulka %s potřebuje aktualizaci. Prosím aktualizujte ji, nebo použijte "
+"setup.php."
+
+#: index.php:137
+#, php-format
+msgid "Invalid language (%s) chosen in config file."
+msgstr "Byl zvolen chybný jazyk (%s)."
+
+#: index.php:152 index.php:602
+msgid "No categories defined."
+msgstr "Nejsou definovány žádné kategorie."
+
+#: index.php:156 index.php:168 index.php:605 index.php:609
+msgid "Filter"
+msgstr "Filtr"
+
+#: index.php:157
+msgid "Text"
+msgstr "Text"
+
+#: index.php:163 index.php:606 index.php:613 lib/category.php:43
+msgid "Personal"
+msgstr "Osobní"
+
+#: index.php:164 index.php:166 index.php:607
+msgid "All"
+msgstr "Vše"
+
+#: index.php:164 index.php:166 index.php:607
+msgid "Show"
+msgstr "Zobrazit"
+
+#: index.php:164 index.php:166 index.php:607
+msgid "Hide"
+msgstr "Schovat"
+
+#: index.php:165
+msgid "Finished"
+msgstr "Ukončené"
+
+#: index.php:203 index.php:244 index.php:278 index.php:293 index.php:308
+msgid "No entries found."
+msgstr "Nebyly nalezeny žádne položky."
+
+#: index.php:210 index.php:250
+msgid "Created"
+msgstr "Vytvořen"
+
+#: index.php:211 index.php:613
+msgid "Actions"
+msgstr "Akce"
+
+#: index.php:224 index.php:260
+msgid "Reopen"
+msgstr "Otevřít"
+
+#: index.php:226 index.php:262
+msgid "Finish"
+msgstr "Ukončit"
+
+#: index.php:228 index.php:264 index.php:332 index.php:414 index.php:619
+msgid "Edit"
+msgstr "Upravit"
+
+#: index.php:229 index.php:265 index.php:572 index.php:587 index.php:620
+msgid "Delete"
+msgstr "Smazat"
+
+#: index.php:240 index.php:274 index.php:289 index.php:304 index.php:511
+msgid "Invalid parameters."
+msgstr "Chybné parametry."
+
+#: index.php:252
+msgid "Updated"
+msgstr "Aktualizován"
+
+#: index.php:255
+msgid "Closed"
+msgstr "Uzavřený"
+
+#: index.php:282
+#, php-format
+msgid "Task %s reopened."
+msgstr "Úkol %s byl otevřen."
+
+#: index.php:297
+#, php-format
+msgid "Task %s finished."
+msgstr "Úkol %s byl ukončen."
+
+#: index.php:312
+#, php-format
+msgid "Task %s has been deleted."
+msgstr "Úkol %s byl vymazán."
+
+#: index.php:319 index.php:326 index.php:341 index.php:346 index.php:351
+#: index.php:427 index.php:433 index.php:446 index.php:451 index.php:455
+#: index.php:495 index.php:501 index.php:522 index.php:528 index.php:552
+#: index.php:558
+msgid "Invalid ID."
+msgstr "Chyné ID."
+
+#: index.php:357
+msgid "Title can not be empty."
+msgstr "Název nesmí být prázdný."
+
+#: index.php:361 index.php:366
+msgid "Invalid category."
+msgstr "Chybná kategorie."
+
+#: index.php:371 index.php:376
+msgid "Invalid priority."
+msgstr "Chybná priorita."
+
+#: index.php:391
+#, php-format
+msgid "Task %s has been added."
+msgstr "Úkol %s byl přidán."
+
+#: index.php:398
+msgid ""
+"Concurrency error! Changes not saved, because someone else already changed "
+"record"
+msgstr ""
+"Chyba konkuretního přístupu! Změny nebyly uloženy, protože někdo mezitím "
+"změnil záznam."
+
+#: index.php:401
+#, php-format
+msgid "Task %s has been changed."
+msgstr "Úkol %s byl změněn."
+
+#: index.php:416 lib/toolbar.php:13
+msgid "Add"
+msgstr "Přidat"
+
+#: index.php:437 index.php:487
+msgid "Edit category"
+msgstr "Upravit kategorii"
+
+#: index.php:461
+msgid "Name can not be empty."
+msgstr "Jméno nesmí být prázdné."
+
+#: index.php:473
+#, php-format
+msgid "Category %s has been added."
+msgstr "Kategorie %s byla přidána."
+
+#: index.php:476
+#, php-format
+msgid "Category %s has been changed."
+msgstr "Kategorie %s byla změněna."
+
+#: index.php:489 lib/toolbar.php:15
+msgid "Add category"
+msgstr "Přidat kategorii"
+
+#: index.php:518 index.php:535 index.php:539 index.php:543
+#, php-format
+msgid "Category %s has been deleted."
+msgstr "Kategorie %s byla vymazána."
+
+#: index.php:563
+#, php-format
+msgid "You are about to delete category \"%s\""
+msgstr "Chcete vymazat kategorii \"%s\""
+
+#: index.php:569
+#, php-format
+msgid "Number of tasks in category: %d"
+msgstr "Počet úkolů v kategorii: %d"
+
+#: index.php:570
+msgid "What to do with task in deleted category?"
+msgstr "Co chcete udělat s úkoly ve vymazané kategorii?"
+
+#: index.php:574
+msgid "Move to another category"
+msgstr "Přesunout do jiné kategorie"
+
+#: index.php:575
+msgid "Target category"
+msgstr "Cílová kategorie"
+
+#: index.php:581 index.php:584
+msgid "There are no tasks in this category."
+msgstr "Nebyly nalezeny žádné úkoly v této kategorii."
+
+#: index.php:613 index.php:630 lib/category.php:40
+msgid "Name"
+msgstr "Jméno"
+
+#: index.php:617 setup.php:136
+msgid "Yes"
+msgstr "Ano"
+
+#: index.php:617 setup.php:136
+msgid "No"
+msgstr "Ne"
+
+#: index.php:630
+msgid "Item"
+msgstr "Položka"
+
+#: index.php:636
+msgid "Total tasks count"
+msgstr "Celkem úkolů"
+
+#: index.php:644
+msgid "Opened tasks count"
+msgstr "Otevřených úkolů"
+
+#: index.php:655
+msgid "Opened high priority count"
+msgstr "Otevřených úkolů s vysokou prioritou"
+
+#: index.php:662
+msgid "Opened medium priority tasks"
+msgstr "Otevřených úkolů se střední prioritou"
+
+#: index.php:669
+msgid "Opened low priority tasks"
+msgstr "Otevřených úkolů s nízkou prioritou"
+
+#: index.php:680
+msgid "Oldest task"
+msgstr "Nejstarší úkol"
+
+#: index.php:682
+msgid "Oldest task age"
+msgstr "Stáří nejstaršího úkolu"
+
+#: index.php:683 index.php:691 index.php:701 index.php:709 index.php:717
+msgid "days"
+msgstr "dnů"
+
+#: index.php:690
+msgid "Average task age"
+msgstr "Průměrné stáří úkolu"
+
+#: index.php:698
+msgid "Oldest opened task"
+msgstr "Nejstarší otevřený úkol"
+
+#: index.php:700
+msgid "Oldest opened task age"
+msgstr "Stáří nejdéle otevřeného úkolu"
+
+#: index.php:708
+msgid "Average opened task age"
+msgstr "Průměrné stáří otevřeného úkolu"
+
+#: index.php:716
+msgid "Average age when task is closed"
+msgstr "Průměrné stáří úkolu při uzavření"
+
+#: index.php:725
+msgid "Please select export format:"
+msgstr "Prosím zvolte formát exportu:"
+
+#: index.php:727
+msgid "CSV (Comma separated values)"
+msgstr "CSV (Čárkou oddělené hodnoty)"
+
+#: index.php:728
+msgid "vCalendar"
+msgstr "vCalendar"
+
+#: index.php:785
+msgid "Uknonwn command! Maybe you hit some not yet implemented functionality."
+msgstr ""
+"Neznámý příkaz! Pravděpodobně jste narazili na neimplementovanou "
+"funkcionalitu."
+
+#: lib/html.php:43
+msgid "Default style"
+msgstr "Výchozí vzhled"
+
+#: lib/priority.php:16
+msgid "Low"
+msgstr "Nízká"
+
+#: lib/priority.php:16
+msgid "Medium"
+msgstr "Střední"
+
+#: lib/priority.php:16
+msgid "High"
+msgstr "Vysoká"
+
+#: lib/sql.php:87
+#, php-format
+msgid "Database %s has been created."
+msgstr "Databáze %s byla vytvořena."
+
+#: lib/sql.php:117 lib/sql.php:128 lib/sql.php:136
+#, php-format
+msgid "Table %s has been created."
+msgstr "Tabulka %s byla vytvořena."
+
+#: lib/sql.php:155
+#, php-format
+msgid "Settings database has been updated"
+msgstr "Databáze nastavení byla aktualizována"
+
+#: lib/sql.php:165
+#, php-format
+msgid "Table %s updated."
+msgstr "Tabulka %s aktualizována."
+
+#: lib/sql.php:188
+#, php-format
+msgid "SQL query failed: %s"
+msgstr "Dotaz SQL selhal: %s"
+
+#: lib/string.php:15
+msgid "%d.%m.%Y, %H:%M"
+msgstr "%d.%m.%Y, %H:%M"
+
+#: lib/toolbar.php:12
+msgid "Main"
+msgstr "Hlavní"
+
+#: lib/toolbar.php:14
+msgid "Categories"
+msgstr "Kategorie"
+
+#: lib/toolbar.php:16
+msgid "Export"
+msgstr "Export"
+
+#: lib/toolbar.php:17
+msgid "Stats"
+msgstr "Statistiky"
+
+#: lib/toolbar.php:18
+msgid "Settings"
+msgstr "Nastavení"
+
+#: setup.php:53
+msgid "Language"
+msgstr "Jazyk"
+
+#: setup.php:54
+msgid "Style"
+msgstr "Vzhled"
+
+#: setup.php:55
+msgid "Stay on add page after adding new entry"
+msgstr "Zůstat na přidávací stránce po přidání úkolu"
+
+#: setup.php:56
+msgid "Show entries list on add page"
+msgstr "Zobrazit seznam úkolů na přidávací stránce"
+
+#: setup.php:120
+msgid ""
+"Tables are in correct state (see above messages about needed changes, if "
+"any), you can go back to index.php."
+msgstr ""
+"Tabulky jsou v pořádku (případné úpravy jsou popsány výše), můžete se vrátit "
+"zpět na index.php."
+
+#: setup.php:122
+msgid "Settings has been updated"
+msgstr "Nastavení byla aktualizována"
+
+#: setup.php:152
+msgid "Save"
+msgstr "Uložit"
