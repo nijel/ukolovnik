@@ -18,6 +18,9 @@ require_once('./lib/extensions.php');
 
 HTTP_clean_request();
 
+// Include correct language file
+$failed_lang = LOCALE_init();
+
 // Grab some parameters
 if (empty($_REQUEST['cmd'])) {
     $cmd = '';
@@ -25,17 +28,7 @@ if (empty($_REQUEST['cmd'])) {
     $cmd = $_REQUEST['cmd'];
 }
 
-$d = opendir('./languages/');
-$langs = array();
-if ($d) {
-    while (($file = readdir($d)) !== false) {
-        $matches = array();
-        if (preg_match('/([a-zA-Z_-]*)\.php/', $file, $matches)) {
-            $langs[$matches[1]] = $matches[1];
-        }
-    }
-    closedir($d);
-}
+$langs = LOCALE_list();
 
 $d = opendir('./styles/');
 $styles = array();
@@ -86,9 +79,6 @@ if ($cmd == 'save') {
         }
     }
 }
-
-// Include correct language file
-$failed_lang = LOCALE_init();
 
 HTTP_nocache_headers();
 

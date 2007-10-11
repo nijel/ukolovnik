@@ -8,13 +8,12 @@
 // Grab needed libraries
 require_once('./lib/config.php');
 
-$locale = array();
-
+$locale_path = './locale-data/';
 /**
  * Initializes locales and loads translation.
  */
 function LOCALE_init() {
-    global $locale;
+    global $locale_path;
 
     $language = CONFIG_get('language', 'cs');
 
@@ -24,8 +23,28 @@ function LOCALE_init() {
 
     $domain = 'ukolovnik';
 
-    bindtextdomain($domain, './locale-data/');
+    bindtextdomain($domain, $locale_path);
     textdomain($domain);
     bind_textdomain_codeset($domain, 'UTF-8');
+}
+
+/**
+ * Lists available locales.
+ */
+function LOCALE_list() {
+    global $locale_path;
+
+    $d = opendir($locale_path);
+    $langs = array('en');
+    if ($d) {
+        while (($file = readdir($d)) !== false) {
+            $matches = array();
+            if (preg_match('/([a-zA-Z]{2,2})/', $file, $matches)) {
+                $langs[$matches[1]] = $matches[1];
+            }
+        }
+        closedir($d);
+    }
+    return $langs;
 }
 ?>
