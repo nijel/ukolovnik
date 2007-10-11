@@ -29,18 +29,7 @@ if (empty($_REQUEST['cmd'])) {
 }
 
 $langs = LOCALE_list();
-
-$d = opendir('./styles/');
-$styles = array();
-if ($d) {
-    while (($file = readdir($d)) !== false) {
-        $matches = array();
-        if (preg_match('/([a-zA-Z_-]*)\.css/', $file, $matches)) {
-            $styles[$matches[1]] = $matches[1];
-        }
-    }
-    closedir($d);
-}
+$styles = HTML_list_styles();
 
 $settings = array(
     array('name' => 'language', 'text' => _('Language'), 'type' => 'select', 'values' => $langs),

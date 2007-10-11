@@ -11,11 +11,35 @@ require_once('./lib/http.php');
 require_once('./lib/config.php');
 require_once('./lib/locale.php');
 
+$style_path = './styles/';
+$image_path = './images/';
+
+/**
+ * Returns list of available styles.
+ */
+function HTML_list_styles() {
+    global $style_path;
+
+    $d = opendir($style_path);
+    $styles = array();
+    if ($d) {
+        while (($file = readdir($d)) !== false) {
+            $matches = array();
+            if (preg_match('/([a-zA-Z_-]*)\.css/', $file, $matches)) {
+                $styles[$matches[1]] = $matches[1];
+            }
+        }
+        closedir($d);
+    }
+
+    return $styles;
+}
+
 /**
  * Displays HTML header.
  */
 function HTML_header() {
-    global $version;
+    global $version, $style_path;
 
     // Define the charset to be used
     HTTP_type_header('text/html; charset=utf-8');
@@ -40,7 +64,7 @@ function HTML_header() {
     }
     //]]>
     </script>
-    <link media="all" href="styles/<?php echo CONFIG_get('style'); ?>.css" type="text/css" rel="stylesheet" title="<?php echo _('Default style');?>" />
+    <link media="all" href="<?php echo $style_path . CONFIG_get('style'); ?>.css" type="text/css" rel="stylesheet" title="<?php echo _('Default style');?>" />
 </head>
 
 <body>
@@ -85,8 +109,10 @@ function HTML_die_error($text) {
 }
 
 function HTML_show_image_link($url, $image, $text) {
+    global $image_path;
+
     echo '<a class="action" href="index.php?' . $url . '">';
-    echo '<img src="images/' . CONFIG_get('style') . '/' . $image . '.png" title="' . $text . '" alt="' . $text . '"/>';
+    echo '<img src="' . $image_path . CONFIG_get('style') . '/' . $image . '.png" title="' . $text . '" alt="' . $text . '"/>';
     echo '</a> ';
 }
 
