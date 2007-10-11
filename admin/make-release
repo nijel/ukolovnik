@@ -29,3 +29,4 @@ tar cfj $repo-$version.tar.bz2 $repo-$version
 
 echo "Release is in $tmp directory:"
 ls -lh $tmp
+chmod 644 $repo-$version.*
