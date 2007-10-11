@@ -19,6 +19,8 @@ function LOCALE_init() {
 
     if ($language == 'cs') {
         setlocale(LC_MESSAGES,  'cs_CZ.UTF-8');
+    } elseif ($language == 'en') {
+        setlocale(LC_MESSAGES,  'en_GB.UTF-8');
     }
 
     $domain = 'ukolovnik';
