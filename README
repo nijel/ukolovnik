@@ -21,9 +21,14 @@ Some icons were taken from phpMyAdmin (GNU GPL) and GNOME (GNU LGPL).
 Installation
 ------------
 
-Edit config.php to fit your setup and create needed tables by provided SQL
-script (use sql/ukolovnik.sql for current MySQL which supports charsets or
-sql/ukolovnik-no-charsets.sql for older versions 3.x which do not support it).
+Edit config.php to fit your setup and create needed tables by provided
+SQL script (use sql/ukolovnik.sql for current MySQL which supports
+charsets or sql/ukolovnik-no-charsets.sql for older versions 3.x which
+do not support it).
+
+If you are running svn version, you need to generate locales data if you
+want to use localized versions. To do so, install gettext and run
+./admin/locales-generate script.
 
 
 Bug reporting
@@ -46,4 +51,4 @@ You can also update translations online using Pootle [4].
 [4]: https://l10n.cihar.com/projects/ukolovnik/
 
 
-# vim: expandtab sw=4 ts=4 sts=4:
+# vim: et ts=4 sw=4 sts=4 tw=72 spell spelllang=en_us

@@ -8,7 +8,12 @@
 // Grab needed libraries
 require_once('./lib/config.php');
 
+/**
+ * Path where are stored generated locales. You can generate them using
+ * ./admin/locales-generate script.
+ */
 $locale_path = './locale-data/';
+
 /**
  * Initializes locales and loads translation.
  */
