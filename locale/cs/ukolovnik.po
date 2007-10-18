@@ -7,7 +7,7 @@
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: Ukolovnik 0.8\n"
+"Project-Id-Version: Ukolovnik 0.9\n"
 "Report-Msgid-Bugs-To: michal@cihar.com\n"
 "POT-Creation-Date: 2007-10-11 13:43+0900\n"
 "PO-Revision-Date: 2007-10-11 13:43+0900\n"

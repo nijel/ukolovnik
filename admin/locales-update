@@ -1,4 +1,5 @@
 #!/bin/sh
+# vim: expandtab sw=4 ts=4 sts=4:
 LOCS=`ls locale/*/ukolovnik.po | sed 's@.*/\(.*\)/[^/]*@\1@'`
 xgettext \
     -d ukolovnik \
@@ -19,5 +20,11 @@ sed -i '
     ' locale/ukolovnik.pot
 
 for loc in $LOCS ; do
+    sed -i '
+        s/SOME DESCRIPTIVE TITLE/Ukolovnik translation/;
+        s/PACKAGE/Ukolovnik/;
+        s/VERSION/'$ver'/;
+        s/Project-Id-Version: Ukolovnik [0-9.]*/Project-Id-Version: Ukolovnik '$ver'/;
+        ' locale/$loc/ukolovnik.po
     msgmerge --previous -U locale/$loc/ukolovnik.po locale/ukolovnik.pot
 done
