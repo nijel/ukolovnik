@@ -8,425 +8,440 @@ msgstr ""
 "Project-Id-Version: Ukolovnik 0.9\n"
 "Report-Msgid-Bugs-To: michal@cihar.com\n"
 "POT-Creation-Date: 2007-10-11 13:43+0900\n"
-"PO-Revision-Date: 2007-10-11 13:43+0900\n"
-"Last-Translator: Automatically generated\n"
+"PO-Revision-Date: 2007-10-18 14:01+0200\n"
+"Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: none\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Pootle 1.0.2\n"
 
 #: index.php:65
 msgid "Any"
-msgstr ""
+msgstr "Alla"
 
 #: index.php:84 index.php:208
 msgid "Title"
-msgstr ""
+msgstr "Titel"
 
 #: index.php:86
 msgid "Description"
-msgstr ""
+msgstr "Beskrivning"
 
 #: index.php:88 index.php:159
 msgid "Priority"
-msgstr ""
+msgstr "Prioritet"
 
 #: index.php:90 index.php:161 index.php:209
 msgid "Category"
-msgstr ""
+msgstr "Kategori"
 
 #: index.php:102 setup.php:86
 #, php-format
 msgid "Can not find needed PHP extension \"%s\". Please install and enable it."
 msgstr ""
+"Kan inte hitta nödvändiga PHP-tillägget \"%s\". Installera och aktivera det."
 
 #: index.php:109 setup.php:94
 msgid "Can not connect to MySQL database. Please check your configuration."
-msgstr ""
+msgstr "Kan inte ansluta till MySQL-databasen. Kontrollera din konfiguration."
 
 #: index.php:116
 msgid ""
 "Can not select configured database. Please check your configuration or use "
 "setup.php."
 msgstr ""
+"Kan inte välja konfigurerad databas. Kontrollera din konfiguration eller "
+"använd setup.php."
 
 #: index.php:121
 #, php-format
 msgid ""
 "Can not find table \"%s\". Please check your configuration or use setup.php."
 msgstr ""
+"Kan inte hitta tabellen \"%s\". Kontrollera din konfiguration eller använd "
+"setup.php."
 
 #: index.php:127
 #, php-format
 msgid "Table %s need update. Please upgrade your tables or use setup.php."
 msgstr ""
+"Tabellen %s behöver uppdateras. Uppgradera dina tabeller eller använd "
+"setup.php."
 
 #: index.php:137
 #, php-format
 msgid "Invalid language (%s) has been chosen."
-msgstr ""
+msgstr "Ogiltigt språk (%s) har valts."
 
 #: index.php:152 index.php:602
 msgid "No categories defined."
-msgstr ""
+msgstr "Inga kategorier har definierats."
 
 #: index.php:156 index.php:168 index.php:605 index.php:609
 msgid "Filter"
-msgstr ""
+msgstr "Filter"
 
 #: index.php:157
 msgid "Text"
-msgstr ""
+msgstr "Text"
 
 #: index.php:163 index.php:606 index.php:613 lib/category.php:43
 msgid "Personal"
-msgstr ""
+msgstr "Personligt"
 
 #: index.php:164 index.php:166 index.php:607
 msgid "All"
-msgstr ""
+msgstr "Alla"
 
 #: index.php:164 index.php:166 index.php:607
 msgid "Show"
-msgstr ""
+msgstr "Visa"
 
 #: index.php:164 index.php:166 index.php:607
 msgid "Hide"
-msgstr ""
+msgstr "Dölj"
 
 #: index.php:165
 msgid "Finished"
-msgstr ""
+msgstr "Färdig"
 
 #: index.php:203 index.php:244 index.php:278 index.php:293 index.php:308
 msgid "No entries found."
-msgstr ""
+msgstr "Inga poster hittades."
 
 #: index.php:210 index.php:250
 msgid "Created"
-msgstr ""
+msgstr "Skapades"
 
 #: index.php:211 index.php:613
 msgid "Actions"
-msgstr ""
+msgstr "Åtgärder"
 
 #: index.php:224 index.php:260
 msgid "Reopen"
-msgstr ""
+msgstr "Öppna igen"
 
 #: index.php:226 index.php:262
 msgid "Finish"
-msgstr ""
+msgstr "Färdig"
 
 #: index.php:228 index.php:264 index.php:332 index.php:414 index.php:619
 msgid "Edit"
-msgstr ""
+msgstr "Redigera"
 
 #: index.php:229 index.php:265 index.php:572 index.php:587 index.php:620
 msgid "Delete"
-msgstr ""
+msgstr "Ta bort"
 
 #: index.php:240 index.php:274 index.php:289 index.php:304 index.php:511
 msgid "Invalid parameters."
-msgstr ""
+msgstr "Ogiltiga parametrar."
 
 #: index.php:252
 msgid "Updated"
-msgstr ""
+msgstr "Uppdaterad"
 
 #: index.php:255
 msgid "Closed"
-msgstr ""
+msgstr "Stängd"
 
 #: index.php:282
 #, php-format
 msgid "Task %s reopened."
-msgstr ""
+msgstr "Uppgiften %s öppnades igen."
 
 #: index.php:297
 #, php-format
 msgid "Task %s finished."
-msgstr ""
+msgstr "Uppgiften %s är färdig."
 
 #: index.php:312
 #, php-format
 msgid "Task %s has been deleted."
-msgstr ""
+msgstr "Uppgiften %s har tagits bort."
 
 #: index.php:319 index.php:326 index.php:341 index.php:346 index.php:351
 #: index.php:427 index.php:433 index.php:446 index.php:451 index.php:455
 #: index.php:495 index.php:501 index.php:522 index.php:528 index.php:552
 #: index.php:558
 msgid "Invalid ID."
-msgstr ""
+msgstr "Ogiltigt id."
 
 #: index.php:357
 msgid "Title can not be empty."
-msgstr ""
+msgstr "Titeln får inte vara tom."
 
 #: index.php:361 index.php:366
 msgid "Invalid category."
-msgstr ""
+msgstr "Ogiltig kategori."
 
 #: index.php:371 index.php:376
 msgid "Invalid priority."
-msgstr ""
+msgstr "Ogiltig prioritet."
 
 #: index.php:391
 #, php-format
 msgid "Task %s has been added."
-msgstr ""
+msgstr "Uppgiften %s har lagts till."
 
 #: index.php:398
 msgid ""
 "Concurrency error! Changes not saved, because someone else already changed "
 "record."
 msgstr ""
+"Fel upptäcktes! Ändringar har inte sparats på grund av att någon annan redan "
+"ändrat posten."
 
 #: index.php:401
 #, php-format
 msgid "Task %s has been changed."
-msgstr ""
+msgstr "Uppgiften %s har ändrats."
 
 #: index.php:416 lib/toolbar.php:13
 msgid "Add"
-msgstr ""
+msgstr "Lägg till"
 
 #: index.php:437 index.php:487
 msgid "Edit category"
-msgstr ""
+msgstr "Redigera kategori"
 
 #: index.php:461
 msgid "Name can not be empty."
-msgstr ""
+msgstr "Namnet får inte vara tomt."
 
 #: index.php:473
 #, php-format
 msgid "Category %s has been added."
-msgstr ""
+msgstr "Kategorin %s har lagts till."
 
 #: index.php:476
 #, php-format
 msgid "Category %s has been changed."
-msgstr ""
+msgstr "Kategorin %s har ändrats."
 
 #: index.php:489 lib/toolbar.php:15
 msgid "Add category"
-msgstr ""
+msgstr "Lägg till kategori"
 
 #: index.php:518 index.php:535 index.php:539 index.php:543
 #, php-format
 msgid "Category %s has been deleted."
-msgstr ""
+msgstr "Kategorin %s har tagits bort."
 
 #: index.php:563
 #, php-format
 msgid "You are about to delete category \"%s\""
-msgstr ""
+msgstr "Du är på väg att ta bort kategorin \"%s\""
 
 #: index.php:569
 #, php-format
 msgid "Number of tasks in category: %d"
-msgstr ""
+msgstr "Antal uppgifter i kategori: %d"
 
 #: index.php:570
 msgid "What to do with task in deleted category?"
-msgstr ""
+msgstr "Vad vill du göra med uppgifterna i borttagna kategorin?"
 
 #: index.php:574
 msgid "Move to another category"
-msgstr ""
+msgstr "Flytta till en annan kategori"
 
 #: index.php:575
 msgid "Target category"
-msgstr ""
+msgstr "Målkategori"
 
 #: index.php:581 index.php:584
 msgid "There are no tasks in this category."
-msgstr ""
+msgstr "Det finns inga uppgifter i denna kategori."
 
 #: index.php:613 index.php:630 lib/category.php:40
 msgid "Name"
-msgstr ""
+msgstr "Namn"
 
 #: index.php:617 setup.php:121
 msgid "Yes"
-msgstr ""
+msgstr "Ja"
 
 #: index.php:617 setup.php:121
 msgid "No"
-msgstr ""
+msgstr "Nej"
 
 #: index.php:630
 msgid "Item"
-msgstr ""
+msgstr "Post"
 
 #: index.php:636
 msgid "Total tasks count"
-msgstr ""
+msgstr "Totalt antal uppgifter"
 
 #: index.php:644
 msgid "Opened tasks count"
-msgstr ""
+msgstr "Antal öppna uppgifter"
 
 #: index.php:655
 msgid "Opened high priority count"
-msgstr ""
+msgstr "Antal öppna med hög prioritet"
 
 #: index.php:662
 msgid "Opened medium priority tasks"
-msgstr ""
+msgstr "Antal uppgifter med medelprioritet"
 
 #: index.php:669
 msgid "Opened low priority tasks"
-msgstr ""
+msgstr "Antal uppgifter med låg prioritet"
 
 #: index.php:680
 msgid "Oldest task"
-msgstr ""
+msgstr "Äldsta uppgift"
 
 #: index.php:682
 msgid "Oldest task age"
-msgstr ""
+msgstr "Högsta ålder för uppgift"
 
 #: index.php:683 index.php:691 index.php:701 index.php:709 index.php:717
 msgid "days"
-msgstr ""
+msgstr "dagar"
 
 #: index.php:690
 msgid "Average task age"
-msgstr ""
+msgstr "Medelålder för uppgifter"
 
 #: index.php:698
 msgid "Oldest opened task"
-msgstr ""
+msgstr "Äldsta öppna uppgift"
 
 #: index.php:700
 msgid "Oldest opened task age"
-msgstr ""
+msgstr "Högsta ålder för öppen uppgift"
 
 #: index.php:708
 msgid "Average opened task age"
-msgstr ""
+msgstr "Medelålder för öppnade uppgifter"
 
 #: index.php:716
 msgid "Average age when task is closed"
-msgstr ""
+msgstr "Medelålder när uppgifter stängs"
 
 #: index.php:725
 msgid "About Ukolovnik"
-msgstr ""
+msgstr "Om Ukolovnik"
 
 #: index.php:726
 msgid "Ukolovnik is simple todo manager licensed under GNU/GPL version 2."
 msgstr ""
+"Ukolovnik är en enkel AttGöra-hanterare licensierad under GNU/GPL version 2."
 
 #: index.php:728
 #, php-format
 msgid "It has homepage on %s."
-msgstr ""
+msgstr "Dess webbplats finns på %s."
 
 #: index.php:731
 #, php-format
 msgid "You can support it's development on %s."
-msgstr ""
+msgstr "Du kan bidra till dess utveckling på %s."
 
 #: index.php:736
 msgid "Please select export format:"
-msgstr ""
+msgstr "Välj ett exportformat:"
 
 #: index.php:738
 msgid "CSV (Comma separated values)"
-msgstr ""
+msgstr "CSV (Kommaseparerade värden)"
 
 #: index.php:739
 msgid "vCalendar"
-msgstr ""
+msgstr "vCalendar"
 
 #: index.php:796
 msgid "Uknonwn command! Maybe you hit some not yet implemented functionality."
 msgstr ""
+"Okänt kommando! Du har kanske påträffat funktionalitet som ännu inte "
+"implementerats."
 
 #: lib/html.php:67
 msgid "Default style"
-msgstr ""
+msgstr "Standardstil"
 
 #: lib/priority.php:16
 msgid "Low"
-msgstr ""
+msgstr "Låg"
 
 #: lib/priority.php:16
 msgid "Medium"
-msgstr ""
+msgstr "Medel"
 
 #: lib/priority.php:16
 msgid "High"
-msgstr ""
+msgstr "Hög"
 
 #: lib/sql.php:87
 #, php-format
 msgid "Database %s has been created."
-msgstr ""
+msgstr "Databasen %s har skapats."
 
 #: lib/sql.php:117 lib/sql.php:128 lib/sql.php:136
 #, php-format
 msgid "Table %s has been created."
-msgstr ""
+msgstr "Tabellen %s har skapats."
 
 #: lib/sql.php:155
 #, php-format
 msgid "Settings database has been updated"
-msgstr ""
+msgstr "Inställningsdatabasen har uppdaterats"
 
 #: lib/sql.php:165
 #, php-format
 msgid "Table %s updated."
-msgstr ""
+msgstr "Tabellen %s har uppdaterats."
 
 #: lib/sql.php:188
 #, php-format
 msgid "SQL query failed: %s"
-msgstr ""
+msgstr "SQL-fråga misslyckades: %s"
 
 #: lib/string.php:15
 msgid "%d.%m.%Y, %H:%M"
-msgstr ""
+msgstr "%Y-%m-%d, %H:%M"
 
 #: lib/toolbar.php:12
 msgid "Main"
-msgstr ""
+msgstr "Allmänt"
 
 #: lib/toolbar.php:14
 msgid "Categories"
-msgstr ""
+msgstr "Kategorier"
 
 #: lib/toolbar.php:16
 msgid "Export"
-msgstr ""
+msgstr "Exportera"
 
 #: lib/toolbar.php:17
 msgid "Stats"
-msgstr ""
+msgstr "Statistik"
 
 #: lib/toolbar.php:18
 msgid "Settings"
-msgstr ""
+msgstr "Inställningar"
 
 #: lib/toolbar.php:19
 msgid "About"
-msgstr ""
+msgstr "Om"
 
 #: setup.php:104
 msgid ""
 "Tables are in correct state (see above messages about needed changes, if "
 "any), you can go back to index.php."
 msgstr ""
+"Tabellerna är korrekta (se ovanstående meddelande om nödvändiga ändringar, "
+"om några), du kan gå tillbaka till index.php."
 
 #: setup.php:106
 msgid "Settings has been updated"
-msgstr ""
+msgstr "Inställningarna har uppdaterats"
 
 #: setup.php:137
 msgid "Save"
-msgstr ""
+msgstr "Spara"
