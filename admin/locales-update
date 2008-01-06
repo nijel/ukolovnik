@@ -15,7 +15,7 @@ ver=`sed -n "/version =/ s/.*= '\(.*\)'.*/\1/p" lib/version.php`
 sed -i '
     s/SOME DESCRIPTIVE TITLE/Ukolovnik translation/;
     s/PACKAGE/Ukolovnik/;
-    s/(C) YEAR/(C) 2003 - 2007/;
+    s/(C) YEAR/(C) 2003 - '`date +%Y`'/;
     s/VERSION/'$ver'/;
     ' locale/ukolovnik.pot
 
