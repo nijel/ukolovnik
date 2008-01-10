@@ -16,6 +16,7 @@ require_once('./lib/category.php');
 require_once('./lib/priority.php');
 require_once('./lib/extensions.php');
 
+// Strip possible slashes in REQUEST
 HTTP_clean_request();
 
 // Include correct language file
