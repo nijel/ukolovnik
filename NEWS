@@ -7,7 +7,7 @@ Simple task manager written in PHP and using MySQL as backend.
 News
 ----
 
-0.9 release (2008-??-??)
+0.9 release (2008-01-10)
 
     * Fixed double SQL escaping in some cases.
 
