@@ -3,13 +3,13 @@
 # This file is distributed under the same license as the Ukolovnik package.
 # Michal Čihař <michal@cihar.com>, 2007.
 # Michal Čihař <michal@cihar.com>, 2007.
-# 
-# 
+#
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Ukolovnik 0.9\n"
 "Report-Msgid-Bugs-To: michal@cihar.com\n"
-"POT-Creation-Date: 2007-10-11 13:43+0900\n"
+"POT-Creation-Date: 2008-01-10 13:15+0900\n"
 "PO-Revision-Date: 2007-10-11 13:43+0900\n"
 "Last-Translator: Michal Čihař <michal@cihar.com>\n"
 "Language-Team: Czech <cs@li.org>\n"
@@ -18,39 +18,39 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
-#: index.php:65
+#: index.php:68
 msgid "Any"
 msgstr "Jakákoliv"
 
-#: index.php:84 index.php:208
+#: index.php:87 index.php:211
 msgid "Title"
 msgstr "Název"
 
-#: index.php:86
+#: index.php:89
 msgid "Description"
 msgstr "Popis"
 
-#: index.php:88 index.php:159
+#: index.php:91 index.php:162
 msgid "Priority"
 msgstr "Priorita"
 
-#: index.php:90 index.php:161 index.php:209
+#: index.php:93 index.php:164 index.php:212
 msgid "Category"
 msgstr "Kategorie"
 
-#: index.php:102 setup.php:86
+#: index.php:105 setup.php:87
 #, php-format
 msgid "Can not find needed PHP extension \"%s\". Please install and enable it."
 msgstr ""
 "Nepodařilo se načíst potřebné rozšíření PHP \"%s\". Prosím nainstalujte a "
 "povolte ho."
 
-#: index.php:109 setup.php:94
+#: index.php:112 setup.php:95
 msgid "Can not connect to MySQL database. Please check your configuration."
 msgstr ""
 "Nepodařilo se připojit k MySQL databázi. Prosím zkontrolujte vaše nastavení."
 
-#: index.php:116
+#: index.php:119
 msgid ""
 "Can not select configured database. Please check your configuration or use "
 "setup.php."
@@ -58,7 +58,7 @@ msgstr ""
 "Nepodařilo se vybrat zvolenou databázi. Prosím zkontrolujte vaše nastavení "
 "nebo použijte setup.php."
 
-#: index.php:121
+#: index.php:124
 #, php-format
 msgid ""
 "Can not find table \"%s\". Please check your configuration or use setup.php."
@@ -66,130 +66,130 @@ msgstr ""
 "Nepodařilo se nalézt tabulku \"%s\". Prosím zkontrolujte vaše nastavení nebo "
 "použijte setup.php."
 
-#: index.php:127
+#: index.php:130
 #, php-format
 msgid "Table %s need update. Please upgrade your tables or use setup.php."
 msgstr ""
 "Tabulka %s potřebuje aktualizaci. Prosím aktualizujte ji, nebo použijte "
 "setup.php."
 
-#: index.php:137
+#: index.php:140
 #, php-format
 msgid "Invalid language (%s) has been chosen."
 msgstr "Byl zvolen chybný jazyk (%s)."
 
-#: index.php:152 index.php:602
+#: index.php:155 index.php:605
 msgid "No categories defined."
 msgstr "Nejsou definovány žádné kategorie."
 
-#: index.php:156 index.php:168 index.php:605 index.php:609
+#: index.php:159 index.php:171 index.php:608 index.php:612
 msgid "Filter"
 msgstr "Filtr"
 
-#: index.php:157
+#: index.php:160
 msgid "Text"
 msgstr "Text"
 
-#: index.php:163 index.php:606 index.php:613 lib/category.php:43
+#: index.php:166 index.php:609 index.php:616 lib/category.php:43
 msgid "Personal"
 msgstr "Osobní"
 
-#: index.php:164 index.php:166 index.php:607
+#: index.php:167 index.php:169 index.php:610
 msgid "All"
 msgstr "Vše"
 
-#: index.php:164 index.php:166 index.php:607
+#: index.php:167 index.php:169 index.php:610
 msgid "Show"
 msgstr "Zobrazit"
 
-#: index.php:164 index.php:166 index.php:607
+#: index.php:167 index.php:169 index.php:610
 msgid "Hide"
 msgstr "Schovat"
 
-#: index.php:165
+#: index.php:168
 msgid "Finished"
 msgstr "Ukončené"
 
-#: index.php:203 index.php:244 index.php:278 index.php:293 index.php:308
+#: index.php:206 index.php:247 index.php:281 index.php:296 index.php:311
 msgid "No entries found."
 msgstr "Nebyly nalezeny žádne položky."
 
-#: index.php:210 index.php:250
+#: index.php:213 index.php:253
 msgid "Created"
 msgstr "Vytvořen"
 
-#: index.php:211 index.php:613
+#: index.php:214 index.php:616
 msgid "Actions"
 msgstr "Akce"
 
-#: index.php:224 index.php:260
+#: index.php:227 index.php:263
 msgid "Reopen"
 msgstr "Otevřít"
 
-#: index.php:226 index.php:262
+#: index.php:229 index.php:265
 msgid "Finish"
 msgstr "Ukončit"
 
-#: index.php:228 index.php:264 index.php:332 index.php:414 index.php:619
+#: index.php:231 index.php:267 index.php:335 index.php:417 index.php:622
 msgid "Edit"
 msgstr "Upravit"
 
-#: index.php:229 index.php:265 index.php:572 index.php:587 index.php:620
+#: index.php:232 index.php:268 index.php:575 index.php:590 index.php:623
 msgid "Delete"
 msgstr "Smazat"
 
-#: index.php:240 index.php:274 index.php:289 index.php:304 index.php:511
+#: index.php:243 index.php:277 index.php:292 index.php:307 index.php:514
 msgid "Invalid parameters."
 msgstr "Chybné parametry."
 
-#: index.php:252
+#: index.php:255
 msgid "Updated"
 msgstr "Aktualizován"
 
-#: index.php:255
+#: index.php:258
 msgid "Closed"
 msgstr "Uzavřený"
 
-#: index.php:282
+#: index.php:285
 #, php-format
 msgid "Task %s reopened."
 msgstr "Úkol %s byl otevřen."
 
-#: index.php:297
+#: index.php:300
 #, php-format
 msgid "Task %s finished."
 msgstr "Úkol %s byl ukončen."
 
-#: index.php:312
+#: index.php:315
 #, php-format
 msgid "Task %s has been deleted."
 msgstr "Úkol %s byl vymazán."
 
-#: index.php:319 index.php:326 index.php:341 index.php:346 index.php:351
-#: index.php:427 index.php:433 index.php:446 index.php:451 index.php:455
-#: index.php:495 index.php:501 index.php:522 index.php:528 index.php:552
-#: index.php:558
+#: index.php:322 index.php:329 index.php:344 index.php:349 index.php:354
+#: index.php:430 index.php:436 index.php:449 index.php:454 index.php:458
+#: index.php:498 index.php:504 index.php:525 index.php:531 index.php:555
+#: index.php:561
 msgid "Invalid ID."
 msgstr "Chyné ID."
 
-#: index.php:357
+#: index.php:360
 msgid "Title can not be empty."
 msgstr "Název nesmí být prázdný."
 
-#: index.php:361 index.php:366
+#: index.php:364 index.php:369
 msgid "Invalid category."
 msgstr "Chybná kategorie."
 
-#: index.php:371 index.php:376
+#: index.php:374 index.php:379
 msgid "Invalid priority."
 msgstr "Chybná priorita."
 
-#: index.php:391
+#: index.php:394
 #, php-format
 msgid "Task %s has been added."
 msgstr "Úkol %s byl přidán."
 
-#: index.php:398
+#: index.php:401
 msgid ""
 "Concurrency error! Changes not saved, because someone else already changed "
 "record."
@@ -197,168 +197,168 @@ msgstr ""
 "Chyba konkuretního přístupu! Změny nebyly uloženy, protože někdo mezitím "
 "změnil záznam."
 
-#: index.php:401
+#: index.php:404
 #, php-format
 msgid "Task %s has been changed."
 msgstr "Úkol %s byl změněn."
 
-#: index.php:416 lib/toolbar.php:13
+#: index.php:419 lib/toolbar.php:13
 msgid "Add"
 msgstr "Přidat"
 
-#: index.php:437 index.php:487
+#: index.php:440 index.php:490
 msgid "Edit category"
 msgstr "Upravit kategorii"
 
-#: index.php:461
+#: index.php:464
 msgid "Name can not be empty."
 msgstr "Jméno nesmí být prázdné."
 
-#: index.php:473
+#: index.php:476
 #, php-format
 msgid "Category %s has been added."
 msgstr "Kategorie %s byla přidána."
 
-#: index.php:476
+#: index.php:479
 #, php-format
 msgid "Category %s has been changed."
 msgstr "Kategorie %s byla změněna."
 
-#: index.php:489 lib/toolbar.php:15
+#: index.php:492 lib/toolbar.php:15
 msgid "Add category"
 msgstr "Přidat kategorii"
 
-#: index.php:518 index.php:535 index.php:539 index.php:543
+#: index.php:521 index.php:538 index.php:542 index.php:546
 #, php-format
 msgid "Category %s has been deleted."
 msgstr "Kategorie %s byla vymazána."
 
-#: index.php:563
+#: index.php:566
 #, php-format
 msgid "You are about to delete category \"%s\""
 msgstr "Chcete vymazat kategorii \"%s\""
 
-#: index.php:569
+#: index.php:572
 #, php-format
 msgid "Number of tasks in category: %d"
 msgstr "Počet úkolů v kategorii: %d"
 
-#: index.php:570
+#: index.php:573
 msgid "What to do with task in deleted category?"
 msgstr "Co chcete udělat s úkoly ve vymazané kategorii?"
 
-#: index.php:574
+#: index.php:577
 msgid "Move to another category"
 msgstr "Přesunout do jiné kategorie"
 
-#: index.php:575
+#: index.php:578
 msgid "Target category"
 msgstr "Cílová kategorie"
 
-#: index.php:581 index.php:584
+#: index.php:584 index.php:587
 msgid "There are no tasks in this category."
 msgstr "Nebyly nalezeny žádné úkoly v této kategorii."
 
-#: index.php:613 index.php:630 lib/category.php:40
+#: index.php:616 index.php:633 lib/category.php:40
 msgid "Name"
 msgstr "Jméno"
 
-#: index.php:617 setup.php:121
+#: index.php:620 setup.php:122
 msgid "Yes"
 msgstr "Ano"
 
-#: index.php:617 setup.php:121
+#: index.php:620 setup.php:122
 msgid "No"
 msgstr "Ne"
 
-#: index.php:630
+#: index.php:633
 msgid "Item"
 msgstr "Položka"
 
-#: index.php:636
+#: index.php:639
 msgid "Total tasks count"
 msgstr "Celkem úkolů"
 
-#: index.php:644
+#: index.php:647
 msgid "Opened tasks count"
 msgstr "Otevřených úkolů"
 
-#: index.php:655
+#: index.php:658
 msgid "Opened high priority count"
 msgstr "Otevřených úkolů s vysokou prioritou"
 
-#: index.php:662
+#: index.php:665
 msgid "Opened medium priority tasks"
 msgstr "Otevřených úkolů se střední prioritou"
 
-#: index.php:669
+#: index.php:672
 msgid "Opened low priority tasks"
 msgstr "Otevřených úkolů s nízkou prioritou"
 
-#: index.php:680
+#: index.php:683
 msgid "Oldest task"
 msgstr "Nejstarší úkol"
 
-#: index.php:682
+#: index.php:685
 msgid "Oldest task age"
 msgstr "Stáří nejstaršího úkolu"
 
-#: index.php:683 index.php:691 index.php:701 index.php:709 index.php:717
+#: index.php:686 index.php:694 index.php:704 index.php:712 index.php:720
 msgid "days"
 msgstr "dnů"
 
-#: index.php:690
+#: index.php:693
 msgid "Average task age"
 msgstr "Průměrné stáří úkolu"
 
-#: index.php:698
+#: index.php:701
 msgid "Oldest opened task"
 msgstr "Nejstarší otevřený úkol"
 
-#: index.php:700
+#: index.php:703
 msgid "Oldest opened task age"
 msgstr "Stáří nejdéle otevřeného úkolu"
 
-#: index.php:708
+#: index.php:711
 msgid "Average opened task age"
 msgstr "Průměrné stáří otevřeného úkolu"
 
-#: index.php:716
+#: index.php:719
 msgid "Average age when task is closed"
 msgstr "Průměrné stáří úkolu při uzavření"
 
-#: index.php:725
+#: index.php:728
 msgid "About Ukolovnik"
 msgstr "O Ukolovniku"
 
-#: index.php:726
+#: index.php:729
 msgid "Ukolovnik is simple todo manager licensed under GNU/GPL version 2."
 msgstr ""
 "Ukolovnik je jednoduchý zprávce úkolů vydaný pod licencí GNU/GPL verze 2."
 
-#: index.php:728
+#: index.php:731
 #, php-format
 msgid "It has homepage on %s."
 msgstr "Jeho domovskou stránku naleznete na %s."
 
-#: index.php:731
+#: index.php:734
 #, php-format
 msgid "You can support it's development on %s."
 msgstr "Jeho vývoj můžete podpořit na %s."
 
-#: index.php:736
+#: index.php:739
 msgid "Please select export format:"
 msgstr "Prosím zvolte formát exportu:"
 
-#: index.php:738
+#: index.php:741
 msgid "CSV (Comma separated values)"
 msgstr "CSV (Čárkou oddělené hodnoty)"
 
-#: index.php:739
+#: index.php:742
 msgid "vCalendar"
 msgstr "vCalendar"
 
-#: index.php:796
+#: index.php:799
 msgid "Uknonwn command! Maybe you hit some not yet implemented functionality."
 msgstr ""
 "Neznámý příkaz! Pravděpodobně jste narazili na neimplementovanou "
@@ -433,7 +433,7 @@ msgstr "Nastavení"
 msgid "About"
 msgstr "O programu"
 
-#: setup.php:104
+#: setup.php:105
 msgid ""
 "Tables are in correct state (see above messages about needed changes, if "
 "any), you can go back to index.php."
@@ -441,11 +441,11 @@ msgstr ""
 "Tabulky jsou v pořádku (případné úpravy jsou popsány výše), můžete se vrátit "
 "zpět na index.php."
 
-#: setup.php:106
+#: setup.php:107
 msgid "Settings has been updated"
 msgstr "Nastavení byla aktualizována"
 
-#: setup.php:137
+#: setup.php:138
 msgid "Save"
 msgstr "Uložit"
 
