@@ -17,5 +17,6 @@ HTML_toolbar(array(
     _('Stats') => 'index.php?cmd=stats',
     _('Settings') => 'setup.php',
     _('About') => 'index.php?cmd=about',
+    _('Donate') => 'http://cihar.com/donate',
     ));
 ?>
