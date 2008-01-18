@@ -54,4 +54,15 @@ function LOCALE_list() {
     }
     return $langs;
 }
+
+/**
+ * Returns URL to cihar.com server with locale based prefix.
+ */
+function LOCALE_url($base) {
+    $lang = CONFIG_get('language');
+    if ($lang == 'cs') {
+        return 'cz.' . $base;
+    }
+    return $base;
+}
 ?>

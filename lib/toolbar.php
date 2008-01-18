@@ -7,6 +7,7 @@
 
 // Grab needed libraries
 require_once('./lib/html.php');
+require_once('./lib/locale.php');
 
 HTML_toolbar(array(
     _('Main') => 'index.php',
@@ -17,6 +18,6 @@ HTML_toolbar(array(
     _('Stats') => 'index.php?cmd=stats',
     _('Settings') => 'setup.php',
     _('About') => 'index.php?cmd=about',
-    _('Donate') => 'http://cihar.com/donate',
+    _('Donate') => 'http://' . LOCALE_url('cihar.com/donate/'),
     ));
 ?>

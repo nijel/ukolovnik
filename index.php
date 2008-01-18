@@ -15,6 +15,7 @@ require_once('./lib/string.php');
 require_once('./lib/category.php');
 require_once('./lib/priority.php');
 require_once('./lib/extensions.php');
+require_once('./lib/locale.php');
 
 // Strip possible slashes in REQUEST
 HTTP_clean_request();
@@ -728,10 +729,12 @@ while (!empty($cmd)) {
             echo '<h3>' . _('About Ukolovnik') . '</h3>';
             echo '<p>' . _('Ukolovnik is simple todo manager licensed under GNU/GPL version 2.') . '</p>';
             echo '<p>';
-            printf(_('It has homepage on %s.'), '<a href="http://cihar.com/software/ukolovnik/">cihar.com/software/ukolovnik</a>');
+            $url = LOCALE_url('cihar.com/software/ukolovnik');
+            printf(_('It has homepage on %s.'), '<a href="http://' . $url . '/">' . $url . '</a>');
             echo '</p>';
             echo '<p>';
-            printf(_('You can support it\'s development on %s.'), '<a href="http://cihar.com/donate/">cihar.com/donate</a>');
+            $url = LOCALE_url('cihar.com/donate');
+            printf(_('You can support it\'s development on %s.'), '<a href="http://' . $url . '/">' . $url . '</a>');
             echo '</p>';
             $cmd = '';
             break;
