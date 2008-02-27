@@ -432,7 +432,7 @@ msgstr "Om"
 
 #: lib/toolbar.php:21
 msgid "Donate"
-msgstr ""
+msgstr "Donerar"
 
 #: setup.php:105
 msgid ""
