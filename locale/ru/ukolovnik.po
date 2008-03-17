@@ -2,19 +2,18 @@
 # Copyright (C) 2003 - 2008 Michal Čihař
 # This file is distributed under the same license as the Ukolovnik package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Ukolovnik 1.1\n"
 "Report-Msgid-Bugs-To: michal@cihar.com\n"
 "POT-Creation-Date: 2008-02-27 16:07+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2008-03-12 17:49+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Translate Toolkit 1.1.0\n"
+"X-Generator: Pootle 1.0.2\n"
 
 #: index.php:69
 msgid "Any"
@@ -22,19 +21,19 @@ msgstr ""
 
 #: index.php:88 index.php:212
 msgid "Title"
-msgstr ""
+msgstr "Название"
 
 #: index.php:90
 msgid "Description"
-msgstr ""
+msgstr "Описание"
 
 #: index.php:92 index.php:163
 msgid "Priority"
-msgstr ""
+msgstr "Приоритет"
 
 #: index.php:94 index.php:165 index.php:213
 msgid "Category"
-msgstr ""
+msgstr "Категория"
 
 #: index.php:106 setup.php:87
 #, php-format
@@ -69,63 +68,63 @@ msgstr ""
 
 #: index.php:156 index.php:606
 msgid "No categories defined."
-msgstr ""
+msgstr "Нет категорий"
 
 #: index.php:160 index.php:172 index.php:609 index.php:613
 msgid "Filter"
-msgstr ""
+msgstr "Фильтр"
 
 #: index.php:161
 msgid "Text"
-msgstr ""
+msgstr "Текст"
 
 #: index.php:167 index.php:610 index.php:617 lib/category.php:43
 msgid "Personal"
-msgstr ""
+msgstr "Личное"
 
 #: index.php:168 index.php:170 index.php:611
 msgid "All"
-msgstr ""
+msgstr "Все"
 
 #: index.php:168 index.php:170 index.php:611
 msgid "Show"
-msgstr ""
+msgstr "Показать"
 
 #: index.php:168 index.php:170 index.php:611
 msgid "Hide"
-msgstr ""
+msgstr "Спрятать"
 
 #: index.php:169
 msgid "Finished"
-msgstr ""
+msgstr "Завершено"
 
 #: index.php:207 index.php:248 index.php:282 index.php:297 index.php:312
 msgid "No entries found."
-msgstr ""
+msgstr "Нет записей."
 
 #: index.php:214 index.php:254
 msgid "Created"
-msgstr ""
+msgstr "Создано"
 
 #: index.php:215 index.php:617
 msgid "Actions"
-msgstr ""
+msgstr "Действия"
 
 #: index.php:228 index.php:264
 msgid "Reopen"
-msgstr ""
+msgstr "Возобновить"
 
 #: index.php:230 index.php:266
 msgid "Finish"
-msgstr ""
+msgstr "Завершить"
 
 #: index.php:232 index.php:268 index.php:336 index.php:418 index.php:623
 msgid "Edit"
-msgstr ""
+msgstr "Редактировать"
 
 #: index.php:233 index.php:269 index.php:576 index.php:591 index.php:624
 msgid "Delete"
-msgstr ""
+msgstr "Удалить"
 
 #: index.php:244 index.php:278 index.php:293 index.php:308 index.php:515
 msgid "Invalid parameters."
@@ -133,11 +132,11 @@ msgstr ""
 
 #: index.php:256
 msgid "Updated"
-msgstr ""
+msgstr "Обновлено"
 
 #: index.php:259
 msgid "Closed"
-msgstr ""
+msgstr "Закрыто"
 
 #: index.php:286
 #, php-format
@@ -213,7 +212,7 @@ msgstr ""
 
 #: index.php:493 lib/toolbar.php:16
 msgid "Add category"
-msgstr ""
+msgstr "Добавить категорию"
 
 #: index.php:522 index.php:539 index.php:543 index.php:547
 #, php-format
@@ -236,7 +235,7 @@ msgstr ""
 
 #: index.php:578
 msgid "Move to another category"
-msgstr ""
+msgstr "Переместить в другую категорию"
 
 #: index.php:579
 msgid "Target category"
@@ -244,19 +243,19 @@ msgstr ""
 
 #: index.php:585 index.php:588
 msgid "There are no tasks in this category."
-msgstr ""
+msgstr "В этой категории нет заданий"
 
 #: index.php:617 index.php:634 lib/category.php:40
 msgid "Name"
-msgstr ""
+msgstr "Имя"
 
 #: index.php:621 setup.php:122
 msgid "Yes"
-msgstr ""
+msgstr "Да"
 
 #: index.php:621 setup.php:122
 msgid "No"
-msgstr ""
+msgstr "Нет"
 
 #: index.php:634
 msgid "Item"
@@ -264,11 +263,12 @@ msgstr ""
 
 #: index.php:640
 msgid "Total tasks count"
-msgstr ""
+msgstr "Всего задач"
 
 #: index.php:648
+#, fuzzy
 msgid "Opened tasks count"
-msgstr ""
+msgstr "Открытых задач"
 
 #: index.php:659
 msgid "Opened high priority count"
@@ -334,15 +334,15 @@ msgstr ""
 
 #: index.php:742
 msgid "Please select export format:"
-msgstr ""
+msgstr "Пожалуйста, выберите формат для экспорта данных:"
 
 #: index.php:744
 msgid "CSV (Comma separated values)"
-msgstr ""
+msgstr "CSV (значения, разделённые запятыми)"
 
 #: index.php:745
 msgid "vCalendar"
-msgstr ""
+msgstr "vCalendar"
 
 #: index.php:802
 msgid "Uknonwn command! Maybe you hit some not yet implemented functionality."
@@ -350,39 +350,39 @@ msgstr ""
 
 #: lib/html.php:67
 msgid "Default style"
-msgstr ""
+msgstr "Стиль по умолчанию"
 
 #: lib/priority.php:16
 msgid "Low"
-msgstr ""
+msgstr "Низкий"
 
 #: lib/priority.php:16
 msgid "Medium"
-msgstr ""
+msgstr "Средний"
 
 #: lib/priority.php:16
 msgid "High"
-msgstr ""
+msgstr "Высокий"
 
 #: lib/sql.php:87
 #, php-format
 msgid "Database %s has been created."
-msgstr ""
+msgstr "База данных %s создана"
 
 #: lib/sql.php:117 lib/sql.php:128 lib/sql.php:136
 #, php-format
 msgid "Table %s has been created."
-msgstr ""
+msgstr "Таблица %s создана"
 
 #: lib/sql.php:155
 #, php-format
 msgid "Settings database has been updated"
-msgstr ""
+msgstr "База данных с настройками обновлена"
 
 #: lib/sql.php:165
 #, php-format
 msgid "Table %s updated."
-msgstr ""
+msgstr "Таблица %s обновлена."
 
 #: lib/sql.php:188
 #, php-format
@@ -395,31 +395,31 @@ msgstr ""
 
 #: lib/toolbar.php:13
 msgid "Main"
-msgstr ""
+msgstr "Главная"
 
 #: lib/toolbar.php:15
 msgid "Categories"
-msgstr ""
+msgstr "Категории"
 
 #: lib/toolbar.php:17
 msgid "Export"
-msgstr ""
+msgstr "Экспорт"
 
 #: lib/toolbar.php:18
 msgid "Stats"
-msgstr ""
+msgstr "Статистика"
 
 #: lib/toolbar.php:19
 msgid "Settings"
-msgstr ""
+msgstr "Настройки"
 
 #: lib/toolbar.php:20
 msgid "About"
-msgstr ""
+msgstr "О программе"
 
 #: lib/toolbar.php:21
 msgid "Donate"
-msgstr ""
+msgstr "Помочь проекту"
 
 #: setup.php:105
 msgid ""
@@ -429,8 +429,8 @@ msgstr ""
 
 #: setup.php:107
 msgid "Settings has been updated"
-msgstr ""
+msgstr "Настройки обновлены"
 
 #: setup.php:138
 msgid "Save"
-msgstr ""
+msgstr "Сохранить"
