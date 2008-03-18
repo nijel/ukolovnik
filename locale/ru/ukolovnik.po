@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: Ukolovnik 1.1\n"
 "Report-Msgid-Bugs-To: michal@cihar.com\n"
 "POT-Creation-Date: 2008-02-27 16:07+0100\n"
-"PO-Revision-Date: 2008-03-12 17:49+0100\n"
+"PO-Revision-Date: 2008-03-17 18:56+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -17,7 +17,7 @@ msgstr ""
 
 #: index.php:69
 msgid "Any"
-msgstr ""
+msgstr "Любой"
 
 #: index.php:88 index.php:212
 msgid "Title"
@@ -39,36 +39,45 @@ msgstr "Категория"
 #, php-format
 msgid "Can not find needed PHP extension \"%s\". Please install and enable it."
 msgstr ""
+"Отсутствует расширение PHP \"%s\". Пожалуйста, установите и активируйте его."
 
 #: index.php:113 setup.php:95
 msgid "Can not connect to MySQL database. Please check your configuration."
 msgstr ""
+"Невозможно подключиться к базе данных MySQL. Пожалуйста, проверьте "
+"конфигурацию."
 
 #: index.php:120
 msgid ""
 "Can not select configured database. Please check your configuration or use "
 "setup.php."
 msgstr ""
+"Невозможно выбрать указанную базу данных. Пожалуйста, проверьте настройки, "
+"или откройте setup.php."
 
 #: index.php:125
 #, php-format
 msgid ""
 "Can not find table \"%s\". Please check your configuration or use setup.php."
 msgstr ""
+"Невозможно найти таблицу \"%s\". Пожалуйста, проверьте настройки, или откройте "
+"setup.php."
 
 #: index.php:131
 #, php-format
 msgid "Table %s need update. Please upgrade your tables or use setup.php."
 msgstr ""
+"Необходимо обновить таблицу %s. Пожалуйста, обновите таблицы или откройте "
+"setup.php."
 
 #: index.php:141
 #, php-format
 msgid "Invalid language (%s) has been chosen."
-msgstr ""
+msgstr "Выбран неправильный язык (%s)."
 
 #: index.php:156 index.php:606
 msgid "No categories defined."
-msgstr "Нет категорий"
+msgstr "Категории не определены."
 
 #: index.php:160 index.php:172 index.php:609 index.php:613
 msgid "Filter"
@@ -128,7 +137,7 @@ msgstr "Удалить"
 
 #: index.php:244 index.php:278 index.php:293 index.php:308 index.php:515
 msgid "Invalid parameters."
-msgstr ""
+msgstr "Неправильные настройки."
 
 #: index.php:256
 msgid "Updated"
@@ -141,74 +150,76 @@ msgstr "Закрыто"
 #: index.php:286
 #, php-format
 msgid "Task %s reopened."
-msgstr ""
+msgstr "Задание %s возобновлено."
 
 #: index.php:301
 #, php-format
 msgid "Task %s finished."
-msgstr ""
+msgstr "Задание %s завершено."
 
 #: index.php:316
 #, php-format
 msgid "Task %s has been deleted."
-msgstr ""
+msgstr "Задание %s удалено."
 
 #: index.php:323 index.php:330 index.php:345 index.php:350 index.php:355
 #: index.php:431 index.php:437 index.php:450 index.php:455 index.php:459
 #: index.php:499 index.php:505 index.php:526 index.php:532 index.php:556
 #: index.php:562
 msgid "Invalid ID."
-msgstr ""
+msgstr "Неправильный ID."
 
 #: index.php:361
 msgid "Title can not be empty."
-msgstr ""
+msgstr "Заголовок не может быть пустым."
 
 #: index.php:365 index.php:370
 msgid "Invalid category."
-msgstr ""
+msgstr "Неправильная категория."
 
 #: index.php:375 index.php:380
 msgid "Invalid priority."
-msgstr ""
+msgstr "Неправильный приоритет."
 
 #: index.php:395
 #, php-format
 msgid "Task %s has been added."
-msgstr ""
+msgstr "Добавлено задание %s."
 
 #: index.php:402
 msgid ""
 "Concurrency error! Changes not saved, because someone else already changed "
 "record."
 msgstr ""
+"Ошибка: изменения не сохранены, так как кто-то другой параллельно с вами уже "
+"изменил запись."
 
 #: index.php:405
 #, php-format
 msgid "Task %s has been changed."
-msgstr ""
+msgstr "Задание %s изменено."
 
 #: index.php:420 lib/toolbar.php:14
 msgid "Add"
-msgstr ""
+msgstr "Добавить"
 
 #: index.php:441 index.php:491
 msgid "Edit category"
-msgstr ""
+msgstr "Редактировать категорию"
 
 #: index.php:465
 msgid "Name can not be empty."
-msgstr ""
+msgstr "Имя не может быть пустым."
 
 #: index.php:477
 #, php-format
 msgid "Category %s has been added."
-msgstr ""
+msgstr "Категория %s добавлена."
 
 #: index.php:480
 #, php-format
 msgid "Category %s has been changed."
-msgstr ""
+msgstr "Категория %s изменена."
 
 #: index.php:493 lib/toolbar.php:16
 msgid "Add category"
@@ -217,21 +228,21 @@ msgstr "Добавить категорию"
 #: index.php:522 index.php:539 index.php:543 index.php:547
 #, php-format
 msgid "Category %s has been deleted."
-msgstr ""
+msgstr "Категория %s удалена."
 
 #: index.php:567
 #, php-format
 msgid "You are about to delete category \"%s\""
-msgstr ""
+msgstr "Вы собираетесь удалить категорию \"%s\""
 
 #: index.php:573
 #, php-format
 msgid "Number of tasks in category: %d"
-msgstr ""
+msgstr "Количество задач в категории: %d"
 
 #: index.php:574
 msgid "What to do with task in deleted category?"
-msgstr ""
+msgstr "Что сделать с задачами в удалённой категории?"
 
 #: index.php:578
 msgid "Move to another category"
@@ -239,7 +250,7 @@ msgstr "Переместить в другую категорию"
 
 #: index.php:579
 msgid "Target category"
-msgstr ""
+msgstr "Целевая категория"
 
 #: index.php:585 index.php:588
 msgid "There are no tasks in this category."
@@ -247,7 +258,7 @@ msgstr "В этой категории нет заданий"
 
 #: index.php:617 index.php:634 lib/category.php:40
 msgid "Name"
-msgstr "Имя"
+msgstr "Название"
 
 #: index.php:621 setup.php:122
 msgid "Yes"
@@ -259,78 +270,79 @@ msgstr "Нет"
 
 #: index.php:634
 msgid "Item"
-msgstr ""
+msgstr "Содержание"
 
 #: index.php:640
 msgid "Total tasks count"
 msgstr "Всего задач"
 
 #: index.php:648
-#, fuzzy
 msgid "Opened tasks count"
-msgstr "Открытых задач"
+msgstr "Задач выполняется"
 
 #: index.php:659
 msgid "Opened high priority count"
-msgstr ""
+msgstr "Выполняется задач с высоким приоритетом"
 
 #: index.php:666
 msgid "Opened medium priority tasks"
-msgstr ""
+msgstr "Выполняется задач со средним приоритетом"
 
 #: index.php:673
 msgid "Opened low priority tasks"
-msgstr ""
+msgstr "Выполняется задач с низким приоритетом"
 
 #: index.php:684
 msgid "Oldest task"
-msgstr ""
+msgstr "Самая старая задача"
 
 #: index.php:686
 msgid "Oldest task age"
-msgstr ""
+msgstr "Давность самой старой задачи"
 
 #: index.php:687 index.php:695 index.php:705 index.php:713 index.php:721
 msgid "days"
-msgstr ""
+msgstr "дней"
 
 #: index.php:694
 msgid "Average task age"
-msgstr ""
+msgstr "Средний возраст задачи"
 
 #: index.php:702
 msgid "Oldest opened task"
-msgstr ""
+msgstr "Самая старая незавершённая задача"
 
 #: index.php:704
 msgid "Oldest opened task age"
-msgstr ""
+msgstr "Возраст самой старой незавершённой задачи"
 
 #: index.php:712
 msgid "Average opened task age"
-msgstr ""
+msgstr "Средний возраст незавершённых задач"
 
 #: index.php:720
 msgid "Average age when task is closed"
-msgstr ""
+msgstr "Средний возраст задачи на момент завершения"
 
 #: index.php:729
 msgid "About Ukolovnik"
-msgstr ""
+msgstr "О программе \"Ukolovnik\""
 
 #: index.php:730
 msgid "Ukolovnik is simple todo manager licensed under GNU/GPL version 2."
 msgstr ""
+"\"Ukolovnik\" — это простой менеджер задач, выпущенный под лицензией GNU/GPL "
+"2."
 
 #: index.php:733
 #, php-format
 msgid "It has homepage on %s."
-msgstr ""
+msgstr "Домашняя страница %s."
 
 #: index.php:737
 #, php-format
 msgid "You can support it's development on %s."
-msgstr ""
+msgstr "Вы можете поддержать проект %s."
 
 #: index.php:742
 msgid "Please select export format:"
@@ -347,6 +359,8 @@ msgstr "vCalendar"
 #: index.php:802
 msgid "Uknonwn command! Maybe you hit some not yet implemented functionality."
 msgstr ""
+"Неизвестная команда. Возможно, вы попытались задействовать ещё не "
+"реализованный функционал."
 
 #: lib/html.php:67
 msgid "Default style"
@@ -387,11 +401,11 @@ msgstr "Таблица %s обновлена."
 #: lib/sql.php:188
 #, php-format
 msgid "SQL query failed: %s"
-msgstr ""
+msgstr "SQL запрос \"%s\" не выполнен"
 
 #: lib/string.php:15
 msgid "%d.%m.%Y, %H:%M"
-msgstr ""
+msgstr "%д.%м.%Г, %Ч:%М"
 
 #: lib/toolbar.php:13
 msgid "Main"
@@ -426,6 +440,8 @@ msgid ""
 "Tables are in correct state (see above messages about needed changes, if "
 "any), you can go back to index.php."
 msgstr ""
+"Таблицы проверены (выше могут быть сообщения о необходимых изменениях), вы "
+"можете вернуться на страницу index.php."
 
 #: setup.php:107
 msgid "Settings has been updated"
