@@ -1,0 +1,435 @@
+# Ukolovnik translation.
+# Copyright (C) 2003 - 2008 Michal Čihař
+# This file is distributed under the same license as the Ukolovnik package.
+# Jean-Michel OLTRA <jm.oltra@affaires-en-ligne.com>, 2008.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Ukolovnik 1.0\n"
+"Report-Msgid-Bugs-To: michal@cihar.com\n"
+"POT-Creation-Date: 2008-02-27 16:07+0100\n"
+"PO-Revision-Date: 2008-10-20 22:00+0200\n"
+"Last-Translator: Jean-Michel Oltra <jm.oltra@affaires-en-ligne.com>\n"
+"Language-Team: French <fr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: index.php:69
+msgid "Any"
+msgstr "Tous"
+
+#: index.php:88 index.php:212
+msgid "Title"
+msgstr "Titre"
+
+#: index.php:90
+msgid "Description"
+msgstr "Description"
+
+#: index.php:92 index.php:163
+msgid "Priority"
+msgstr "Priorité"
+
+#: index.php:94 index.php:165 index.php:213
+msgid "Category"
+msgstr "Catégorie"
+
+#: index.php:106 setup.php:87
+#, php-format
+msgid "Can not find needed PHP extension \"%s\". Please install and enable it."
+msgstr "Impossible de trouver l'extension php \"%s\" requise. Veuillez l'installer et l'activer."
+
+#: index.php:113 setup.php:95
+msgid "Can not connect to MySQL database. Please check your configuration."
+msgstr "Impossible de se connecter à la base de données MySQL. Veuillez vérifier votre configuration."
+
+#: index.php:120
+msgid ""
+"Can not select configured database. Please check your configuration or use "
+"setup.php."
+msgstr "Impossible d'atteindre la base de données configurée. Veuillez vérifier votre configuration ou utiliser le fichier setup.php."
+
+#: index.php:125
+#, php-format
+msgid ""
+"Can not find table \"%s\". Please check your configuration or use setup.php."
+msgstr "Impossible de trouver la table \"%s\". Veuillez vérifier votre configuration ou utiliser le fichier setup.php."
+
+#: index.php:131
+#, php-format
+msgid "Table %s need update. Please upgrade your tables or use setup.php."
+msgstr "La table %s a besoin d'une mise à jour. Veuillez effectuer une mise à jour de vos tables ou utiliser le fichier setup.php."
+
+#: index.php:141
+#, php-format
+msgid "Invalid language (%s) has been chosen."
+msgstr "La langue choise (%s) est invalide."
+
+#: index.php:156 index.php:606
+msgid "No categories defined."
+msgstr "Aucune catégorie n'a été définie."
+
+#: index.php:160 index.php:172 index.php:609 index.php:613
+msgid "Filter"
+msgstr "Filtre"
+
+#: index.php:161
+msgid "Text"
+msgstr "Texte"
+
+#: index.php:167 index.php:610 index.php:617 lib/category.php:43
+msgid "Personal"
+msgstr "Confidentialité"
+
+#: index.php:168 index.php:170 index.php:611
+msgid "All"
+msgstr "Toutes"
+
+#: index.php:168 index.php:170 index.php:611
+msgid "Show"
+msgstr "Afficher"
+
+#: index.php:168 index.php:170 index.php:611
+msgid "Hide"
+msgstr "Masquer"
+
+#: index.php:169
+msgid "Finished"
+msgstr "Terminées"
+
+#: index.php:207 index.php:248 index.php:282 index.php:297 index.php:312
+msgid "No entries found."
+msgstr "Aucun résultat."
+
+#: index.php:214 index.php:254
+msgid "Created"
+msgstr "Fait"
+
+#: index.php:215 index.php:617
+msgid "Actions"
+msgstr "Actions"
+
+#: index.php:228 index.php:264
+msgid "Reopen"
+msgstr "Ré-ouvert"
+
+#: index.php:230 index.php:266
+msgid "Finish"
+msgstr "Terminer"
+
+#: index.php:232 index.php:268 index.php:336 index.php:418 index.php:623
+msgid "Edit"
+msgstr "Modifier"
+
+#: index.php:233 index.php:269 index.php:576 index.php:591 index.php:624
+msgid "Delete"
+msgstr "Supprimer"
+
+#: index.php:244 index.php:278 index.php:293 index.php:308 index.php:515
+msgid "Invalid parameters."
+msgstr "Paramètres invalides."
+
+#: index.php:256
+msgid "Updated"
+msgstr "Mis à jour"
+
+#: index.php:259
+msgid "Closed"
+msgstr "Fermé"
+
+#: index.php:286
+#, php-format
+msgid "Task %s reopened."
+msgstr "Tâche %s ré-ouverte."
+
+#: index.php:301
+#, php-format
+msgid "Task %s finished."
+msgstr "Tâche %s terminée."
+
+#: index.php:316
+#, php-format
+msgid "Task %s has been deleted."
+msgstr "La tâche %s a été supprimée."
+
+#: index.php:323 index.php:330 index.php:345 index.php:350 index.php:355
+#: index.php:431 index.php:437 index.php:450 index.php:455 index.php:459
+#: index.php:499 index.php:505 index.php:526 index.php:532 index.php:556
+#: index.php:562
+msgid "Invalid ID."
+msgstr "Identifiant invalide."
+
+#: index.php:361
+msgid "Title can not be empty."
+msgstr "Le titre ne peut pas être laissé vide."
+
+#: index.php:365 index.php:370
+msgid "Invalid category."
+msgstr "Catégorie invalide."
+
+#: index.php:375 index.php:380
+msgid "Invalid priority."
+msgstr "Priorité invalide."
+
+#: index.php:395
+#, php-format
+msgid "Task %s has been added."
+msgstr "La tâche %s a été ajoutée."
+
+#: index.php:402
+msgid ""
+"Concurrency error! Changes not saved, because someone else already changed "
+"record."
+msgstr "Erreur de concurrence ! Les changements ne sont pas sauvegardés, car un autre utilisateur a fait des modifications."
+
+#: index.php:405
+#, php-format
+msgid "Task %s has been changed."
+msgstr "La tâche %s a été modifiée."
+
+#: index.php:420 lib/toolbar.php:14
+msgid "Add"
+msgstr "Ajouter"
+
+#: index.php:441 index.php:491
+msgid "Edit category"
+msgstr "Modifier la catégorie"
+
+#: index.php:465
+msgid "Name can not be empty."
+msgstr "Le nom ne peut être laissé vide."
+
+#: index.php:477
+#, php-format
+msgid "Category %s has been added."
+msgstr "La catégorie %s a été ajoutée."
+
+#: index.php:480
+#, php-format
+msgid "Category %s has been changed."
+msgstr "La catégorie %s a été modifiée."
+
+#: index.php:493 lib/toolbar.php:16
+msgid "Add category"
+msgstr "Ajouter une catégorie"
+
+#: index.php:522 index.php:539 index.php:543 index.php:547
+#, php-format
+msgid "Category %s has been deleted."
+msgstr "La catégorie %s a été supprimée."
+
+#: index.php:567
+#, php-format
+msgid "You are about to delete category \"%s\""
+msgstr "Vous vous apprêtez à supprimer la catégorie \"%s\""
+
+#: index.php:573
+#, php-format
+msgid "Number of tasks in category: %d"
+msgstr "Nombre de tâches dans la catégorie : %d"
+
+#: index.php:574
+msgid "What to do with task in deleted category?"
+msgstr "Que faire des tâches dans la catégorie supprimée ?"
+
+#: index.php:578
+msgid "Move to another category"
+msgstr "Déplacer vers une autre catégorie"
+
+#: index.php:579
+msgid "Target category"
+msgstr "Catégorie de destination"
+
+#: index.php:585 index.php:588
+msgid "There are no tasks in this category."
+msgstr "Il n'y a aucune tâche dans cette catégorie."
+
+#: index.php:617 index.php:634 lib/category.php:40
+msgid "Name"
+msgstr "Nom"
+
+#: index.php:621 setup.php:122
+msgid "Yes"
+msgstr "Oui"
+
+#: index.php:621 setup.php:122
+msgid "No"
+msgstr "Non"
+
+#: index.php:634
+msgid "Item"
+msgstr "Elément"
+
+#: index.php:640
+msgid "Total tasks count"
+msgstr "Nombre total de tâches"
+
+#: index.php:648
+msgid "Opened tasks count"
+msgstr "Nombre de tâches ouvertes"
+
+#: index.php:659
+msgid "Opened high priority count"
+msgstr "Nombre de tâches ouvertes en priorité élevée"
+
+#: index.php:666
+msgid "Opened medium priority tasks"
+msgstr "Tâches de moyenne priorité ouvertes"
+
+#: index.php:673
+msgid "Opened low priority tasks"
+msgstr "Tâches de basse priorité ouvertes"
+
+#: index.php:684
+msgid "Oldest task"
+msgstr "Tâche la plus ancienne"
+
+#: index.php:686
+msgid "Oldest task age"
+msgstr "Age de la tâche la plus ancienne"
+
+#: index.php:687 index.php:695 index.php:705 index.php:713 index.php:721
+msgid "days"
+msgstr "jours"
+
+#: index.php:694
+msgid "Average task age"
+msgstr "Moyenne d'âge des tâches"
+
+#: index.php:702
+msgid "Oldest opened task"
+msgstr "Tâche la plus vieille ouverte"
+
+#: index.php:704
+msgid "Oldest opened task age"
+msgstr "Age de la tâche la plus vieille ouverte"
+
+#: index.php:712
+msgid "Average opened task age"
+msgstr "Moyenne d'âge des tâches ouvertes"
+
+#: index.php:720
+msgid "Average age when task is closed"
+msgstr "Moyenne d'âge des tâches fermées"
+
+#: index.php:729
+msgid "About Ukolovnik"
+msgstr "A propos d'Ukolovnik"
+
+#: index.php:730
+msgid "Ukolovnik is simple todo manager licensed under GNU/GPL version 2."
+msgstr "Ukolovnik est un gestionnaire de tâches simplifié, sous license GNU/GPL version 2."
+
+#: index.php:733
+#, php-format
+msgid "It has homepage on %s."
+msgstr "Vous trouvez sa page d'accueil sur %s."
+
+#: index.php:737
+#, php-format
+msgid "You can support it's development on %s."
+msgstr "Vous pouvez contribuer à son développement sur %s."
+
+#: index.php:742
+msgid "Please select export format:"
+msgstr "Veuillez sélectionner un format d'exportation :"
+
+#: index.php:744
+msgid "CSV (Comma separated values)"
+msgstr "CSV (valeurs séparées par des virgules)"
+
+#: index.php:745
+msgid "vCalendar"
+msgstr "vCalendar"
+
+#: index.php:802
+msgid "Uknonwn command! Maybe you hit some not yet implemented functionality."
+msgstr "Commande inconnue ! Vous avez certainement activé une fonction non implémentée."
+
+#: lib/html.php:67
+msgid "Default style"
+msgstr "Style par défaut"
+
+#: lib/priority.php:16
+msgid "Low"
+msgstr "Basse"
+
+#: lib/priority.php:16
+msgid "Medium"
+msgstr "Moyenne"
+
+#: lib/priority.php:16
+msgid "High"
+msgstr "Elevée"
+
+#: lib/sql.php:87
+#, php-format
+msgid "Database %s has been created."
+msgstr "La base %s a été créée."
+
+#: lib/sql.php:117 lib/sql.php:128 lib/sql.php:136
+#, php-format
+msgid "Table %s has been created."
+msgstr "La table %s a été créee."
+
+#: lib/sql.php:155
+#, php-format
+msgid "Settings database has been updated"
+msgstr "La base des préférences a été mise à jour"
+
+#: lib/sql.php:165
+#, php-format
+msgid "Table %s updated."
+msgstr "Mise à jour de la table %s."
+
+#: lib/sql.php:188
+#, php-format
+msgid "SQL query failed: %s"
+msgstr "La requête SQL a échoué : %s"
+
+#: lib/string.php:15
+msgid "%d.%m.%Y, %H:%M"
+msgstr "%d.%m.%Y, %H%M"
+
+#: lib/toolbar.php:13
+msgid "Main"
+msgstr "Accueil"
+
+#: lib/toolbar.php:15
+msgid "Categories"
+msgstr "Catégories"
+
+#: lib/toolbar.php:17
+msgid "Export"
+msgstr "Export"
+
+#: lib/toolbar.php:18
+msgid "Stats"
+msgstr "Statistiques"
+
+#: lib/toolbar.php:19
+msgid "Settings"
+msgstr "Préférences"
+
+#: lib/toolbar.php:20
+msgid "About"
+msgstr "A propos"
+
+#: lib/toolbar.php:21
+msgid "Donate"
+msgstr "Faire un don"
+
+#: setup.php:105
+msgid ""
+"Tables are in correct state (see above messages about needed changes, if "
+"any), you can go back to index.php."
+msgstr "Les tables sont cohérentes (voyez les messages ci-dessus concernant les modifications éventuellement nécessaires), vous pouvez revenir sur index.php."
+
+#: setup.php:107
+msgid "Settings has been updated"
+msgstr "Les préférences ont été mises à jour."
+
+#: setup.php:138
+msgid "Save"
+msgstr "Enregistrer"
