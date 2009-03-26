@@ -7,9 +7,11 @@ Simple task manager written in PHP and using MySQL as backend.
 News
 ----
 
-1.1 release (2008-??-??)
+1.1 release (2009-??-??)
 
     * New French translation.
+    * New German translation.
+    * Properly set locales (bug #851).
 
 1.0 release (2008-02-27)
 
