@@ -441,7 +441,7 @@ msgstr "Přispějte"
 #. l10n: please keep also English text "Language" in translated text
 #: setup.php:41
 msgid "Language"
-msgstr "Jazyk"
+msgstr "Jazyk (Language)"
 
 #: setup.php:42
 msgid "Style"
