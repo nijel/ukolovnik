@@ -3,6 +3,9 @@ Ukolovnik
 
 Simple task manager written in PHP and using MySQL as backend. 
 
+It requires browser with decent CSS support (Internet Explorer 7 or
+newer or almost any version of Firefox, Safari or Opera).
+
 
 Homepage
 --------
