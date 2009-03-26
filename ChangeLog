@@ -13,6 +13,7 @@ News
     * New German translation.
     * New Russian translation.
     * Properly set locales (bug #851).
+    * Translate few missing strings in setup (bug #852).
 
 1.0 release (2008-02-27)
 
