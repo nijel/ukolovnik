@@ -37,6 +37,7 @@ function N_($text) {
 }
 
 $settings = array(
+    /* l10n: please keep also English text "Language" in translated text */
     array('name' => 'language', 'text' => N_('Language'), 'type' => 'select', 'values' => $langs),
     array('name' => 'style', 'text' => N_('Style'), 'type' => 'select', 'values' => $styles),
     array('name' => 'add_stay', 'text' => N_('Stay on add page after adding new entry'), 'type' => 'bool'),
