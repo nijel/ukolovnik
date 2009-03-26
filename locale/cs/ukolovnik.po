@@ -2,15 +2,15 @@
 # Copyright (C) 2003 - 2007 Michal Čihař
 # This file is distributed under the same license as the Ukolovnik package.
 # Michal Čihař <michal@cihar.com>, 2007.
-# Michal Čihař <michal@cihar.com>, 2007.
 #
 #
+# Michal Čihař <michal@cihar.com>, 20, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: Ukolovnik 1.1\n"
 "Report-Msgid-Bugs-To: michal@cihar.com\n"
 "POT-Creation-Date: 2009-03-26 13:30+0100\n"
-"PO-Revision-Date: 2008-03-27 16:05+0100\n"
+"PO-Revision-Date: 2009-03-26 13:57+0100\n"
 "Last-Translator: Michal Čihař <michal@cihar.com>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -465,7 +465,7 @@ msgstr ""
 
 #: setup.php:108
 msgid "Settings has been updated"
-msgstr "Nastavení byla aktualizována"
+msgstr "Nastavení byla aktualizováno"
 
 #: setup.php:139
 msgid "Save"
