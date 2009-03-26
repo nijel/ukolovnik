@@ -335,7 +335,7 @@ msgstr "O Ukolovniku"
 #: index.php:730
 msgid "Ukolovnik is simple todo manager licensed under GNU/GPL version 2."
 msgstr ""
-"Ukolovnik je jednoduchý zprávce úkolů vydaný pod licencí GNU/GPL verze 2."
+"Ukolovnik je jednoduchý správce úkolů vydaný pod licencí GNU/GPL verze 2."
 
 #: index.php:733
 #, php-format
