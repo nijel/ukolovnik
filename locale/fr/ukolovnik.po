@@ -5,9 +5,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Ukolovnik 1.0\n"
+"Project-Id-Version: Ukolovnik 1.1\n"
 "Report-Msgid-Bugs-To: michal@cihar.com\n"
-"POT-Creation-Date: 2008-02-27 16:07+0100\n"
+"POT-Creation-Date: 2009-03-26 13:30+0100\n"
 "PO-Revision-Date: 2008-10-20 22:00+0200\n"
 "Last-Translator: Jean-Michel Oltra <jm.oltra@affaires-en-ligne.com>\n"
 "Language-Team: French <fr@li.org>\n"
@@ -35,31 +35,41 @@ msgstr "Priorité"
 msgid "Category"
 msgstr "Catégorie"
 
-#: index.php:106 setup.php:87
+#: index.php:106 setup.php:88
 #, php-format
 msgid "Can not find needed PHP extension \"%s\". Please install and enable it."
-msgstr "Impossible de trouver l'extension php \"%s\" requise. Veuillez l'installer et l'activer."
+msgstr ""
+"Impossible de trouver l'extension php \"%s\" requise. Veuillez l'installer "
+"et l'activer."
 
-#: index.php:113 setup.php:95
+#: index.php:113 setup.php:96
 msgid "Can not connect to MySQL database. Please check your configuration."
-msgstr "Impossible de se connecter à la base de données MySQL. Veuillez vérifier votre configuration."
+msgstr ""
+"Impossible de se connecter à la base de données MySQL. Veuillez vérifier "
+"votre configuration."
 
 #: index.php:120
 msgid ""
 "Can not select configured database. Please check your configuration or use "
 "setup.php."
-msgstr "Impossible d'atteindre la base de données configurée. Veuillez vérifier votre configuration ou utiliser le fichier setup.php."
+msgstr ""
+"Impossible d'atteindre la base de données configurée. Veuillez vérifier "
+"votre configuration ou utiliser le fichier setup.php."
 
 #: index.php:125
 #, php-format
 msgid ""
 "Can not find table \"%s\". Please check your configuration or use setup.php."
-msgstr "Impossible de trouver la table \"%s\". Veuillez vérifier votre configuration ou utiliser le fichier setup.php."
+msgstr ""
+"Impossible de trouver la table \"%s\". Veuillez vérifier votre configuration "
+"ou utiliser le fichier setup.php."
 
 #: index.php:131
 #, php-format
 msgid "Table %s need update. Please upgrade your tables or use setup.php."
-msgstr "La table %s a besoin d'une mise à jour. Veuillez effectuer une mise à jour de vos tables ou utiliser le fichier setup.php."
+msgstr ""
+"La table %s a besoin d'une mise à jour. Veuillez effectuer une mise à jour "
+"de vos tables ou utiliser le fichier setup.php."
 
 #: index.php:141
 #, php-format
@@ -181,7 +191,9 @@ msgstr "La tâche %s a été ajoutée."
 msgid ""
 "Concurrency error! Changes not saved, because someone else already changed "
 "record."
-msgstr "Erreur de concurrence ! Les changements ne sont pas sauvegardés, car un autre utilisateur a fait des modifications."
+msgstr ""
+"Erreur de concurrence ! Les changements ne sont pas sauvegardés, car un "
+"autre utilisateur a fait des modifications."
 
 #: index.php:405
 #, php-format
@@ -249,11 +261,11 @@ msgstr "Il n'y a aucune tâche dans cette catégorie."
 msgid "Name"
 msgstr "Nom"
 
-#: index.php:621 setup.php:122
+#: index.php:621 setup.php:123
 msgid "Yes"
 msgstr "Oui"
 
-#: index.php:621 setup.php:122
+#: index.php:621 setup.php:123
 msgid "No"
 msgstr "Non"
 
@@ -319,7 +331,9 @@ msgstr "A propos d'Ukolovnik"
 
 #: index.php:730
 msgid "Ukolovnik is simple todo manager licensed under GNU/GPL version 2."
-msgstr "Ukolovnik est un gestionnaire de tâches simplifié, sous license GNU/GPL version 2."
+msgstr ""
+"Ukolovnik est un gestionnaire de tâches simplifié, sous license GNU/GPL "
+"version 2."
 
 #: index.php:733
 #, php-format
@@ -345,7 +359,9 @@ msgstr "vCalendar"
 
 #: index.php:802
 msgid "Uknonwn command! Maybe you hit some not yet implemented functionality."
-msgstr "Commande inconnue ! Vous avez certainement activé une fonction non implémentée."
+msgstr ""
+"Commande inconnue ! Vous avez certainement activé une fonction non "
+"implémentée."
 
 #: lib/html.php:67
 msgid "Default style"
@@ -420,16 +436,37 @@ msgstr "A propos"
 msgid "Donate"
 msgstr "Faire un don"
 
-#: setup.php:105
+#. l10n: please keep also English text "Language" in translated text
+#: setup.php:41
+msgid "Language"
+msgstr ""
+
+#: setup.php:42
+#, fuzzy
+#| msgid "Title"
+msgid "Style"
+msgstr "Titre"
+
+#: setup.php:43
+msgid "Stay on add page after adding new entry"
+msgstr ""
+
+#: setup.php:44
+msgid "Show entries list on add page"
+msgstr ""
+
+#: setup.php:106
 msgid ""
 "Tables are in correct state (see above messages about needed changes, if "
 "any), you can go back to index.php."
-msgstr "Les tables sont cohérentes (voyez les messages ci-dessus concernant les modifications éventuellement nécessaires), vous pouvez revenir sur index.php."
+msgstr ""
+"Les tables sont cohérentes (voyez les messages ci-dessus concernant les "
+"modifications éventuellement nécessaires), vous pouvez revenir sur index.php."
 
-#: setup.php:107
+#: setup.php:108
 msgid "Settings has been updated"
 msgstr "Les préférences ont été mises à jour."
 
-#: setup.php:138
+#: setup.php:139
 msgid "Save"
 msgstr "Enregistrer"

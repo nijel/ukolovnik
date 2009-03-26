@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Ukolovnik 1.1\n"
 "Report-Msgid-Bugs-To: michal@cihar.com\n"
-"POT-Creation-Date: 2008-02-27 16:03+0100\n"
+"POT-Creation-Date: 2009-03-26 13:30+0100\n"
 "PO-Revision-Date: 2008-03-27 16:05+0100\n"
 "Last-Translator: Michal Čihař <michal@cihar.com>\n"
 "Language-Team: Czech <cs@li.org>\n"
@@ -39,14 +39,14 @@ msgstr "Priorita"
 msgid "Category"
 msgstr "Kategorie"
 
-#: index.php:106 setup.php:87
+#: index.php:106 setup.php:88
 #, php-format
 msgid "Can not find needed PHP extension \"%s\". Please install and enable it."
 msgstr ""
 "Nepodařilo se načíst potřebné rozšíření PHP \"%s\". Prosím nainstalujte a "
 "povolte ho."
 
-#: index.php:113 setup.php:95
+#: index.php:113 setup.php:96
 msgid "Can not connect to MySQL database. Please check your configuration."
 msgstr ""
 "Nepodařilo se připojit k MySQL databázi. Prosím zkontrolujte vaše nastavení."
@@ -264,11 +264,11 @@ msgstr "Nebyly nalezeny žádné úkoly v této kategorii."
 msgid "Name"
 msgstr "Jméno"
 
-#: index.php:621 setup.php:122
+#: index.php:621 setup.php:123
 msgid "Yes"
 msgstr "Ano"
 
-#: index.php:621 setup.php:122
+#: index.php:621 setup.php:123
 msgid "No"
 msgstr "Ne"
 
@@ -438,7 +438,24 @@ msgstr "O programu"
 msgid "Donate"
 msgstr "Přispějte"
 
-#: setup.php:105
+#. l10n: please keep also English text "Language" in translated text
+#: setup.php:41
+msgid "Language"
+msgstr "Jazyk"
+
+#: setup.php:42
+msgid "Style"
+msgstr "Vzhled"
+
+#: setup.php:43
+msgid "Stay on add page after adding new entry"
+msgstr "Zůstat na přidávací stránce po přidání úkolu"
+
+#: setup.php:44
+msgid "Show entries list on add page"
+msgstr "Zobrazit seznam úkolů na přidávací stránce"
+
+#: setup.php:106
 msgid ""
 "Tables are in correct state (see above messages about needed changes, if "
 "any), you can go back to index.php."
@@ -446,26 +463,14 @@ msgstr ""
 "Tabulky jsou v pořádku (případné úpravy jsou popsány výše), můžete se vrátit "
 "zpět na index.php."
 
-#: setup.php:107
+#: setup.php:108
 msgid "Settings has been updated"
 msgstr "Nastavení byla aktualizována"
 
-#: setup.php:138
+#: setup.php:139
 msgid "Save"
 msgstr "Uložit"
 
 #, fuzzy
 #~ msgid "text"
 #~ msgstr "Text"
-
-#~ msgid "Language"
-#~ msgstr "Jazyk"
-
-#~ msgid "Style"
-#~ msgstr "Vzhled"
-
-#~ msgid "Stay on add page after adding new entry"
-#~ msgstr "Zůstat na přidávací stránce po přidání úkolu"
-
-#~ msgid "Show entries list on add page"
-#~ msgstr "Zobrazit seznam úkolů na přidávací stránce"

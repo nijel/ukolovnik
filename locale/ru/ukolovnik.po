@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Ukolovnik 1.1\n"
 "Report-Msgid-Bugs-To: michal@cihar.com\n"
-"POT-Creation-Date: 2008-02-27 16:07+0100\n"
+"POT-Creation-Date: 2009-03-26 13:30+0100\n"
 "PO-Revision-Date: 2008-03-17 18:56+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -14,7 +14,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Pootle 1.0.2\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
+"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: index.php:69
 msgid "Any"
@@ -36,13 +37,13 @@ msgstr "Приоритет"
 msgid "Category"
 msgstr "Категория"
 
-#: index.php:106 setup.php:87
+#: index.php:106 setup.php:88
 #, php-format
 msgid "Can not find needed PHP extension \"%s\". Please install and enable it."
 msgstr ""
 "Отсутствует расширение PHP \"%s\". Пожалуйста, установите и активируйте его."
 
-#: index.php:113 setup.php:95
+#: index.php:113 setup.php:96
 msgid "Can not connect to MySQL database. Please check your configuration."
 msgstr ""
 "Невозможно подключиться к базе данных MySQL. Пожалуйста, проверьте "
@@ -61,8 +62,8 @@ msgstr ""
 msgid ""
 "Can not find table \"%s\". Please check your configuration or use setup.php."
 msgstr ""
-"Невозможно найти таблицу \"%s\". Пожалуйста, проверьте настройки, или откройте "
-"setup.php."
+"Невозможно найти таблицу \"%s\". Пожалуйста, проверьте настройки, или "
+"откройте setup.php."
 
 #: index.php:131
 #, php-format
@@ -261,11 +262,11 @@ msgstr "В этой категории нет заданий"
 msgid "Name"
 msgstr "Название"
 
-#: index.php:621 setup.php:122
+#: index.php:621 setup.php:123
 msgid "Yes"
 msgstr "Да"
 
-#: index.php:621 setup.php:122
+#: index.php:621 setup.php:123
 msgid "No"
 msgstr "Нет"
 
@@ -436,7 +437,26 @@ msgstr "О программе"
 msgid "Donate"
 msgstr "Помочь проекту"
 
-#: setup.php:105
+#. l10n: please keep also English text "Language" in translated text
+#: setup.php:41
+msgid "Language"
+msgstr ""
+
+#: setup.php:42
+#, fuzzy
+#| msgid "Title"
+msgid "Style"
+msgstr "Название"
+
+#: setup.php:43
+msgid "Stay on add page after adding new entry"
+msgstr ""
+
+#: setup.php:44
+msgid "Show entries list on add page"
+msgstr ""
+
+#: setup.php:106
 msgid ""
 "Tables are in correct state (see above messages about needed changes, if "
 "any), you can go back to index.php."
@@ -444,10 +464,10 @@ msgstr ""
 "Таблицы проверены (выше могут быть сообщения о необходимых изменениях), вы "
 "можете вернуться на страницу index.php."
 
-#: setup.php:107
+#: setup.php:108
 msgid "Settings has been updated"
 msgstr "Настройки обновлены"
 
-#: setup.php:138
+#: setup.php:139
 msgid "Save"
 msgstr "Сохранить"

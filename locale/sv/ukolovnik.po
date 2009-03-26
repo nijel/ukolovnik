@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Ukolovnik 1.1\n"
 "Report-Msgid-Bugs-To: michal@cihar.com\n"
-"POT-Creation-Date: 2008-02-27 16:03+0100\n"
+"POT-Creation-Date: 2009-03-26 13:30+0100\n"
 "PO-Revision-Date: 2007-10-18 14:01+0200\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: none\n"
@@ -37,13 +37,13 @@ msgstr "Prioritet"
 msgid "Category"
 msgstr "Kategori"
 
-#: index.php:106 setup.php:87
+#: index.php:106 setup.php:88
 #, php-format
 msgid "Can not find needed PHP extension \"%s\". Please install and enable it."
 msgstr ""
 "Kan inte hitta nödvändiga PHP-tillägget \"%s\". Installera och aktivera det."
 
-#: index.php:113 setup.php:95
+#: index.php:113 setup.php:96
 msgid "Can not connect to MySQL database. Please check your configuration."
 msgstr "Kan inte ansluta till MySQL-databasen. Kontrollera din konfiguration."
 
@@ -260,11 +260,11 @@ msgstr "Det finns inga uppgifter i denna kategori."
 msgid "Name"
 msgstr "Namn"
 
-#: index.php:621 setup.php:122
+#: index.php:621 setup.php:123
 msgid "Yes"
 msgstr "Ja"
 
-#: index.php:621 setup.php:122
+#: index.php:621 setup.php:123
 msgid "No"
 msgstr "Nej"
 
@@ -434,7 +434,26 @@ msgstr "Om"
 msgid "Donate"
 msgstr "Donerar"
 
-#: setup.php:105
+#. l10n: please keep also English text "Language" in translated text
+#: setup.php:41
+msgid "Language"
+msgstr ""
+
+#: setup.php:42
+#, fuzzy
+#| msgid "Title"
+msgid "Style"
+msgstr "Titel"
+
+#: setup.php:43
+msgid "Stay on add page after adding new entry"
+msgstr ""
+
+#: setup.php:44
+msgid "Show entries list on add page"
+msgstr ""
+
+#: setup.php:106
 msgid ""
 "Tables are in correct state (see above messages about needed changes, if "
 "any), you can go back to index.php."
@@ -442,10 +461,10 @@ msgstr ""
 "Tabellerna är korrekta (se ovanstående meddelande om nödvändiga ändringar, "
 "om några), du kan gå tillbaka till index.php."
 
-#: setup.php:107
+#: setup.php:108
 msgid "Settings has been updated"
 msgstr "Inställningarna har uppdaterats"
 
-#: setup.php:138
+#: setup.php:139
 msgid "Save"
 msgstr "Spara"

@@ -1,5 +1,5 @@
 # Ukolovnik translation.
-# Copyright (C) 2003 - 2008 Michal Čihař
+# Copyright (C) 2003 - 2009 Michal Čihař
 # This file is distributed under the same license as the Ukolovnik package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Ukolovnik 1.1\n"
 "Report-Msgid-Bugs-To: michal@cihar.com\n"
-"POT-Creation-Date: 2008-04-07 16:49+0200\n"
+"POT-Creation-Date: 2009-03-26 13:30+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -36,12 +36,12 @@ msgstr ""
 msgid "Category"
 msgstr ""
 
-#: index.php:106 setup.php:87
+#: index.php:106 setup.php:88
 #, php-format
 msgid "Can not find needed PHP extension \"%s\". Please install and enable it."
 msgstr ""
 
-#: index.php:113 setup.php:95
+#: index.php:113 setup.php:96
 msgid "Can not connect to MySQL database. Please check your configuration."
 msgstr ""
 
@@ -250,11 +250,11 @@ msgstr ""
 msgid "Name"
 msgstr ""
 
-#: index.php:621 setup.php:122
+#: index.php:621 setup.php:123
 msgid "Yes"
 msgstr ""
 
-#: index.php:621 setup.php:122
+#: index.php:621 setup.php:123
 msgid "No"
 msgstr ""
 
@@ -421,16 +421,33 @@ msgstr ""
 msgid "Donate"
 msgstr ""
 
-#: setup.php:105
+#. l10n: please keep also English text "Language" in translated text
+#: setup.php:41
+msgid "Language"
+msgstr ""
+
+#: setup.php:42
+msgid "Style"
+msgstr ""
+
+#: setup.php:43
+msgid "Stay on add page after adding new entry"
+msgstr ""
+
+#: setup.php:44
+msgid "Show entries list on add page"
+msgstr ""
+
+#: setup.php:106
 msgid ""
 "Tables are in correct state (see above messages about needed changes, if "
 "any), you can go back to index.php."
 msgstr ""
 
-#: setup.php:107
+#: setup.php:108
 msgid "Settings has been updated"
 msgstr ""
 
-#: setup.php:138
+#: setup.php:139
 msgid "Save"
 msgstr ""
