@@ -8,6 +8,7 @@ xgettext \
     --language=PHP \
     --add-comments=l10n \
     --add-location \
+    --keyword=N_ \
     --copyright-holder="Michal Čihař" \
     `find . -name '*.php' | sort`
 
