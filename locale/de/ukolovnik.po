@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Ukolovnik 1.1\n"
 "Report-Msgid-Bugs-To: michal@cihar.com\n"
 "POT-Creation-Date: 2009-03-26 13:30+0100\n"
-"PO-Revision-Date: 2009-03-26 13:59+0200\n"
+"PO-Revision-Date: 2009-03-26 15:03+0200\n"
 "Last-Translator: Simon Büsselmann <sailo@sendmail.cz>\n"
 "Language-Team: none\n"
 "Language: de\n"
@@ -442,19 +442,20 @@ msgstr "Spenden"
 #. l10n: please keep also English text "Language" in translated text
 #: setup.php:41
 msgid "Language"
-msgstr ""
+msgstr "Sprache"
 
 #: setup.php:42
 msgid "Style"
-msgstr ""
+msgstr "Thema"
 
 #: setup.php:43
 msgid "Stay on add page after adding new entry"
 msgstr ""
+"Nachdem Hinzufügen einer Aufgabe weiterhin das Hinzufügen-Formular anzeigen"
 
 #: setup.php:44
 msgid "Show entries list on add page"
-msgstr ""
+msgstr "Aufgabenliste beim Hinzufügen einer neuen Aufgabe anzeigen"
 
 #: setup.php:106
 msgid ""
