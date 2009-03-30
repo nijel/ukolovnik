@@ -8,12 +8,15 @@ msgstr ""
 "Project-Id-Version: Ukolovnik 1.1\n"
 "Report-Msgid-Bugs-To: michal@cihar.com\n"
 "POT-Creation-Date: 2009-03-26 13:30+0100\n"
-"PO-Revision-Date: 2008-10-20 22:00+0200\n"
-"Last-Translator: Jean-Michel Oltra <jm.oltra@affaires-en-ligne.com>\n"
+"PO-Revision-Date: 2009-03-26 17:22+0200\n"
+"Last-Translator: Jean-Michel Oltra <jm.oltra@espinasse.net>\n"
 "Language-Team: French <fr@li.org>\n"
+"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Pootle 1.2.1\n"
 
 #: index.php:69
 msgid "Any"
@@ -439,21 +442,22 @@ msgstr "Faire un don"
 #. l10n: please keep also English text "Language" in translated text
 #: setup.php:41
 msgid "Language"
-msgstr ""
+msgstr "Langue"
 
 #: setup.php:42
-#, fuzzy
 #| msgid "Title"
 msgid "Style"
-msgstr "Titre"
+msgstr "Style"
 
 #: setup.php:43
 msgid "Stay on add page after adding new entry"
-msgstr ""
+msgstr "Rester sur la page de l'ajout après l'ajout d'une nouvelle entrée"
 
 #: setup.php:44
 msgid "Show entries list on add page"
 msgstr ""
+"Afficher la liste des entrées dans la page utilisée pour ajouter une "
+"nouvelle entrée"
 
 #: setup.php:106
 msgid ""

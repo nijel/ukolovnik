@@ -8,14 +8,15 @@ msgstr ""
 "Project-Id-Version: Ukolovnik 1.1\n"
 "Report-Msgid-Bugs-To: michal@cihar.com\n"
 "POT-Creation-Date: 2009-03-26 13:30+0100\n"
-"PO-Revision-Date: 2007-10-18 14:01+0200\n"
+"PO-Revision-Date: 2009-03-26 20:50+0200\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: none\n"
+"Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Pootle 1.0.2\n"
+"X-Generator: Pootle 1.2.1\n"
 
 #: index.php:69
 msgid "Any"
@@ -432,26 +433,25 @@ msgstr "Om"
 
 #: lib/toolbar.php:21
 msgid "Donate"
-msgstr "Donerar"
+msgstr "Donera"
 
 #. l10n: please keep also English text "Language" in translated text
 #: setup.php:41
 msgid "Language"
-msgstr ""
+msgstr "Språk"
 
 #: setup.php:42
-#, fuzzy
 #| msgid "Title"
 msgid "Style"
-msgstr "Titel"
+msgstr "Stil"
 
 #: setup.php:43
 msgid "Stay on add page after adding new entry"
-msgstr ""
+msgstr "Stanna på sidan efter ny post lagts till"
 
 #: setup.php:44
 msgid "Show entries list on add page"
-msgstr ""
+msgstr "Visa postlista på tilläggssida"
 
 #: setup.php:106
 msgid ""
