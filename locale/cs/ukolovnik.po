@@ -465,7 +465,7 @@ msgstr ""
 
 #: setup.php:108
 msgid "Settings has been updated"
-msgstr "Nastavení byla aktualizováno"
+msgstr "Nastavení bylo změněno"
 
 #: setup.php:139
 msgid "Save"
