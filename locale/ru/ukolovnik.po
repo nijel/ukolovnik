@@ -444,8 +444,8 @@ msgid "Language"
 msgstr ""
 
 #: setup.php:42
-#| msgid "Title"
 #, fuzzy
+#| msgid "Title"
 msgid "Style"
 msgstr "Название"
 
