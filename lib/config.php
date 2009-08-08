@@ -28,6 +28,7 @@ $default_settings = array(
     'add_stay' => '1',
     'language' => 'en',
     'version' => '0',
+    'main_style' => '1'
     );
 
 /**
