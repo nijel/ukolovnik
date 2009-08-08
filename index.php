@@ -199,7 +199,11 @@ while (!empty($cmd)) {
             }
 
             // Sorting
-            $order = 'priority DESC, created ASC';
+	    $order = 'priority DESC, created ASC';
+	    if (CONFIG_get('main_style')==1) {
+	      $order = 'category ASC,'.$order;
+	    } 
+	    
             // FIXME: make this parameter
 
             $q = SQL_do('SELECT id,category,UNIX_TIMESTAMP(created) AS created,priority,title,UNIX_TIMESTAMP(closed) AS closed FROM ' . $GLOBALS['table_prefix'] . 'tasks ' . $filter . ' ORDER BY ' . $order);
@@ -215,6 +219,10 @@ while (!empty($cmd)) {
                 echo '<th>' . _('Actions') . '</th></tr></thead>';
                 echo '<tbody>';
                 while ($row = mysql_fetch_assoc($q)) {
+		    if ($oldcategory != $row['category'] && CONFIG_get('main_style')==1) {
+		      echo '<tr><td colspan="4"><b>'. htmlspecialchars($categories[$row['category']]) .'</b></td></tr>'."\n";
+		    }
+		    $oldcategory = $row['category'];
                     echo '<tr class="priority' . $row['priority'];
                     if (!is_null($row['closed']) && $row['closed'] != 0) {
                         echo ' closed';
