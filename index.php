@@ -94,7 +94,7 @@ function show_edit_task($name, $cmd, $title, $description, $priority, $category,
     echo '<label class="desc" for="sel_category">' . _('Category') . '</label>';
     echo get_select('category', $category, $categories);
     echo '<input type="hidden" name="cmd" value="' . $cmd . '" \>';
-	echo '<input type="hidden" name="update_count" value="' . $update_count . '" \>';
+    echo '<input type="hidden" name="update_count" value="' . $update_count . '" \>';
     echo '<input type="submit" value="' . $name . '"/></form></fieldset>';
 }
 
@@ -199,11 +199,11 @@ while (!empty($cmd)) {
             }
 
             // Sorting
-	    $order = 'priority DESC, created ASC';
-	    if (CONFIG_get('main_style')==1) {
-	      $order = 'category ASC,'.$order;
-	    } 
-	    
+            $order = 'priority DESC, created ASC';
+            if (CONFIG_get('main_style') == 1) {
+                $order = 'category ASC,'.$order;
+            }
+
             // FIXME: make this parameter
 
             $q = SQL_do('SELECT id,category,UNIX_TIMESTAMP(created) AS created,priority,title,UNIX_TIMESTAMP(closed) AS closed FROM ' . $GLOBALS['table_prefix'] . 'tasks ' . $filter . ' ORDER BY ' . $order);
@@ -219,10 +219,10 @@ while (!empty($cmd)) {
                 echo '<th>' . _('Actions') . '</th></tr></thead>';
                 echo '<tbody>';
                 while ($row = mysql_fetch_assoc($q)) {
-		    if ($oldcategory != $row['category'] && CONFIG_get('main_style')==1) {
-		      echo '<tr><td colspan="4"><b>'. htmlspecialchars($categories[$row['category']]) .'</b></td></tr>'."\n";
-		    }
-		    $oldcategory = $row['category'];
+                    if ($oldcategory != $row['category'] && CONFIG_get('main_style')==1) {
+                        echo '<tr><td colspan="4"><b>'. htmlspecialchars($categories[$row['category']]) .'</b></td></tr>'."\n";
+                    }
+            $oldcategory = $row['category'];
                     echo '<tr class="priority' . $row['priority'];
                     if (!is_null($row['closed']) && $row['closed'] != 0) {
                         echo ' closed';
@@ -402,16 +402,15 @@ while (!empty($cmd)) {
                     SQL_do('INSERT INTO ' . $GLOBALS['table_prefix'] . 'tasks ' . $set_sql);
                     HTML_message('notice', sprintf(_('Task %s has been added.'), htmlspecialchars($_REQUEST['title'])));
                 } else {
-				    $cnt = (int) $_REQUEST['update_count'];
+                    $cnt = (int) $_REQUEST['update_count'];
                     SQL_do('UPDATE ' . $GLOBALS['table_prefix'] . 'tasks ' . $set_sql . ', updated=NOW(), update_count='. ($cnt+1) . ' WHERE id=' . $id . ' AND update_count='.$cnt);
 
-					$r=mysql_affected_rows();
-					if (!$r) {
-						HTML_message('error', _('Concurrency error! Changes not saved, because someone else already changed record.'));
-					}
-					else {
-                    HTML_message('notice', sprintf(_('Task %s has been changed.'), htmlspecialchars($_REQUEST['title'])));
-                }
+                    $r = mysql_affected_rows();
+                    if (!$r) {
+                        HTML_message('error', _('Concurrency error! Changes not saved, because someone else already changed record.'));
+                    } else {
+                        HTML_message('notice', sprintf(_('Task %s has been changed.'), htmlspecialchars($_REQUEST['title'])));
+                    }
                 }
                 // To avoid filtering
                 unset($_REQUEST['priority'], $_REQUEST['category']);
