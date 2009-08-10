@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Ukolovnik 1.2\n"
 "Report-Msgid-Bugs-To: michal@cihar.com\n"
-"POT-Creation-Date: 2009-08-08 20:33+0200\n"
+"POT-Creation-Date: 2009-08-11 00:41+0200\n"
 "PO-Revision-Date: 2009-08-07 21:01+0200\n"
 "Last-Translator: Tomas Srnka\n"
 "Language-Team: American English <kde-i18n-doc@kde.org>\n"
@@ -45,7 +45,7 @@ msgstr "Kategória"
 msgid "Can not find needed PHP extension \"%s\". Please install and enable it."
 msgstr ""
 "Nepodarilo se načítať potrebné rozšírenie PHP \"%s\". Prosím, nainštalujte a "
-"povolte ho."
+"povoľte ho."
 
 #: index.php:113 setup.php:97
 msgid "Can not connect to MySQL database. Please check your configuration."
@@ -119,7 +119,7 @@ msgstr "Neboli nájdené žiadne položky."
 
 #: index.php:218 index.php:262
 msgid "Created"
-msgstr "Vytvorená"
+msgstr "Vytvorené"
 
 #: index.php:219 index.php:624
 msgid "Actions"
@@ -151,12 +151,12 @@ msgstr "Aktualizovaný"
 
 #: index.php:267
 msgid "Closed"
-msgstr "Uzavrený"
+msgstr "Uzavretý"
 
 #: index.php:294
 #, php-format
 msgid "Task %s reopened."
-msgstr "Úloha %s bola znovu-otvorená."
+msgstr "Úloha %s bola znovuotvorená."
 
 #: index.php:309
 #, php-format
@@ -197,7 +197,7 @@ msgid ""
 "Concurrency error! Changes not saved, because someone else already changed "
 "record."
 msgstr ""
-"Chyba konkuretného prístupu! Zmeny neboli uložené, pretože niekto medzitým "
+"Chyba konkurentného prístupu! Zmeny neboli uložené, pretože niekto medzitým "
 "zmenil záznam."
 
 #: index.php:412
@@ -220,12 +220,12 @@ msgstr "Meno nesmie byť prázdne."
 #: index.php:484
 #, php-format
 msgid "Category %s has been added."
-msgstr "Kategoria %s bola pridaná."
+msgstr "Kategória %s bola pridaná."
 
 #: index.php:487
 #, php-format
 msgid "Category %s has been changed."
-msgstr "Kategoria %s bola zmenená."
+msgstr "Kategória %s bola zmenená."
 
 #: index.php:500 lib/toolbar.php:16
 msgid "Add category"
@@ -234,21 +234,21 @@ msgstr "Pridať kategóriu"
 #: index.php:529 index.php:546 index.php:550 index.php:554
 #, php-format
 msgid "Category %s has been deleted."
-msgstr "Kategoria %s bola vymazaná."
+msgstr "Kategória %s bola vymazaná."
 
 #: index.php:574
 #, php-format
 msgid "You are about to delete category \"%s\""
-msgstr "Chcete vymazať kategoriu \"%s\""
+msgstr "Chcete vymazať kategóriu \"%s\""
 
 #: index.php:580
 #, php-format
 msgid "Number of tasks in category: %d"
-msgstr "Počet úloh v kategorií: %d"
+msgstr "Počet úloh v kategórii: %d"
 
 #: index.php:581
 msgid "What to do with task in deleted category?"
-msgstr "Čo chcete urobiť s úlohami vo vymazanej kategórií?"
+msgstr "Čo chcete urobiť s úlohami vo vymazanej kategórii?"
 
 #: index.php:585
 msgid "Move to another category"
@@ -260,7 +260,7 @@ msgstr "Cieľová kategória"
 
 #: index.php:592 index.php:595
 msgid "There are no tasks in this category."
-msgstr "Neboli nájdené žiadne úlohy v tejto kategórií."
+msgstr "Neboli nájdené žiadne úlohy v tejto kategórii."
 
 #: index.php:624 index.php:641 lib/category.php:40
 msgid "Name"
@@ -390,7 +390,7 @@ msgstr "Databáza %s bola vytvorená."
 #: lib/sql.php:117 lib/sql.php:128 lib/sql.php:136
 #, php-format
 msgid "Table %s has been created."
-msgstr "Tabulka %s bola vytvorená."
+msgstr "Tabuľka %s bola vytvorená."
 
 #: lib/sql.php:155
 #, php-format
@@ -465,7 +465,7 @@ msgid ""
 "Tables are in correct state (see above messages about needed changes, if "
 "any), you can go back to index.php."
 msgstr ""
-"Tabulky sú v poriadku (prípadné úpravy sú popísané vyšie), môžete sa vrátiť "
+"Tabuľky sú v poriadku (prípadné úpravy sú popísané vyšie), môžete sa vrátiť "
 "späť na index.php."
 
 #: setup.php:109
