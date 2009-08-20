@@ -56,5 +56,5 @@ cd "$srcdir"
 
 if [ $dotag -eq 1 ] ; then
     # Tag the release
-    git tag -m "Tag release $version" "$version"
+    git tag -s -m "Tag release $version" "$version"
 fi
