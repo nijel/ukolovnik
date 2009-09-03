@@ -33,6 +33,9 @@ If you are running git version, you need to generate locales data if you
 want to use localized versions. To do so, install gettext and run
 ./admin/locales-generate script.
 
+Ukolovnik does not provide any authentication and user management. If
+you don't want to make it publicly available, please configure
+authentication in your web server.
 
 Bug reporting
 -------------
