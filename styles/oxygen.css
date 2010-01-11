@@ -20,6 +20,7 @@ h1 {
     border-bottom: 2px solid black;
     margin: 0;
     padding: 0.5em;
+    text-shadow: 0 -1px 1px #222;
 }
 
 
@@ -36,17 +37,29 @@ ul.toolbar li {
     list-style-type: none;
     display: inline;
 }
-ul.toolbar li a {
-    padding: 0.2em 0.5em;
-    border: 1px solid black;
-    background-color: #e0e9f8;
-    text-decoration: none;
-    color: black;
+ul.toolbar li a, ul.toolbar li a:visited {
+	background: #222 url(/images/oxygen/alert-overlay.png) repeat-x;
+	display: inline-block;
+	padding: 5px 10px 5px;
+	color: #fff;
+	text-decoration: none;
+	font-weight: bold;
+	line-height: 1;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-box-shadow: 0 1px 3px #999;
+	-webkit-box-shadow: 0 1px 3px #999;
+	text-shadow: 0 -1px 1px #222;
+	border-bottom: 1px solid #222;
+	position: relative;
+	cursor: pointer;
 }
 ul.toolbar li a:hover {
-    border: 1px solid #444444;
-    background-color: #77B7FF;
-    color: #FFFFFF;
+    text-decoration: none;
+    background-color: #111; color: #fff; 
+}
+ul.toolbar li a:active {
+	top: 1px;
 }
 
 
@@ -64,21 +77,21 @@ div.notice {
     color: #000000;
     border-color: #FFD700;
     background-color: #FFFFDD;
-    background-image: url(../images/default/notice.png);
+    background-image: url(../images/oxygen/notice.png);
 }
 
 div.warning {
     color: #CC0000;
     border-color: #CC0000;
     background-color: #FFFFCC;
-    background-image: url(../images/default/warning.png);
+    background-image: url(../images/oxygen/warning.png);
 }
 
 div.error {
     color: #ff0000;
     border-color:  #ff0000;
     background-color: #FFFFCC;
-    background-image: url(../images/default/error.png);
+    background-image: url(../images/oxygen/error.png);
 }
 
 /* Forms */
