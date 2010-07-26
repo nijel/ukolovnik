@@ -357,7 +357,7 @@ msgstr "Unknown command! Maybe you hit some not yet implemented functionality."
 
 #: lib/html.php:67
 msgid "Default style"
-msgstr ""
+msgstr "Default style"
 
 #: lib/priority.php:16
 msgid "Low"
