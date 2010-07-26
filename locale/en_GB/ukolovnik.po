@@ -126,7 +126,7 @@ msgstr "Finish"
 
 #: index.php:240 index.php:276 index.php:344 index.php:425 index.php:630
 msgid "Edit"
-msgstr ""
+msgstr "Edit"
 
 #: index.php:241 index.php:277 index.php:583 index.php:598 index.php:631
 msgid "Delete"
