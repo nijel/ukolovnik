@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Ukolovnik 1.2\n"
 "Report-Msgid-Bugs-To: michal@cihar.com\n"
 "POT-Creation-Date: 2009-08-11 00:41+0200\n"
-"PO-Revision-Date: 2010-07-26 16:56+0200\n"
+"PO-Revision-Date: 2010-07-26 16:57+0200\n"
 "Last-Translator: Robert Readman <robert_readman@hotmail.com>\n"
 "Language-Team: none\n"
 "Language: en_GB\n"
@@ -152,7 +152,7 @@ msgstr "Task %s reopened."
 #: index.php:309
 #, php-format
 msgid "Task %s finished."
-msgstr ""
+msgstr "Task %s finished."
 
 #: index.php:324
 #, php-format
