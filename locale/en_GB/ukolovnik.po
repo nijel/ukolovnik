@@ -323,7 +323,7 @@ msgstr "Average age when task is closed"
 
 #: index.php:736
 msgid "About Ukolovnik"
-msgstr ""
+msgstr "About Ukolovnik"
 
 #: index.php:737
 msgid "Ukolovnik is simple todo manager licensed under GNU/GPL version 2."
