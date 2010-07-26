@@ -60,6 +60,7 @@ msgstr ""
 msgid ""
 "Can not find table \"%s\". Please check your configuration or use setup.php."
 msgstr ""
+"Cannot find table \"%s\". Please check your configuration or use setup.php."
 
 #: index.php:131
 #, php-format
