@@ -319,7 +319,7 @@ msgstr "Average opened task age"
 
 #: index.php:727
 msgid "Average age when task is closed"
-msgstr ""
+msgstr "Average age when task is closed"
 
 #: index.php:736
 msgid "About Ukolovnik"
