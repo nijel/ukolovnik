@@ -303,7 +303,7 @@ msgstr "days"
 
 #: index.php:701
 msgid "Average task age"
-msgstr ""
+msgstr "Average task age"
 
 #: index.php:709
 msgid "Oldest opened task"
