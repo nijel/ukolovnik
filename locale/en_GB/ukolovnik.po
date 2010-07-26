@@ -206,7 +206,7 @@ msgstr "Edit category"
 
 #: index.php:472
 msgid "Name can not be empty."
-msgstr "Name can not be empty."
+msgstr "Name cannot be empty."
 
 #: index.php:484
 #, php-format
