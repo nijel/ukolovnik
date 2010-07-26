@@ -447,7 +447,7 @@ msgstr "Show entries list on add page"
 
 #: setup.php:45
 msgid "Show category name in main page output"
-msgstr ""
+msgstr "Show category name in main page output"
 
 #: setup.php:107
 msgid ""
