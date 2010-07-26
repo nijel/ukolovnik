@@ -202,7 +202,7 @@ msgstr "Add"
 
 #: index.php:448 index.php:498
 msgid "Edit category"
-msgstr ""
+msgstr "Edit category"
 
 #: index.php:472
 msgid "Name can not be empty."
