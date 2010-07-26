@@ -78,7 +78,7 @@ msgstr "No categories defined."
 
 #: index.php:160 index.php:172 index.php:616 index.php:620
 msgid "Filter"
-msgstr ""
+msgstr "Filter"
 
 #: index.php:161
 msgid "Text"
