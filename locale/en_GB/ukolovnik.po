@@ -406,7 +406,7 @@ msgstr "Main"
 
 #: lib/toolbar.php:15
 msgid "Categories"
-msgstr ""
+msgstr "Categories"
 
 #: lib/toolbar.php:17
 msgid "Export"
