@@ -138,7 +138,7 @@ msgstr "Invalid parameters."
 
 #: index.php:264
 msgid "Updated"
-msgstr ""
+msgstr "Updated"
 
 #: index.php:267
 msgid "Closed"
