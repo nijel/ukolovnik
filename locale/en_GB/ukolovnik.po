@@ -32,7 +32,7 @@ msgstr "Description"
 
 #: index.php:92 index.php:163
 msgid "Priority"
-msgstr ""
+msgstr "Priority"
 
 #: index.php:94 index.php:165 index.php:217
 msgid "Category"
