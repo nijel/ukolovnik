@@ -251,7 +251,7 @@ msgstr "Target category"
 
 #: index.php:592 index.php:595
 msgid "There are no tasks in this category."
-msgstr ""
+msgstr "There are no tasks in this category."
 
 #: index.php:624 index.php:641 lib/category.php:40
 msgid "Name"
