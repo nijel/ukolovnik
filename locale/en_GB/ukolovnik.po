@@ -164,7 +164,7 @@ msgstr "Task %s has been deleted."
 #: index.php:506 index.php:512 index.php:533 index.php:539 index.php:563
 #: index.php:569
 msgid "Invalid ID."
-msgstr ""
+msgstr "Invalid ID."
 
 #: index.php:369
 msgid "Title can not be empty."
