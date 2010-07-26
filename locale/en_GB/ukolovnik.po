@@ -52,6 +52,8 @@ msgid ""
 "Can not select configured database. Please check your configuration or use "
 "setup.php."
 msgstr ""
+"Cannot select configured database. Please check your configuration or use "
+"setup.php."
 
 #: index.php:125
 #, php-format
