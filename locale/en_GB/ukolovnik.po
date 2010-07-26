@@ -394,7 +394,7 @@ msgstr "Table %s updated."
 #: lib/sql.php:188
 #, php-format
 msgid "SQL query failed: %s"
-msgstr ""
+msgstr "SQL query failed: %s"
 
 #: lib/string.php:15
 msgid "%d.%m.%Y, %H:%M"
