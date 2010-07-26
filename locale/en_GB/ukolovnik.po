@@ -361,7 +361,7 @@ msgstr "Default style"
 
 #: lib/priority.php:16
 msgid "Low"
-msgstr ""
+msgstr "Low"
 
 #: lib/priority.php:16
 msgid "Medium"
