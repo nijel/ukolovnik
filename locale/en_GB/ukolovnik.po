@@ -211,7 +211,7 @@ msgstr "Name cannot be empty."
 #: index.php:484
 #, php-format
 msgid "Category %s has been added."
-msgstr ""
+msgstr "Category %s has been added."
 
 #: index.php:487
 #, php-format
