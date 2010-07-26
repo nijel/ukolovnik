@@ -110,7 +110,7 @@ msgstr "No entries found."
 
 #: index.php:218 index.php:262
 msgid "Created"
-msgstr ""
+msgstr "Created"
 
 #: index.php:219 index.php:624
 msgid "Actions"
