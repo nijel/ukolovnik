@@ -106,7 +106,7 @@ msgstr "Finished"
 
 #: index.php:211 index.php:256 index.php:290 index.php:305 index.php:320
 msgid "No entries found."
-msgstr ""
+msgstr "No entries found."
 
 #: index.php:218 index.php:262
 msgid "Created"
