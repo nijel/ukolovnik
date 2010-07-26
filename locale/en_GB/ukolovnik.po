@@ -463,4 +463,4 @@ msgstr "Settings has been updated"
 
 #: setup.php:140
 msgid "Save"
-msgstr ""
+msgstr "Save"
