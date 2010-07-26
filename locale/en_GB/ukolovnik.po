@@ -384,7 +384,7 @@ msgstr "Table %s has been created."
 #: lib/sql.php:155
 #, php-format
 msgid "Settings database has been updated"
-msgstr ""
+msgstr "Settings database has been updated"
 
 #: lib/sql.php:165
 #, php-format
