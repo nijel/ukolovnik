@@ -188,6 +188,8 @@ msgid ""
 "Concurrency error! Changes not saved, because someone else already changed "
 "record."
 msgstr ""
+"Concurrency error! Changes not saved, because someone else already changed "
+"record."
 
 #: index.php:412
 #, php-format
