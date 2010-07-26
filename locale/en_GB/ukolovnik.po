@@ -235,7 +235,7 @@ msgstr "You are about to delete category \"%s\""
 #: index.php:580
 #, php-format
 msgid "Number of tasks in category: %d"
-msgstr ""
+msgstr "Number of tasks in category: %d"
 
 #: index.php:581
 msgid "What to do with task in deleted category?"
