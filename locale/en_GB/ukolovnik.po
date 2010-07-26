@@ -454,6 +454,8 @@ msgid ""
 "Tables are in correct state (see above messages about needed changes, if "
 "any), you can go back to index.php."
 msgstr ""
+"Tables are in correct state (see above messages about needed changes, if "
+"any), you can go back to index.php."
 
 #: setup.php:109
 msgid "Settings has been updated"
