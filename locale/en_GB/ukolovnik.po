@@ -243,7 +243,7 @@ msgstr "What to do with task in deleted category?"
 
 #: index.php:585
 msgid "Move to another category"
-msgstr ""
+msgstr "Move to another category"
 
 #: index.php:586
 msgid "Target category"
