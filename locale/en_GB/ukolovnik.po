@@ -365,7 +365,7 @@ msgstr "Low"
 
 #: lib/priority.php:16
 msgid "Medium"
-msgstr ""
+msgstr "Medium"
 
 #: lib/priority.php:16
 msgid "High"
