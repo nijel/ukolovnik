@@ -332,7 +332,7 @@ msgstr "Ukolovnik is simple todo manager licensed under GNU/GPL version 2."
 #: index.php:740
 #, php-format
 msgid "It has homepage on %s."
-msgstr ""
+msgstr "It has homepage on %s."
 
 #: index.php:744
 #, php-format
