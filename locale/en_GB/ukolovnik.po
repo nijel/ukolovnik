@@ -118,7 +118,7 @@ msgstr "Actions"
 
 #: index.php:236 index.php:272
 msgid "Reopen"
-msgstr ""
+msgstr "Reopen"
 
 #: index.php:238 index.php:274
 msgid "Finish"
