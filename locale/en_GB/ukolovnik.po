@@ -443,7 +443,7 @@ msgstr "Stay on add page after adding new entry"
 
 #: setup.php:44
 msgid "Show entries list on add page"
-msgstr ""
+msgstr "Show entries list on add page"
 
 #: setup.php:45
 msgid "Show category name in main page output"
