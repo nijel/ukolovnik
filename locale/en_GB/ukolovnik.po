@@ -435,7 +435,7 @@ msgstr "Language"
 
 #: setup.php:42
 msgid "Style"
-msgstr ""
+msgstr "Style"
 
 #: setup.php:43
 msgid "Stay on add page after adding new entry"
