@@ -172,7 +172,7 @@ msgstr "Title cannot be empty."
 
 #: index.php:373 index.php:378
 msgid "Invalid category."
-msgstr ""
+msgstr "Invalid category."
 
 #: index.php:383 index.php:388
 msgid "Invalid priority."
