@@ -102,7 +102,7 @@ msgstr "Hide"
 
 #: index.php:169
 msgid "Finished"
-msgstr ""
+msgstr "Finished"
 
 #: index.php:211 index.php:256 index.php:290 index.php:305 index.php:320
 msgid "No entries found."
