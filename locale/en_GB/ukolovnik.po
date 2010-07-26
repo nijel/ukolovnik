@@ -181,7 +181,7 @@ msgstr "Invalid priority."
 #: index.php:403
 #, php-format
 msgid "Task %s has been added."
-msgstr ""
+msgstr "Task %s has been added."
 
 #: index.php:410
 msgid ""
