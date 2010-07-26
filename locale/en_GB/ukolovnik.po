@@ -259,7 +259,7 @@ msgstr "Name"
 
 #: index.php:628 setup.php:124
 msgid "Yes"
-msgstr ""
+msgstr "Yes"
 
 #: index.php:628 setup.php:124
 msgid "No"
