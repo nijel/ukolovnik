@@ -255,7 +255,7 @@ msgstr "There are no tasks in this category."
 
 #: index.php:624 index.php:641 lib/category.php:40
 msgid "Name"
-msgstr ""
+msgstr "Name"
 
 #: index.php:628 setup.php:124
 msgid "Yes"
