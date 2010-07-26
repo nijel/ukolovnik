@@ -283,7 +283,7 @@ msgstr "Opened high priority count"
 
 #: index.php:673
 msgid "Opened medium priority tasks"
-msgstr ""
+msgstr "Opened medium priority tasks"
 
 #: index.php:680
 msgid "Opened low priority tasks"
