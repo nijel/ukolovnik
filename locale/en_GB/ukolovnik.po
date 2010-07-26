@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Ukolovnik 1.2\n"
 "Report-Msgid-Bugs-To: michal@cihar.com\n"
 "POT-Creation-Date: 2009-08-11 00:41+0200\n"
-"PO-Revision-Date: 2010-07-26 17:03+0200\n"
+"PO-Revision-Date: 2010-07-26 17:04+0200\n"
 "Last-Translator: Robert Readman <robert_readman@hotmail.com>\n"
 "Language-Team: none\n"
 "Language: en_GB\n"
@@ -349,7 +349,7 @@ msgstr "CSV (Comma separated values)"
 
 #: index.php:752
 msgid "vCalendar"
-msgstr ""
+msgstr "vCalendar"
 
 #: index.php:809
 msgid "Uknonwn command! Maybe you hit some not yet implemented functionality."
