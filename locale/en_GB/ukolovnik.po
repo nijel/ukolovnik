@@ -337,7 +337,7 @@ msgstr "It has homepage on %s."
 #: index.php:744
 #, php-format
 msgid "You can support it's development on %s."
-msgstr ""
+msgstr "You can support it's development on %s."
 
 #: index.php:749
 msgid "Please select export format:"
