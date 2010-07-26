@@ -41,7 +41,7 @@ msgstr "Category"
 #: index.php:106 setup.php:89
 #, php-format
 msgid "Can not find needed PHP extension \"%s\". Please install and enable it."
-msgstr ""
+msgstr "Cannot find needed PHP extension \"%s\". Please install and enable it."
 
 #: index.php:113 setup.php:97
 msgid "Can not connect to MySQL database. Please check your configuration."
