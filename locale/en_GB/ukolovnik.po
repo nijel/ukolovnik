@@ -311,7 +311,7 @@ msgstr "Oldest opened task"
 
 #: index.php:711
 msgid "Oldest opened task age"
-msgstr ""
+msgstr "Oldest opened task age"
 
 #: index.php:719
 msgid "Average opened task age"
