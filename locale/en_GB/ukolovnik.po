@@ -94,7 +94,7 @@ msgstr "All"
 
 #: index.php:168 index.php:170 index.php:618
 msgid "Show"
-msgstr ""
+msgstr "Show"
 
 #: index.php:168 index.php:170 index.php:618
 msgid "Hide"
