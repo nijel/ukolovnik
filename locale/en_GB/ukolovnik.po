@@ -45,7 +45,7 @@ msgstr "Cannot find needed PHP extension \"%s\". Please install and enable it."
 
 #: index.php:113 setup.php:97
 msgid "Can not connect to MySQL database. Please check your configuration."
-msgstr ""
+msgstr "Cannot connect to MySQL database. Please check your configuration."
 
 #: index.php:120
 msgid ""
