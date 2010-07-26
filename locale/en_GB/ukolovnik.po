@@ -147,7 +147,7 @@ msgstr "Closed"
 #: index.php:294
 #, php-format
 msgid "Task %s reopened."
-msgstr ""
+msgstr "Task %s reopened."
 
 #: index.php:309
 #, php-format
