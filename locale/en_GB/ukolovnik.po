@@ -74,7 +74,7 @@ msgstr "Invalid language (%s) has been chosen."
 
 #: index.php:156 index.php:613
 msgid "No categories defined."
-msgstr ""
+msgstr "No categories defined."
 
 #: index.php:160 index.php:172 index.php:616 index.php:620
 msgid "Filter"
