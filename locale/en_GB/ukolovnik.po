@@ -291,7 +291,7 @@ msgstr "Opened low priority tasks"
 
 #: index.php:691
 msgid "Oldest task"
-msgstr ""
+msgstr "Oldest task"
 
 #: index.php:693
 msgid "Oldest task age"
