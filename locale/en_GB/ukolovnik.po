@@ -379,7 +379,7 @@ msgstr "Database %s has been created."
 #: lib/sql.php:117 lib/sql.php:128 lib/sql.php:136
 #, php-format
 msgid "Table %s has been created."
-msgstr ""
+msgstr "Table %s has been created."
 
 #: lib/sql.php:155
 #, php-format
