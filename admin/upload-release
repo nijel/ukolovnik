@@ -1,0 +1,20 @@
+#!/bin/sh
+
+REL=$1
+if [ -z $REL ] ; then
+    echo 'Usage: upload-release VERSION [DIR]'
+    echo 'Must be called in directory with binaries or with path'
+    exit 1
+fi
+
+if [ ! -z "$2" ] ; then
+    cd "$2"
+fi
+
+sftp mort <<EOT
+cd /srv/http/dl.cihar.com/ukolovnik/v1.x/
+put ukolovnik-$REL.tar.bz2
+put ukolovnik-$REL.tar.gz
+put ukolovnik-$REL.zip
+put ukolovnik-$REL.7z
+EOT
