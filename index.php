@@ -218,11 +218,12 @@ while (!empty($cmd)) {
                 echo '<th>' . _('Created') . '</th>';
                 echo '<th>' . _('Actions') . '</th></tr></thead>';
                 echo '<tbody>';
+                $oldcategory = null;
                 while ($row = mysql_fetch_assoc($q)) {
                     if ($oldcategory != $row['category'] && CONFIG_get('main_style')==1) {
                         echo '<tr><td colspan="4"><b>'. htmlspecialchars($categories[$row['category']]) .'</b></td></tr>'."\n";
                     }
-            $oldcategory = $row['category'];
+                    $oldcategory = $row['category'];
                     echo '<tr class="priority' . $row['priority'];
                     if (!is_null($row['closed']) && $row['closed'] != 0) {
                         echo ' closed';
