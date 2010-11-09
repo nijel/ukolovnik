@@ -45,8 +45,13 @@ function LOCALE_init() {
 function LOCALE_list() {
     global $locale_path;
 
-    $d = opendir($locale_path);
     $langs = array('en' => 'en');
+
+    if (!is_dir($locale_path)) {
+        return $langs;
+    }
+
+    $d = opendir($locale_path);
     if ($d) {
         while (($file = readdir($d)) !== false) {
             $matches = array();
