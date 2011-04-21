@@ -458,7 +458,7 @@ msgstr ""
 
 #: setup.php:45
 msgid "Show category name in main page output"
-msgstr ""
+msgstr "Показывать названия категорий на главной странице"
 
 #: setup.php:107
 msgid ""
