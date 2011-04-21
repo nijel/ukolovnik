@@ -444,10 +444,9 @@ msgid "Language"
 msgstr "Язык"
 
 #: setup.php:42
-#, fuzzy
 #| msgid "Title"
 msgid "Style"
-msgstr "Название"
+msgstr "Стиль"
 
 #: setup.php:43
 msgid "Stay on add page after adding new entry"
