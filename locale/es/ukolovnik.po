@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Ukolovnik 1.2\n"
 "Report-Msgid-Bugs-To: michal@cihar.com\n"
 "POT-Creation-Date: 2009-08-11 00:41+0200\n"
-"PO-Revision-Date: 2011-05-04 22:03+0200\n"
+"PO-Revision-Date: 2011-05-04 22:04+0200\n"
 "Last-Translator: Matías Bellone <matiasbellone@gmail.com>\n"
 "Language-Team: none\n"
 "Language: es\n"
@@ -128,7 +128,7 @@ msgstr "Re-abrir"
 
 #: index.php:238 index.php:274
 msgid "Finish"
-msgstr ""
+msgstr "Terminar"
 
 #: index.php:240 index.php:276 index.php:344 index.php:425 index.php:630
 msgid "Edit"
