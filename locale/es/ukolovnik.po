@@ -349,7 +349,7 @@ msgstr "Puedes soportar su desarrollo en %s."
 
 #: index.php:749
 msgid "Please select export format:"
-msgstr ""
+msgstr "Porfavor selecciona un formato de exportación:"
 
 #: index.php:751
 msgid "CSV (Comma separated values)"
