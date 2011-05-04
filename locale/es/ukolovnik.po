@@ -469,7 +469,7 @@ msgstr ""
 
 #: setup.php:109
 msgid "Settings has been updated"
-msgstr ""
+msgstr "Las configuraciones fueron actualizadas"
 
 #: setup.php:140
 msgid "Save"
