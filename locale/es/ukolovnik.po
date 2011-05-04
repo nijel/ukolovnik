@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Ukolovnik 1.2\n"
 "Report-Msgid-Bugs-To: michal@cihar.com\n"
 "POT-Creation-Date: 2009-08-11 00:41+0200\n"
-"PO-Revision-Date: 2011-05-04 22:05+0200\n"
+"PO-Revision-Date: 2011-05-04 22:06+0200\n"
 "Last-Translator: Matías Bellone <matiasbellone@gmail.com>\n"
 "Language-Team: none\n"
 "Language: es\n"
@@ -194,6 +194,8 @@ msgid ""
 "Concurrency error! Changes not saved, because someone else already changed "
 "record."
 msgstr ""
+"¡Error de concurrencia! No se guardaron los cambios porque alguien ya cambió "
+"el registro."
 
 #: index.php:412
 #, php-format
