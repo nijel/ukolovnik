@@ -473,4 +473,4 @@ msgstr "Las configuraciones fueron actualizadas"
 
 #: setup.php:140
 msgid "Save"
-msgstr ""
+msgstr "Guardar"
