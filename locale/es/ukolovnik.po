@@ -194,8 +194,8 @@ msgid ""
 "Concurrency error! Changes not saved, because someone else already changed "
 "record."
 msgstr ""
-"¡Error de concurrencia! No se guardaron los cambios porque alguien ya cambió "
-"el registro."
+"¡Error de concurrencia! No se guardaron los cambios porque alguien ya "
+"modificó el registro."
 
 #: index.php:412
 #, php-format
