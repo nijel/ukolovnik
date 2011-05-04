@@ -200,7 +200,7 @@ msgstr ""
 #: index.php:412
 #, php-format
 msgid "Task %s has been changed."
-msgstr ""
+msgstr "Tarea %s modificada."
 
 #: index.php:427 lib/toolbar.php:14
 msgid "Add"
