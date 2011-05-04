@@ -245,7 +245,7 @@ msgstr "Cantidad de tareas en la categoría: %d"
 
 #: index.php:581
 msgid "What to do with task in deleted category?"
-msgstr ""
+msgstr "¿Qué hacer con las tareas en la categoría eliminada?"
 
 #: index.php:585
 msgid "Move to another category"
