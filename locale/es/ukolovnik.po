@@ -441,7 +441,7 @@ msgstr "Donar"
 #. l10n: please keep also English text "Language" in translated text
 #: setup.php:41
 msgid "Language"
-msgstr ""
+msgstr "Idioma"
 
 #: setup.php:42
 msgid "Style"
