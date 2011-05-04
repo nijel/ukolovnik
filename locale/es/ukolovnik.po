@@ -108,7 +108,7 @@ msgstr "Esconder"
 
 #: index.php:169
 msgid "Finished"
-msgstr ""
+msgstr "Terminado"
 
 #: index.php:211 index.php:256 index.php:290 index.php:305 index.php:320
 msgid "No entries found."
