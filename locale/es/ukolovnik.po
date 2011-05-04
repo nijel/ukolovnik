@@ -182,7 +182,7 @@ msgstr "Categoría inválida."
 
 #: index.php:383 index.php:388
 msgid "Invalid priority."
-msgstr ""
+msgstr "Prioridad inválida."
 
 #: index.php:403
 #, php-format
