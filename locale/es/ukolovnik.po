@@ -297,7 +297,7 @@ msgstr "Cantidad de tareas de baja prioridad abiertas"
 
 #: index.php:691
 msgid "Oldest task"
-msgstr "Tareas más antiguas"
+msgstr "Tarea más antigua"
 
 #: index.php:693
 msgid "Oldest task age"
