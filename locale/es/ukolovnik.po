@@ -249,7 +249,7 @@ msgstr "¿Qué hacer con las tareas en la categoría eliminada?"
 
 #: index.php:585
 msgid "Move to another category"
-msgstr ""
+msgstr "Mover a otra categoría"
 
 #: index.php:586
 msgid "Target category"
