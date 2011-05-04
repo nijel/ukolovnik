@@ -345,7 +345,7 @@ msgstr "Su sitio web está en %s."
 #: index.php:744
 #, php-format
 msgid "You can support it's development on %s."
-msgstr ""
+msgstr "Puedes soportar su desarrollo en %s."
 
 #: index.php:749
 msgid "Please select export format:"
