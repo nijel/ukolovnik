@@ -112,7 +112,7 @@ msgstr "Terminado"
 
 #: index.php:211 index.php:256 index.php:290 index.php:305 index.php:320
 msgid "No entries found."
-msgstr ""
+msgstr "No se encontraron entradas."
 
 #: index.php:218 index.php:262
 msgid "Created"
