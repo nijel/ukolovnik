@@ -88,7 +88,7 @@ msgstr "Filtrar"
 
 #: index.php:161
 msgid "Text"
-msgstr ""
+msgstr "Texto"
 
 #: index.php:167 index.php:617 index.php:624 lib/category.php:43
 msgid "Personal"
