@@ -144,7 +144,7 @@ msgstr "Parámetros inválidos."
 
 #: index.php:264
 msgid "Updated"
-msgstr ""
+msgstr "Actualizado"
 
 #: index.php:267
 msgid "Closed"
