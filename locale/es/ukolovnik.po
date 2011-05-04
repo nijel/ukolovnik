@@ -28,7 +28,7 @@ msgstr "Título"
 
 #: index.php:90
 msgid "Description"
-msgstr ""
+msgstr "Descripción"
 
 #: index.php:92 index.php:163
 msgid "Priority"
