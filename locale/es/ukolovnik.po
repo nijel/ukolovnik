@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Ukolovnik 1.2\n"
 "Report-Msgid-Bugs-To: michal@cihar.com\n"
 "POT-Creation-Date: 2009-08-11 00:41+0200\n"
-"PO-Revision-Date: 2011-05-04 22:06+0200\n"
+"PO-Revision-Date: 2011-05-04 22:07+0200\n"
 "Last-Translator: Matías Bellone <matiasbellone@gmail.com>\n"
 "Language-Team: none\n"
 "Language: es\n"
@@ -217,7 +217,7 @@ msgstr "El nombre no puede estar vacío."
 #: index.php:484
 #, php-format
 msgid "Category %s has been added."
-msgstr ""
+msgstr "Categoría %s agregada."
 
 #: index.php:487
 #, php-format
