@@ -379,7 +379,7 @@ msgstr "Medio"
 
 #: lib/priority.php:16
 msgid "High"
-msgstr ""
+msgstr "Alto"
 
 #: lib/sql.php:87
 #, php-format
