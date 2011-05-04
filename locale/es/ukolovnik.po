@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Ukolovnik 1.2\n"
 "Report-Msgid-Bugs-To: michal@cihar.com\n"
 "POT-Creation-Date: 2009-08-11 00:41+0200\n"
-"PO-Revision-Date: 2011-05-04 22:09+0200\n"
+"PO-Revision-Date: 2011-05-04 23:28+0200\n"
 "Last-Translator: Matías Bellone <matiasbellone@gmail.com>\n"
 "Language-Team: none\n"
 "Language: es\n"
@@ -261,7 +261,7 @@ msgstr "No hay otras tareas en esta categoría."
 
 #: index.php:624 index.php:641 lib/category.php:40
 msgid "Name"
-msgstr ""
+msgstr "Nombre"
 
 #: index.php:628 setup.php:124
 msgid "Yes"
