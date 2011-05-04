@@ -436,7 +436,7 @@ msgstr "Acerca de"
 
 #: lib/toolbar.php:21
 msgid "Donate"
-msgstr ""
+msgstr "Donar"
 
 #. l10n: please keep also English text "Language" in translated text
 #: setup.php:41
