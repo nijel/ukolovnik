@@ -325,7 +325,7 @@ msgstr "Edad promedio de las tareas abiertas"
 
 #: index.php:727
 msgid "Average age when task is closed"
-msgstr ""
+msgstr "Edad promedio al cerrar una tarea"
 
 #: index.php:736
 msgid "About Ukolovnik"
