@@ -82,8 +82,9 @@ msgid "No categories defined."
 msgstr "No existen categorías definidas."
 
 #: index.php:160 index.php:172 index.php:616 index.php:620
+#, fuzzy
 msgid "Filter"
-msgstr ""
+msgstr "Filtrar"
 
 #: index.php:161
 msgid "Text"
