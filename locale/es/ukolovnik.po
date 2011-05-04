@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Ukolovnik 1.2\n"
 "Report-Msgid-Bugs-To: michal@cihar.com\n"
 "POT-Creation-Date: 2009-08-11 00:41+0200\n"
-"PO-Revision-Date: 2011-05-04 23:37+0200\n"
+"PO-Revision-Date: 2011-05-04 23:38+0200\n"
 "Last-Translator: Matías Bellone <matiasbellone@gmail.com>\n"
 "Language-Team: none\n"
 "Language: es\n"
@@ -404,7 +404,7 @@ msgstr "Tabla %s actualizada."
 #: lib/sql.php:188
 #, php-format
 msgid "SQL query failed: %s"
-msgstr ""
+msgstr "Falló la consulta SQL: %s"
 
 #: lib/string.php:15
 msgid "%d.%m.%Y, %H:%M"
