@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Ukolovnik 1.2\n"
 "Report-Msgid-Bugs-To: michal@cihar.com\n"
 "POT-Creation-Date: 2009-08-11 00:41+0200\n"
-"PO-Revision-Date: 2011-05-04 23:31+0200\n"
+"PO-Revision-Date: 2011-05-04 23:35+0200\n"
 "Last-Translator: Matías Bellone <matiasbellone@gmail.com>\n"
 "Language-Team: none\n"
 "Language: es\n"
@@ -329,7 +329,7 @@ msgstr "Edad promedio al cerrar una tarea"
 
 #: index.php:736
 msgid "About Ukolovnik"
-msgstr ""
+msgstr "Acerca de Ukolovnik"
 
 #: index.php:737
 msgid "Ukolovnik is simple todo manager licensed under GNU/GPL version 2."
