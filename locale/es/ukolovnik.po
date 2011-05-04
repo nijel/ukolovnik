@@ -8,18 +8,19 @@ msgstr ""
 "Project-Id-Version: Ukolovnik 1.2\n"
 "Report-Msgid-Bugs-To: michal@cihar.com\n"
 "POT-Creation-Date: 2009-08-11 00:41+0200\n"
-"PO-Revision-Date: 2009-08-11 00:41+0200\n"
-"Last-Translator: Automatically generated\n"
+"PO-Revision-Date: 2011-05-04 21:59+0200\n"
+"Last-Translator: Matías Bellone <matiasbellone@gmail.com>\n"
 "Language-Team: none\n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: es\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Pootle 2.0.5\n"
 
 #: index.php:69
 msgid "Any"
-msgstr ""
+msgstr "Cualquiera"
 
 #: index.php:88 index.php:216
 msgid "Title"
