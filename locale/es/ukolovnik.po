@@ -253,7 +253,7 @@ msgstr "Mover a otra categoría"
 
 #: index.php:586
 msgid "Target category"
-msgstr ""
+msgstr "Categoría de destino"
 
 #: index.php:592 index.php:595
 msgid "There are no tasks in this category."
