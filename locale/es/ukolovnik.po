@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Ukolovnik 1.2\n"
 "Report-Msgid-Bugs-To: michal@cihar.com\n"
 "POT-Creation-Date: 2009-08-11 00:41+0200\n"
-"PO-Revision-Date: 2011-05-04 23:41+0200\n"
+"PO-Revision-Date: 2011-05-04 23:43+0200\n"
 "Last-Translator: Matías Bellone <matiasbellone@gmail.com>\n"
 "Language-Team: none\n"
 "Language: es\n"
@@ -82,7 +82,6 @@ msgid "No categories defined."
 msgstr "No existen categorías definidas."
 
 #: index.php:160 index.php:172 index.php:616 index.php:620
-#, fuzzy
 msgid "Filter"
 msgstr "Filtrar"
 
