@@ -187,7 +187,7 @@ msgstr "Prioridad inválida."
 #: index.php:403
 #, php-format
 msgid "Task %s has been added."
-msgstr ""
+msgstr "Tarea %s agregada."
 
 #: index.php:410
 msgid ""
