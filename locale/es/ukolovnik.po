@@ -153,7 +153,7 @@ msgstr "Cerrado"
 #: index.php:294
 #, php-format
 msgid "Task %s reopened."
-msgstr "Tarea %s re-abierta"
+msgstr "Tarea %s re-abierta."
 
 #: index.php:309
 #, php-format
