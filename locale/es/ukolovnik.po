@@ -158,7 +158,7 @@ msgstr "Tarea %s re-abierta."
 #: index.php:309
 #, php-format
 msgid "Task %s finished."
-msgstr ""
+msgstr "Tarea %s terminada."
 
 #: index.php:324
 #, php-format
