@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Ukolovnik 1.2\n"
 "Report-Msgid-Bugs-To: michal@cihar.com\n"
 "POT-Creation-Date: 2009-08-11 00:41+0200\n"
-"PO-Revision-Date: 2011-05-04 22:01+0200\n"
+"PO-Revision-Date: 2011-05-04 22:02+0200\n"
 "Last-Translator: Matías Bellone <matiasbellone@gmail.com>\n"
 "Language-Team: none\n"
 "Language: es\n"
@@ -69,6 +69,8 @@ msgstr ""
 #, php-format
 msgid "Table %s need update. Please upgrade your tables or use setup.php."
 msgstr ""
+"Se necesita actualizar la tabla %s. Porfavor actualiza las tablas o utiliza "
+"setup.php"
 
 #: index.php:141
 #, php-format
