@@ -277,7 +277,7 @@ msgstr "Item"
 
 #: index.php:647
 msgid "Total tasks count"
-msgstr ""
+msgstr "Cantidad total de tareas"
 
 #: index.php:655
 msgid "Opened tasks count"
