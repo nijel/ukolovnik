@@ -432,7 +432,7 @@ msgstr "Configuraciones"
 
 #: lib/toolbar.php:20
 msgid "About"
-msgstr ""
+msgstr "Acerca de"
 
 #: lib/toolbar.php:21
 msgid "Donate"
