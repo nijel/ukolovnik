@@ -226,7 +226,7 @@ msgstr "Categoría %s modificada."
 
 #: index.php:500 lib/toolbar.php:16
 msgid "Add category"
-msgstr ""
+msgstr "Agregar categoría"
 
 #: index.php:529 index.php:546 index.php:550 index.php:554
 #, php-format
