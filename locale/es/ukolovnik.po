@@ -424,7 +424,7 @@ msgstr "Exportar"
 
 #: lib/toolbar.php:18
 msgid "Stats"
-msgstr ""
+msgstr "Estadísticas"
 
 #: lib/toolbar.php:19
 msgid "Settings"
