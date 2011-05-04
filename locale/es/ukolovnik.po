@@ -321,7 +321,7 @@ msgstr "Edad de la tarea abierta más antigua"
 
 #: index.php:719
 msgid "Average opened task age"
-msgstr ""
+msgstr "Edad promedio de las tareas abiertas"
 
 #: index.php:727
 msgid "Average age when task is closed"
