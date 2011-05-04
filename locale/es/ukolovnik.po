@@ -148,7 +148,7 @@ msgstr "Actualizado"
 
 #: index.php:267
 msgid "Closed"
-msgstr ""
+msgstr "Cerrado"
 
 #: index.php:294
 #, php-format
