@@ -236,7 +236,7 @@ msgstr "Categoría %s eliminada."
 #: index.php:574
 #, php-format
 msgid "You are about to delete category \"%s\""
-msgstr ""
+msgstr "Borrarás la cateogría \"%s\""
 
 #: index.php:580
 #, php-format
