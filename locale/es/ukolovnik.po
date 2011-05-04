@@ -204,7 +204,7 @@ msgstr "Tarea %s modificada."
 
 #: index.php:427 lib/toolbar.php:14
 msgid "Add"
-msgstr ""
+msgstr "Agregar"
 
 #: index.php:448 index.php:498
 msgid "Edit category"
