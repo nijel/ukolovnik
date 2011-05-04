@@ -453,7 +453,7 @@ msgstr "Volver a la página de agregado luego de agregar una nueva entrada"
 
 #: setup.php:44
 msgid "Show entries list on add page"
-msgstr ""
+msgstr "Mostrar lista de entradas en la página de agregado"
 
 #: setup.php:45
 msgid "Show category name in main page output"
