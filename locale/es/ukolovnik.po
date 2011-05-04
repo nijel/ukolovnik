@@ -362,6 +362,8 @@ msgstr "vCalendar"
 #: index.php:809
 msgid "Uknonwn command! Maybe you hit some not yet implemented functionality."
 msgstr ""
+"¡Orden desconocida! Probablemente hayas dado con funcionalidad no "
+"implementada aún."
 
 #: lib/html.php:67
 msgid "Default style"
