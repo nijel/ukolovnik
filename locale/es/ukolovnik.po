@@ -231,7 +231,7 @@ msgstr "Agregar categoría"
 #: index.php:529 index.php:546 index.php:550 index.php:554
 #, php-format
 msgid "Category %s has been deleted."
-msgstr ""
+msgstr "Categoría %s eliminada."
 
 #: index.php:574
 #, php-format
