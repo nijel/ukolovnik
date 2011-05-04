@@ -399,7 +399,7 @@ msgstr "Se actualizó la base de datos de configuraciones"
 #: lib/sql.php:165
 #, php-format
 msgid "Table %s updated."
-msgstr ""
+msgstr "Tabla %s actualizada."
 
 #: lib/sql.php:188
 #, php-format
