@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Ukolovnik 1.2\n"
 "Report-Msgid-Bugs-To: michal@cihar.com\n"
 "POT-Creation-Date: 2009-08-11 00:41+0200\n"
-"PO-Revision-Date: 2011-05-04 21:59+0200\n"
+"PO-Revision-Date: 2011-05-04 22:00+0200\n"
 "Last-Translator: Matías Bellone <matiasbellone@gmail.com>\n"
 "Language-Team: none\n"
 "Language: es\n"
@@ -41,7 +41,7 @@ msgstr "Categoría"
 #: index.php:106 setup.php:89
 #, php-format
 msgid "Can not find needed PHP extension \"%s\". Please install and enable it."
-msgstr ""
+msgstr "No se encontró la extensión PHP \"%s\". Porfavor instala y actívala."
 
 #: index.php:113 setup.php:97
 msgid "Can not connect to MySQL database. Please check your configuration."
