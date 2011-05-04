@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Ukolovnik 1.2\n"
 "Report-Msgid-Bugs-To: michal@cihar.com\n"
 "POT-Creation-Date: 2009-08-11 00:41+0200\n"
-"PO-Revision-Date: 2011-05-04 22:04+0200\n"
+"PO-Revision-Date: 2011-05-04 22:05+0200\n"
 "Last-Translator: Matías Bellone <matiasbellone@gmail.com>\n"
 "Language-Team: none\n"
 "Language: es\n"
@@ -163,7 +163,7 @@ msgstr "Tarea %s terminada."
 #: index.php:324
 #, php-format
 msgid "Task %s has been deleted."
-msgstr ""
+msgstr "Tarea %s eliminada."
 
 #: index.php:331 index.php:338 index.php:353 index.php:358 index.php:363
 #: index.php:438 index.php:444 index.php:457 index.php:462 index.php:466
