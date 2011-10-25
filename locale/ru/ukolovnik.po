@@ -7,8 +7,8 @@ msgstr ""
 "Project-Id-Version: Ukolovnik 1.2\n"
 "Report-Msgid-Bugs-To: michal@cihar.com\n"
 "POT-Creation-Date: 2009-08-08 20:33+0200\n"
-"PO-Revision-Date: 2011-04-21 14:11+0200\n"
-"Last-Translator: Michal Čihař <michal@cihar.com>\n"
+"PO-Revision-Date: 2011-10-25 15:16+0200\n"
+"Last-Translator:  <md1989_merdan@mail.ru>\n"
 "Language-Team: Russian <ru@li.org>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
@@ -450,7 +450,7 @@ msgstr "Стиль"
 
 #: setup.php:43
 msgid "Stay on add page after adding new entry"
-msgstr ""
+msgstr "Оставайтесь на добавить страницу после добавления новой записи"
 
 #: setup.php:44
 msgid "Show entries list on add page"
