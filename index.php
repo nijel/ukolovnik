@@ -758,7 +758,7 @@ while (!empty($cmd)) {
             header('Content-Type: text/plain; charset=utf-8');
             header('Content-Disposition: attachment; filename="ukolovnik.csv"');
 
-            $q = SQL_do('SELECT id,category,UNIX_TIMESTAMP(created) AS created,priority,title,description,UNIX_TIMESTAMP(closed) AS closed FROM ' . $GLOBALS['table_prefix'] . 'tasks ' . $filter . ' ORDER BY priority DESC, created ASC');
+            $q = SQL_do('SELECT id,category,UNIX_TIMESTAMP(created) AS created,priority,title,description,UNIX_TIMESTAMP(closed) AS closed FROM ' . $GLOBALS['table_prefix'] . 'tasks ORDER BY priority DESC, created ASC');
             echo "priority,title,description,category,created,closed\n";
             if (mysql_num_rows($q) > 0) {
                 while ($row = mysql_fetch_assoc($q)) {
