@@ -302,7 +302,7 @@ msgstr "Tarefa mais antiga"
 
 #: index.php:693
 msgid "Oldest task age"
-msgstr ""
+msgstr "Tarefa com idade mais antiga"
 
 #: index.php:694 index.php:702 index.php:712 index.php:720 index.php:728
 msgid "days"
