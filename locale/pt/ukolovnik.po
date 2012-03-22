@@ -249,7 +249,7 @@ msgstr "O que voce quer fazer com a tarefa na categoria excluida?"
 
 #: index.php:585
 msgid "Move to another category"
-msgstr ""
+msgstr "Mover para outra categoria"
 
 #: index.php:586
 msgid "Target category"
