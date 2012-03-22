@@ -318,7 +318,7 @@ msgstr "Tarefa aberta mais antiga"
 
 #: index.php:711
 msgid "Oldest opened task age"
-msgstr ""
+msgstr "Tarefa aberta com idade mais antiga"
 
 #: index.php:719
 msgid "Average opened task age"
