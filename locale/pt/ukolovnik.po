@@ -140,7 +140,7 @@ msgstr "Excluir"
 
 #: index.php:252 index.php:286 index.php:301 index.php:316 index.php:522
 msgid "Invalid parameters."
-msgstr ""
+msgstr "Parametros invalidos"
 
 #: index.php:264
 msgid "Updated"
