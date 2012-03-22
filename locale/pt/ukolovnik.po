@@ -217,7 +217,7 @@ msgstr "Nome não pode ser vazio."
 #: index.php:484
 #, php-format
 msgid "Category %s has been added."
-msgstr ""
+msgstr "Categoria %s foi adicionada."
 
 #: index.php:487
 #, php-format
