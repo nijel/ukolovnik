@@ -120,7 +120,7 @@ msgstr "Criado"
 
 #: index.php:219 index.php:624
 msgid "Actions"
-msgstr ""
+msgstr "Ações"
 
 #: index.php:236 index.php:272
 msgid "Reopen"
