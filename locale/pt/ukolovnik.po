@@ -178,7 +178,7 @@ msgstr "Titulo não pode ser vazio."
 
 #: index.php:373 index.php:378
 msgid "Invalid category."
-msgstr ""
+msgstr "Categoria invalida."
 
 #: index.php:383 index.php:388
 msgid "Invalid priority."
