@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Ukolovnik 1.2\n"
 "Report-Msgid-Bugs-To: michal@cihar.com\n"
 "POT-Creation-Date: 2009-08-11 00:41+0200\n"
-"PO-Revision-Date: 2012-03-22 20:09+0200\n"
+"PO-Revision-Date: 2012-03-22 20:19+0200\n"
 "Last-Translator: Everton R <everton@tconibo.org>\n"
 "Language-Team: none\n"
 "Language: pt\n"
@@ -298,7 +298,7 @@ msgstr "Tarefas de baixa prioridade abertas"
 
 #: index.php:691
 msgid "Oldest task"
-msgstr ""
+msgstr "Tarefa mais antiga"
 
 #: index.php:693
 msgid "Oldest task age"
