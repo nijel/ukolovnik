@@ -158,7 +158,7 @@ msgstr "Tarefa %s reaberta."
 #: index.php:309
 #, php-format
 msgid "Task %s finished."
-msgstr ""
+msgstr "Tarefa %s fechada."
 
 #: index.php:324
 #, php-format
