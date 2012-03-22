@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Ukolovnik 1.2\n"
 "Report-Msgid-Bugs-To: michal@cihar.com\n"
 "POT-Creation-Date: 2009-08-11 00:41+0200\n"
-"PO-Revision-Date: 2012-03-22 20:03+0200\n"
+"PO-Revision-Date: 2012-03-22 20:05+0200\n"
 "Last-Translator: Everton R <everton@tconibo.org>\n"
 "Language-Team: none\n"
 "Language: pt\n"
@@ -245,7 +245,7 @@ msgstr "Numero de tarefas na categoria: %d"
 
 #: index.php:581
 msgid "What to do with task in deleted category?"
-msgstr ""
+msgstr "O que voce quer fazer com a tarefa na categoria excluida?"
 
 #: index.php:585
 msgid "Move to another category"
