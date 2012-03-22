@@ -96,7 +96,7 @@ msgstr "Pessoal"
 
 #: index.php:168 index.php:170 index.php:618
 msgid "All"
-msgstr ""
+msgstr "Tudo"
 
 #: index.php:168 index.php:170 index.php:618
 msgid "Show"
