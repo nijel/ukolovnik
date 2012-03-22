@@ -314,7 +314,7 @@ msgstr "Idade media da tarefa"
 
 #: index.php:709
 msgid "Oldest opened task"
-msgstr ""
+msgstr "Tarefa aberta mais antiga"
 
 #: index.php:711
 msgid "Oldest opened task age"
