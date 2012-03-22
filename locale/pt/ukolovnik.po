@@ -92,7 +92,7 @@ msgstr "Texto"
 
 #: index.php:167 index.php:617 index.php:624 lib/category.php:43
 msgid "Personal"
-msgstr ""
+msgstr "Pessoal"
 
 #: index.php:168 index.php:170 index.php:618
 msgid "All"
