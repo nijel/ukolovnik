@@ -24,7 +24,7 @@ msgstr "Qualquer"
 
 #: index.php:88 index.php:216
 msgid "Title"
-msgstr ""
+msgstr "Titulo"
 
 #: index.php:90
 msgid "Description"
