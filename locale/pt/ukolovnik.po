@@ -174,7 +174,7 @@ msgstr "ID invalido."
 
 #: index.php:369
 msgid "Title can not be empty."
-msgstr ""
+msgstr "Titulo não pode ser vazio."
 
 #: index.php:373 index.php:378
 msgid "Invalid category."
