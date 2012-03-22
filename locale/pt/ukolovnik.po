@@ -261,7 +261,7 @@ msgstr "Não ha tarefas nesta categoria."
 
 #: index.php:624 index.php:641 lib/category.php:40
 msgid "Name"
-msgstr ""
+msgstr "Nome"
 
 #: index.php:628 setup.php:124
 msgid "Yes"
