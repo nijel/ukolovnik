@@ -212,7 +212,7 @@ msgstr "Editar categoria"
 
 #: index.php:472
 msgid "Name can not be empty."
-msgstr ""
+msgstr "Nome não pode ser vazio."
 
 #: index.php:484
 #, php-format
