@@ -136,7 +136,7 @@ msgstr "Editar"
 
 #: index.php:241 index.php:277 index.php:583 index.php:598 index.php:631
 msgid "Delete"
-msgstr ""
+msgstr "Excluir"
 
 #: index.php:252 index.php:286 index.php:301 index.php:316 index.php:522
 msgid "Invalid parameters."
