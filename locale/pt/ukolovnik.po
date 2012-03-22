@@ -273,7 +273,7 @@ msgstr "Não"
 
 #: index.php:641
 msgid "Item"
-msgstr ""
+msgstr "Item"
 
 #: index.php:647
 msgid "Total tasks count"
