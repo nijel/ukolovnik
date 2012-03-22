@@ -104,7 +104,7 @@ msgstr "Mostrar"
 
 #: index.php:168 index.php:170 index.php:618
 msgid "Hide"
-msgstr ""
+msgstr "Esconder"
 
 #: index.php:169
 msgid "Finished"
