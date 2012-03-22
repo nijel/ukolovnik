@@ -56,7 +56,7 @@ msgid ""
 "setup.php."
 msgstr ""
 "Não pode selecionar banco de dados. Por favor verifique sua configuração ou "
-"utilize o setup.php"
+"utilize o setup.php."
 
 #: index.php:125
 #, php-format
