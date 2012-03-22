@@ -36,7 +36,7 @@ msgstr "Prioridade"
 
 #: index.php:94 index.php:165 index.php:217
 msgid "Category"
-msgstr ""
+msgstr "Categoria"
 
 #: index.php:106 setup.php:89
 #, php-format
