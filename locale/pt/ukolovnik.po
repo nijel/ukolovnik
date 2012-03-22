@@ -163,7 +163,7 @@ msgstr "Tarefa %s fechada."
 #: index.php:324
 #, php-format
 msgid "Task %s has been deleted."
-msgstr ""
+msgstr "Tarefa %s foi excluida."
 
 #: index.php:331 index.php:338 index.php:353 index.php:358 index.php:363
 #: index.php:438 index.php:444 index.php:457 index.php:462 index.php:466
