@@ -116,7 +116,7 @@ msgstr "Nenhuma entrada encontrada."
 
 #: index.php:218 index.php:262
 msgid "Created"
-msgstr ""
+msgstr "Criado"
 
 #: index.php:219 index.php:624
 msgid "Actions"
