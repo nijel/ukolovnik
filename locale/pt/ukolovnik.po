@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Ukolovnik 1.2\n"
 "Report-Msgid-Bugs-To: michal@cihar.com\n"
 "POT-Creation-Date: 2009-08-11 00:41+0200\n"
-"PO-Revision-Date: 2012-03-22 19:23+0200\n"
+"PO-Revision-Date: 2012-03-22 19:24+0200\n"
 "Last-Translator: Everton R <everton@tconibo.org>\n"
 "Language-Team: none\n"
 "Language: pt\n"
@@ -153,7 +153,7 @@ msgstr "Fechado"
 #: index.php:294
 #, php-format
 msgid "Task %s reopened."
-msgstr ""
+msgstr "Tarefa %s reaberta."
 
 #: index.php:309
 #, php-format
