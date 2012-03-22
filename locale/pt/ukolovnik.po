@@ -282,7 +282,7 @@ msgstr "Quantidade total de tarefas"
 
 #: index.php:655
 msgid "Opened tasks count"
-msgstr ""
+msgstr "Quantidade de tarefas abertas"
 
 #: index.php:666
 msgid "Opened high priority count"
