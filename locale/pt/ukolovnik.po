@@ -269,7 +269,7 @@ msgstr "Sim"
 
 #: index.php:628 setup.php:124
 msgid "No"
-msgstr ""
+msgstr "Não"
 
 #: index.php:641
 msgid "Item"
