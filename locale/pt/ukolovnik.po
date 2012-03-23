@@ -39,7 +39,7 @@ msgid "Category"
 msgstr "Categoria"
 
 #: index.php:106 setup.php:89
-#, php-format
+#, fuzzy, php-format
 msgid "Can not find needed PHP extension \"%s\". Please install and enable it."
 msgstr ""
 "Não pode ser encontrada a extensão PHP necessaria. Por favor habilite-a."
@@ -74,7 +74,7 @@ msgstr ""
 "setup.php."
 
 #: index.php:141
-#, php-format
+#, fuzzy, php-format
 msgid "Invalid language (%s) has been chosen."
 msgstr "Linguagem invalida foi escolhida."
 
