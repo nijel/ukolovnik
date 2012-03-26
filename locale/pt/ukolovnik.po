@@ -341,7 +341,7 @@ msgstr ""
 #: index.php:740
 #, php-format
 msgid "It has homepage on %s."
-msgstr "homepage %s"
+msgstr "homepage %s."
 
 #: index.php:744
 #, php-format
