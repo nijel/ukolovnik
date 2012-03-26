@@ -75,9 +75,9 @@ msgstr ""
 "setup.php."
 
 #: index.php:141
-#, fuzzy, php-format
+#, php-format
 msgid "Invalid language (%s) has been chosen."
-msgstr "Idioma (% s) invalido foi escolhido."
+msgstr "Idioma (%s) invalido foi escolhido."
 
 #: index.php:156 index.php:613
 msgid "No categories defined."
