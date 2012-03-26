@@ -383,7 +383,7 @@ msgstr "Alto"
 #: lib/sql.php:87
 #, php-format
 msgid "Database %s has been created."
-msgstr ""
+msgstr "Banco de dados %s foi criado."
 
 #: lib/sql.php:117 lib/sql.php:128 lib/sql.php:136
 #, php-format
