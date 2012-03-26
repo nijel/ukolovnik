@@ -354,7 +354,7 @@ msgstr "Por favor, selecione o formato de exportação:"
 
 #: index.php:751
 msgid "CSV (Comma separated values)"
-msgstr ""
+msgstr "CSV (valores separados por virgula)"
 
 #: index.php:752
 msgid "vCalendar"
