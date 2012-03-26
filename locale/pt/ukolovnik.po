@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Ukolovnik 1.2\n"
 "Report-Msgid-Bugs-To: michal@cihar.com\n"
 "POT-Creation-Date: 2009-08-11 00:41+0200\n"
-"PO-Revision-Date: 2012-03-26 20:50+0200\n"
+"PO-Revision-Date: 2012-03-26 20:51+0200\n"
 "Last-Translator: Everton R <everton@tconibo.org>\n"
 "Language-Team: none\n"
 "Language: pt\n"
@@ -346,7 +346,7 @@ msgstr "homepage %s."
 #: index.php:744
 #, php-format
 msgid "You can support it's development on %s."
-msgstr ""
+msgstr "Você pode apoiar o seu desenvolvimento em %s."
 
 #: index.php:749
 msgid "Please select export format:"
