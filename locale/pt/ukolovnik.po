@@ -423,7 +423,7 @@ msgstr "Exportar"
 
 #: lib/toolbar.php:18
 msgid "Stats"
-msgstr ""
+msgstr "Estatistica"
 
 #: lib/toolbar.php:19
 msgid "Settings"
