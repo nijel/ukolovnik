@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Ukolovnik 1.2\n"
 "Report-Msgid-Bugs-To: michal@cihar.com\n"
 "POT-Creation-Date: 2009-08-11 00:41+0200\n"
-"PO-Revision-Date: 2012-03-26 19:34+0200\n"
+"PO-Revision-Date: 2012-03-26 19:35+0200\n"
 "Last-Translator: Everton R <everton@tconibo.org>\n"
 "Language-Team: none\n"
 "Language: pt\n"
@@ -335,6 +335,8 @@ msgstr "Sobre Ukolovnik"
 #: index.php:737
 msgid "Ukolovnik is simple todo manager licensed under GNU/GPL version 2."
 msgstr ""
+"Ukolovnik é um simples gerenciador de coisas a fazer, licenciado sob GNU/GPL "
+"versão 2."
 
 #: index.php:740
 #, php-format
