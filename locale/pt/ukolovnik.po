@@ -358,7 +358,7 @@ msgstr "CSV (valores separados por virgula)"
 
 #: index.php:752
 msgid "vCalendar"
-msgstr ""
+msgstr "vCalendar"
 
 #: index.php:809
 msgid "Uknonwn command! Maybe you hit some not yet implemented functionality."
