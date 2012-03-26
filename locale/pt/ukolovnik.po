@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Ukolovnik 1.2\n"
 "Report-Msgid-Bugs-To: michal@cihar.com\n"
 "POT-Creation-Date: 2009-08-11 00:41+0200\n"
-"PO-Revision-Date: 2012-03-22 20:20+0200\n"
+"PO-Revision-Date: 2012-03-26 19:30+0200\n"
 "Last-Translator: Everton R <everton@tconibo.org>\n"
 "Language-Team: none\n"
 "Language: pt\n"
@@ -39,7 +39,7 @@ msgid "Category"
 msgstr "Categoria"
 
 #: index.php:106 setup.php:89
-#, fuzzy, php-format
+#, php-format
 msgid "Can not find needed PHP extension \"%s\". Please install and enable it."
 msgstr ""
 "Não pode ser encontrada a extensão PHP necessaria. Por favor habilite-a."
