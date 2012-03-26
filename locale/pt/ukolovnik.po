@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Ukolovnik 1.2\n"
 "Report-Msgid-Bugs-To: michal@cihar.com\n"
 "POT-Creation-Date: 2009-08-11 00:41+0200\n"
-"PO-Revision-Date: 2012-03-26 19:31+0200\n"
+"PO-Revision-Date: 2012-03-26 19:32+0200\n"
 "Last-Translator: Everton R <everton@tconibo.org>\n"
 "Language-Team: none\n"
 "Language: pt\n"
@@ -75,9 +75,9 @@ msgstr ""
 "setup.php."
 
 #: index.php:141
-#, php-format
+#, fuzzy, php-format
 msgid "Invalid language (%s) has been chosen."
-msgstr "Idioma invalido (% s) foi escolhido."
+msgstr "Idioma (% s) invalido foi escolhido."
 
 #: index.php:156 index.php:613
 msgid "No categories defined."
