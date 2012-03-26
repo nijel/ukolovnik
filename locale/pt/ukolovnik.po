@@ -398,7 +398,7 @@ msgstr "Mudanças no banco dados foram realizadas"
 #: lib/sql.php:165
 #, php-format
 msgid "Table %s updated."
-msgstr ""
+msgstr "Tabela %s atualizada."
 
 #: lib/sql.php:188
 #, php-format
