@@ -393,7 +393,7 @@ msgstr "Tabela %s foi criada."
 #: lib/sql.php:155
 #, php-format
 msgid "Settings database has been updated"
-msgstr ""
+msgstr "Mudanças no banco dados foram realizadas."
 
 #: lib/sql.php:165
 #, php-format
