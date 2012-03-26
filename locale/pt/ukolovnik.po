@@ -456,7 +456,7 @@ msgstr "Mostrar lista de entradas adicionadas"
 
 #: setup.php:45
 msgid "Show category name in main page output"
-msgstr ""
+msgstr "Mostrar nome categoria na pagina principal"
 
 #: setup.php:107
 msgid ""
