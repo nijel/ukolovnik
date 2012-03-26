@@ -427,7 +427,7 @@ msgstr "Estatistica"
 
 #: lib/toolbar.php:19
 msgid "Settings"
-msgstr ""
+msgstr "Configuracoes"
 
 #: lib/toolbar.php:20
 msgid "About"
