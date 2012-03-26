@@ -419,7 +419,7 @@ msgstr "Categorias"
 
 #: lib/toolbar.php:17
 msgid "Export"
-msgstr ""
+msgstr "Exportar"
 
 #: lib/toolbar.php:18
 msgid "Stats"
