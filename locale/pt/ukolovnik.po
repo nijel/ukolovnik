@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Ukolovnik 1.2\n"
 "Report-Msgid-Bugs-To: michal@cihar.com\n"
 "POT-Creation-Date: 2009-08-11 00:41+0200\n"
-"PO-Revision-Date: 2012-03-26 20:55+0200\n"
+"PO-Revision-Date: 2012-03-26 20:56+0200\n"
 "Last-Translator: Everton R <everton@tconibo.org>\n"
 "Language-Team: none\n"
 "Language: pt\n"
@@ -411,7 +411,7 @@ msgstr "%d.%m.%Y, %H:%M"
 
 #: lib/toolbar.php:13
 msgid "Main"
-msgstr ""
+msgstr "Principal"
 
 #: lib/toolbar.php:15
 msgid "Categories"
