@@ -273,7 +273,6 @@ msgid "No"
 msgstr "Não"
 
 #: index.php:641
-#, fuzzy
 msgid "Item"
 msgstr "Item"
 
