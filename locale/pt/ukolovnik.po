@@ -407,7 +407,7 @@ msgstr "Query SQL falhou: %s"
 
 #: lib/string.php:15
 msgid "%d.%m.%Y, %H:%M"
-msgstr ""
+msgstr "%d.%m.%Y, %H:%M"
 
 #: lib/toolbar.php:13
 msgid "Main"
