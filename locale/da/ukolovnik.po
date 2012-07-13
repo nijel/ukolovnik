@@ -410,7 +410,7 @@ msgstr "%d.%m.%Y, %H:%M"
 
 #: lib/toolbar.php:13
 msgid "Main"
-msgstr "Primær"
+msgstr "Hovedside"
 
 #: lib/toolbar.php:15
 msgid "Categories"
