@@ -7,8 +7,8 @@ msgstr ""
 "Project-Id-Version: Ukolovnik 1.2\n"
 "Report-Msgid-Bugs-To: michal@cihar.com\n"
 "POT-Creation-Date: 2009-08-08 20:33+0200\n"
-"PO-Revision-Date: 2011-10-25 15:17+0200\n"
-"Last-Translator:  <md1989_merdan@mail.ru>\n"
+"PO-Revision-Date: 2012-07-27 10:24+0200\n"
+"Last-Translator: Michal Čihař <michal@cihar.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
 "10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Pootle 2.0.5\n"
+"X-Generator: Weblate 1.1\n"
 
 #: index.php:69
 msgid "Any"
@@ -257,7 +257,7 @@ msgstr "Целевая категория"
 
 #: index.php:592 index.php:595
 msgid "There are no tasks in this category."
-msgstr "В этой категории нет заданий"
+msgstr "В этой категории нет заданий."
 
 #: index.php:624 index.php:641 lib/category.php:40
 msgid "Name"
@@ -384,12 +384,12 @@ msgstr "Высокий"
 #: lib/sql.php:87
 #, php-format
 msgid "Database %s has been created."
-msgstr "База данных %s создана"
+msgstr "База данных %s создана."
 
 #: lib/sql.php:117 lib/sql.php:128 lib/sql.php:136
 #, php-format
 msgid "Table %s has been created."
-msgstr "Таблица %s создана"
+msgstr "Таблица %s создана."
 
 #: lib/sql.php:155
 #, php-format
