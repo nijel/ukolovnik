@@ -18,440 +18,440 @@ msgstr ""
 
 #: index.php:69
 msgid "Any"
-msgstr ""
+msgstr "不限"
 
 #: index.php:88 index.php:216
 msgid "Title"
-msgstr ""
+msgstr "标题"
 
 #: index.php:90
 msgid "Description"
-msgstr ""
+msgstr "说明"
 
 #: index.php:92 index.php:163
 msgid "Priority"
-msgstr ""
+msgstr "优先级"
 
 #: index.php:94 index.php:165 index.php:217
 msgid "Category"
-msgstr ""
+msgstr "分类"
 
 #: index.php:106 setup.php:89
 #, php-format
 msgid "Can not find needed PHP extension \"%s\". Please install and enable it."
-msgstr ""
+msgstr "找不到必须的 PHP 扩展 \"%s\"。请安装并启用它。"
 
 #: index.php:113 setup.php:97
 msgid "Can not connect to MySQL database. Please check your configuration."
-msgstr ""
+msgstr "无法连接到 MySQL 数据库。请检查您的配置。"
 
 #: index.php:120
 msgid ""
 "Can not select configured database. Please check your configuration or use "
 "setup.php."
-msgstr ""
+msgstr "无法选择配置的数据库。请检查您的配置或使用 setup.php。"
 
 #: index.php:125
 #, php-format
 msgid ""
 "Can not find table \"%s\". Please check your configuration or use setup.php."
-msgstr ""
+msgstr "找不到表 \"%s\"。请检查您的配置或使用 setup.php。"
 
 #: index.php:131
 #, php-format
 msgid "Table %s need update. Please upgrade your tables or use setup.php."
-msgstr ""
+msgstr "表 %s 需要升级。请升级您的表或使用 setup.php。"
 
 #: index.php:141
 #, php-format
 msgid "Invalid language (%s) has been chosen."
-msgstr ""
+msgstr "选择了无效的语言 (%s)。"
 
 #: index.php:156 index.php:613
 msgid "No categories defined."
-msgstr ""
+msgstr "未定义分类。"
 
 #: index.php:160 index.php:172 index.php:616 index.php:620
 msgid "Filter"
-msgstr ""
+msgstr "搜索"
 
 #: index.php:161
 msgid "Text"
-msgstr ""
+msgstr "内容"
 
 #: index.php:167 index.php:617 index.php:624 lib/category.php:43
 msgid "Personal"
-msgstr ""
+msgstr "私有"
 
 #: index.php:168 index.php:170 index.php:618
 msgid "All"
-msgstr ""
+msgstr "全部"
 
 #: index.php:168 index.php:170 index.php:618
 msgid "Show"
-msgstr ""
+msgstr "显示"
 
 #: index.php:168 index.php:170 index.php:618
 msgid "Hide"
-msgstr ""
+msgstr "隐藏"
 
 #: index.php:169
 msgid "Finished"
-msgstr ""
+msgstr "已完成"
 
 #: index.php:211 index.php:256 index.php:290 index.php:305 index.php:320
 msgid "No entries found."
-msgstr ""
+msgstr "没有找到记录。"
 
 #: index.php:218 index.php:262
 msgid "Created"
-msgstr ""
+msgstr "创建时间"
 
 #: index.php:219 index.php:624
 msgid "Actions"
-msgstr ""
+msgstr "操作"
 
 #: index.php:236 index.php:272
 msgid "Reopen"
-msgstr ""
+msgstr "重新打开"
 
 #: index.php:238 index.php:274
 msgid "Finish"
-msgstr ""
+msgstr "完成"
 
 #: index.php:240 index.php:276 index.php:344 index.php:425 index.php:630
 msgid "Edit"
-msgstr ""
+msgstr "编辑"
 
 #: index.php:241 index.php:277 index.php:583 index.php:598 index.php:631
 msgid "Delete"
-msgstr ""
+msgstr "删除"
 
 #: index.php:252 index.php:286 index.php:301 index.php:316 index.php:522
 msgid "Invalid parameters."
-msgstr ""
+msgstr "无效参数。"
 
 #: index.php:264
 msgid "Updated"
-msgstr ""
+msgstr "已更新"
 
 #: index.php:267
 msgid "Closed"
-msgstr ""
+msgstr "已关闭"
 
 #: index.php:294
 #, php-format
 msgid "Task %s reopened."
-msgstr ""
+msgstr "已重新打开任务 %s。"
 
 #: index.php:309
 #, php-format
 msgid "Task %s finished."
-msgstr ""
+msgstr "已完成任务 %s。"
 
 #: index.php:324
 #, php-format
 msgid "Task %s has been deleted."
-msgstr ""
+msgstr "已删除任务 %s。"
 
 #: index.php:331 index.php:338 index.php:353 index.php:358 index.php:363
 #: index.php:438 index.php:444 index.php:457 index.php:462 index.php:466
 #: index.php:506 index.php:512 index.php:533 index.php:539 index.php:563
 #: index.php:569
 msgid "Invalid ID."
-msgstr ""
+msgstr "无效 ID。"
 
 #: index.php:369
 msgid "Title can not be empty."
-msgstr ""
+msgstr "标题不能为空。"
 
 #: index.php:373 index.php:378
 msgid "Invalid category."
-msgstr ""
+msgstr "无效分类。"
 
 #: index.php:383 index.php:388
 msgid "Invalid priority."
-msgstr ""
+msgstr "无效优先级。"
 
 #: index.php:403
 #, php-format
 msgid "Task %s has been added."
-msgstr ""
+msgstr "已添加任务 %s。"
 
 #: index.php:410
 msgid ""
 "Concurrency error! Changes not saved, because someone else already changed "
 "record."
-msgstr ""
+msgstr "并发错误！修改未保存，因为其它人已经修改了记录。"
 
 #: index.php:412
 #, php-format
 msgid "Task %s has been changed."
-msgstr ""
+msgstr "已修改任务 %s。"
 
 #: index.php:427 lib/toolbar.php:14
 msgid "Add"
-msgstr ""
+msgstr "添加"
 
 #: index.php:448 index.php:498
 msgid "Edit category"
-msgstr ""
+msgstr "编辑分类"
 
 #: index.php:472
 msgid "Name can not be empty."
-msgstr ""
+msgstr "名称不能为空。"
 
 #: index.php:484
 #, php-format
 msgid "Category %s has been added."
-msgstr ""
+msgstr "已添加分类 %s。"
 
 #: index.php:487
 #, php-format
 msgid "Category %s has been changed."
-msgstr ""
+msgstr "已修改分类 %s。"
 
 #: index.php:500 lib/toolbar.php:16
 msgid "Add category"
-msgstr ""
+msgstr "添加分类"
 
 #: index.php:529 index.php:546 index.php:550 index.php:554
 #, php-format
 msgid "Category %s has been deleted."
-msgstr ""
+msgstr "已删除分类 %s。"
 
 #: index.php:574
 #, php-format
 msgid "You are about to delete category \"%s\""
-msgstr ""
+msgstr "您将要删除分类 \"%s\""
 
 #: index.php:580
 #, php-format
 msgid "Number of tasks in category: %d"
-msgstr ""
+msgstr "该分类下的任务数: %d"
 
 #: index.php:581
 msgid "What to do with task in deleted category?"
-msgstr ""
+msgstr "如何处理这些任务？"
 
 #: index.php:585
 msgid "Move to another category"
-msgstr ""
+msgstr "移至另一个分类"
 
 #: index.php:586
 msgid "Target category"
-msgstr ""
+msgstr "目标分类"
 
 #: index.php:592 index.php:595
 msgid "There are no tasks in this category."
-msgstr ""
+msgstr "该分类下没有任务。"
 
 #: index.php:624 index.php:641 lib/category.php:40
 msgid "Name"
-msgstr ""
+msgstr "名称"
 
 #: index.php:628 setup.php:124
 msgid "Yes"
-msgstr ""
+msgstr "是"
 
 #: index.php:628 setup.php:124
 msgid "No"
-msgstr ""
+msgstr "否"
 
 #: index.php:641
 msgid "Item"
-msgstr ""
+msgstr "值"
 
 #: index.php:647
 msgid "Total tasks count"
-msgstr ""
+msgstr "任务总数"
 
 #: index.php:655
 msgid "Opened tasks count"
-msgstr ""
+msgstr "打开的任务数"
 
 #: index.php:666
 msgid "Opened high priority count"
-msgstr ""
+msgstr "打开的高优先级任务数"
 
 #: index.php:673
 msgid "Opened medium priority tasks"
-msgstr ""
+msgstr "打开的中优先级任务数"
 
 #: index.php:680
 msgid "Opened low priority tasks"
-msgstr ""
+msgstr "打开的低优先级任务数"
 
 #: index.php:691
 msgid "Oldest task"
-msgstr ""
+msgstr "最早任务"
 
 #: index.php:693
 msgid "Oldest task age"
-msgstr ""
+msgstr "最早任务耗时"
 
 #: index.php:694 index.php:702 index.php:712 index.php:720 index.php:728
 msgid "days"
-msgstr ""
+msgstr "天"
 
 #: index.php:701
 msgid "Average task age"
-msgstr ""
+msgstr "平均任务耗时"
 
 #: index.php:709
 msgid "Oldest opened task"
-msgstr ""
+msgstr "打开的最早任务"
 
 #: index.php:711
 msgid "Oldest opened task age"
-msgstr ""
+msgstr "打开的最早任务耗时"
 
 #: index.php:719
 msgid "Average opened task age"
-msgstr ""
+msgstr "打开的任务平均耗时"
 
 #: index.php:727
 msgid "Average age when task is closed"
-msgstr ""
+msgstr "关闭的任务平均耗时"
 
 #: index.php:736
 msgid "About Ukolovnik"
-msgstr ""
+msgstr "关于 Ukolovnik"
 
 #: index.php:737
 msgid "Ukolovnik is simple todo manager licensed under GNU/GPL version 2."
-msgstr ""
+msgstr "Ukolovnik 是一个以 GNU/GPL 版本 2 授权的简单的任务管理器。"
 
 #: index.php:740
 #, php-format
 msgid "It has homepage on %s."
-msgstr ""
+msgstr "它的主页位于 %s 。"
 
 #: index.php:744
 #, php-format
 msgid "You can support it's development on %s."
-msgstr ""
+msgstr "您可以到 %s 捐助以支持这个软件的开发。"
 
 #: index.php:749
 msgid "Please select export format:"
-msgstr ""
+msgstr "请选择导出格式："
 
 #: index.php:751
 msgid "CSV (Comma separated values)"
-msgstr ""
+msgstr "CSV (逗号分隔文件)"
 
 #: index.php:752
 msgid "vCalendar"
-msgstr ""
+msgstr "vCalendar"
 
 #: index.php:809
 msgid "Uknonwn command! Maybe you hit some not yet implemented functionality."
-msgstr ""
+msgstr "未知命令！您也许点击了一些尚未实现的功能。"
 
 #: lib/html.php:67
 msgid "Default style"
-msgstr ""
+msgstr "默认样式"
 
 #: lib/priority.php:16
 msgid "Low"
-msgstr ""
+msgstr "低"
 
 #: lib/priority.php:16
 msgid "Medium"
-msgstr ""
+msgstr "中"
 
 #: lib/priority.php:16
 msgid "High"
-msgstr ""
+msgstr "高"
 
 #: lib/sql.php:87
 #, php-format
 msgid "Database %s has been created."
-msgstr ""
+msgstr "数据库 %s 已创建。"
 
 #: lib/sql.php:117 lib/sql.php:128 lib/sql.php:136
 #, php-format
 msgid "Table %s has been created."
-msgstr ""
+msgstr "表 %s 已创建。"
 
 #: lib/sql.php:155
 #, php-format
 msgid "Settings database has been updated"
-msgstr ""
+msgstr "设置数据库已更新"
 
 #: lib/sql.php:165
 #, php-format
 msgid "Table %s updated."
-msgstr ""
+msgstr "表 %s 已更新。"
 
 #: lib/sql.php:188
 #, php-format
 msgid "SQL query failed: %s"
-msgstr ""
+msgstr "SQL 查询失败: %s"
 
 #: lib/string.php:15
 msgid "%d.%m.%Y, %H:%M"
-msgstr ""
+msgstr "%Y-%m-%d %H:%M:%S"
 
 #: lib/toolbar.php:13
 msgid "Main"
-msgstr ""
+msgstr "首页"
 
 #: lib/toolbar.php:15
 msgid "Categories"
-msgstr ""
+msgstr "分类"
 
 #: lib/toolbar.php:17
 msgid "Export"
-msgstr ""
+msgstr "导出"
 
 #: lib/toolbar.php:18
 msgid "Stats"
-msgstr ""
+msgstr "统计"
 
 #: lib/toolbar.php:19
 msgid "Settings"
-msgstr ""
+msgstr "设置"
 
 #: lib/toolbar.php:20
 msgid "About"
-msgstr ""
+msgstr "关于"
 
 #: lib/toolbar.php:21
 msgid "Donate"
-msgstr ""
+msgstr "捐助"
 
 #. l10n: please keep also English text "Language" in translated text
 #: setup.php:41
 msgid "Language"
-msgstr ""
+msgstr "Language"
 
 #: setup.php:42
 msgid "Style"
-msgstr ""
+msgstr "样式"
 
 #: setup.php:43
 msgid "Stay on add page after adding new entry"
-msgstr ""
+msgstr "添加新任务后留在添加页面"
 
 #: setup.php:44
 msgid "Show entries list on add page"
-msgstr ""
+msgstr "在添加页面显示任务列表"
 
 #: setup.php:45
 msgid "Show category name in main page output"
-msgstr ""
+msgstr "在首页中显示分类名称"
 
 #: setup.php:107
 msgid ""
 "Tables are in correct state (see above messages about needed changes, if "
 "any), you can go back to index.php."
-msgstr ""
+msgstr "表都很正常 (如果有任何问题，请根据上面显示出的消息修改)，您可以返回首页。"
 
 #: setup.php:109
 msgid "Settings has been updated"
-msgstr ""
+msgstr "设置已更新"
 
 #: setup.php:140
 msgid "Save"
-msgstr ""
+msgstr "保存"
