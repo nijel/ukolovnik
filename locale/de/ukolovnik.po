@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: Ukolovnik 1.4\n"
 "Report-Msgid-Bugs-To: michal@cihar.com\n"
 "POT-Creation-Date: 2012-08-06 09:46+0200\n"
-"PO-Revision-Date: 2012-03-27 17:16+0200\n"
+"PO-Revision-Date: 2012-08-06 09:47+0200\n"
 "Last-Translator: Michal Čihař <michal@cihar.com>\n"
-"Language-Team: none\n"
+"Language-Team: German <http://l10n.cihar.com/projects/ukolovnik/master/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Weblate 0.8\n"
+"X-Generator: Weblate 1.2\n"
 
 #: index.php:69
 msgid "Any"
@@ -395,7 +395,7 @@ msgstr "Tabelle \"%s\" erstellt."
 #: lib/sql.php:155
 #, php-format
 msgid "Settings database has been updated"
-msgstr "Einstellungen der Datenbank aktualisiert."
+msgstr "Einstellungen der Datenbank aktualisiert"
 
 #: lib/sql.php:165
 #, php-format
