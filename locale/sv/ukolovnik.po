@@ -5,9 +5,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Ukolovnik 1.2\n"
+"Project-Id-Version: Ukolovnik 1.4\n"
 "Report-Msgid-Bugs-To: michal@cihar.com\n"
-"POT-Creation-Date: 2009-08-08 20:33+0200\n"
+"POT-Creation-Date: 2012-08-06 09:46+0200\n"
 "PO-Revision-Date: 2009-08-13 11:37+0200\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: none\n"
@@ -76,11 +76,11 @@ msgstr ""
 msgid "Invalid language (%s) has been chosen."
 msgstr "Ogiltigt språk (%s) har valts."
 
-#: index.php:156 index.php:613
+#: index.php:156 index.php:614
 msgid "No categories defined."
 msgstr "Inga kategorier har definierats."
 
-#: index.php:160 index.php:172 index.php:616 index.php:620
+#: index.php:160 index.php:172 index.php:617 index.php:621
 msgid "Filter"
 msgstr "Filter"
 
@@ -88,19 +88,19 @@ msgstr "Filter"
 msgid "Text"
 msgstr "Text"
 
-#: index.php:167 index.php:617 index.php:624 lib/category.php:43
+#: index.php:167 index.php:618 index.php:625 lib/category.php:43
 msgid "Personal"
 msgstr "Personligt"
 
-#: index.php:168 index.php:170 index.php:618
+#: index.php:168 index.php:170 index.php:619
 msgid "All"
 msgstr "Alla"
 
-#: index.php:168 index.php:170 index.php:618
+#: index.php:168 index.php:170 index.php:619
 msgid "Show"
 msgstr "Visa"
 
-#: index.php:168 index.php:170 index.php:618
+#: index.php:168 index.php:170 index.php:619
 msgid "Hide"
 msgstr "Dölj"
 
@@ -108,86 +108,86 @@ msgstr "Dölj"
 msgid "Finished"
 msgstr "Färdig"
 
-#: index.php:211 index.php:256 index.php:290 index.php:305 index.php:320
+#: index.php:211 index.php:257 index.php:291 index.php:306 index.php:321
 msgid "No entries found."
 msgstr "Inga poster hittades."
 
-#: index.php:218 index.php:262
+#: index.php:218 index.php:263
 msgid "Created"
 msgstr "Skapades"
 
-#: index.php:219 index.php:624
+#: index.php:219 index.php:625
 msgid "Actions"
 msgstr "Åtgärder"
 
-#: index.php:236 index.php:272
+#: index.php:237 index.php:273
 msgid "Reopen"
 msgstr "Öppna igen"
 
-#: index.php:238 index.php:274
+#: index.php:239 index.php:275
 msgid "Finish"
 msgstr "Färdig"
 
-#: index.php:240 index.php:276 index.php:344 index.php:425 index.php:630
+#: index.php:241 index.php:277 index.php:345 index.php:426 index.php:631
 msgid "Edit"
 msgstr "Redigera"
 
-#: index.php:241 index.php:277 index.php:583 index.php:598 index.php:631
+#: index.php:242 index.php:278 index.php:584 index.php:599 index.php:632
 msgid "Delete"
 msgstr "Ta bort"
 
-#: index.php:252 index.php:286 index.php:301 index.php:316 index.php:522
+#: index.php:253 index.php:287 index.php:302 index.php:317 index.php:523
 msgid "Invalid parameters."
 msgstr "Ogiltiga parametrar."
 
-#: index.php:264
+#: index.php:265
 msgid "Updated"
 msgstr "Uppdaterad"
 
-#: index.php:267
+#: index.php:268
 msgid "Closed"
 msgstr "Stängd"
 
-#: index.php:294
+#: index.php:295
 #, php-format
 msgid "Task %s reopened."
 msgstr "Uppgiften %s öppnades igen."
 
-#: index.php:309
+#: index.php:310
 #, php-format
 msgid "Task %s finished."
 msgstr "Uppgiften %s är färdig."
 
-#: index.php:324
+#: index.php:325
 #, php-format
 msgid "Task %s has been deleted."
 msgstr "Uppgiften %s har tagits bort."
 
-#: index.php:331 index.php:338 index.php:353 index.php:358 index.php:363
-#: index.php:438 index.php:444 index.php:457 index.php:462 index.php:466
-#: index.php:506 index.php:512 index.php:533 index.php:539 index.php:563
-#: index.php:569
+#: index.php:332 index.php:339 index.php:354 index.php:359 index.php:364
+#: index.php:439 index.php:445 index.php:458 index.php:463 index.php:467
+#: index.php:507 index.php:513 index.php:534 index.php:540 index.php:564
+#: index.php:570
 msgid "Invalid ID."
 msgstr "Ogiltigt id."
 
-#: index.php:369
+#: index.php:370
 msgid "Title can not be empty."
 msgstr "Titeln får inte vara tom."
 
-#: index.php:373 index.php:378
+#: index.php:374 index.php:379
 msgid "Invalid category."
 msgstr "Ogiltig kategori."
 
-#: index.php:383 index.php:388
+#: index.php:384 index.php:389
 msgid "Invalid priority."
 msgstr "Ogiltig prioritet."
 
-#: index.php:403
+#: index.php:404
 #, php-format
 msgid "Task %s has been added."
 msgstr "Uppgiften %s har lagts till."
 
-#: index.php:410
+#: index.php:411
 msgid ""
 "Concurrency error! Changes not saved, because someone else already changed "
 "record."
@@ -195,168 +195,168 @@ msgstr ""
 "Fel upptäcktes! Ändringar har inte sparats på grund av att någon annan redan "
 "ändrat posten."
 
-#: index.php:412
+#: index.php:413
 #, php-format
 msgid "Task %s has been changed."
 msgstr "Uppgiften %s har ändrats."
 
-#: index.php:427 lib/toolbar.php:14
+#: index.php:428 lib/toolbar.php:14
 msgid "Add"
 msgstr "Lägg till"
 
-#: index.php:448 index.php:498
+#: index.php:449 index.php:499
 msgid "Edit category"
 msgstr "Redigera kategori"
 
-#: index.php:472
+#: index.php:473
 msgid "Name can not be empty."
 msgstr "Namnet får inte vara tomt."
 
-#: index.php:484
+#: index.php:485
 #, php-format
 msgid "Category %s has been added."
 msgstr "Kategorin %s har lagts till."
 
-#: index.php:487
+#: index.php:488
 #, php-format
 msgid "Category %s has been changed."
 msgstr "Kategorin %s har ändrats."
 
-#: index.php:500 lib/toolbar.php:16
+#: index.php:501 lib/toolbar.php:16
 msgid "Add category"
 msgstr "Lägg till kategori"
 
-#: index.php:529 index.php:546 index.php:550 index.php:554
+#: index.php:530 index.php:547 index.php:551 index.php:555
 #, php-format
 msgid "Category %s has been deleted."
 msgstr "Kategorin %s har tagits bort."
 
-#: index.php:574
+#: index.php:575
 #, php-format
 msgid "You are about to delete category \"%s\""
 msgstr "Du är på väg att ta bort kategorin \"%s\""
 
-#: index.php:580
+#: index.php:581
 #, php-format
 msgid "Number of tasks in category: %d"
 msgstr "Antal uppgifter i kategori: %d"
 
-#: index.php:581
+#: index.php:582
 msgid "What to do with task in deleted category?"
 msgstr "Vad vill du göra med uppgifterna i borttagna kategorin?"
 
-#: index.php:585
+#: index.php:586
 msgid "Move to another category"
 msgstr "Flytta till en annan kategori"
 
-#: index.php:586
+#: index.php:587
 msgid "Target category"
 msgstr "Målkategori"
 
-#: index.php:592 index.php:595
+#: index.php:593 index.php:596
 msgid "There are no tasks in this category."
 msgstr "Det finns inga uppgifter i denna kategori."
 
-#: index.php:624 index.php:641 lib/category.php:40
+#: index.php:625 index.php:642 lib/category.php:40
 msgid "Name"
 msgstr "Namn"
 
-#: index.php:628 setup.php:124
+#: index.php:629 setup.php:124
 msgid "Yes"
 msgstr "Ja"
 
-#: index.php:628 setup.php:124
+#: index.php:629 setup.php:124
 msgid "No"
 msgstr "Nej"
 
-#: index.php:641
+#: index.php:642
 msgid "Item"
 msgstr "Post"
 
-#: index.php:647
+#: index.php:648
 msgid "Total tasks count"
 msgstr "Totalt antal uppgifter"
 
-#: index.php:655
+#: index.php:656
 msgid "Opened tasks count"
 msgstr "Antal öppna uppgifter"
 
-#: index.php:666
+#: index.php:667
 msgid "Opened high priority count"
 msgstr "Antal öppna med hög prioritet"
 
-#: index.php:673
+#: index.php:674
 msgid "Opened medium priority tasks"
 msgstr "Antal uppgifter med medelprioritet"
 
-#: index.php:680
+#: index.php:681
 msgid "Opened low priority tasks"
 msgstr "Antal uppgifter med låg prioritet"
 
-#: index.php:691
+#: index.php:692
 msgid "Oldest task"
 msgstr "Äldsta uppgift"
 
-#: index.php:693
+#: index.php:694
 msgid "Oldest task age"
 msgstr "Högsta ålder för uppgift"
 
-#: index.php:694 index.php:702 index.php:712 index.php:720 index.php:728
+#: index.php:695 index.php:703 index.php:713 index.php:721 index.php:729
 msgid "days"
 msgstr "dagar"
 
-#: index.php:701
+#: index.php:702
 msgid "Average task age"
 msgstr "Medelålder för uppgifter"
 
-#: index.php:709
+#: index.php:710
 msgid "Oldest opened task"
 msgstr "Äldsta öppna uppgift"
 
-#: index.php:711
+#: index.php:712
 msgid "Oldest opened task age"
 msgstr "Högsta ålder för öppen uppgift"
 
-#: index.php:719
+#: index.php:720
 msgid "Average opened task age"
 msgstr "Medelålder för öppnade uppgifter"
 
-#: index.php:727
+#: index.php:728
 msgid "Average age when task is closed"
 msgstr "Medelålder när uppgifter stängs"
 
-#: index.php:736
+#: index.php:737
 msgid "About Ukolovnik"
 msgstr "Om Ukolovnik"
 
-#: index.php:737
+#: index.php:738
 msgid "Ukolovnik is simple todo manager licensed under GNU/GPL version 2."
 msgstr ""
 "Ukolovnik är en enkel AttGöra-hanterare licensierad under GNU/GPL version 2."
 
-#: index.php:740
+#: index.php:741
 #, php-format
 msgid "It has homepage on %s."
 msgstr "Dess webbplats finns på %s."
 
-#: index.php:744
+#: index.php:745
 #, php-format
 msgid "You can support it's development on %s."
 msgstr "Du kan bidra till dess utveckling på %s."
 
-#: index.php:749
+#: index.php:750
 msgid "Please select export format:"
 msgstr "Välj ett exportformat:"
 
-#: index.php:751
+#: index.php:752
 msgid "CSV (Comma separated values)"
 msgstr "CSV (Kommaseparerade värden)"
 
-#: index.php:752
+#: index.php:753
 msgid "vCalendar"
 msgstr "vCalendar"
 
-#: index.php:809
+#: index.php:810
 msgid "Uknonwn command! Maybe you hit some not yet implemented functionality."
 msgstr ""
 "Okänt kommando! Du har kanske påträffat funktionalitet som ännu inte "
