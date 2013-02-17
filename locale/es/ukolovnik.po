@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: Ukolovnik 1.4\n"
 "Report-Msgid-Bugs-To: michal@cihar.com\n"
 "POT-Creation-Date: 2012-08-06 09:46+0200\n"
-"PO-Revision-Date: 2011-05-04 23:43+0200\n"
-"Last-Translator: Matías Bellone <matiasbellone@gmail.com>\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2013-02-17 09:03+0200\n"
+"Last-Translator: Adolfo Jayme Barrientos <fitoschido@gmail.com>\n"
+"Language-Team: Spanish <http://l10n.cihar.com/projects/ukolovnik/master/es/>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Pootle 2.0.5\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 1.5-dev\n"
 
 #: index.php:69
 msgid "Any"
@@ -75,11 +75,11 @@ msgstr ""
 #: index.php:141
 #, php-format
 msgid "Invalid language (%s) has been chosen."
-msgstr "Idioma inválido (%s) elegido."
+msgstr "Se eligió un idioma no válido (%s)."
 
 #: index.php:156 index.php:614
 msgid "No categories defined."
-msgstr "No existen categorías definidas."
+msgstr "No se definieron categorías."
 
 #: index.php:160 index.php:172 index.php:617 index.php:621
 msgid "Filter"
@@ -103,7 +103,7 @@ msgstr "Mostrar"
 
 #: index.php:168 index.php:170 index.php:619
 msgid "Hide"
-msgstr "Esconder"
+msgstr "Ocultar"
 
 #: index.php:169
 msgid "Finished"
@@ -123,11 +123,11 @@ msgstr "Acciones"
 
 #: index.php:237 index.php:273
 msgid "Reopen"
-msgstr "Re-abrir"
+msgstr "Reabrir"
 
 #: index.php:239 index.php:275
 msgid "Finish"
-msgstr "Terminar"
+msgstr "Finalizar"
 
 #: index.php:241 index.php:277 index.php:345 index.php:426 index.php:631
 msgid "Edit"
@@ -135,11 +135,11 @@ msgstr "Editar"
 
 #: index.php:242 index.php:278 index.php:584 index.php:599 index.php:632
 msgid "Delete"
-msgstr "Borrar"
+msgstr "Eliminar"
 
 #: index.php:253 index.php:287 index.php:302 index.php:317 index.php:523
 msgid "Invalid parameters."
-msgstr "Parámetros inválidos."
+msgstr "Parámetros no válidos."
 
 #: index.php:265
 msgid "Updated"
@@ -152,24 +152,24 @@ msgstr "Cerrado"
 #: index.php:295
 #, php-format
 msgid "Task %s reopened."
-msgstr "Tarea %s re-abierta."
+msgstr "Tarea %s reabierta."
 
 #: index.php:310
 #, php-format
 msgid "Task %s finished."
-msgstr "Tarea %s terminada."
+msgstr "Tarea %s finalizada."
 
 #: index.php:325
 #, php-format
 msgid "Task %s has been deleted."
-msgstr "Tarea %s eliminada."
+msgstr "Se eliminó la tarea %s."
 
 #: index.php:332 index.php:339 index.php:354 index.php:359 index.php:364
 #: index.php:439 index.php:445 index.php:458 index.php:463 index.php:467
 #: index.php:507 index.php:513 index.php:534 index.php:540 index.php:564
 #: index.php:570
 msgid "Invalid ID."
-msgstr "ID inválido."
+msgstr "ID no válido."
 
 #: index.php:370
 msgid "Title can not be empty."
@@ -177,16 +177,16 @@ msgstr "El título no puede estar vacío."
 
 #: index.php:374 index.php:379
 msgid "Invalid category."
-msgstr "Categoría inválida."
+msgstr "Categoría no válida."
 
 #: index.php:384 index.php:389
 msgid "Invalid priority."
-msgstr "Prioridad inválida."
+msgstr "Prioridad no válida."
 
 #: index.php:404
 #, php-format
 msgid "Task %s has been added."
-msgstr "Tarea %s agregada."
+msgstr "Se añadió la tarea %s."
 
 #: index.php:411
 msgid ""
@@ -199,11 +199,11 @@ msgstr ""
 #: index.php:413
 #, php-format
 msgid "Task %s has been changed."
-msgstr "Tarea %s modificada."
+msgstr "Se modificó la tarea %s."
 
 #: index.php:428 lib/toolbar.php:14
 msgid "Add"
-msgstr "Agregar"
+msgstr "Añadir"
 
 #: index.php:449 index.php:499
 msgid "Edit category"
@@ -230,12 +230,12 @@ msgstr "Agregar categoría"
 #: index.php:530 index.php:547 index.php:551 index.php:555
 #, php-format
 msgid "Category %s has been deleted."
-msgstr "Categoría %s eliminada."
+msgstr "Se eliminó la categoría %s."
 
 #: index.php:575
 #, php-format
 msgid "You are about to delete category \"%s\""
-msgstr "Borrarás la categoría \"%s\""
+msgstr "Está a punto de eliminar la categoría «%s»"
 
 #: index.php:581
 #, php-format
@@ -264,7 +264,7 @@ msgstr "Nombre"
 
 #: index.php:629 setup.php:124
 msgid "Yes"
-msgstr "Si"
+msgstr "Sí"
 
 #: index.php:629 setup.php:124
 msgid "No"
@@ -272,7 +272,7 @@ msgstr "No"
 
 #: index.php:642
 msgid "Item"
-msgstr "Item"
+msgstr "Elemento"
 
 #: index.php:648
 msgid "Total tasks count"
@@ -344,11 +344,11 @@ msgstr "Su sitio web está en %s."
 #: index.php:745
 #, php-format
 msgid "You can support it's development on %s."
-msgstr "Puedes soportar su desarrollo en %s."
+msgstr "Puede apoyar su desarrollo en %s."
 
 #: index.php:750
 msgid "Please select export format:"
-msgstr "Porfavor selecciona un formato de exportación:"
+msgstr "Seleccione un formato de exportación:"
 
 #: index.php:752
 msgid "CSV (Comma separated values)"
@@ -361,7 +361,7 @@ msgstr "vCalendar"
 #: index.php:810
 msgid "Uknonwn command! Maybe you hit some not yet implemented functionality."
 msgstr ""
-"¡Orden desconocida! Probablemente hayas dado con funcionalidad no "
+"Orden desconocida. Probablemente haya dado con una funcionalidad no "
 "implementada aún."
 
 #: lib/html.php:67
@@ -427,7 +427,7 @@ msgstr "Estadísticas"
 
 #: lib/toolbar.php:19
 msgid "Settings"
-msgstr "Configuraciones"
+msgstr "Configuración"
 
 #: lib/toolbar.php:20
 msgid "About"
@@ -468,7 +468,7 @@ msgstr ""
 
 #: setup.php:109
 msgid "Settings has been updated"
-msgstr "Las configuraciones fueron actualizadas"
+msgstr "Se actualizó la configuración"
 
 #: setup.php:140
 msgid "Save"
