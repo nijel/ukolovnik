@@ -807,7 +807,7 @@ while (!empty($cmd)) {
             $cmd = '';
             break;
         default:
-            HTML_message('error', _('Uknonwn command! Maybe you hit some not yet implemented functionality.'));
+            HTML_message('error', _('Unknown command! Maybe you hit some not yet implemented functionality.'));
             $cmd = '';
             break;
     }

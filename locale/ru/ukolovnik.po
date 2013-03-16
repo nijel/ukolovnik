@@ -360,7 +360,7 @@ msgid "vCalendar"
 msgstr "vCalendar"
 
 #: index.php:810
-msgid "Uknonwn command! Maybe you hit some not yet implemented functionality."
+msgid "Unknown command! Maybe you hit some not yet implemented functionality."
 msgstr ""
 "Неизвестная команда. Возможно, вы попытались задействовать ещё не "
 "реализованный функционал."
