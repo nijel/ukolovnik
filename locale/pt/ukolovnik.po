@@ -8,15 +8,16 @@ msgstr ""
 "Project-Id-Version: Ukolovnik 1.4\n"
 "Report-Msgid-Bugs-To: michal@cihar.com\n"
 "POT-Creation-Date: 2012-08-06 09:46+0200\n"
-"PO-Revision-Date: 2012-03-26 21:49+0200\n"
-"Last-Translator: Everton R <everton@tconibo.org>\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2013-04-18 10:54+0200\n"
+"Last-Translator: Jonadabe PT <jonadabe@hotmail.com>\n"
+"Language-Team: Portuguese "
+"<http://l10n.cihar.com/projects/ukolovnik/master/pt/>\n"
 "Language: pt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Weblate 0.8\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 1.5-dev\n"
 
 #: index.php:69
 msgid "Any"
@@ -24,7 +25,7 @@ msgstr "Qualquer"
 
 #: index.php:88 index.php:216
 msgid "Title"
-msgstr "Titulo"
+msgstr "Título"
 
 #: index.php:90
 msgid "Description"
@@ -42,13 +43,13 @@ msgstr "Categoria"
 #, php-format
 msgid "Can not find needed PHP extension \"%s\". Please install and enable it."
 msgstr ""
-"Não pode ser encontrada a extensão PHP necessaria,\"%s\". Por favor habilite-"
-"a."
+"Não pode ser encontrada a extensão PHP necessária,\"%s\". Por favor queira "
+"proceder à sua instalação e activação."
 
 #: index.php:113 setup.php:97
 msgid "Can not connect to MySQL database. Please check your configuration."
 msgstr ""
-"Não pode conectar-se com banco dados MySQL. Por favor verifique sua "
+"Não pode ligar-se com a base de dados MySQL. Por favor verifique a sua "
 "configuração."
 
 #: index.php:120
@@ -56,28 +57,28 @@ msgid ""
 "Can not select configured database. Please check your configuration or use "
 "setup.php."
 msgstr ""
-"Não pode selecionar banco de dados. Por favor verifique sua configuração ou "
-"utilize o setup.php."
+"Não pode seleccionar a base de dados configurada. Por favor verifique a sua "
+"configuração ou utilize o setup.php."
 
 #: index.php:125
 #, php-format
 msgid ""
 "Can not find table \"%s\". Please check your configuration or use setup.php."
 msgstr ""
-"Não encontrou a tabela \"%s\". Por favor verifique sua configuração ou "
-"utilize o setup.php."
+"Não foi possível encontrar a tabela \"%s\". Por favor verifique a sua "
+"configuração ou utilize o setup.php."
 
 #: index.php:131
 #, php-format
 msgid "Table %s need update. Please upgrade your tables or use setup.php."
 msgstr ""
-"Tabela %s foi alterada. Por favor faça upgrade em suas tabelas ou utilize o "
-"setup.php."
+"Tabela %s necessita de uma actualização. Por favor faça uma actualização das "
+"suas tabelas ou utilize o setup.php."
 
 #: index.php:141
 #, php-format
 msgid "Invalid language (%s) has been chosen."
-msgstr "Idioma (%s) invalido foi escolhido."
+msgstr "Foi escolhido um idioma (%s) inválido."
 
 #: index.php:156 index.php:614
 msgid "No categories defined."
@@ -137,15 +138,15 @@ msgstr "Editar"
 
 #: index.php:242 index.php:278 index.php:584 index.php:599 index.php:632
 msgid "Delete"
-msgstr "Excluir"
+msgstr "Eliminar"
 
 #: index.php:253 index.php:287 index.php:302 index.php:317 index.php:523
 msgid "Invalid parameters."
-msgstr "Parametros invalidos."
+msgstr "Parâmetros inválidos."
 
 #: index.php:265
 msgid "Updated"
-msgstr "Alterado"
+msgstr "Actualizado"
 
 #: index.php:268
 msgid "Closed"
@@ -159,12 +160,12 @@ msgstr "Tarefa %s reaberta."
 #: index.php:310
 #, php-format
 msgid "Task %s finished."
-msgstr "Tarefa %s fechada."
+msgstr "Tarefa %s terminada."
 
 #: index.php:325
 #, php-format
 msgid "Task %s has been deleted."
-msgstr "Tarefa %s foi excluida."
+msgstr "Tarefa %s foi eliminada."
 
 #: index.php:332 index.php:339 index.php:354 index.php:359 index.php:364
 #: index.php:439 index.php:445 index.php:458 index.php:463 index.php:467
@@ -175,15 +176,15 @@ msgstr "ID invalido."
 
 #: index.php:370
 msgid "Title can not be empty."
-msgstr "Titulo não pode ser vazio."
+msgstr "Título não pode ser vazio."
 
 #: index.php:374 index.php:379
 msgid "Invalid category."
-msgstr "Categoria invalida."
+msgstr "Categoria inválida."
 
 #: index.php:384 index.php:389
 msgid "Invalid priority."
-msgstr "Prioridade invalida."
+msgstr "Prioridade inválida."
 
 #: index.php:404
 #, php-format
@@ -195,17 +196,17 @@ msgid ""
 "Concurrency error! Changes not saved, because someone else already changed "
 "record."
 msgstr ""
-"Erro de concorrencia! Mudanças não foram salvas, porque alguem já esta "
-"alterando este registro."
+"Erro de concorrência! Alterações não foram guardadas, porque alguém já "
+"alterou este registo."
 
 #: index.php:413
 #, php-format
 msgid "Task %s has been changed."
-msgstr "Tarefa %s ja foi mudada."
+msgstr "Tarefa %s já foi alterada."
 
 #: index.php:428 lib/toolbar.php:14
 msgid "Add"
-msgstr "Adicionado"
+msgstr "Adicionar"
 
 #: index.php:449 index.php:499
 msgid "Edit category"
@@ -223,7 +224,7 @@ msgstr "Categoria %s foi adicionada."
 #: index.php:488
 #, php-format
 msgid "Category %s has been changed."
-msgstr "Categoria %s foi mudada."
+msgstr "Categoria %s foi alterada."
 
 #: index.php:501 lib/toolbar.php:16
 msgid "Add category"
@@ -232,21 +233,21 @@ msgstr "Adicionar categoria"
 #: index.php:530 index.php:547 index.php:551 index.php:555
 #, php-format
 msgid "Category %s has been deleted."
-msgstr "Categoria %s foi excluida."
+msgstr "Categoria %s foi eliminada."
 
 #: index.php:575
 #, php-format
 msgid "You are about to delete category \"%s\""
-msgstr "Você esta prestes a excluir a categoria \"%s\""
+msgstr "Está prestes a eliminar a categoria \"%s\""
 
 #: index.php:581
 #, php-format
 msgid "Number of tasks in category: %d"
-msgstr "Numero de tarefas na categoria: %d"
+msgstr "Número de tarefas na categoria: %d"
 
 #: index.php:582
 msgid "What to do with task in deleted category?"
-msgstr "O que voce quer fazer com a tarefa na categoria excluida?"
+msgstr "O que fazer com a tarefa na categoria eliminada?"
 
 #: index.php:586
 msgid "Move to another category"
@@ -258,7 +259,7 @@ msgstr "Categoria de destino"
 
 #: index.php:593 index.php:596
 msgid "There are no tasks in this category."
-msgstr "Não ha tarefas nesta categoria."
+msgstr "Não há tarefas nesta categoria."
 
 #: index.php:625 index.php:642 lib/category.php:40
 msgid "Name"
@@ -278,23 +279,23 @@ msgstr "Item"
 
 #: index.php:648
 msgid "Total tasks count"
-msgstr "Quantidade total de tarefas"
+msgstr "Número total de tarefas"
 
 #: index.php:656
 msgid "Opened tasks count"
-msgstr "Quantidade de tarefas abertas"
+msgstr "Número de tarefas abertas"
 
 #: index.php:667
 msgid "Opened high priority count"
-msgstr "Contagem de alta prioridade abertos"
+msgstr "Número com prioridade elevada abertos"
 
 #: index.php:674
 msgid "Opened medium priority tasks"
-msgstr "Tarefas de media prioridade abertas"
+msgstr "Tarefas abertas com prioridade média"
 
 #: index.php:681
 msgid "Opened low priority tasks"
-msgstr "Tarefas de baixa prioridade abertas"
+msgstr "Tarefas abertas de prioridade reduzida"
 
 #: index.php:692
 msgid "Oldest task"
@@ -302,7 +303,7 @@ msgstr "Tarefa mais antiga"
 
 #: index.php:694
 msgid "Oldest task age"
-msgstr "Tarefa com idade mais antiga"
+msgstr "Tarefa mais antiga"
 
 #: index.php:695 index.php:703 index.php:713 index.php:721 index.php:729
 msgid "days"
@@ -310,7 +311,7 @@ msgstr "dias"
 
 #: index.php:702
 msgid "Average task age"
-msgstr "Idade media da tarefa"
+msgstr "Idade média da tarefa"
 
 #: index.php:710
 msgid "Oldest opened task"
@@ -318,7 +319,7 @@ msgstr "Tarefa aberta mais antiga"
 
 #: index.php:712
 msgid "Oldest opened task age"
-msgstr "Tarefa aberta com idade mais antiga"
+msgstr "Tarefa aberta mais antiga"
 
 #: index.php:720
 msgid "Average opened task age"
@@ -326,7 +327,7 @@ msgstr "Idade média de tarefas abertas"
 
 #: index.php:728
 msgid "Average age when task is closed"
-msgstr "Idade media quando a tarefa é fechada"
+msgstr "Idade média quando a tarefa é fechada"
 
 #: index.php:737
 msgid "About Ukolovnik"
