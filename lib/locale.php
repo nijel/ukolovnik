@@ -70,7 +70,7 @@ function LOCALE_list() {
 function LOCALE_url($base) {
     $lang = CONFIG_get('language');
     if ($lang == 'cs') {
-        return 'cz.' . $base;
+        return 'cs.' . $base;
     }
     return $base;
 }
