@@ -40,7 +40,7 @@ authentication in your web server.
 Bug reporting
 -------------
 
-Please report found bugs to my bugtracker [1].
+Please report found bugs to issue tracker on GitHub [1].
 
 
 Developing
@@ -51,9 +51,9 @@ browse it.
 
 You can also update translations online using Pootle [4].
 
-[1]: http://bugs.cihar.com/
-[2]: git://gitorious.org/ukolovnik/ukolovnik.git
-[3]: http://gitorious.org/ukolovnik/ukolovnik/trees
+[1]: https://github.com/nijel/ukolovnik/issues
+[2]: git://github.com/nijel/ukolovnik.git
+[3]: https://github.com/nijel/ukolovnik
 [4]: https://l10n.cihar.com/projects/ukolovnik/
 
 
