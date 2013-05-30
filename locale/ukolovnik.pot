@@ -1,5 +1,5 @@
 # Ukolovnik translation.
-# Copyright (C) 2003 - 2012 Michal Čihař
+# Copyright (C) 2003 - 2013 Michal Čihař
 # This file is distributed under the same license as the Ukolovnik package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Ukolovnik 1.4\n"
 "Report-Msgid-Bugs-To: michal@cihar.com\n"
-"POT-Creation-Date: 2012-08-06 09:46+0200\n"
+"POT-Creation-Date: 2013-05-30 15:24+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
