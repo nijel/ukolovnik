@@ -3,7 +3,7 @@
 
 // This is extension checking for Ukolovnik
 // Copyright © 2005 - 2009 Michal Čihař
-// Published under GNU GPL version 2
+// Published under GNU GPL version 3 or later
 
 $required_extensions = array('mysql' => 'mysql_connect', 'pcre' => 'preg_replace');
 

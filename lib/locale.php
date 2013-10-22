@@ -3,7 +3,7 @@
 
 // This is translation handling stuff for Ukolovnik
 // Copyright © 2005 - 2009 Michal Čihař
-// Published under GNU GPL version 2
+// Published under GNU GPL version 3 or later
 
 // Grab needed libraries
 require_once('./lib/config.php');
