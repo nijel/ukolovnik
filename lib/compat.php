@@ -3,7 +3,7 @@
 
 // This is compatibility stuff for Ukolovnik, it might be dropped in future when we can require newer php
 // Copyright © 2005 - 2013 Michal Čihař
-// Published under GNU GPL version 2
+// Published under GNU GPL version 3 or later
 
 
 /**

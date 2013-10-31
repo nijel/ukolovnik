@@ -3,7 +3,7 @@
 
 // This is main file for Ukolovnik
 // Copyright © 2005 - 2013 Michal Čihař
-// Published under GNU GPL version 2
+// Published under GNU GPL version 3 or later
 
 // Grab needed libaries
 require_once('./lib/version.php');

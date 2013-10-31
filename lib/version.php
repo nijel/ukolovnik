@@ -3,7 +3,7 @@
 
 // This is version handling stuff for Ukolovnik
 // Copyright © 2005 - 2013 Michal Čihař
-// Published under GNU GPL version 2
+// Published under GNU GPL version 3 or later
 
 // Version of Ukolovnik
 $version = '1.5';
