@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Ukolovnik 1.5\n"
 "Report-Msgid-Bugs-To: michal@cihar.com\n"
-"POT-Creation-Date: 2013-10-31 09:20+0100\n"
+"POT-Creation-Date: 2013-10-31 09:24+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -320,7 +320,8 @@ msgid "About Ukolovnik"
 msgstr ""
 
 #: index.php:738
-msgid "Ukolovnik is simple todo manager licensed under GNU/GPL version 2."
+msgid ""
+"Ukolovnik is simple todo manager licensed under GNU GPL version 3 or later."
 msgstr ""
 
 #: index.php:741

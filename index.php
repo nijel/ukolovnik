@@ -735,7 +735,7 @@ while (!empty($cmd)) {
             break;
         case 'about':
             echo '<h3>' . _('About Ukolovnik') . '</h3>';
-            echo '<p>' . _('Ukolovnik is simple todo manager licensed under GNU/GPL version 2.') . '</p>';
+            echo '<p>' . _('Ukolovnik is simple todo manager licensed under GNU GPL version 3 or later.') . '</p>';
             echo '<p>';
             $url = LOCALE_url('cihar.com/software/ukolovnik');
             printf(_('It has homepage on %s.'), '<a href="http://' . $url . '/">' . $url . '</a>');
