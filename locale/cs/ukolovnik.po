@@ -10,15 +10,15 @@ msgstr ""
 "Project-Id-Version: Ukolovnik 1.5\n"
 "Report-Msgid-Bugs-To: michal@cihar.com\n"
 "POT-Creation-Date: 2013-10-31 09:24+0100\n"
-"PO-Revision-Date: 2009-08-08 20:40+0200\n"
+"PO-Revision-Date: 2013-10-31 09:42+0200\n"
 "Last-Translator: Michal Čihař <michal@cihar.com>\n"
-"Language-Team: Czech <cs@li.org>\n"
+"Language-Team: Czech <http://l10n.cihar.com/projects/ukolovnik/master/cs/>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Pootle 1.2.1\n"
+"X-Generator: Weblate 1.8-dev\n"
 
 #: index.php:69
 msgid "Any"
@@ -334,12 +334,12 @@ msgid "About Ukolovnik"
 msgstr "O Ukolovniku"
 
 #: index.php:738
-#, fuzzy
 #| msgid "Ukolovnik is simple todo manager licensed under GNU/GPL version 2."
 msgid ""
 "Ukolovnik is simple todo manager licensed under GNU GPL version 3 or later."
 msgstr ""
-"Ukolovnik je jednoduchý správce úkolů vydaný pod licencí GNU/GPL verze 2."
+"Ukolovnik je jednoduchý správce úkolů vydaný pod licencí GNU GPL verze 3 "
+"nebo novější."
 
 #: index.php:741
 #, php-format
