@@ -2,7 +2,7 @@
 // vim: expandtab sw=4 ts=4 sts=4:
 
 // This is extension checking for Ukolovnik
-// Copyright © 2005 - 2009 Michal Čihař
+// Copyright © 2005 - 2013 Michal Čihař
 // Published under GNU GPL version 2
 
 $required_extensions = array('mysql' => 'mysql_connect', 'pcre' => 'preg_replace');
