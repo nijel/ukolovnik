@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: Ukolovnik 1.5\n"
 "Report-Msgid-Bugs-To: michal@cihar.com\n"
 "POT-Creation-Date: 2013-10-31 09:24+0100\n"
-"PO-Revision-Date: 2012-08-06 09:47+0200\n"
+"PO-Revision-Date: 2013-11-01 10:01+0200\n"
 "Last-Translator: Michal Čihař <michal@cihar.com>\n"
 "Language-Team: German <http://l10n.cihar.com/projects/ukolovnik/master/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Weblate 1.2\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 1.8-dev\n"
 
 #: index.php:69
 msgid "Any"
@@ -333,13 +333,12 @@ msgid "About Ukolovnik"
 msgstr "Über Ukolovnik"
 
 #: index.php:738
-#, fuzzy
 #| msgid "Ukolovnik is simple todo manager licensed under GNU/GPL version 2."
 msgid ""
 "Ukolovnik is simple todo manager licensed under GNU GPL version 3 or later."
 msgstr ""
-"Ukolovnik ist ein einfacher Todo-Listenmanager lizensiert unter der GNU/GPL "
-"v2."
+"Ukolovnik ist ein einfacher Todo-Listenmanager lizensiert unter der GNU GPL "
+"Version 2 oder neuer."
 
 #: index.php:741
 #, php-format
