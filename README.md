@@ -1,5 +1,6 @@
-Ukolovnik
-=========
+# Ukolovnik
+
+[![Translation status](http://l10n.cihar.com/widgets/weblate-status-badge.png)](http://l10n.cihar.com/engage/weblate/?utm_source=widget)
 
 Simple task manager written in PHP and using MySQL as backend. 
 
@@ -7,22 +8,19 @@ It requires browser with decent CSS support (Internet Explorer 7 or
 newer or almost any version of Firefox, Safari or Opera).
 
 
-Homepage
---------
+## Homepage
 
 http://cihar.com/software/ukolovnik/
 
 
-License
--------
+## License
 
 Ukolovnik is provided under GNU GPL version 3 or later.
 
 Some icons were taken from phpMyAdmin (GNU GPL) and GNOME (GNU LGPL).
 
 
-Installation
-------------
+## Installation
 
 Edit config.php to fit your setup and create needed tables by provided
 SQL script (use sql/ukolovnik.sql for current MySQL which supports
@@ -37,24 +35,19 @@ Ukolovnik does not provide any authentication and user management. If
 you don't want to make it publicly available, please configure
 authentication in your web server.
 
-Bug reporting
--------------
+## Bug reporting
 
-Please report found bugs to issue tracker on GitHub [1].
+Please report found bugs to issue tracker on [GitHub][1].
 
 
-Developing
-----------
+## Developing
 
-Development goes on in Git [2], you can use web based browser [3] to
+Development goes on in [Git][2], you can use [web based browser[3] to
 browse it.
 
-You can also update translations online using Pootle [4].
+You can also update translations [online using Weblate][4].
 
 [1]: https://github.com/nijel/ukolovnik/issues
 [2]: git://github.com/nijel/ukolovnik.git
 [3]: https://github.com/nijel/ukolovnik
 [4]: https://l10n.cihar.com/projects/ukolovnik/
-
-
-# vim: et ts=4 sw=4 sts=4 tw=72 spell spelllang=en_us
