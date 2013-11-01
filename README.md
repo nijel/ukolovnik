@@ -42,7 +42,7 @@ Please report found bugs to issue tracker on [GitHub][1].
 
 ## Developing
 
-Development goes on in [Git][2], you can use [web based browser[3] to
+Development goes on in [Git][2], you can use [web based browser][3] to
 browse it.
 
 You can also update translations [online using Weblate][4].
