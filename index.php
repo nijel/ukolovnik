@@ -44,14 +44,40 @@ if ($show_html) {
     HTML_header();
 }
 
+/**
+ * Returns HTML for checked attribute
+ *
+ * @param $name string Name of parameter
+ *
+ * @return string
+ */
 function get_check($name) {
     return isset($_REQUEST[$name]) ? 'checked="checked" ' : '';
 }
 
+/**
+ * Returns option valud
+ *
+ * @param $name    string Name of option
+ * @param $default string Default value
+ *
+ * @return string
+ */
 function get_opt($name, $default = '') {
     return empty($_REQUEST[$name]) ? $default : htmlspecialchars($_REQUEST[$name]);
 }
 
+/**
+ * Returns HTML for select
+ *
+ * @param $name string Name of element
+ * @param $default string Default value
+ * @param $options string[] Options to list
+ * @param $add_any bool Add "Any" option
+ * @param $autosubmit bool If the form should autosubmit on change
+ *
+ * @return string
+ */
 function get_select($name, $default, $options, $add_any=FALSE, $autosubmit=FALSE) {
     if (isset($_REQUEST[$name]) && strlen($_REQUEST[$name]) > 0) {
         $default = $_REQUEST[$name];
@@ -78,6 +104,11 @@ function get_select($name, $default, $options, $add_any=FALSE, $autosubmit=FALSE
     return $ret . '</select>';
 }
 
+/**
+ * Returns HTML for task
+ *
+ * @return string
+ */
 function show_edit_task($name, $cmd, $title, $description, $priority, $category, $update_count, $id = NULL) {
     global $priorities, $categories;
 
