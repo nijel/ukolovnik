@@ -1,6 +1,6 @@
 # Ukolovnik
 
-[![Translation status](http://l10n.cihar.com/widgets/weblate-status-badge.png)](http://l10n.cihar.com/engage/weblate/?utm_source=widget)
+[![Translation status](http://hosted.weblate.org/widgets/weblate-status-badge.png)](http://l10n.cihar.com/engage/weblate/?utm_source=widget)
 
 Simple task manager written in PHP and using MySQL as backend. 
 
@@ -50,4 +50,4 @@ You can also update translations [online using Weblate][4].
 [1]: https://github.com/nijel/ukolovnik/issues
 [2]: git://github.com/nijel/ukolovnik.git
 [3]: https://github.com/nijel/ukolovnik
-[4]: https://l10n.cihar.com/projects/ukolovnik/
+[4]: https://hosted.weblate.org/projects/ukolovnik/
