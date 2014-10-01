@@ -1,6 +1,6 @@
 # Ukolovnik
 
-[![Translation status](http://hosted.weblate.org/widgets/weblate-status-badge.png)](http://l10n.cihar.com/engage/weblate/?utm_source=widget)
+[![Translation status](http://hosted.weblate.org/widgets/weblate-status-badge.png)](http://hosted.weblate.org/engage/weblate/?utm_source=widget)
 
 Simple task manager written in PHP and using MySQL as backend. 
 
