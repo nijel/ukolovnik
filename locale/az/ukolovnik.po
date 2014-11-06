@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: Ukolovnik 1.5\n"
 "Report-Msgid-Bugs-To: michal@cihar.com\n"
 "POT-Creation-Date: 2014-01-21 10:40+0100\n"
-"PO-Revision-Date: 2014-07-15 21:48+0200\n"
-"Last-Translator: Sevdimali İsa <sevdimaliisayev@mail.ru>\n"
+"PO-Revision-Date: 2014-11-06 17:45+0200\n"
+"Last-Translator: Mircəlal <01youknowme@gmail.com>\n"
 "Language-Team: Azerbaijani "
 "<https://hosted.weblate.org/projects/ukolovnik/master/az/>\n"
 "Language: az\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 1.10-dev\n"
+"X-Generator: Weblate 2.0\n"
 
 #: index.php:69
 msgid "Any"
@@ -112,7 +112,7 @@ msgstr "Bitirildi"
 
 #: index.php:211 index.php:257 index.php:291 index.php:306 index.php:321
 msgid "No entries found."
-msgstr ""
+msgstr "Heç bir nətivə tapılmadı."
 
 #: index.php:218 index.php:263
 msgid "Created"
@@ -120,7 +120,7 @@ msgstr "Yaradıldı"
 
 #: index.php:219 index.php:625
 msgid "Actions"
-msgstr ""
+msgstr "Əməliyyatlar"
 
 #: index.php:237 index.php:273
 msgid "Reopen"
@@ -194,6 +194,7 @@ msgid ""
 "Concurrency error! Changes not saved, because someone else already changed "
 "record."
 msgstr ""
+"Dəyişikliklər qeydə alınmadı, çünki başqa birisi artıq dəyişiklikləri edib."
 
 #: index.php:413
 #, php-format
@@ -352,7 +353,7 @@ msgstr "Zəhmət olmasa eksport formatını seçin:"
 
 #: index.php:752
 msgid "CSV (Comma separated values)"
-msgstr "CSV (Comma separated values)"
+msgstr "CSV (Vergüllə ayrılmış dəyərlər)"
 
 #: index.php:753
 msgid "vCalendar"
@@ -368,11 +369,11 @@ msgstr ""
 
 #: lib/priority.php:16
 msgid "Low"
-msgstr ""
+msgstr "Tərcümə olunmayan ifadələr"
 
 #: lib/priority.php:16
 msgid "Medium"
-msgstr ""
+msgstr "Orta"
 
 #: lib/priority.php:16
 msgid "High"
@@ -421,7 +422,7 @@ msgstr "Eksport"
 
 #: lib/toolbar.php:18
 msgid "Stats"
-msgstr "Stats"
+msgstr "Statistikalar"
 
 #: lib/toolbar.php:19
 msgid "Settings"
