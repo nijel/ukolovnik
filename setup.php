@@ -43,9 +43,6 @@ $settings = array(
     array('name' => 'add_stay', 'text' => N_('Stay on add page after adding new entry'), 'type' => 'bool'),
     array('name' => 'add_list', 'text' => N_('Show entries list on add page'), 'type' => 'bool'),
     array('name' => 'main_style', 'text' => N_('Show category name in main page output'), 'type' => 'bool'),
-/*
-    array('name' => '', 'text' => _(''), 'type' => '', 'values' => array('')),
-*/
     );
 
 // Process settings
