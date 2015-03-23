@@ -24,7 +24,7 @@ function HTTP_nocache_headers() {
 
 /**
  * Outputs http header with content type.
- * @param string content type
+ * @param string $type content type
  */
 function HTTP_type_header($type) {
     header('Content-Type: ' . $type);

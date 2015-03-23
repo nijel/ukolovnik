@@ -75,9 +75,9 @@ function HTML_header() {
 /**
  * Displays message
  *
- * @param   string  type of message (notice/warning/error)
- * @param   string  text of message
- * @param   title   optional title of message
+ * @param   string $type  type of message (notice/warning/error)
+ * @param   string $text  text of message
+ * @param   string $title optional title of message
  *
  * @return  nothing
  */

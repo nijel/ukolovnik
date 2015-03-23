@@ -9,7 +9,7 @@
 /**
  * calls $function vor every element in $array recursively
  *
- * @param   array   $array      array to walk
+ * @param   array   &$array     array to walk
  * @param   string  $function   function to call for every array element
  */
 function arrayWalkRecursive(&$array, $function) {
