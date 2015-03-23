@@ -129,6 +129,13 @@ function show_edit_task($name, $cmd, $title, $description, $priority, $category,
     echo '<input type="submit" value="' . $name . '"/></form></fieldset>';
 }
 
+
+function check_id_param() {
+    if (!isset($_REQUEST['id'])) {
+        HTML_die_error(_('Invalid parameters.'));
+    }
+}
+
 // Check for extensions
 $check = EXTENSIONS_check();
 
@@ -275,9 +282,7 @@ while (!empty($cmd)) {
             $cmd = '';
             break;
         case 'show':
-            if (!isset($_REQUEST['id'])) {
-                HTML_die_error(_('Invalid parameters.'));
-            }
+            check_id_param();
             $q = SQL_do('SELECT id,category,UNIX_TIMESTAMP(created) AS created,priority,title,UNIX_TIMESTAMP(closed) AS closed,UNIX_TIMESTAMP(updated) AS updated,description FROM ' . $GLOBALS['table_prefix'] . 'tasks WHERE id=' . (int)$_REQUEST['id']);
             if (mysql_num_rows($q) != 1) {
                 HTML_message('notice', _('No entries found.'));
@@ -309,9 +314,7 @@ while (!empty($cmd)) {
             $cmd = '';
             break;
         case 'reopen':
-            if (!isset($_REQUEST['id'])) {
-                HTML_die_error(_('Invalid parameters.'));
-            }
+            check_id_param();
             $q = SQL_do('SELECT title FROM ' . $GLOBALS['table_prefix'] . 'tasks WHERE id=' . (int)$_REQUEST['id']);
             if (mysql_num_rows($q) != 1) {
                 HTML_message('notice', _('No entries found.'));
@@ -324,9 +327,7 @@ while (!empty($cmd)) {
             $cmd = 'list';
             break;
         case 'fin':
-            if (!isset($_REQUEST['id'])) {
-                HTML_die_error(_('Invalid parameters.'));
-            }
+            check_id_param();
             $q = SQL_do('SELECT title FROM ' . $GLOBALS['table_prefix'] . 'tasks WHERE id=' . (int)$_REQUEST['id']);
             if (mysql_num_rows($q) != 1) {
                 HTML_message('notice', _('No entries found.'));
@@ -339,9 +340,7 @@ while (!empty($cmd)) {
             $cmd = 'list';
             break;
         case 'del':
-            if (!isset($_REQUEST['id'])) {
-                HTML_die_error(_('Invalid parameters.'));
-            }
+            check_id_param();
             $q = SQL_do('SELECT title FROM ' . $GLOBALS['table_prefix'] . 'tasks WHERE id=' . (int)$_REQUEST['id']);
             if (mysql_num_rows($q) != 1) {
                 HTML_message('notice', _('No entries found.'));
