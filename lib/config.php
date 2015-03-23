@@ -33,9 +33,9 @@ $default_settings = array(
 
 /**
  * Read value from configuration.
- * @param string $name       name
- * @param string $source     parameter storage (db or file)
- * @param string $skip_check skip check for db setup
+ * @param string  $name       name
+ * @param string  $source     parameter storage (db or file)
+ * @param boolean $skip_check skip check for db setup
  */
 function CONFIG_get($name, $source = 'db', $skip_check = false) {
     global $default_settings;
@@ -67,9 +67,9 @@ function CONFIG_get($name, $source = 'db', $skip_check = false) {
 
 /**
  * Sets value to (database) configuration.
- * @param string $name       name
- * @param string $value      value
- * @param string $skip_check skip check for db setup
+ * @param string  $name       name
+ * @param string  $value      value
+ * @param boolean $skip_check skip check for db setup
  */
 function CONFIG_set($name, $value, $skip_check = false) {
     if (!$skip_check && (!SQL_init() || count(SQL_check()) > 0)) {
