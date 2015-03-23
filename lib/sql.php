@@ -189,4 +189,3 @@ function SQL_do($query, $allowfail = false) {
     }
     return $q;
 }
-?>

@@ -77,4 +77,3 @@ function CONFIG_set($name, $value, $skip_check = false) {
     }
     SQL_do('REPLACE INTO `' . SQL_name('settings') . '` VALUES("' . $name . '", "' . addslashes($value) . '")');
 }
-?>

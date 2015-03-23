@@ -15,4 +15,3 @@ function PRIORITY_grab() {
     global $priorities;
     $priorities = array(_('Low'), _('Medium'), _('High'));
 }
-?>

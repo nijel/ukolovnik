@@ -841,4 +841,3 @@ while (!empty($cmd)) {
 if ($show_html) {
     HTML_footer();
 }
-?>

@@ -44,4 +44,3 @@ function CATEGORY_show_edit($title, $cmd, $name, $personal, $id = NULL) {
     echo '<input type="hidden" name="cmd" value="' . $cmd . '" \>';
     echo '<input type="submit" value="' . $title . '"/></form></fieldset>';
 }
-?>

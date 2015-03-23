@@ -123,4 +123,3 @@ function HTML_toolbar($items) {
     }
     echo "</ul>\n";
 }
-?>

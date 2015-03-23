@@ -60,5 +60,3 @@ function STRING_format_date_vcal($value) {
         date('i', $value),
         date('s', $value));
 }
-
-?>

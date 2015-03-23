@@ -20,4 +20,3 @@ HTML_toolbar(array(
     _('About') => 'index.php?cmd=about',
     _('Donate') => 'http://' . LOCALE_url('cihar.com/donate/'),
     ));
-?>

@@ -23,4 +23,3 @@ function EXTENSIONS_check() {
 
     return $result;
 }
-?>

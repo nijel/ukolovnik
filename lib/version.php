@@ -7,4 +7,3 @@
 
 // Version of Ukolovnik
 $version = '1.5';
-?>

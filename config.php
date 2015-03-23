@@ -11,4 +11,3 @@ $db_user        = 'ukolovnik';
 $db_password    = 'ukolovnik';
 $db_database    = 'ukolovnik';
 $table_prefix   = 'ukolovnik_';
-?>

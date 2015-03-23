@@ -38,4 +38,3 @@ function HTTP_clean_request() {
         arrayWalkRecursive($_REQUEST, 'stripslashes');
     }
 }
-?>

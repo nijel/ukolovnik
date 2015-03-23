@@ -21,5 +21,3 @@ function arrayWalkRecursive(&$array, $function) {
         }
     }
 }
-
-?>

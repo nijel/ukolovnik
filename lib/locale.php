@@ -74,4 +74,3 @@ function LOCALE_url($base) {
     }
     return $base;
 }
-?>
