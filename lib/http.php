@@ -5,9 +5,6 @@
 // Copyright © 2005 - 2013 Michal Čihař
 // Published under GNU GPL version 3 or later
 
-// Grab needed libraries
-require_once('./lib/compat.php');
-
 /**
  * Outputs headers to disable caching.
  */
@@ -35,6 +32,6 @@ function HTTP_type_header($type) {
  */
 function HTTP_clean_request() {
     if (get_magic_quotes_gpc()) {
-        arrayWalkRecursive($_REQUEST, 'stripslashes');
+        array_walk_recursive($_REQUEST, 'stripslashes');
     }
 }
