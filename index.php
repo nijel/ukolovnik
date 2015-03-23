@@ -47,7 +47,7 @@ if ($show_html) {
 /**
  * Returns HTML for checked attribute
  *
- * @param $name string Name of parameter
+ * @param string $name Name of parameter
  *
  * @return string
  */
@@ -58,8 +58,8 @@ function get_check($name) {
 /**
  * Returns option valud
  *
- * @param $name    string Name of option
- * @param $default string Default value
+ * @param string $name    Name of option
+ * @param string $default Default value
  *
  * @return string
  */
@@ -70,11 +70,11 @@ function get_opt($name, $default = '') {
 /**
  * Returns HTML for select
  *
- * @param $name string Name of element
- * @param $default string Default value
- * @param $options string[] Options to list
- * @param $add_any bool Add "Any" option
- * @param $autosubmit bool If the form should autosubmit on change
+ * @param string   $name      Name of element
+ * @param string   $default   Default value
+ * @param string[] $options   Options to list
+ * @param boolean $add_any    Add "Any" option
+ * @param boolean $autosubmit If the form should autosubmit on change
  *
  * @return string
  */
