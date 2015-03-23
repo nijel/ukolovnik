@@ -20,7 +20,7 @@ require_once('./lib/extensions.php');
 HTTP_clean_request();
 
 // Include correct language file
-$failed_lang = LOCALE_init();
+LOCALE_init();
 
 // Grab some parameters
 if (empty($_REQUEST['cmd'])) {
@@ -74,7 +74,7 @@ if ($cmd == 'save') {
             CONFIG_set($val['name'], $set);
         }
     }
-    $failed_lang = LOCALE_init();
+    LOCALE_init();
 }
 
 HTTP_nocache_headers();
