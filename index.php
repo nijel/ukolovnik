@@ -36,7 +36,7 @@ if (substr($cmd, 0, 7) == 'export_') {
 }
 
 // Include correct language file
-$failed_lang = LOCALE_init();
+LOCALE_init();
 
 HTTP_nocache_headers();
 
@@ -165,11 +165,6 @@ if (isset($check['upgrade'], $check)) {
 
 if (count($check) > 0) {
     HTML_footer();
-}
-
-// Could we locate language file?
-if ($failed_lang) {
-    HTML_message('warning', sprintf(_('Invalid language (%s) has been chosen.'), $language));
 }
 
 if ($show_html) {
