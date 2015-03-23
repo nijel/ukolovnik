@@ -1,0 +1,8 @@
+# scrutinizer-ci.com configuration
+imports:
+    - javascript
+    - php
+checks:
+  php:
+    code_rating: true
+    duplication: true
