@@ -1,6 +1,8 @@
 # Ukolovnik
 
-[![Translation status](http://hosted.weblate.org/widgets/weblate-status-badge.png)](http://hosted.weblate.org/engage/weblate/?utm_source=widget)
+[![Build Status](https://travis-ci.org/nijel/ukolovnik.svg?branch=master)](https://travis-ci.org/nijel/ukolovnik)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/nijel/ukolovnik/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/nijel/ukolovnik/?branch=master)
+[![Translation status](https://hosted.weblate.org/widgets/ukolovnik/-/svg-badge.svg)](https://hosted.weblate.org/engage/ukolovnik/?utm_source=widget)
 
 Simple task manager written in PHP and using MySQL as backend. 
 
