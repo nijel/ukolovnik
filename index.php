@@ -2,7 +2,7 @@
 // vim: expandtab sw=4 ts=4 sts=4:
 
 // This is main file for Ukolovnik
-// Copyright © 2005 - 2013 Michal Čihař
+// Copyright © 2005 - 2016 Michal Čihař
 // Published under GNU GPL version 3 or later
 
 // Grab needed libaries

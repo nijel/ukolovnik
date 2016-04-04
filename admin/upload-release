@@ -11,7 +11,7 @@ if [ ! -z "$2" ] ; then
     cd "$2"
 fi
 
-sftp mort <<EOT
+sftp web <<EOT
 cd /srv/http/dl.cihar.com/ukolovnik/v1.x/
 put ukolovnik-$REL.tar.bz2
 put ukolovnik-$REL.tar.gz
