@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Ukolovnik 1.5\n"
 "Report-Msgid-Bugs-To: michal@cihar.com\n"
 "POT-Creation-Date: 2014-01-21 10:40+0100\n"
-"PO-Revision-Date: 2017-11-22 05:18+0000\n"
+"PO-Revision-Date: 2017-11-23 05:47+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål "
 "<https://hosted.weblate.org/projects/ukolovnik/master/nb_NO/>\n"
@@ -196,7 +196,7 @@ msgstr ""
 #: index.php:413
 #, php-format
 msgid "Task %s has been changed."
-msgstr "Oppgaven %s har blitt endret"
+msgstr "Oppgaven %s har blitt endret."
 
 #: index.php:428 lib/toolbar.php:14
 msgid "Add"
@@ -245,7 +245,7 @@ msgstr "Hva skal gjøres med gjøremålene den slettede kategorien?"
 
 #: index.php:586
 msgid "Move to another category"
-msgstr "Flytt til en annen kategori."
+msgstr "Flytt til en annen kategori"
 
 #: index.php:587
 msgid "Target category"
