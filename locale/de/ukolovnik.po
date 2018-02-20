@@ -8,15 +8,16 @@ msgstr ""
 "Project-Id-Version: Ukolovnik 1.5\n"
 "Report-Msgid-Bugs-To: michal@cihar.com\n"
 "POT-Creation-Date: 2014-01-21 10:40+0100\n"
-"PO-Revision-Date: 2013-11-01 10:01+0200\n"
-"Last-Translator: Michal Čihař <michal@cihar.com>\n"
-"Language-Team: German <http://hosted.weblate.org/projects/ukolovnik/master/de/>\n"
+"PO-Revision-Date: 2018-02-21 19:37+0000\n"
+"Last-Translator: Andreas Kleinert <Andy.Kleinert@gmail.com>\n"
+"Language-Team: German "
+"<https://hosted.weblate.org/projects/ukolovnik/master/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 1.8-dev\n"
+"X-Generator: Weblate 2.20-dev\n"
 
 #: index.php:69
 msgid "Any"
@@ -42,7 +43,7 @@ msgstr "Kategorie"
 #, php-format
 msgid "Can not find needed PHP extension \"%s\". Please install and enable it."
 msgstr ""
-"PHP-Erweiterung \"%s\" kann nicht gefunden werden. Bitte nachinstallieren "
+"PHP-Erweiterung „%s” konnte nicht gefunden werden. Bitte nachinstallieren "
 "und aktivieren."
 
 #: index.php:113 setup.php:97
@@ -237,12 +238,12 @@ msgstr "Kategorie \"%s\" gelöscht."
 #: index.php:575
 #, php-format
 msgid "You are about to delete category \"%s\""
-msgstr "Kategorie \"%s\" wirklich löschen?"
+msgstr "Kategorie „%s” wirklich löschen?"
 
 #: index.php:581
 #, php-format
 msgid "Number of tasks in category: %d"
-msgstr "Es sind \"%d\" Aufgaben in dieser Kategorie."
+msgstr "Anzahl der Aufgaben in dieser Kategorie: %d"
 
 #: index.php:582
 msgid "What to do with task in deleted category?"
@@ -342,12 +343,12 @@ msgstr ""
 #: index.php:741
 #, php-format
 msgid "It has homepage on %s."
-msgstr "Internetseite: \"%s\""
+msgstr "Internetseite: %s"
 
 #: index.php:745
 #, php-format
 msgid "You can support it's development on %s."
-msgstr "Mit einer Spende kannst Du bei der Entwicklung helfen: \"%s\""
+msgstr "Mit einer Spende können Sie bei der Entwicklung helfen: %s"
 
 #: index.php:750
 msgid "Please select export format:"
